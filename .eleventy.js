@@ -1,14 +1,16 @@
-const addTransforms = require("./src/_flightdeck/transforms");
+// Eleventy Configuration
 const addWorkflow = require("./src/_flightdeck/workflow");
-const addShortcodes = require("./src/_flightdeck/shortcodes");
 const addFilters = require("./src/_flightdeck/filters");
+const addShortcodes = require("./src/_flightdeck/shortcodes");
+const addTransforms = require("./src/_flightdeck/transforms");
 const addPlugins = require("./src/_flightdeck/plugins");
+
 module.exports = (config) => {
-  addWorkflow(config); // workflow - browsersync, layout aliases, watch, passthrough copy
-  addTransforms(config); // transforms - esbuild, sass, htmlmin
-  addFilters(config); // filters - universal filters
-  addShortcodes(config); // shortcodes - copyright year, youtube embeds, etc.
-  addPlugins(config); // plugins - eleventy plugins
+  addWorkflow(config);
+  addFilters(config);
+  addShortcodes(config);
+  addTransforms(config);
+  addPlugins(config);
   return {
     dir: {
       input: "src",

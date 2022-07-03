@@ -1,11 +1,6 @@
 # Custom Dictionary Words
 browserlist
 browserslist
-esbuild
-funboxteam
-Jamstack
-mpnpm
-optimizt
 browsersync
 ELEVENTY
 endfor
@@ -13,7 +8,12 @@ endmacro
 endregion
 endset
 esbuild
+funboxteam
 htmlmin
+Jamstack
+mpnpm
 optimizt
-Shortcode
 shortcode
+Shortcode
+shortcodes
+Shortcodes
