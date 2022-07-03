@@ -6,3 +6,14 @@ funboxteam
 Jamstack
 mpnpm
 optimizt
+browsersync
+ELEVENTY
+endfor
+endmacro
+endregion
+endset
+esbuild
+htmlmin
+optimizt
+Shortcode
+shortcode

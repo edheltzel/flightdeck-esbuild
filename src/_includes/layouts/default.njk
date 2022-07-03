@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+  <html lang="en">
+  {% include "global/head.njk" %}
+
+    <body>
+      <main aria-label="Content">
+        {% include "components/navigation.njk" %}
+
+        {{ content | safe }}
+
+        {% include "global/footer.njk" %}
+      </main>
+    </body>
+
+  </html>

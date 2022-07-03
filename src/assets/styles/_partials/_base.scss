@@ -1,0 +1,47 @@
+body {
+  font-family: 'Arvo', serif;
+  background-color: var(--color-gray8);
+  color: var(--color-gray1);
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: var(--color-brand2);
+  text-decoration: none;
+  transition: all 0.24s;
+  &:hover {
+    color: var(--color-brand5);
+  }
+}
+
+img {
+  width: 50rem;
+}
+
+h1 {
+  color: var(--color-brand4);
+  font-size: 5rem;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-start;
+  gap: 2rem;
+  margin: 1rem;
+  padding: 1rem;
+  width: 100vw;
+  max-width: 75vw;
+}
+
+blockquote{
+  background-color: var(--color-brand7);
+  padding: 1rem;
+}
