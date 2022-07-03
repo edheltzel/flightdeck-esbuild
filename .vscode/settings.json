@@ -2,7 +2,7 @@
   "files.exclude": {
     "**/.sass-cache/": true,
     "**/_site/": false, // set to true if you do not want to see the build output dir.
-    "node_modules/": true
+    "node_modules/": false
   },
   "search.exclude": {
     "node_modules/": true,
