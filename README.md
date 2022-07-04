@@ -87,16 +87,21 @@ Flightdeck leverages a Javascript ecosystem using NodeJs. So some very basic kno
 
 ### Prerequisites
 
-We are assuming that you already have Node and NPM installed on your system. Currently there is an [open issue with Parcel v2](https://github.com/parcel-bundler/parcel/issues/5950) that outlines some broken features and a workaround, when using an alternative package manager with Parcel 2.
+We are assuming that you already have Node and NPM installed on your system.
 
-In future releases, [PNPM](https://pnpm.io/) will be used once Parcel or PNPM squashes the bugs associated with each other, but until this happens NPM will work without any issues
+#### Install Dependencies
 
-- npm
+> You can swap `pnpm` in favor of `yarn` or `npm` - but I would suggest enabling Node's [corepack](https://nodejs.org/api/corepack.html) this way you do not need to manage or install a separate package manager for Node and all the `pnpm` commands work out-of-the-box
+
+Read more about Corepack on Node's documentation site - [Node Docs](https://nodejs.org/api/corepack.html). Please note this most likely wont be at the latest version – At the time of this writing PNPM is at [v7.50](https://github.com/pnpm/pnpm/releases).
+
+- pnpm
+
   ```sh
-  npm install npm@latest -g
-  ```
+  corepack enable
 
-If you'd like to use `pnpm` -> checkout the [workaround](https://github.com/parcel-bundler/parcel/issues/5950#issuecomment-789312062), it is a bit hacky but apparently it works.
+  corepack prepare pnpm@7.5.0 --activate
+  ```
 
 ### Installation
 
@@ -104,36 +109,23 @@ If you'd like to use `pnpm` -> checkout the [workaround](https://github.com/parc
 git clone https://github.com/flight-deck/Flightdeck-11ty.git
 ```
 
-#### Install Dependencies
-
-> ~~You can swap `pnpm` in favor of `yarn` or `npm` - but I would suggest enabling Node's [corepack](https://nodejs.org/api/corepack.html) this way you do not need to manage or install a separate package manager for Node and all the `pnpm` commands work out-of-the-box~~
->
-> `pnpm` brakes `parcel`
-
-Read more about Corepack on Node's documentation site - [Node Docs](https://nodejs.org/api/corepack.html)
+```shell
+cd flightdeck
+pnpm install
+```
 
 ###### List all NPM packages
 
 ```shell
-npm list
-flightdeck-11ty@0.0.4 /Users/ed/Projects/oss/flightdeck/fd-11ty
-├── @11ty/eleventy@1.0.1
-├── @parcel/transformer-sass@2.6.2
-├── browserlist@1.0.1
-├── cross-env@7.0.3
-├── eleventy-plugin-embed-everything@1.14.0
-├── html-minifier@4.0.0
-├── imagemin-cli@7.0.0
-├── imagemin-webp@7.0.0
-├── npm-run-all@4.1.5
-├── parcel@2.6.2
-├── sass@1.53.0
-└── sharp@0.30.7
-```
+pnpm list
+Legend: production dependency, optional only, dev only
 
-```shell
-cd flightdeck
-npm install
+flightdeck-for-eleventy@0.1.0 /Users/ed/Projects/oss/flightdeck/flightdeck-for-eleventy
+
+devDependencies:
+@11ty/eleventy 1.0.1                     browserlist 1.0.1                        esbuild-sass-plugin 2.2.6                postcss 8.4.14
+@funboxteam/optimizt 4.0.0               eleventy-plugin-embed-everything 1.14.0  html-minifier 4.0.0                      postcss-preset-env 7.7.2
+autoprefixer 10.4.7                      esbuild 0.14.48                          npm-run-all 4.1.5                        sass 1.53.0
 ```
 
 #### Available Scripts
@@ -141,30 +133,23 @@ npm install
 **List all NPM Scripts**
 
 ```shell
-npm run
-Lifecycle scripts included in flightdeck-11ty@0.0.4:
-  start
-    npm-run-all -p dev:11ty dev:parcel
+pnpm run
 
-available via `npm run-script`:
-  dev:11ty
-    eleventy --serve
-  dev:parcel
-    npm-run-all -p  watch:assets
-  watch:assets
-    parcel watch './src/assets/images/*' ./src/assets/js/app.js ./src/assets/styles/app.scss --dist-dir ./dist/assets
+Lifecycle scripts:
+  start
+    ENVIRONMENT=dev eleventy --serve
+
+Commands available via "pnpm run":
   build
-    npm-run-all -s clean build:parcel build:11ty
-  build:11ty
-    cross-env ELEVENTY_ENV=production eleventy
-  build:parcel
-    parcel build './src/assets/images/*' ./src/assets/js/app.js ./src/assets/styles/app.scss --dist-dir ./dist/assets
+    run-s clean ENVIRONMENT=prod eleventy
+  images
+    optimizt src/assets/images
+  clean
+    (rm -rf dist/ .cache/ || del dist/ .cache/)
   clean:node
     (rm -rf node_modules package-lock.json pnpm-lock.yaml || del node_modules package-lock.json pnpm-lock.yaml)
-  clean
-    (rm -rf dist/ .parcel-cache/ || del dist/ .parcel-cache)
   purge
-    npm run clean:node && npm run clean && echo "\033[32m🧹 All Clean ✨""\033[0m Run ""\033[33mnpm install""\033[0m to start fresh 🤩"
+    npm run clean:node && npm run clean && echo "\033[32m🧹 All Clean ✨""\033[0m Run ""\033[33mpnpm install""\033[0m to start fresh 🤩"
 ```
 
 The `start` command executes npm scripts that include file watching, browser synchronisation, module hot reloading, CSS injecting etc.

@@ -2,6 +2,7 @@
 browserlist
 browserslist
 browsersync
+Corepack
 ELEVENTY
 endfor
 endmacro

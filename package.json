@@ -5,6 +5,7 @@
   "scripts": {
     "start": "ENVIRONMENT=dev eleventy --serve",
     "build": "run-s clean ENVIRONMENT=prod eleventy",
+    "images": "optimizt src/assets/images",
     "clean": "(rm -rf dist/ .cache/ || del dist/ .cache/)",
     "clean:node": "(rm -rf node_modules package-lock.json pnpm-lock.yaml || del node_modules package-lock.json pnpm-lock.yaml)",
     "purge": "npm run clean:node && npm run clean && echo \"\\033[32m🧹 All Clean ✨\"\"\\033[0m Run \"\"\\033[33mpnpm install\"\"\\033[0m to start fresh 🤩\""
