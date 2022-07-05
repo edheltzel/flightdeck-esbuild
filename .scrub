@@ -1,0 +1,30 @@
+#!/bin/bash
+####################################################
+
+GREEN='\033[0;32m' #green
+YELLOW='\033[33m' #yellow
+WHITE='\033[97m' #white
+GRAY='\033[37m' #light gray
+NC='\033[0m' #no-color
+OPTIONS="${YELLOW}clean${NC}, ${YELLOW}clean node${NC} or ${YELLOW}all${NC}"
+MALFUNCTION="👨‍🚀 Huston... We have a problem! Make sure you use ${OPTIONS}"
+FRESH="🧼 Scrubbed ${WHITE}node_modules${NC}, ${WHITE}dist/${NC}, ${WHITE}.cache/${NC} & ${GRAY}lock files${NC}, ✨"
+SITE="🧼 Scrubbed ${WHITE}dist/${NC} & ${WHITE}.cache/${NC} directories ✨"
+PURGE="${GREEN}🧹 All Clean ✨${NC} ${FRESH}${NC} Run ${YELLOW}pnpm install${NC} to start fresh 🤩"
+OOPS="🚀💥🔥 OOPS! We need a valid option – Try using ${OPTIONS}"
+
+################## DONT EDIT BELOW  👀 ########################
+if [ $# -eq 0 ]
+  then
+    echo -e "$MALFUNCTION"
+elif [ "$1" == "site" ]
+  then
+    echo -e ${SITE}
+    (rm -rf dist/ .cache/ || del dist/ .cache/)
+  elif [ "$1" == "purge" ]
+    then
+      echo -e ${PURGE}
+      (rm -rf dist/ .cache/ node_modules package-lock.json pnpm-lock.yaml yarn.lock || del dist/ .cache/ node_modules package-lock.json pnpm-lock.yaml yarn.lock)
+  else
+    echo -e "$OOPS"
+fi

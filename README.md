@@ -19,6 +19,7 @@
       <a href="#about-the-project">About The Project</a>
       <ul>
         <li><a href="#inspiration">Inspiration</a></li>
+        <ul><li><a href="#dependencies">Dependencies</a></li></ul>
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
@@ -48,7 +49,7 @@ This flavor of Flightdeck uses [Eleventy](https://www.11ty.dev/) with an opinion
 
 ### Inspiration
 
-Like other versions of Flightdeck, this is just an adaptation of the original [Flightdeck](https://github.com/flight-deck/Flightdeck-Jekyll) project that leverages [Jekyll](https://jekyllrb.com/) for its static site generation and uses [Gulp](https://gulpjs.com/) as its single-source-of-truth. ([Hugo](https://github.com/flight-deck/Flightdeck-Hugo) version, that uses Hugo's asset pipeline.)
+Like other versions of Flightdeck, this is just an adaptation of the original [Flightdeck](https://github.com/flight-deck/Flightdeck-Jekyll) project that leverages [Jekyll](https://jekyllrb.com/) for its static site generation and uses [Gulp](https://gulpjs.com/) as its single source of truth. ([Hugo](https://github.com/flight-deck/Flightdeck-Hugo) version, that uses Hugo's asset pipeline.)
 
 Jérôme Coupé's post[Structuring Eleventy Projects](https://www.webstoemp.com/blog/eleventy-projects-structure/) served as the sole inspiration for our folder arrangement. Over-time, things will shift as ideas change, but in 2022, we are shamelessly adopting the concept Jérôme Coupé outlines.
 
@@ -89,21 +90,19 @@ Jérôme Coupé's post[Structuring Eleventy Projects](https://www.webstoemp.com/
 
 All version of Flightdeck use a NodeJS ecosystem. So a very minimal and basic knowledge of Node should be had when using Flightdeck as your launchpad.
 
-> In the future, we plan to include Docker and make all Flightdeck starters available as Yeoman and/or NPM packages.
+> In the future, we plan to include Docker and make all Flightdeck starters available as a Yeoman and/or NPM package.
 
 ### Prerequisites
 
-We are assuming that you already have Node and NPM installed on your system.
+We are assuming that you already have Node and NPM installed on your system and that you have a basic understanding of Git.
 
-#### Install Dependencies
+#### Dependencies
 
-I would It is highly suggested you enable Node's [corepack](https://nodejs.org/api/corepack.html) – this way you do not need to install or manage separate package managers for Node and all the `pnpm` commands work out-of-the-box.
+We use `pnpm` as our package manager and we highly suggested that you enable Node's [corepack](https://nodejs.org/api/corepack.html), this way all the `pnpm` commands are supported out-of-the-box.
 
-Read more about Corepack on Node's documentation site - [Node Docs](https://nodejs.org/api/corepack.html).
+> Please be aware that this certainly won't be the most recent version of PNPM and as of this writing, PNPM is at version [7.5.0](https://github.com/pnpm/pnpm/releases).
 
-> Please note this most likely will not be at the latest version – At the time of this writing PNPM is at [v7.5.0](https://github.com/pnpm/pnpm/releases).
-
-Also, You can swap `pnpm` in favor of `yarn` or `npm` - just make sure you edit the `package.json` to suite your needs.
+Also, You can swap `pnpm` in favor of `yarn` or `npm`
 
 - pnpm
 
@@ -116,62 +115,114 @@ Also, You can swap `pnpm` in favor of `yarn` or `npm` - just make sure you edit 
 ### Installation
 
 ```shell
-git clone https://github.com/flight-deck/flightdeck-for-eleventy.git flightdeck
+git clone https://github.com/flight-deck/flightdeck-for-eleventy.git
 ```
 
 ```shell
-cd flightdeck
+cd flightdeck-for-eleventy
 pnpm install
 ```
 
-#### List all NPM packages with PNPM
+<details>
+	<summary>See all NPM packages</summary>
+  <pre>pnpm list
+  Legend: production dependency, optional only, dev only
 
-```shell
-pnpm list
-Legend: production dependency, optional only, dev only
-
-flightdeck-for-eleventy@0.1.0 /Users/ed/Projects/oss/flightdeck/flightdeck-for-eleventy
+flightdeck-for-eleventy@0.1.0 ~/flightdeck-for-eleventy
 
 devDependencies:
-@11ty/eleventy 1.0.1                     browserlist 1.0.1                        esbuild-sass-plugin 2.2.6                postcss 8.4.14
-@funboxteam/optimizt 4.0.0               eleventy-plugin-embed-everything 1.14.0  html-minifier 4.0.0                      postcss-preset-env 7.7.2
-autoprefixer 10.4.7                      esbuild 0.14.48                          npm-run-all 4.1.5                        sass 1.53.0
-```
+@11ty/eleventy 1.0.1 eleventy-plugin-embed-everything 1.14.0 npm-run-all 4.1.5
+@funboxteam/optimizt 4.0.0 esbuild 0.14.48 postcss 8.4.14
+autoprefixer 10.4.7 esbuild-sass-plugin 2.2.6 postcss-preset-env 7.7.2
+browserlist 1.0.1 html-minifier 4.0.0 sass 1.53.0</pre>
 
-#### Available Scripts
+</details>
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- USAGE -->
+
+### Usage
+
+There are just a few npm-scripts available, but the `start` command is where all the magic 🪄 happens – it will spin up the development server from Eleventy.
+
+Again, the focus here is to keep Eleventy in control of the entire development and build processes, to keep things simple.
 
 ```shell
-pnpm run
+pnpm start
+```
+
+<details open>
+  <summary>Available Scripts</summary>
+  <pre>pnpm run
 
 Lifecycle scripts:
-  start
-    ENVIRONMENT=dev eleventy --serve
+start
+cross-env ENVIRONMENT=dev eleventy --serve
 
 Commands available via "pnpm run":
-  build
-    run-s clean ENVIRONMENT=prod eleventy
-  images
-    optimizt src/assets/images
-  clean
-    (rm -rf dist/ .cache/ || del dist/ .cache/)
-  clean:node
-    (rm -rf node_modules package-lock.json pnpm-lock.yaml || del node_modules package-lock.json pnpm-lock.yaml)
-  purge
-    npm run clean:node && npm run clean && echo "\033[32m🧹 All Clean ✨""\033[0m Run ""\033[33mpnpm install""\033[0m to start fresh 🤩"
-```
+build
+cross-env ENVIRONMENT=prod eleventy
+images
+optimizt src/assets/images
+clean
+./.scrub site
+purge
+./.scrub purge</pre>
 
-The `start` command executes npm scripts that include file watching, browser synchronisation, module hot reloading, CSS injecting etc.
+Notice the funky `||` ? This is an attempt to provide cross platform compatibility for Linux/Unix, and Windows. If your terminal doesn’t know what it is, it will skip over it.
 
-```shell
-npm start
-```
+- `build` command - executes the production build of your site with Eleventy, includes HTML minification, compressed Sass, optimized images, and bundled javascript.
+- `images` command - will optimize all image files inside of `/src/assets/images`, the files will be copied to `/dist/assets/images` with Eleventy's `addPassthroughCopy` but only when you run the development server.
+- `clean` command - scrubs/removes the `dist/` and `.cache` directories
+- `purge` command - scrubs/removes the `dist/`, `.cache`, `node_modules`, and any lock files from npm, yarn, or pnpm.
 
-#### Build
+Both `clean` and `purge` are executed from a bash script keep the `package.json` as clean as possible.
 
-```shell
-npm run build
-```
+</details>
 
-#### Image and SVG processing
+If you're looking to extend your project with other NPM modules or Eleventy plugins, just reference the appropriate documentation.
 
-Lossless image compression is provided by [Parcel - Reference the docs](https://parceljs.org/recipes/image/)
+- [Eleventy Docs](https://11ty.dev)
+- [NPM Package Docs](https://docs.npmjs.com/using-npm-packages-in-your-projects)
+- [Nunjucks Docs](https://mozilla.github.io/nunjucks/templating.html)
+- [Sass Docs](https://sass-lang.com/documentation/)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- ROADMAP -->
+
+## Roadmap
+
+- [ ] Create a theme using Airframe
+- [ ] Improve documentation
+- [ ] Add Dockerfile
+- [ ] Include in NPM package
+
+See the [open issues](https://github.com/flight-deck/flightdeck-for-eleventy/issues) for a full list of proposed features (and known bugs/issues).
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- CONTRIBUTING -->
+
+## Contributing
+
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- LICENSE -->
+
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+<p align="right">(<a href="#top">back to top</a>)</p>
