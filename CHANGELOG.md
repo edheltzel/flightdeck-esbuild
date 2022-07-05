@@ -10,6 +10,8 @@ A good first release of Flightdeck for Eleventy (workflow only - theme is coming
 
 > Migration to a new repository - trying to merge into the previous `Flightdeck-11ty` repository was painful 🤷‍♂️
 
+This brought focus back to using Eleventy as the "single-source-of-truth", to simplify the developer experience.
+
 ### Adds
 
 - Image optimization is now handled by 11ty

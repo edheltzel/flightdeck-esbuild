@@ -48,7 +48,7 @@ This flavor of Flightdeck uses [Eleventy](https://www.11ty.dev/) with an opinion
 
 ### Inspiration
 
-Like other versions of Flightdeck, this is just an adaptation of the original [Flightdeck](https://github.com/flight-deck/Flightdeck-Jekyll) project that leverages [Jekyll](https://jekyllrb.com/) for its static site generation and uses [Gulp](https://gulpjs.com/) as its single source of truth. ([Hugo](https://github.com/flight-deck/Flightdeck-Hugo) version, that uses Hugo's asset pipeline.)
+Like other versions of Flightdeck, this is just an adaptation of the original [Flightdeck](https://github.com/flight-deck/Flightdeck-Jekyll) project that leverages [Jekyll](https://jekyllrb.com/) for its static site generation and uses [Gulp](https://gulpjs.com/) as its single-source-of-truth. ([Hugo](https://github.com/flight-deck/Flightdeck-Hugo) version, that uses Hugo's asset pipeline.)
 
 Jérôme Coupé's post[Structuring Eleventy Projects](https://www.webstoemp.com/blog/eleventy-projects-structure/) served as the sole inspiration for our folder arrangement. Over-time, things will shift as ideas change, but in 2022, we are shamelessly adopting the concept Jérôme Coupé outlines.
 
