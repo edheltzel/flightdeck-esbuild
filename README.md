@@ -18,6 +18,7 @@
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
+        <li><a href="#inspiration">Inspiration</a></li>
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
@@ -41,38 +42,43 @@
 
 ## About The Project
 
-This starter project is an adaptation of the original [Flightdeck](https://github.com/flight-deck/Flightdeck-Jekyll) project that leverages [Jekyll](https://jekyllrb.com/) for its static site generation and [Gulp](https://gulpjs.com/) for all compiling and bundling of assets. There is also a version for [ParcelJS](https://github.com/flight-deck/flightdeck-jekyll-parcel), if you're interested in that.
+The basic objective of Flightdeck has always been to leverage popular static-site-generators _(SSG)_, in an attempt to deliver unified starting point for all your Jamstack websites.
 
-### Inspiration and Folder Structure 🤔
+This flavor of Flightdeck uses [Eleventy](https://www.11ty.dev/) with an opinionated workflow, keeping Eleventy in control of the entire development and build processes.
 
-Like other versions of Flightdeck, [Jekyll](https://github.com/flight-deck/Flightdeck-Jekyll/) and [Hugo](https://github.com/flight-deck/Flightdeck-Hugo), each project's objective is to create consistent workflow and reusability from project to project, making the developer experience as frictionless as possible, and for Flightdeck 11ty this is no different. So we have structured this project using the concept and structure described by Jérôme Coupé's article [Structuring Eleventy Projects](https://www.webstoemp.com/blog/eleventy-projects-structure/). Over-time, things will shift as ideas change, but in 2022, we are shamelessly borrowing the concept, structure, and conventions Jérôme Coupé outlines.
+### Inspiration
+
+Like other versions of Flightdeck, this is just an adaptation of the original [Flightdeck](https://github.com/flight-deck/Flightdeck-Jekyll) project that leverages [Jekyll](https://jekyllrb.com/) for its static site generation and uses [Gulp](https://gulpjs.com/) as its single source of truth. ([Hugo](https://github.com/flight-deck/Flightdeck-Hugo) version, that uses Hugo's asset pipeline.)
+
+Jérôme Coupé's post[Structuring Eleventy Projects](https://www.webstoemp.com/blog/eleventy-projects-structure/) served as the sole inspiration for our folder arrangement. Over-time, things will shift as ideas change, but in 2022, we are shamelessly adopting the concept Jérôme Coupé outlines.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Built With
 
 - [Eleventy](https://www.11ty.dev/)
-- [Parcel Js](https://parceljs.org/)
+- [esbuild](https://esbuild.github.io/)
 - [Nunjucks](https://mozilla.github.io/nunjucks/)
 - [Sass](https://sass-lang.com/)
+- [Optimizt](https://github.com/funbox/optimizt)
 
 <details>
   <summary>see all dependencies</summary>
   <pre>
     ❯ npm list
-  flightdeck-11ty@0.0.4 /Users/ed/Projects/oss/flightdeck/fd-11ty
-  ├── @11ty/eleventy@1.0.1
-  ├── @parcel/transformer-sass@2.6.2
-  ├── browserlist@1.0.1
-  ├── cross-env@7.0.3
-  ├── eleventy-plugin-embed-everything@1.14.0
-  ├── html-minifier@4.0.0
-  ├── imagemin-cli@7.0.0
-  ├── imagemin-webp@7.0.0
-  ├── npm-run-all@4.1.5
-  ├── parcel@2.6.2
-  ├── sass@1.53.0
-  └── sharp@0.30.7
+    flightdeck-for-eleventy@0.1.0
+    ├── @11ty/eleventy@1.0.1
+    ├── @funboxteam/optimizt@4.0.0
+    ├── autoprefixer@10.4.7
+    ├── browserlist@1.0.1
+    ├── eleventy-plugin-embed-everything@1.14.0
+    ├── esbuild-sass-plugin@2.2.6
+    ├── esbuild@0.14.48
+    ├── html-minifier@4.0.0
+    ├── npm-run-all@4.1.5
+    ├── postcss-preset-env@7.7.2
+    ├── postcss@8.4.14
+    └── sass@1.53.0
   </pre>
 </details>
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -81,7 +87,7 @@ Like other versions of Flightdeck, [Jekyll](https://github.com/flight-deck/Fligh
 
 ## Getting Started
 
-Flightdeck leverages a Javascript ecosystem using NodeJs. So some very basic knowledge of Node should be had when using Flightdeck as your launchpad.
+All version of Flightdeck use a NodeJS ecosystem. So a very minimal and basic knowledge of Node should be had when using Flightdeck as your launchpad.
 
 > In the future, we plan to include Docker and make all Flightdeck starters available as Yeoman and/or NPM packages.
 
@@ -91,9 +97,13 @@ We are assuming that you already have Node and NPM installed on your system.
 
 #### Install Dependencies
 
-> You can swap `pnpm` in favor of `yarn` or `npm` - but I would suggest enabling Node's [corepack](https://nodejs.org/api/corepack.html) this way you do not need to manage or install a separate package manager for Node and all the `pnpm` commands work out-of-the-box
+I would It is highly suggested you enable Node's [corepack](https://nodejs.org/api/corepack.html) – this way you do not need to install or manage separate package managers for Node and all the `pnpm` commands work out-of-the-box.
 
-Read more about Corepack on Node's documentation site - [Node Docs](https://nodejs.org/api/corepack.html). Please note this most likely wont be at the latest version – At the time of this writing PNPM is at [v7.50](https://github.com/pnpm/pnpm/releases).
+Read more about Corepack on Node's documentation site - [Node Docs](https://nodejs.org/api/corepack.html).
+
+> Please note this most likely will not be at the latest version – At the time of this writing PNPM is at [v7.5.0](https://github.com/pnpm/pnpm/releases).
+
+Also, You can swap `pnpm` in favor of `yarn` or `npm` - just make sure you edit the `package.json` to suite your needs.
 
 - pnpm
 
@@ -106,7 +116,7 @@ Read more about Corepack on Node's documentation site - [Node Docs](https://node
 ### Installation
 
 ```shell
-git clone https://github.com/flight-deck/Flightdeck-11ty.git
+git clone https://github.com/flight-deck/flightdeck-for-eleventy.git flightdeck
 ```
 
 ```shell
@@ -114,7 +124,7 @@ cd flightdeck
 pnpm install
 ```
 
-###### List all NPM packages
+#### List all NPM packages with PNPM
 
 ```shell
 pnpm list
@@ -129,8 +139,6 @@ autoprefixer 10.4.7                      esbuild 0.14.48                        
 ```
 
 #### Available Scripts
-
-**List all NPM Scripts**
 
 ```shell
 pnpm run
