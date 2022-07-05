@@ -1,5 +1,4 @@
 <div id="top" align="center">
-<style type="text/css">html {scroll-behavior: smooth;}</style>
 <!-- PROJECT LOGO -->
   <a href="https://github.com/flight-deck"><img src="https://rdm.sfo2.digitaloceanspaces.com/flightdeck/v3-flightdeck__logo--purple-haze-600x528.png" alt="Flightdeck Logo" width="400"></a>
   <h1>Flightdeck</h1>

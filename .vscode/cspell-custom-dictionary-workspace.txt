@@ -3,6 +3,8 @@ browserlist
 browserslist
 browsersync
 Corepack
+Coupé
+Coupé's
 ELEVENTY
 endfor
 endmacro
@@ -14,6 +16,9 @@ htmlmin
 Jamstack
 mpnpm
 optimizt
+roadmap
+Roadmap
+ROADMAP
 shortcode
 Shortcode
 shortcodes
