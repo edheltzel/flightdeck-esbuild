@@ -42,15 +42,15 @@
 
 ## About The Project
 
-The basic objective of Flightdeck has always been to leverage popular static-site-generators _(SSG)_, in an attempt to deliver unified starting point for all your Jamstack websites.
+The basic objective of Flightdeck has always been an attempt to deliver a unified starting point for all your Jamstack websites, by leveraging popular static-site-generators _(SSG)_.
 
 This flavor of Flightdeck uses [Eleventy](https://www.11ty.dev/) with an opinionated workflow, keeping Eleventy in control of the entire development and build processes.
 
 ### Inspiration
 
-Like other versions of Flightdeck, this is just an adaptation of the original [Flightdeck](https://github.com/flight-deck/Flightdeck-Jekyll) project that leverages [Jekyll](https://jekyllrb.com/) for its static site generation and uses [Gulp](https://gulpjs.com/) as its single source of truth. ([Hugo](https://github.com/flight-deck/Flightdeck-Hugo) version, that uses Hugo's asset pipeline.)
+Like other versions of Flightdeck, this is just an adaptation of the original [Flightdeck](https://github.com/flight-deck/Flightdeck-Jekyll) project that uses [Jekyll](https://jekyllrb.com/) for its static site generation and [Gulp](https://gulpjs.com/) for all assets bundling, optimization, etc. (The [Hugo](https://github.com/flight-deck/Flightdeck-Hugo) version, takes full advantage of Hugo's asset pipeline.)
 
-Jérôme Coupé's post[Structuring Eleventy Projects](https://www.webstoemp.com/blog/eleventy-projects-structure/) served as the sole inspiration for our folder arrangement. Over-time, things will shift as ideas change, but in 2022, we are shamelessly adopting the concept Jérôme Coupé outlines.
+Jérôme Coupé's post [Structuring Eleventy Projects](https://www.webstoemp.com/blog/eleventy-projects-structure/) served as the sole inspiration for our folder structure. Over-time, things will shift as ideas change, but in 2022, we are shamelessly adopting the concept Jérôme Coupé outlines.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
