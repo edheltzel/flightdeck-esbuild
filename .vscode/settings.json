@@ -1,4 +1,27 @@
 {
+  "files.exclude": {
+    "**/.sass-cache/": true,
+    "**/_site/": false, // set to true if you do not want to see the build output dir.
+    "node_modules/": false
+  },
+  "search.exclude": {
+    "node_modules/": true,
+    "_site/**": true,
+    "dist/**": true,
+    "**/css/*": true,
+    "*.lock": true,
+    "**/.sass-cache/": true,
+    "**/.publish/": true,
+    ".vscode/**": true,
+    "package-lock.json": true
+  },
+  "workbench.colorCustomizations": {
+    "titleBar.activeForeground": "#41f3fe",
+    "titleBar.inactiveForeground": "#41f3fe5D"
+  },
+  "emmet.includeLanguages": {
+    "*.njk": "html"
+  },
   "cSpell.customDictionaries": {
     "custom-dictionary-workspace": {
       "name": "custom-dictionary-workspace",

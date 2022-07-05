@@ -1,0 +1,14 @@
+{
+  "Embed Codepens By Url": {
+    "prefix": ["codepen", "codep", "cp"],
+    "body": [
+      "{% codepen \"${1:Url}\", ${2:Height}, \"${3:Tabs}\", \"${4:ThemeID}\" %}"
+    ],
+    "description": "Eleventy Shortcode to embed Codepens by URL. Url is required – Optional: Height (must be a number), Tabs, ThemeID"
+  },
+  "Add Copyright Year": {
+    "prefix": ["copyright"],
+    "body": ["{% year %}"],
+    "description": "adds ©️ with current calendar year"
+  }
+}

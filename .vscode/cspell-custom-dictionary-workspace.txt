@@ -1,8 +1,20 @@
 # Custom Dictionary Words
 browserlist
 browserslist
+browsersync
+Corepack
+ELEVENTY
+endfor
+endmacro
+endregion
+endset
 esbuild
 funboxteam
+htmlmin
 Jamstack
 mpnpm
 optimizt
+shortcode
+Shortcode
+shortcodes
+Shortcodes
