@@ -2,7 +2,7 @@
 <!-- PROJECT LOGO -->
   <a href="https://github.com/flight-deck"><img src="https://rdm.sfo2.digitaloceanspaces.com/flightdeck/v3-flightdeck__logo--purple-haze-600x528.png" alt="Flightdeck Logo" width="400"></a>
   <h1>Flightdeck</h1>
-  <h3 style="padding-bottom: .5em">A starter project for <a href="https://www.11ty.dev/">Eleventy</a> using a minimal and opinionated frontend workflow.</h3>
+  <h4 style="padding-bottom: .5em">A starter project for <a href="https://www.11ty.dev/">Eleventy 🎈</a> using a minimal and opinionated workflow.</h4>
 
 <!-- PROJECT SHIELDS -->
 
