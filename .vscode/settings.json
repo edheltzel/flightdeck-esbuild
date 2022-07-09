@@ -15,10 +15,10 @@
     ".vscode/**": true,
     "package-lock.json": true
   },
-  "workbench.colorCustomizations": {
-    "titleBar.activeForeground": "#41f3fe",
-    "titleBar.inactiveForeground": "#41f3fe5D"
-  },
+  // "workbench.colorCustomizations": {
+  //   "titleBar.activeForeground": "#41f3fe",
+  //   "titleBar.inactiveForeground": "#41f3fe5D"
+  // },
   "emmet.includeLanguages": {
     "*.njk": "html"
   },
