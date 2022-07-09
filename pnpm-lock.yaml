@@ -79,9 +79,9 @@ packages:
       handlebars: 4.7.7
       is-glob: 4.0.3
       kleur: 4.1.5
-      liquidjs: 9.38.0
+      liquidjs: 9.39.0
       lodash: 4.17.21
-      luxon: 2.4.0
+      luxon: 2.5.0
       markdown-it: 12.3.2
       minimist: 1.2.6
       moo: 0.5.1
@@ -2752,8 +2752,8 @@ packages:
       uc.micro: 1.0.6
     dev: true
 
-  /liquidjs/9.38.0:
-    resolution: {integrity: sha512-LDGPbOfc8L9LG7ZSG0NueTcCe0AZzJAIa0BjYgMnCR+4VO0yS+AnOZjx0WOih8mtLRNSIYo9fik5exY6Cf4TOQ==}
+  /liquidjs/9.39.0:
+    resolution: {integrity: sha512-WmsBwFlvhHrMtrlSjVR58kAYjZT/0QVO5sqw4zs9mpGQdf3xTon388WbWwOwyCoTtKzXwedbvWtq2M2wnozr0g==}
     engines: {node: '>=4.8.7'}
     hasBin: true
     dev: true
@@ -2825,8 +2825,8 @@ packages:
       yallist: 4.0.0
     dev: true
 
-  /luxon/2.4.0:
-    resolution: {integrity: sha512-w+NAwWOUL5hO0SgwOHsMBAmZ15SoknmQXhSO0hIbJCAmPKSsGeK8MlmhYh2w6Iib38IxN2M+/ooXWLbeis7GuA==}
+  /luxon/2.5.0:
+    resolution: {integrity: sha512-IDkEPB80Rb6gCAU+FEib0t4FeJ4uVOuX1CQ9GsvU3O+JAGIgu0J7sf1OarXKaKDygTZIoJyU6YdZzTFRu+YR0A==}
     engines: {node: '>=12'}
     dev: true
 

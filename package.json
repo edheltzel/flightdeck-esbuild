@@ -4,7 +4,8 @@
   "description": "An opinionated Jamstack starter project for Eleventy.",
   "scripts": {
     "start": "eleventy --serve --config=.flightdeck.config",
-    "build": "cross-env ENVIRONMENT=prod eleventy --config=.flightdeck.config",
+    "build": "run-s clean 11ty",
+    "11ty": "cross-env ENVIRONMENT=prod eleventy --config=.flightdeck.config",
     "images": "optimizt src/assets/images",
     "clean": "./.scrub site",
     "purge": "./.scrub purge"
