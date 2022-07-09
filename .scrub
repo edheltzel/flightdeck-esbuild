@@ -12,6 +12,8 @@ FRESH="🧼 Scrubbed ${WHITE}node_modules${NC}, ${WHITE}dist/${NC}, ${WHITE}.cac
 SITE="🧼 Scrubbed ${WHITE}dist/${NC} & ${WHITE}.cache/${NC} directories ✨"
 PURGE="${GREEN}🧹 All Clean ✨${NC} ${FRESH}${NC} Run ${YELLOW}pnpm install${NC} to start fresh 🤩"
 OOPS="🚀💥🔥 OOPS! We need a valid option – Try using ${OPTIONS}"
+DEVFILES="dist/ .cache/ .pnpm-debug.log"
+NODEFILES="node_modules package-lock.json pnpm-lock.yaml yarn.lock"
 
 ################## DONT EDIT BELOW  👀 ########################
 if [ $# -eq 0 ]
@@ -19,12 +21,12 @@ if [ $# -eq 0 ]
     echo -e "$MALFUNCTION"
 elif [ "$1" == "site" ]
   then
+    (rm -rf ${DEVFILES} || del ${DEVFILES})
     echo -e ${SITE}
-    (rm -rf dist/ .cache/ || del dist/ .cache/)
   elif [ "$1" == "purge" ]
     then
+      (rm -rf ${DEVFILES} ${NODEFILES} || del ${DEVFILES} ${NODEFILES})
       echo -e ${PURGE}
-      (rm -rf dist/ .cache/ node_modules package-lock.json pnpm-lock.yaml yarn.lock || del dist/ .cache/ node_modules package-lock.json pnpm-lock.yaml yarn.lock)
   else
     echo -e "$OOPS"
 fi
