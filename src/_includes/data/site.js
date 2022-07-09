@@ -1,5 +1,7 @@
 const isProd = process.env.ENVIRONMENT === "prod";
-const baseUrl = isProd ? `https://google.com/` : `http://localhost:8080/`;
+const baseUrl = isProd
+  ? `https://flightdeck.systems/`
+  : `http://localhost:8080/`;
 
 const site = {
   baseUrl,
