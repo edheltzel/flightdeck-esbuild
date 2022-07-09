@@ -1,7 +1,6 @@
 ---
 layout: layouts/default.njk
 title: The Flightdeck Foundation
-description: "Huston ready for launch"
 ---
 
 # {{ title }}
