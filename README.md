@@ -42,15 +42,15 @@
 
 ## About The Project
 
-The basic objective of Flightdeck has always been an attempt to deliver a unified starting point for all your Jamstack websites, by leveraging popular static-site-generators _(SSG)_.
+The Flightdeck objective is to provide a unified starting point for all your Jamstack websites, by leveraging popular static-site-generators _(SSG)_.
 
 This flavor of Flightdeck uses [Eleventy](https://www.11ty.dev/) with an opinionated workflow, keeping Eleventy in control of the entire development and build processes.
 
 ### Inspiration
 
-Like other versions of Flightdeck, this is just an adaptation of the original [Flightdeck](https://github.com/flight-deck/Flightdeck-Jekyll) project that uses [Jekyll](https://jekyllrb.com/) for its static site generation and [Gulp](https://gulpjs.com/) for all assets bundling, optimization, etc. (The [Hugo](https://github.com/flight-deck/Flightdeck-Hugo) version, takes full advantage of Hugo's asset pipeline.)
+Like other versions of Flightdeck, this is just an adaptation of the original [Flightdeck](https://github.com/flight-deck/Flightdeck-Jekyll) project that uses [Jekyll](https://jekyllrb.com/) for its static site generation and [Gulp](https://gulpjs.com/) for all assets bundling. (The [Hugo](https://github.com/flight-deck/Flightdeck-Hugo) version, takes full advantage of Hugo's asset pipeline.)
 
-Jérôme Coupé's post [Structuring Eleventy Projects](https://www.webstoemp.com/blog/eleventy-projects-structure/) served as the sole inspiration for our folder structure. Over-time, things will shift as ideas change, but in 2022, we are shamelessly adopting the concept Jérôme Coupé outlines.
+Jérôme Coupé's post [Structuring Eleventy Projects](https://www.webstoemp.com/blog/eleventy-projects-structure/) served as inspiration for how this project is structured and over-time, things will shift as ideas change, but in 2022, we are shamelessly adopting the concept Jérôme Coupé outlines.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -87,21 +87,21 @@ Jérôme Coupé's post [Structuring Eleventy Projects](https://www.webstoemp.com
 
 ## Getting Started
 
-All version of Flightdeck use a NodeJS ecosystem. So a very minimal and basic knowledge of Node should be had when using Flightdeck as your launchpad.
+All version of Flightdeck use NodeJS. So a very minimal and basic knowledge of Node and Git should be had when using Flightdeck as your launchpad.
 
 > In the future, we plan to include Docker and make all Flightdeck starters available as a Yeoman and/or NPM package.
 
 ### Prerequisites
 
-We are assuming that you already have Node and NPM installed on your system and that you have a basic understanding of Git.
+We are assuming that you already have Node with NPM and Git installed on your system.
 
 #### Dependencies
 
-We use `pnpm` as our package manager and we highly suggested that you enable Node's [corepack](https://nodejs.org/api/corepack.html), this way all the `pnpm` commands are supported out-of-the-box.
+`pnpm` is our package manager of choice – we highly recommend you enable Node's [corepack](https://nodejs.org/api/corepack.html), this way all the `pnpm` commands are work out-of-the-box.
 
 > Please be aware that this certainly won't be the most recent version of PNPM and as of this writing, PNPM is at version [7.5.0](https://github.com/pnpm/pnpm/releases).
 
-Also, You can swap `pnpm` in favor of `yarn` or `npm`
+Also, You can swap `pnpm` in favor of `yarn` or `npm` without any friction.
 
 - pnpm
 
