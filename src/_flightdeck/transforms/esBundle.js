@@ -12,7 +12,7 @@ module.exports = (config) => {
       bundle: true,
       entryPoints: {
         "assets/js/app": "./src/assets/js/app.js",
-        "assets/css/app": "./src/assets/scss/app.scss",
+        "assets/styles/app": "./src/assets/scss/app.scss",
       },
       loader: { ".scss": "css" },
       minify: isProd,
