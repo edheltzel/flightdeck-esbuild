@@ -1,9 +1,6 @@
 ---
 layout: layouts/default.njk
-title: The Flightdeck Foundation
 ---
-
-# {{ title }}
 
 > "That's one small step for man, one giant leap for mankind"<br> > <small>– Neil Armstrong</small>
 

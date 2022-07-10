@@ -5,7 +5,7 @@ const baseUrl = isProd
 
 const site = {
   baseUrl,
-  title: "Flightdeck",
+  title: "Flightdeck For Eleventy with Airframe",
   description: "🚀 An opinionated Jamstack starter project for Eleventy.",
   authorName: "Ed Heltzel",
   social: [

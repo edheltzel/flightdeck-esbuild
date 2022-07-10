@@ -16,6 +16,7 @@ htmlmin
 Jamstack
 mpnpm
 optimizt
+outdir
 roadmap
 Roadmap
 ROADMAP
@@ -23,3 +24,4 @@ shortcode
 Shortcode
 shortcodes
 Shortcodes
+smacss

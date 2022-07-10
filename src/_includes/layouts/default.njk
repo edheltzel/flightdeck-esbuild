@@ -4,6 +4,8 @@
     <body>
       <main aria-label="Content">
         {% include "components/navigation.njk" %}
+        {%- set pageTitle %}{% if title %}{{ title }}{% else %}{{ site.title }}{% endif %}{%- endset -%}
+        <h1>{{ pageTitle }}</h1>
 
         {{ content | safe }}
 
