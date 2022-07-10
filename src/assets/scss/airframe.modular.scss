@@ -1,13 +1,11 @@
 /*!
- * Airframe.css v1.5.3 (https://flightdeck.systems/airframecss)
+ * Airframe CSS System v1.5.3 (https://flightdeck.systems/airframe)
+ * A semantic CSS system for raw HTML
  * Copyright 2019-2022 - Licensed under MIT
- *
- * Modular version example
- * Include only the modules you need/want
  */
 
-// Config
-// --------------------
+// Modular configuration – use only the modules you need/want
+// -------------------------------------------------------------
 
 // Enable responsive spacings for <header>, <main>, <footer>, <section>, <article>
 $enable-responsive-spacings: false;
@@ -18,10 +16,10 @@ $enable-transitions: false;
 // Enable overriding with !important
 $enable-important: false;
 
-// Airframe Lib
+// Airframe Library
 // --------------------
 
-// Config
+// Core Settings
 @import "variables";
 
 // Theming
