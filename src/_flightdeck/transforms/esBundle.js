@@ -2,6 +2,7 @@
 const esbuild = require("esbuild");
 const { sassPlugin } = require("esbuild-sass-plugin");
 const postcss = require("postcss");
+const cssDeclarationSorter = require("css-declaration-sorter");
 const autoprefixer = require("autoprefixer");
 const postcssPresetEnv = require("postcss-preset-env");
 const isProd = process.env.ENVIRONMENT === "prod";
@@ -12,7 +13,7 @@ module.exports = (config) => {
       bundle: true,
       entryPoints: {
         "assets/js/app": "./src/assets/js/app.js",
-        "assets/styles/app": "./src/assets/scss/app.scss",
+        "assets/styles/airframe": "./src/assets/scss/airframe.core.scss",
       },
       loader: { ".scss": "css" },
       minify: isProd,
@@ -22,6 +23,7 @@ module.exports = (config) => {
         sassPlugin({
           async transform(source, resolveDir) {
             const { css } = await postcss([
+              postcss([cssDeclarationSorter({ order: "smacss" })]),
               autoprefixer,
               postcssPresetEnv({ stage: 0 }),
             ]).process(source, { from: undefined });

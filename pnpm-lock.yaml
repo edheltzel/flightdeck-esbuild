@@ -6,6 +6,7 @@ specifiers:
   autoprefixer: ^10.4.7
   browserlist: ^1.0.1
   cross-env: ^7.0.3
+  css-declaration-sorter: ^6.3.0
   eleventy-plugin-embed-everything: ^1.14.0
   esbuild: ^0.14.48
   esbuild-sass-plugin: ^2.2.6
@@ -21,6 +22,7 @@ devDependencies:
   autoprefixer: 10.4.7_postcss@8.4.14
   browserlist: 1.0.1
   cross-env: 7.0.3
+  css-declaration-sorter: 6.3.0_postcss@8.4.14
   eleventy-plugin-embed-everything: 1.14.0
   esbuild: 0.14.48
   esbuild-sass-plugin: 2.2.6
@@ -1064,6 +1066,15 @@ packages:
     dependencies:
       postcss: 8.4.14
       postcss-selector-parser: 6.0.10
+    dev: true
+
+  /css-declaration-sorter/6.3.0_postcss@8.4.14:
+    resolution: {integrity: sha512-OGT677UGHJTAVMRhPO+HJ4oKln3wkBTwtDFH0ojbqm+MJm6xuDMHp2nkhh/ThaBqq20IbraBQSWKfSLNHQO9Og==}
+    engines: {node: ^10 || ^12 || >=14}
+    peerDependencies:
+      postcss: ^8.0.9
+    dependencies:
+      postcss: 8.4.14
     dev: true
 
   /css-has-pseudo/3.0.4_postcss@8.4.14:

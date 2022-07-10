@@ -19,6 +19,7 @@
     "autoprefixer": "^10.4.7",
     "browserlist": "^1.0.1",
     "cross-env": "^7.0.3",
+    "css-declaration-sorter": "^6.3.0",
     "eleventy-plugin-embed-everything": "^1.14.0",
     "esbuild": "^0.14.48",
     "esbuild-sass-plugin": "^2.2.6",

@@ -1,8 +1,11 @@
 {
-    "modules": false,
-    "plugins": {
-        "autoprefixer": {
-            "grid": true
-        }
+  "modules": false,
+  "plugins": {
+    "autoprefixer": {
+      "grid": true
+    },
+    "css-declaration-sorter": {
+      "order": "smacss"
     }
+  }
 }
