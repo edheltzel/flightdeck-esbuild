@@ -23,8 +23,8 @@ module.exports = (config) => {
         sassPlugin({
           async transform(source, resolveDir) {
             const { css } = await postcss([
-              postcss([cssDeclarationSorter({ order: "smacss" })]),
               autoprefixer,
+              postcss([cssDeclarationSorter({ order: "smacss" })]),
               postcssPresetEnv({ stage: 0 }),
             ]).process(source, { from: undefined });
             return css;
