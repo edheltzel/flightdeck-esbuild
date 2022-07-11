@@ -19,8 +19,8 @@ $enable-important: false;
 // Airframe Library
 // --------------------
 
-// Core Settings
-@import "variables";
+// Configuration
+@import "config";
 
 // Theming
 @import "themes/default";
@@ -31,7 +31,7 @@ $enable-important: false;
 @import "layout/container"; // .container, .container-fluid
 @import "layout/section"; // section
 @import "layout/grid"; // .grid
-@import "layout/scroller"; // figure
+@import "layout/h-scroll"; // figure
 
 // Content
 @import "content/typography"; // a, headings, p, ul, blockquote, ...
