@@ -14,6 +14,7 @@ esbuild
 funboxteam
 htmlmin
 Jamstack
+miscs
 mpnpm
 optimizt
 outdir
@@ -25,3 +26,5 @@ Shortcode
 shortcodes
 Shortcodes
 smacss
+viewports
+Viewports
