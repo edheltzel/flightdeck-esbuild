@@ -7,14 +7,15 @@
 
 code[class*="language-"],
 pre[class*="language-"] {
-  color: #ffffff;
   font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace; /* this is the default */
   /* The following properties are standard, please leave them as they are */
+  // font-size: 1em;
   direction: ltr;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
   word-break: normal;
+  // line-height: 1.5;
   -moz-tab-size: 2;
   -o-tab-size: 2;
   tab-size: 2;
@@ -103,7 +104,7 @@ pre[class*="language-"] {
 .token.regex,
 .token.char,
 .token.string {
-  color: #b4dce7;
+  color: #{$primary-hue};
 }
 
 .token.entity,
