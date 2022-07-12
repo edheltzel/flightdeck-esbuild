@@ -9,8 +9,8 @@ $enable-semantic-container: true;
 // Enable a centered viewport for <header>, <main>, <footer> inside <body>
 $enable-viewport: true;
 
-// Enable .classes
-$enable-classes: false;
+// Enable .classes - no classes, just semantic HTML
+$enable-classes: true;
 
 // Airframe Library
 // --------------------

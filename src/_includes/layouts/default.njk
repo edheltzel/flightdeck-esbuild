@@ -2,10 +2,18 @@
   <html lang="en">
   {%- include "global/head.njk" -%}
     <body>
-      <main aria-label="Content">
-        {% include "components/navigation.njk" %}
+      {% include "components/navigation.njk" %}
+      <main class="container" aria-label="Content">
         {%- set pageTitle %}{% if title %}{{ title }}{% else %}{{ site.title }}{% endif %}{%- endset -%}
-        <h1>{{ pageTitle }}</h1>
+        {%- set pageTagline %}{% if tagline %}{{ tagline }}{% endif %}{%- endset -%}
+        {% if tagline %}
+        <hgroup>
+          <h1>{{ pageTitle}}</h1>
+          <h2>{{ pageTagline | safe }}</h2>
+        </hgroup>
+        {% else %}
+          <h1>{{ pageTitle}}</h1>
+        {% endif %}
 
         {{ content | safe }}
 
