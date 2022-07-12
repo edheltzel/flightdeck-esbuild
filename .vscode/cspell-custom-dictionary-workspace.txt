@@ -1,4 +1,5 @@
 # Custom Dictionary Words
+awsm
 browserlist
 browserslist
 browsersync
@@ -18,9 +19,11 @@ miscs
 mpnpm
 optimizt
 outdir
+prismjs
 roadmap
 Roadmap
 ROADMAP
+sakura
 shortcode
 Shortcode
 shortcodes
