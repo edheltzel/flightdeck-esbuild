@@ -29,5 +29,6 @@
       "addWords": true,
       "scope": "workspace"
     }
-  }
+  },
+  "cSpell.words": ["Laserwave"]
 }
