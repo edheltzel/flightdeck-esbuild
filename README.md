@@ -93,7 +93,8 @@ All version of Flightdeck use NodeJS. So a very minimal and basic knowledge of N
 
 ### Prerequisites
 
-We are assuming that you already have Node with NPM and Git installed on your system.
+We are assuming that you already have Node with NPM and Git installed on your system – it is also ideal that you have the latest [LTS](https://nodejs.org/en/download/) release of Node.
+**As of this writing the current LTS release is `16.16.0`**
 
 #### Dependencies
 
