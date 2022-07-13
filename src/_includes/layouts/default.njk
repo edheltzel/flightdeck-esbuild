@@ -3,6 +3,7 @@
   {%- include "global/head.njk" -%}
     <body>
       {% include "components/navigation.njk" %}
+      <!-- Main-->
       <main class="container" aria-label="Content">
         {%- set pageTitle %}{% if title %}{{ title }}{% else %}{{ site.title }}{% endif %}{%- endset -%}
         {%- set pageTagline %}{% if tagline %}{{ tagline }}{% endif %}{%- endset -%}
@@ -18,6 +19,6 @@
         {{ content | safe }}
 
         {% include "global/footer.njk" %}
-      </main>
+      </main><!-- End Main -->
     </body>
   </html>
