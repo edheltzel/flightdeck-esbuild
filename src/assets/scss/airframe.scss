@@ -12,7 +12,7 @@
 /// water.css - https://watercss.kognise.dev/
 
 // Configuration
-@import "config";
+@use "config";
 
 // Theming
 @import "themes/default";
