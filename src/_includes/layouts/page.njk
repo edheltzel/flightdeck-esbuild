@@ -1,0 +1,20 @@
+{% extends "./default.njk" %}
+{% block main %}
+
+  {% block pageTitle %}
+    {% from "../_macros/component.njk" import component %}
+    {%- set pageTitle %}{% if title %}{{ title }}{% else %}{{ site.title }}{% endif %}{%- endset -%}
+    {%- set pageTagline %}{% if tagline %}{{ tagline }}{% endif %}{%- endset -%}
+    {% if tagline %}
+      <hgroup>
+        <h1>{{ pageTitle | safe }}</h1>
+        <h2>{{ pageTagline | safe }}</h2>
+      </hgroup>{% else %}<h1>{{ pageTitle | safe }}</h1>
+    {% endif %}
+  {% endblock %}
+
+  {% block content %}
+    {{ content | safe }}
+  {% endblock %}
+
+{% endblock %}

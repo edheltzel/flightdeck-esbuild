@@ -1,5 +1,6 @@
 ---
-layout: layouts/default.njk
+layout: page
+title: Eleventy + Nunjucks with Block & Extends = 🤯
 ---
 
 > "That's one small step for man, one giant leap for mankind

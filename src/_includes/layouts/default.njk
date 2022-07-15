@@ -1,24 +1,15 @@
+{# {% from "macros/component.njk" import component %} #}
 <!DOCTYPE html>
   <html lang="en">
-  {%- include "global/head.njk" -%}
+  {%- include "partials/head.njk" -%}
     <body>
-      {% include "components/navigation.njk" %}
+      {% include "partials/navigation.njk" %}
       <!-- Main-->
       <main class="container" aria-label="Content">
-        {%- set pageTitle %}{% if title %}{{ title }}{% else %}{{ site.title }}{% endif %}{%- endset -%}
-        {%- set pageTagline %}{% if tagline %}{{ tagline }}{% endif %}{%- endset -%}
-        {% if tagline %}
-        <hgroup>
-          <h1>{{ pageTitle}}</h1>
-          <h2>{{ pageTagline | safe }}</h2>
-        </hgroup>
-        {% else %}
-          <h1>{{ pageTitle}}</h1>
-        {% endif %}
 
-        {{ content | safe }}
+        {% block main %}{% endblock %}
 
-        {% include "global/footer.njk" %}
+        {% include "partials/footer.njk" %}
       </main><!-- End Main -->
     </body>
   </html>

@@ -33,7 +33,5 @@ module.exports = (config) => {
   }
 
   // Layout Aliases
-  config.addLayoutAlias("default", "layouts/default.njk");
-  config.addLayoutAlias("post", "layouts/post.njk"); // consider using nunjucks extend
-  config.addLayoutAlias("page", "layouts/page.njk"); // consider using nunjucks extend
+  config.addLayoutAlias("page", "layouts/page.njk");
 };

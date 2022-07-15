@@ -1,6 +1,6 @@
----
-layout: default
----
+{% extends "./page.njk" %}
 
-<pre>{{ page.date | postDate }}</pre>
+{% block content %}
+<small>{{ page.date | postDate }}</small>
 {{ content | safe }}
+{% endblock %}
