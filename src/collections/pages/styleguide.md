@@ -1,5 +1,5 @@
 ---
-title: Styleguide
+title: Style Guide
 tagline: Just HTML with no classes
 ---
 
