@@ -13,7 +13,7 @@ module.exports = (config) => {
       bundle: true,
       entryPoints: {
         "assets/js/app": "./src/assets/js/app.js",
-        "assets/styles/airframe": "./src/assets/scss/airframe.core.scss",
+        "assets/styles/airframe": "./src/assets/scss/airframe.config.scss",
       },
       loader: { ".scss": "css" },
       minify: isProd,
