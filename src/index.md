@@ -16,8 +16,6 @@ title: Eleventy + Nunjucks with Block & Extends = 🤯
 </div>
 ```
 
-![remote image](https://source.unsplash.com/TV2gg2kZD1o)
-
 ## Blah Blah Blah
 
 ![local image](assets/images/testing.jpg)

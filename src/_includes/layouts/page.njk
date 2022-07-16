@@ -1,9 +1,8 @@
 {% extends "./default.njk" %}
+{% from 'macros/component.njk' import component %}
 {% block main %}
-
   <header>
   {% block pageTitle %}
-    {% from "../_macros/component.njk" import component %}
     {%- set pageTitle %}{% if title %}{{ title }}{% else %}{{ site.title }}{% endif %}{%- endset -%}
     {%- set pageTagline %}{% if tagline %}{{ tagline }}{% endif %}{%- endset -%}
     {% if tagline %}
@@ -14,6 +13,7 @@
     {% endif %}
   {% endblock %}
   </header>
+  <hr>
   {% block content %}
     {{ content | safe }}
   {% endblock %}
