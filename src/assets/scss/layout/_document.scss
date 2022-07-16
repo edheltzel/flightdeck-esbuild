@@ -29,7 +29,7 @@
 // 2. Change the line height in all browsers (opinionated)
 // 3. Breaks words to prevent overflow in all browsers (opinionated)
 // 4. Use a 4-space tab width in all browsers (opinionated)
-// 5. Remove the grey highlight on links in iOS (opinionated)
+// 5. Remove the gray highlight on links in iOS (opinionated)
 // 6. Prevent adjustments of font size after orientation changes in iOS
 :where(:root) {
   -webkit-tap-highlight-color: transparent; // 5

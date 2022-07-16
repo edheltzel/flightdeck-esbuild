@@ -65,16 +65,16 @@
   --nav-link-spacing-vertical: 0.5rem;
   --nav-link-spacing-horizontal: 0.5rem;
 
-  // Font weight for form labels & fieldsets legend
+  // Font weight for form labels & fieldset legend
   --form-label-font-weight: var(--font-weight);
 
   // Transitions
   --transition: 0.2s ease-in-out;
 }
 
-// Responsives spacings
+// Responsive spacings
 @if $enable-responsive-spacings {
-  // Sectionning
+  // Sectioning
   body > header,
   body > main,
   body > footer,
@@ -133,7 +133,6 @@
 
   // Modal
   dialog > article {
-
     --block-spacing-vertical: calc(var(--spacing) * 2);
     --block-spacing-horizontal: var(--spacing);
 
@@ -241,4 +240,11 @@ samp {
 
 kbd {
   --font-weight: bolder;
+}
+
+// Lists
+ul.grid {
+  li {
+    list-style: none;
+  }
 }

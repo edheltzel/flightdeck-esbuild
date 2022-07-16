@@ -1,0 +1,79 @@
+// Configuration
+// ––––––––––––––––––––
+
+/// @content Enable to use <header>, <main>, <footer> as a container
+/// @type boolean
+///
+$enable-semantic-container: false !default;
+
+/// @content Enable container type to be fixed or fluid
+/// @example add the .container or .container-fluid to your markup
+/// @type boolean
+///
+$enable-class-container: true !default;
+
+/// @content Enable to align the viewport to the center <header>, <main>, <footer>
+/// @type boolean
+///
+/// Fluid layout if disabled
+$enable-viewport: true !default;
+
+/// @content Enable responsive spacings <header>, <main>, <footer>, <section>, <article>
+/// @type boolean
+/// When set to false the spacing is fixed at --spacing: 1rem;
+$enable-responsive-spacings: true !default;
+
+/// @content Enable responsive typography
+/// @type boolean
+///  When set to false the root element is fixed at --font-size: 16px;
+$enable-responsive-typography: true !default;
+
+/// @content Enables the use of classes in your markup
+/// @type boolean
+/// When set to false the core (classless) version will be used.
+$enable-classes: true !default;
+
+/// @content Enable to use the grid layout
+/// @type boolean
+/// @example add the .grid class to your markup
+$enable-grid: true !default;
+
+/// @content Enable transitions
+/// @type boolean
+$enable-transitions: true !default;
+
+/// @content Enable overriding with !important
+/// @type boolean
+$enable-important: true !default;
+
+// Responsive
+// ––––––––––––––––––––
+
+/// null: disables the breakpoint
+/// xs: Extra small (portrait phones)
+/// sm: Small(landscape phones)
+/// md: Medium(tablets)
+/// lg: Large(desktops)
+/// xl: Extra large (large desktops)
+
+/// PLEASE NOTE:
+/// The following at-rules are NOT used by the Airframe System.
+/// This is to keep the styling process for each breakpoint as simple as possible.
+/// In other words, you'll need to edit each file to add the breakpoint you want.
+
+// Breakpoints
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+) !default;
+
+// Viewports
+$viewports: (
+  sm: 510px,
+  md: 700px,
+  lg: 920px,
+  xl: 1130px,
+) !default;

@@ -4,23 +4,10 @@
  * Copyright 2019-2022 - Licensed under MIT
  */
 
-// Modular configuration – use only the modules you need/want
-// -------------------------------------------------------------
-
-// Enable responsive spacings for <header>, <main>, <footer>, <section>, <article>
-$enable-responsive-spacings: false;
-
-// Enable transitions
-$enable-transitions: false;
-
-// Enable overriding with !important
-$enable-important: false;
-
-// Airframe Library
-// --------------------
-
-// Configuration
-@import "config";
+// Airframe system
+// -------------------------------
+// Variables
+@use "variables";
 
 // Theming
 @import "themes/default";
@@ -38,8 +25,25 @@ $enable-important: false;
 @import "content/embedded"; // audio, canvas, iframe, img, svg, video
 @import "content/button"; // button, a[role=button], type=button, type=submit ...
 @import "content/form"; // input, select, textarea, label, fieldset, legend
+@import "content/form-checkbox-radio"; // type=checkbox, type=radio, role=switch
+@import "content/form-alt-input-types"; // type=color, type=date, type=file, type=search, ...
 @import "content/table"; // table, tr, td, ...
+@import "content/code"; // pre, code, ...
+@import "content/miscs"; // hr, template, [hidden], dialog, canvas
+
+// Modules
+@import "modules/accordion"; // details, summary
+@import "modules/card"; // article
+@import "modules/modal"; // dialog
+@import "modules/nav"; // nav
+@import "modules/progress"; // progress
+@import "modules/dropdown"; // dropdown
 
 // Utilities
+@import "utilities/loading"; // aria-busy=true
+@import "utilities/tooltip"; // data-tooltip
 @import "utilities/accessibility"; // -ms-touch-action, aria-*
 @import "utilities/reduce-motion"; // prefers-reduced-motion
+
+// Vendors
+@import "content/prismjs-theme"; // prismJS Laserwave theme
