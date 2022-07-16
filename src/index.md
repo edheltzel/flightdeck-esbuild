@@ -1,14 +1,20 @@
 ---
-layout: layouts/default.njk
-title: The Flightdeck Foundation
-description: "Huston ready for launch"
+layout: page
+title: Eleventy + Nunjucks with Block & Extends = 🤯
 ---
 
-# {{ title }}
+> "That's one small step for man, one giant leap for mankind
+>
+> --<cite>Neil Armstrong</cite>
 
-> "That's one small step for man, one giant leap for mankind"<br> > <small>– Neil Armstrong</small>
+```html
+<!-- AlpineJS -->
+<div x-data="{ search: '' }">
+  <input type="text" x-model="search" />
 
-![remote image](https://source.unsplash.com/TV2gg2kZD1o)
+  Searching for: <span x-text="search"></span>
+</div>
+```
 
 ## Blah Blah Blah
 

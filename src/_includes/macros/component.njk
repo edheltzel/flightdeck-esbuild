@@ -1,0 +1,11 @@
+{# to use macros: add this line to your markdown or njk files:
+  {% from 'macros/component.njk' import component %}
+  Macros usage:
+  {{ component('blockquote', {text:'stuff here', source: 'more stuff here'}) }}
+
+  Add macros to /src/_includes/components/YOUR_NEW_MACRO.njk
+#}
+
+{%- macro component(name, params) -%}
+  {% include "../components/" + name + ".njk" ignore missing %}
+{%- endmacro -%}

@@ -1,0 +1,65 @@
+// Navy-gray
+$gray-hue: 205 !default;
+$gray-50: hsl($gray-hue, 20%, 94%) !default;
+$gray-100: hsl($gray-hue, 18%, 86%) !default;
+$gray-200: hsl($gray-hue, 16%, 77%) !default;
+$gray-300: hsl($gray-hue, 14%, 68%) !default;
+$gray-400: hsl($gray-hue, 12%, 59%) !default;
+$gray-500: hsl($gray-hue, 10%, 50%) !default;
+$gray-600: hsl($gray-hue, 15%, 41%) !default;
+$gray-700: hsl($gray-hue, 20%, 32%) !default;
+$gray-800: hsl($gray-hue, 25%, 23%) !default;
+$gray-900: hsl($gray-hue, 30%, 15%) !default;
+
+// Light Blue
+$primary-hue: 195 !default;
+$primary-50: hsl($primary-hue, 90%, 94%) !default;
+$primary-100: hsl($primary-hue, 88%, 86%) !default;
+$primary-200: hsl($primary-hue, 86%, 77%) !default;
+$primary-300: hsl($primary-hue, 84%, 68%) !default;
+$primary-400: hsl($primary-hue, 82%, 59%) !default;
+$primary-500: hsl($primary-hue, 80%, 50%) !default;
+$primary-600: hsl($primary-hue, 85%, 41%) !default;
+$primary-700: hsl($primary-hue, 90%, 32%) !default;
+$primary-800: hsl($primary-hue, 95%, 23%) !default;
+$primary-900: hsl($primary-hue, 100%, 15%) !default;
+
+// Black & White
+$black: #000 !default;
+$white: #fff !default;
+
+// Amber
+$amber-50: #fff8e1 !default;
+$amber-100: #ffecb3 !default;
+$amber-200: #ffe082 !default;
+$amber-300: #ffd54f !default;
+$amber-400: #ffca28 !default;
+$amber-500: #ffc107 !default;
+$amber-600: #ffb300 !default;
+$amber-700: #ffa000 !default;
+$amber-800: #ff8f00 !default;
+$amber-900: #ff6f00 !default;
+
+// Green
+$green-50: #e8f5e9 !default;
+$green-100: #c8e6c9 !default;
+$green-200: #a5d6a7 !default;
+$green-300: #81c784 !default;
+$green-400: #66bb6a !default;
+$green-500: #4caf50 !default;
+$green-600: #43a047 !default;
+$green-700: #388e3c !default;
+$green-800: #2e7d32 !default;
+$green-900: #1b5e20 !default;
+
+// Red
+$red-50: #ffebee !default;
+$red-100: #ffcdd2 !default;
+$red-200: #ef9a9a !default;
+$red-300: #e57373 !default;
+$red-400: #ef5350 !default;
+$red-500: #f44336 !default;
+$red-600: #e53935 !default;
+$red-700: #d32f2f !default;
+$red-800: #c62828 !default;
+$red-900: #b71c1c !default;

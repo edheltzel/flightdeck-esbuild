@@ -1,4 +1,5 @@
 # Custom Dictionary Words
+awsm
 browserlist
 browserslist
 browsersync
@@ -14,12 +15,19 @@ esbuild
 funboxteam
 htmlmin
 Jamstack
+miscs
 mpnpm
 optimizt
+outdir
+prismjs
 roadmap
 Roadmap
 ROADMAP
+sakura
 shortcode
 Shortcode
 shortcodes
 Shortcodes
+smacss
+viewports
+Viewports

@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "description": "An opinionated Jamstack starter project for Eleventy.",
   "scripts": {
-    "start": "cross-env ENVIRONMENT=dev eleventy --serve",
-    "build": "cross-env ENVIRONMENT=prod eleventy",
+    "start": "eleventy --serve --config=.flightdeck.config",
+    "build": "run-s clean 11ty",
+    "11ty": "cross-env ENVIRONMENT=prod eleventy --config=.flightdeck.config",
     "images": "optimizt src/assets/images",
     "clean": "./.scrub site",
     "purge": "./.scrub purge"
@@ -14,10 +15,12 @@
   "browserslist": "> 0.5%, last 2 versions, Firefox ESR, not dead",
   "devDependencies": {
     "@11ty/eleventy": "^1.0.1",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^4.1.0",
     "@funboxteam/optimizt": "^4.0.0",
     "autoprefixer": "^10.4.7",
     "browserlist": "^1.0.1",
     "cross-env": "^7.0.3",
+    "css-declaration-sorter": "^6.3.0",
     "eleventy-plugin-embed-everything": "^1.14.0",
     "esbuild": "^0.14.48",
     "esbuild-sass-plugin": "^2.2.6",

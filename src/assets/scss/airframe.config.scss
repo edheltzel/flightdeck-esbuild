@@ -1,0 +1,26 @@
+/*!
+ * Airframe CSS System v1.5.3 (https://flightdeck.systems/airframe)
+ * A semantic CSS system for raw HTML
+ * Copyright 2019-2022 - Licensed under MIT
+ */
+
+/// Airframe inspiration was taken from:
+/// mvp.css - https://andybrewer.github.io/mvp/
+/// sakura - https://oxal.org/projects/sakura/demo/
+/// awsm.css - https://igoradamenko.github.io/awsm.css/
+/// tacit - https://yegor256.github.io/tacit/
+/// water.css - https://watercss.kognise.dev/
+///
+/// TODO: add documentation to comments on how to use the css system
+
+/// Modular configuration: The basic idea is to use only the modules you want/need.
+/// @see _variables.scss for the list of variables that can be overwritten in this configuration.
+
+$enable-semantic-container: true;
+$enable-viewport: true;
+$enable-classes: true;
+
+// Airframe System
+// --------------------
+
+@use "core";
