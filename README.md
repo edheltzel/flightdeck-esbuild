@@ -190,7 +190,11 @@ We really like Netlify but also enjoy using CI/CD tools or even using our [Lifto
 
 ### 👀 Usage
 
-If you're looking to extend your project with other NPM modules or Eleventy plugins, just reference the appropriate documentation.
+Flightdeck makes a lot of assumptions and is very opinionated - but having a good idea of how Eleventy's [data cascade](https://www.11ty.dev/docs/data-cascade/) works is always nice, as well as having some understanding on [template inherence](https://mozilla.github.io/nunjucks/templating.html#template-inheritance) works with Nunjucks will go a long way. **But is not needed**
+
+**WIP** The Airframe CSS System uses a modified version of the [7-1 pattern](https://sass-guidelin.es/#the-7-1-pattern), but we combined a couple of concepts regarding naming conventions that fit our workflow. **Documentation coming soon**
+
+If you're looking to extend your project with other NPM modules, Eleventy plugins, or ESBuild Plugins, just reference the appropriate documentation.
 
 - [Eleventy Docs](https://11ty.dev)
 - [Nunjucks Docs](https://mozilla.github.io/nunjucks/templating.html)
