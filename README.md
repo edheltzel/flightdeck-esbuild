@@ -12,7 +12,7 @@
 
 <!-- TABLE OF CONTENTS -->
 <details open>
-  <summary>Table of Contents</summary>
+  <summary>📔 Table of Contents</summary>
   <ol>
     <li>
       <a href="#about-the-project">About The Project</a>
@@ -40,13 +40,13 @@
 
 <!-- ABOUT THE PROJECT -->
 
-## About The Project
+## 🌟 About The Project
 
 The Flightdeck objective is to provide a unified starting point for all your Jamstack websites, by leveraging popular static-site-generators _(SSG)_.
 
 This flavor of Flightdeck uses [Eleventy](https://www.11ty.dev/) with an opinionated workflow, keeping Eleventy in control of the entire development and build processes.
 
-### Inspiration
+### 💡 Inspiration
 
 Like other versions of Flightdeck, this is just an adaptation of the original [Flightdeck](https://github.com/flight-deck/Flightdeck-Jekyll) project that uses [Jekyll](https://jekyllrb.com/) for its static site generation and [Gulp](https://gulpjs.com/) for all assets bundling. (The [Hugo](https://github.com/flight-deck/Flightdeck-Hugo) version, takes full advantage of Hugo's asset pipeline.)
 
@@ -54,10 +54,10 @@ Jérôme Coupé's post [Structuring Eleventy Projects](https://www.webstoemp.com
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-### Built With
+### 👾 Tech Stack
 
 - [Eleventy](https://www.11ty.dev/)
-- [esbuild](https://esbuild.github.io/)
+- [ESBuild](https://esbuild.github.io/)
 - [Nunjucks](https://mozilla.github.io/nunjucks/)
 - [Sass](https://sass-lang.com/)
 - [Optimizt](https://github.com/funbox/optimizt)
@@ -85,18 +85,18 @@ Jérôme Coupé's post [Structuring Eleventy Projects](https://www.webstoemp.com
 
 <!-- GETTING STARTED -->
 
-## Getting Started
+## 🧰 Getting Started
 
 All version of Flightdeck use NodeJS. So a very minimal and basic knowledge of Node and Git should be had when using Flightdeck as your launchpad.
 
 > In the future, we plan to include Docker and make all Flightdeck starters available as a Yeoman and/or NPM package.
 
-### Prerequisites
+### 🧯 Prerequisites
 
 We are assuming that you already have Node with NPM and Git installed on your system – it is also ideal that you have the latest [LTS](https://nodejs.org/en/download/) release of Node.
 **As of this writing the current LTS release is `16.16.0`**
 
-#### Dependencies
+#### 🤖 Dependencies
 
 `pnpm` is our package manager of choice – we highly recommend you enable Node's [corepack](https://nodejs.org/api/corepack.html), this way all the `pnpm` commands are work out-of-the-box.
 
@@ -112,7 +112,7 @@ Also, You can swap `pnpm` in favor of `yarn` or `npm` without any friction.
   corepack prepare pnpm@7.5.0 --activate
   ```
 
-### Installation
+### ⚙️ Installation
 
 ```shell
 git clone https://github.com/flight-deck/flightdeck-for-eleventy.git
@@ -127,23 +127,19 @@ pnpm install
 	<summary>See all NPM packages</summary>
   <pre>pnpm list
   Legend: production dependency, optional only, dev only
-
-flightdeck-for-eleventy@0.1.0 ~/flightdeck-for-eleventy
-
-devDependencies:
-@11ty/eleventy 1.0.1 eleventy-plugin-embed-everything 1.14.0 npm-run-all 4.1.5
-@funboxteam/optimizt 4.0.0 esbuild 0.14.48 postcss 8.4.14
-autoprefixer 10.4.7 esbuild-sass-plugin 2.2.6 postcss-preset-env 7.7.2
-browserlist 1.0.1 html-minifier 4.0.0 sass 1.53.0</pre>
-
+  flightdeck-for-eleventy@0.1.0 ~/flightdeck-for-eleventy
+  devDependencies:
+  @11ty/eleventy 1.0.1 eleventy-plugin-embed-everything 1.14.0 npm-run-all 4.1.5
+  @funboxteam/optimizt 4.0.0 esbuild 0.14.48 postcss 8.4.14
+  autoprefixer 10.4.7 esbuild-sass-plugin 2.2.6 postcss-preset-env 7.7.2
+  browserlist 1.0.1 html-minifier 4.0.0 sass 1.53.0</pre>
 </details>
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-<!-- USAGE -->
+### 🏃‍♂️ Run Locally
 
-### Usage
-
-There are just a few npm-scripts available, but the `start` command is where all the magic 🪄 happens – it will spin up the development server from Eleventy.
+There are just a few npm-:150
+available, but the `start` command is where all the magic 🪄 happens – it will spin up the development server from Eleventy.
 
 Again, the focus here is to keep Eleventy in control of the entire development and build processes, to keep things simple.
 
@@ -151,8 +147,8 @@ Again, the focus here is to keep Eleventy in control of the entire development a
 pnpm start
 ```
 
-<details open>
-  <summary>Available Scripts</summary>
+<details>
+  <summary>Available Run Commands</summary>
   <pre>pnpm run
 
 Lifecycle scripts:
@@ -180,18 +176,32 @@ Both `clean` and `purge` are executed from a bash script keep the `package.json`
 
 </details>
 
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+### ‍🚀 Deployments
+
+Deployments for this project are completely up you and your needs.
+
+We really like Netlify but also enjoy using CI/CD tools or even using our [Liftoff Deployment Script](https://github.com/flight-deck/Lifftoff-Deploy-Script)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- USAGE -->
+
+### 👀 Usage
+
 If you're looking to extend your project with other NPM modules or Eleventy plugins, just reference the appropriate documentation.
 
 - [Eleventy Docs](https://11ty.dev)
-- [NPM Package Docs](https://docs.npmjs.com/using-npm-packages-in-your-projects)
 - [Nunjucks Docs](https://mozilla.github.io/nunjucks/templating.html)
 - [Sass Docs](https://sass-lang.com/documentation/)
-
+- [ESBuild Docs](https://esbuild.github.io/plugins/)
+- [NPM Package Docs](https://docs.npmjs.com/using-npm-packages-in-your-projects)
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- ROADMAP -->
 
-## Roadmap
+## 🧭 Roadmap
 
 - [ ] Create a theme using Airframe - Flightdeck's classless CSS system
 - [ ] Improve documentation
@@ -204,7 +214,7 @@ See the [open issues](https://github.com/flight-deck/flightdeck-for-eleventy/iss
 
 <!-- CONTRIBUTING -->
 
-## Contributing
+## 👋 Contributing
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
@@ -221,7 +231,7 @@ Don't forget to give the project a star! Thanks again!
 
 <!-- LICENSE -->
 
-## License
+## ⚠️ License
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
