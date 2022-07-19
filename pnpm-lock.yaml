@@ -4,6 +4,7 @@ specifiers:
   '@11ty/eleventy': ^1.0.1
   '@11ty/eleventy-plugin-syntaxhighlight': ^4.1.0
   '@funboxteam/optimizt': ^4.0.0
+  alpinejs: ^3.10.2
   autoprefixer: ^10.4.7
   browserlist: ^1.0.1
   cross-env: ^7.0.3
@@ -21,6 +22,7 @@ devDependencies:
   '@11ty/eleventy': 1.0.1
   '@11ty/eleventy-plugin-syntaxhighlight': 4.1.0
   '@funboxteam/optimizt': 4.0.0
+  alpinejs: 3.10.2
   autoprefixer: 10.4.7_postcss@8.4.14
   browserlist: 1.0.1
   cross-env: 7.0.3
@@ -373,6 +375,16 @@ packages:
       '@types/node': 18.0.3
     dev: true
 
+  /@vue/reactivity/3.1.5:
+    resolution: {integrity: sha512-1tdfLmNjWG6t/CsPldh+foumYFo3cpyCHgBYQ34ylaMsJ+SNHQ1kApMIa8jN+i593zQuaw3AdWH0nJTARzCFhg==}
+    dependencies:
+      '@vue/shared': 3.1.5
+    dev: true
+
+  /@vue/shared/3.1.5:
+    resolution: {integrity: sha512-oJ4F3TnvpXaQwZJNF3ZK+kLPHKarDmJjJ6jyzVNDKH9md1dptjC7lWR//jrGuLdek/U6iltWxqAnYOu8gCiOvA==}
+    dev: true
+
   /a-sync-waterfall/1.0.1:
     resolution: {integrity: sha512-RYTOHHdWipFUliRFMCS4X2Yn2X8M87V/OpSqWzKKOGhzqyUxzyVmhHDH9sAvG+ZuQf/TAOFsLCpMw09I1ufUnA==}
     dev: true
@@ -393,6 +405,12 @@ packages:
     resolution: {integrity: sha512-nQyp0o1/mNdbTO1PO6kHkwSrmgZ0MT/jCCpNiwbUjGoRN4dlBhqJtoQuCnEOKzgTVwg0ZWiCoQy6SxMebQVh8A==}
     engines: {node: '>=0.4.0'}
     hasBin: true
+    dev: true
+
+  /alpinejs/3.10.2:
+    resolution: {integrity: sha512-P6DTX78J94FgsskS3eS23s26hfb0NWQZUidBnkUK7fId1x64/kLm5E79lL3HNItUmHDCKOHvfP8EAcuCVab89w==}
+    dependencies:
+      '@vue/reactivity': 3.1.5
     dev: true
 
   /ansi-regex/2.1.1:
