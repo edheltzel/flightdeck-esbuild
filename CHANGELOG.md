@@ -4,6 +4,37 @@ All notable changes to Flightdeck for 11ty will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.1] -
+This includes the Flightdeck Airframe System, a Minimal CSS framework for semantic markup.
+
+### Adds
+- Airframe System was added to start theming
+  - This includes the `scss` structure which was modified to fit the 7-1 pattern
+- Uses Nunjucks `extends` and `blocks` for layouts
+- PrismJS theme for code and pre -
+- Shortcodes and Macros
+  - Shortcodes will be more high-level components - ie: blockquote with citation, card with title, button, photo
+  - Macros will be limited to extending content
+
+### Changed
+- total project folder structure
+  - `_includes` sticks to the same naming convention as `scss` regarding components
+- `.flightdeck.config` has been renamed to `.flightdeck.js` - this is optional, if you would like to use `.eleventy.js` just update the npm run command for `start` and `build`
+- 11ty template inheritance is not the same as "vanilla" Nunjucks - so including macros is manual and has to be performed on very page where they are needed.
+  - this is limited to just a single include.
+### Deprecated
+Nothing for this release
+
+### Removes
+- Removed layout includes for Nunjucks `extends` and `blocks`
+
+### Fixed
+- Readme now has better getting started section
+- Scss inheritance for vendor styles - ie: prismJS template for codeblocks
+
+### Security
+Nothing for this release
+
 ## [0.1.0] - 2022-07-03
 
 A good first release of Flightdeck for Eleventy (workflow only - theme is coming soon)
