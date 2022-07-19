@@ -1,14 +1,16 @@
 <!DOCTYPE html>
-  <html lang="en">
-  {%- include "partials/head.njk" -%}
-    <body>
-      {% include "partials/navigation.njk" %}
-      <!-- Main-->
-      <main class="container" aria-label="Content">
+<html lang="en">
+{%- include "partials/head.njk" -%}
 
-        {% block main %}{% endblock %}
+<body>
+  {% include "partials/navigation.njk" %}
+  <!-- Main-->
+  <main class="container" aria-label="Content">
 
-        {% include "partials/footer.njk" %}
-      </main><!-- End Main -->
-    </body>
-  </html>
+    {% block main %}{% endblock %}
+
+    {% include "partials/footer.njk" %}
+  </main><!-- End Main -->
+</body>
+
+</html>
