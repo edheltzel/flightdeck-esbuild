@@ -14,7 +14,7 @@ This includes the Flightdeck Airframe System, a Minimal CSS framework for semant
 - PrismJS theme for code and pre -
 - Shortcodes and Macros
   - Shortcodes will be more high-level components - ie: blockquote with citation, card with title, button, photo
-  - Macros will be limited to extending content
+  - Macros will be limited to extending content only... 🤔
 - 11ty SyntaxHighlighting plugin
 
 ### Changed
@@ -23,7 +23,9 @@ This includes the Flightdeck Airframe System, a Minimal CSS framework for semant
 - `.flightdeck.config` has been renamed to `.flightdeck.js` - this is optional, if you would like to use `.eleventy.js` just update the npm run command for `start` and `build`
 - 11ty template inheritance is not the same as "vanilla" Nunjucks - so including macros is manual and has to be performed on very page where they are needed.
   - this is limited to just a single include.
+  - [Ref Issue #613](https://github.com/11ty/eleventy/issues/613)
 - `esbundle.js` renamed to `esBuildAssets.js`
+
 ### Deprecated
 Nothing for this release
 
