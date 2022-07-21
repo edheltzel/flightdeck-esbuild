@@ -26,12 +26,15 @@ module.exports = (config) => {
   // Watch Targets
   config.addWatchTarget("./src/assets");
 
+  // Layout Aliases
+  config.addLayoutAlias("page", "layouts/page.njk");
+
   // Passthrough Copy
   config.addPassthroughCopy("./src/assets/fonts");
   if (!isProd) {
-    config.addPassthroughCopy("./src/assets/images");
+    config.addPassthroughCopy("./src/assets/images"); //no image optimization during development
   }
-
-  // Layout Aliases
-  config.addLayoutAlias("page", "layouts/page.njk");
+  config.addPassthroughCopy({
+    './node_modules/alpinejs/dist/cdn.js': './src/assets/js/alpine.js',
+  })
 };

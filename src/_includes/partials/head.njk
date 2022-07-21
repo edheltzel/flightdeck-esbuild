@@ -1,5 +1,6 @@
 {%- set pageTitle -%}{% if title %}{{ title }} |{% endif %} {{ site.title }}{% endset -%}
 {%- set pageDescription %}{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}{%- endset -%}
+
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -10,4 +11,5 @@
         font-size=%2290%22>🚀</text></svg>" />
   <meta rel="canonical" href="{{ page.url | baseUrl }}" />
   <link rel="stylesheet" href="/assets/styles/airframe.css" />
+  <script src="/assets/js/alpine.js"></script>
 </head>
