@@ -7,7 +7,15 @@
     <li><a class="contrast" href="/style-guide/">Style Guide</a></li>
     <li><a class="contrast" href="/404/">404 Page</a></li>
     <li><a class="contrast" href="/test-page/">Test Page</a></li>
-      <input type="checkbox" name="theme-switch" role="switch">
+    <li>
+      <details role="list">
+        <summary aria-haspopup="listbox" role="button" class="secondary">Theme</summary>
+        <ul role="listbox">
+          <li><a href="#" data-theme-switcher="auto">Auto</a></li>
+          <li><a href="#" data-theme-switcher="light">Light</a></li>
+          <li><a href="#" data-theme-switcher="dark">Dark</a></li>
+        </ul>
+      </details>
     </li>
   </ul>
 </nav>
