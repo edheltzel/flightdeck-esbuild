@@ -23,16 +23,4 @@ module.exports = (config) => {
     },
   });
 
-  // Watch Targets
-  config.addWatchTarget("./src/assets");
-
-  // Layout Aliases
-  config.addLayoutAlias("page", "layouts/page.njk");
-
-  // Passthrough Copy
-  config.addPassthroughCopy({ "./node_modules/alpinejs/dist/cdn.min.js": "assets/js/alpine.js" }); // AlpineJS
-  config.addPassthroughCopy("./src/assets/fonts");
-  if (!isProd) {
-    config.addPassthroughCopy("./src/assets/images"); //no image optimization during development
-  }
 };
