@@ -11,7 +11,7 @@
     "purge": "./.scrub purge"
   },
   "author": "Ed Heltzel",
-  "license": "MIT",
+  "license": "WTFPL",
   "browserslist": "> 0.5%, last 2 versions, Firefox ESR, not dead",
   "devDependencies": {
     "@11ty/eleventy": "^1.0.1",
