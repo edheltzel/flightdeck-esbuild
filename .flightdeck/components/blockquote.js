@@ -1,5 +1,5 @@
 /**
- * Blockquote Component for FlightDeck
+ * Blockquote Component for FlightDeck Airframe
  * @param {string} text - The text to display in the blockquote
  * @param {string} source - The source of the blockquote or Author of the quote
  * @example {% blockquote "First, solve the problem. Then, write the code.", "John Johnson" %}
