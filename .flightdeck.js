@@ -5,16 +5,14 @@ const addTransforms = require("./.flightdeck/transforms");
 const addShortcodes = require("./.flightdeck/shortcodes");
 const addPlugins = require("./.flightdeck/plugins");
 const addComponents = require("./.flightdeck/components");
-const isProd = process.env.ENVIRONMENT === "prod";
 
 module.exports = (config) => {
-  addWorkflow(config);
-  addFilters(config);
-  addTransforms(config);
-  addShortcodes(config);
-  addPlugins(config);
-  addComponents(config);
-
+  addWorkflow(config); // browsersync, layout aliases, watch, passthrough copy
+  addFilters(config); // universal filters
+  addTransforms(config); // htmlmin, ESbuild, image transforms
+  addShortcodes(config); // copyright year, youtube embeds, etc.
+  addPlugins(config); // eleventy plugins
+  addComponents(config); // custom components for Flightdeck Airframe
 
   return {
     dir: {
