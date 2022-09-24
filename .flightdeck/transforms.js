@@ -1,11 +1,11 @@
-const esBundle = require("./transforms/esBundle");
+const esBuildAssets = require("./transforms/esBuildAssets");
 const minifyHtml = require("./transforms/minifyHtml");
 const buildImages = require("./transforms/buildImages");
 
 const isProd = process.env.ENVIRONMENT === "prod";
 
 module.exports = (config) => {
-  config.addPlugin(esBundle);
+  config.addPlugin(esBuildAssets);
 
   if (isProd) {
     config.addPlugin(buildImages);

@@ -1,14 +1,29 @@
 {
   "Embed Codepens By Url": {
-    "prefix": ["codepen", "codep", "cp"],
+    "prefix": [
+      "codepen"
+    ],
     "body": [
       "{% codepen \"${1:Url}\", ${2:Height}, \"${3:Tabs}\", \"${4:ThemeID}\" %}"
     ],
     "description": "Eleventy Shortcode to embed Codepens by URL. Url is required – Optional: Height (must be a number), Tabs, ThemeID"
   },
   "Add Copyright Year": {
-    "prefix": ["copyright"],
-    "body": ["{% year %}"],
+    "prefix": [
+      "copyright"
+    ],
+    "body": [
+      "{% year %}"
+    ],
     "description": "adds ©️ with current calendar year"
+  },
+  "Airframe Blockquote": {
+    "prefix": [
+      "blockquote"
+    ],
+    "body": [
+      "{% blockquote  \"${1:Add Quoted Text Here }\", \"${2:Author or URL}\" %}"
+    ],
+    "description": "adds a blockquote with citation - you can use HTML"
   }
 }

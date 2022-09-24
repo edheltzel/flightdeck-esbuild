@@ -1,12 +1,14 @@
+# editorconfig.org
+
 root = true
 
 [*]
 charset = utf-8
 end_of_line = lf
+indent_size = 2
+indent_style = space
 insert_final_newline = true
 trim_trailing_whitespace = true
-indent_style = space
-indent_size = 2
 
 [*.{md,markdown}]
 trim_trailing_whitespace = false
@@ -16,5 +18,9 @@ indent_style = space
 indent_size = 2
 
 [*.{css,scss}]
+indent_style = space
+indent_size = 2
+
+[*.{json,yaml,yml}]
 indent_style = space
 indent_size = 2

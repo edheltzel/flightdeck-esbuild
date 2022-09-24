@@ -8,7 +8,7 @@ module.exports = (config) => {
    */
   config.setBrowserSyncConfig({
     open: false,
-    notify: true,
+    notify: false,
     // 404
     callbacks: {
       ready: function (err, browserSync) {
@@ -26,12 +26,14 @@ module.exports = (config) => {
   // Watch Targets
   config.addWatchTarget("./src/assets");
 
-  // Passthrough Copy
-  config.addPassthroughCopy("./src/assets/fonts");
-  if (!isProd) {
-    config.addPassthroughCopy("./src/assets/images");
-  }
-
   // Layout Aliases
   config.addLayoutAlias("page", "layouts/page.njk");
+
+  // Passthrough Copy
+  config.addPassthroughCopy({ "./node_modules/alpinejs/dist/cdn.min.js": "assets/js/alpine.js" });
+  config.addPassthroughCopy("./src/assets/fonts");
+
+  if (!isProd) {
+    config.addPassthroughCopy("./src/assets/images"); //no image optimization during development
+  }
 };
