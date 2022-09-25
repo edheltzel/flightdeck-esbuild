@@ -1,10 +1,10 @@
 // Eleventy Configuration
-const addWorkflow = require("./.flightdeck/workflow");
-const addFilters = require("./.flightdeck/filters");
-const addTransforms = require("./.flightdeck/transforms");
-const addShortcodes = require("./.flightdeck/shortcodes");
-const addPlugins = require("./.flightdeck/plugins");
-const addComponents = require("./.flightdeck/components");
+const addWorkflow = require("./workflow");
+const addFilters = require("./filters");
+const addTransforms = require("./transforms");
+const addShortcodes = require("./shortcodes");
+const addPlugins = require("./plugins");
+const addComponents = require("./components");
 
 module.exports = (config) => {
   addWorkflow(config); // browsersync, layout aliases, watch, passthrough copy
