@@ -3,7 +3,6 @@
   <a href="https://github.com/flight-deck"><img src="https://rdm.sfo2.digitaloceanspaces.com/flightdeck/v3-flightdeck__logo--purple-haze-600x528.png" alt="Flightdeck Logo" width="400"></a>
   <h1>Flightdeck</h1>
   <h4 style="padding-bottom: .5em">A starter project for <a href="https://www.11ty.dev/">Eleventy 🎈</a> using a minimal and opinionated workflow.</h4>
-
 <!-- PROJECT SHIELDS -->
 
 [![release](https://img.shields.io/github/release/flight-deck/flightdeck-for-eleventy.svg?style=for-the-badge&logo=github&logoColor=white&colorA=101119&colorB=6D57FF)](https://github.com/flight-deck/flightdeck-for-eleventy/releases/latest) [![eleventy](https://img.shields.io/badge/Eleventy-v1.0.0+-373277.svg?style=for-the-badge&logo=eleventy&logoColor=white&colorA=101119&colorB=7273D6)](https://github.com/11ty/eleventy/releases/latest) [![license](https://img.shields.io/badge/License-MIT-373277.svg?style=for-the-badge&l&logoColor=white&colorA=101119&colorB=42557B)](https://github.com/flight-deck/flightdeck-for-eleventy/blob/master/LICENSE)
@@ -109,7 +108,7 @@ Also, You can swap `pnpm` in favor of `yarn` or `npm` without any friction.
   ```sh
   corepack enable
 
-  corepack prepare pnpm@7.5.0 --activate
+  corepack prepare pnpm@7.12.2 --activate
   ```
 
 ### ⚙️ Installation
@@ -186,6 +185,15 @@ We really like Netlify but also enjoy using CI/CD tools or even using our [Lifto
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+<!-- File Structure -->
+
+### 📁 File Structure
+
+Flightdeck is a very opinionated starter kit, so the file structure is very specific to our needs. The Eleventy configuration file is located under `_flightdeck` and is called `.manifest.js`.
+
+All the Eleventy configuration is done in this file, and it is broken down into sections for easier navigation and maintain. The `.manifest.js` file is where you will find the `addPassthroughCopy` and `addWatchTarget` methods along with custom filters, shortcodes, and Eleventy Plugins. All Eleventy configuration options are available, see the [Eleventy Docs](https://www.11ty.dev/docs/config/) for more information.
+
+
 <!-- USAGE -->
 
 ### 👀 Usage
@@ -237,6 +245,6 @@ Don't forget to give the project a star! Thanks again!
 
 ## ⚠️ License
 
-Distributed under the MIT License. See `LICENSE` for more information.
+Distributed under the WTFPL License. See `LICENSE` for more information.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
