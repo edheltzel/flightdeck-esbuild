@@ -1,5 +1,4 @@
 const fs = require("fs");
-const isProd = process.env.ENVIRONMENT === "prod";
 
 module.exports = (config) => {
   config.setQuietMode(true); // reduce console
@@ -33,7 +32,5 @@ module.exports = (config) => {
   config.addPassthroughCopy({ "./node_modules/alpinejs/dist/cdn.min.js": "assets/js/alpine.js" });
   config.addPassthroughCopy("./src/assets/fonts");
 
-  if (!isProd) {
-    config.addPassthroughCopy("./src/assets/images"); //no image optimization during development
-  }
+  config.addPassthroughCopy("./src/assets/images"); //images are optimized only in production
 };

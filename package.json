@@ -6,7 +6,7 @@
     "start": "eleventy --serve --config=_flightdeck/.manifest.js",
     "build": "run-s clean 11ty",
     "11ty": "cross-env ENVIRONMENT=prod eleventy --config=_flightdeck/.manifest.js",
-    "images": "optimizt src/assets/images",
+    "images": "optimizt --webp src/assets/images",
     "clean": "./.scrub site",
     "purge": "./.scrub purge"
   },
