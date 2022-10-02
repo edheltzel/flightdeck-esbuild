@@ -1,9 +1,8 @@
 // Commons Styles
 :root {
   // Typography
-  --font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu",
-    "Cantarell", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-    "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto;
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --line-height: 1.5;
   --font-weight: 400;
   --font-size: 16px;
@@ -74,6 +73,7 @@
 
 // Responsive spacings
 @if $enable-responsive-spacings {
+
   // Sectioning
   body > header,
   body > main,
@@ -158,6 +158,7 @@ a {
 
   // Secondary & Contrast
   @if $enable-classes {
+
     &.secondary,
     &.contrast {
       --text-decoration: underline;
@@ -218,6 +219,7 @@ h5 {
 // Table
 thead,
 tfoot {
+
   th,
   td {
     --border-width: 3px;
@@ -233,9 +235,7 @@ pre,
 code,
 kbd,
 samp {
-  --font-family: "Menlo", "Consolas", "Roboto Mono", "Ubuntu Monospace",
-    "Noto Mono", "Oxygen Mono", "Liberation Mono", monospace,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family: var(--font-family-monospace);
 }
 
 kbd {

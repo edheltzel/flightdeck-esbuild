@@ -28,6 +28,26 @@ Aliquam lobortis vitae nibh nec rhoncus. Morbi mattis neque eget efficitur feugi
 ```
 </details>
 
+<!-- Code & Pre -->
+### Code
+
+```js
+// function expression
+let x = function(x, y) {
+   return x * y;
+}
+
+// function expression using arrow function
+let x = (x, y) => x * y;
+```
+`const x = 1;`
+
+    foo=bar
+
+
+
+
+
 <!-- Lists-->
 
 ### Lists
