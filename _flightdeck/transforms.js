@@ -1,14 +1,12 @@
-const esBuildAssets = require("./transforms/esBuildAssets");
-const minifyHtml = require("./transforms/minifyHtml");
-const buildImages = require("./transforms/buildImages");
+const esBuild = require("./transforms/esBuild");
+const jamPack = require("./transforms/jamPack");
 
 const isProd = process.env.ENVIRONMENT === "prod";
 
 module.exports = (config) => {
-  config.addPlugin(esBuildAssets);
+  config.addPlugin(esBuild);
 
   if (isProd) {
-    config.addPlugin(buildImages);
-    config.addPlugin(minifyHtml);
+    config.addPlugin(jamPack);
   }
 };

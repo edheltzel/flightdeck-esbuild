@@ -27,5 +27,4 @@ module.exports = (config) => {
   config.addLayoutAlias("default", "layouts/default.njk");
   config.addLayoutAlias("page", "layouts/page.njk");
   config.addLayoutAlias("post", "layouts/post.njk");
-  // NOTE: consider using nunjucks extends - https://mozilla.github.io/nunjucks/templating.html#extends
 };

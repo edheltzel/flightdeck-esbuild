@@ -1,9 +1,9 @@
-// compress and optimize images at build time
+// postbuild processing of images, html, css, and js files
 module.exports = (config) => {
   config.on("eleventy.after", () => {
     const spawn = require("child_process").spawn;
 
-    const Images = spawn("optimizt -v src/assets/images --output dist/", {
+    const Images = spawn("jampack ./dist --cleancache", {
       stdio: "inherit",
       shell: true,
     });
