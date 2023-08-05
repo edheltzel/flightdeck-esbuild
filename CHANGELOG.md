@@ -4,6 +4,36 @@ All notable changes to Flightdeck for 11ty will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.0] -
+Eleventy upgraded to 2.0.1 with Jampack for post optimizations
+### Adds
+- [Jampack](https://jampack.divriots.com/) for post optimizations of images, html, css, and js.
+- adds `{% thefold %}` shortcode for jampack to optimizations [for above the fold content](https://jampack.divriots.com/features/optimize-above-the-fold/)
+- adds `./src/assets/seo` for robots.txt and redirects
+- add markdown it support
+- adds buttonlink component
+- adds sample data `animals.json` for testing
+- adds netlify config via toml
+### Changed
+- updates all packages
+- updates `.manifest.js` back to `.eleventy.js` - this is the default for 11ty
+- updates `_flightdeck` files to support eleventy 2.0+
+  - updates `workflow.js` to support eleventy dev server
+- workspace settings for VSCode updates dictionary
+- updates `scss`
+- updates `esbuild.js` to use `eleventy.before`
+- collections include pages and blog (posts)
+- more test images
+- layouts updated to use `extends` and `blocks` for better inheritance
+- gitignore update
+- update readme
+
+### Removes
+- Removes `optimizt` in favor of `jampack`
+- Removes parcel2 in favor of `esbuild`
+- Removes eleventy browser sync from `workflow.js`
+
+
 ## [0.1.1] -
 This includes the Flightdeck Airframe System, a Minimal CSS framework for semantic markup.
 

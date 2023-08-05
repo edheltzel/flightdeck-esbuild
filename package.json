@@ -9,7 +9,6 @@
     "@11ty/eleventy": "^2.0.1",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
     "@divriots/jampack": "^0.13.0",
-    "alpinejs": "^3.12.3",
     "browserlist": "^1.0.1",
     "cross-env": "^7.0.3",
     "css-declaration-sorter": "^7.0.3",
