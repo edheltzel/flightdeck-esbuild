@@ -17,12 +17,15 @@ module.exports = (config) => {
   // Watch Targets
   config.addWatchTarget("./src/assets");
 
-  // Layout Aliases
-  config.addLayoutAlias("page", "layouts/page.njk");
-
   // Passthrough Copy
   config.addPassthroughCopy({ "./node_modules/alpinejs/dist/cdn.min.js": "assets/js/alpine.js" });
   config.addPassthroughCopy("./src/assets/fonts");
-
+  config.addPassthroughCopy("./src/assets/seo"); //robots.txt, redirects, etc.
   config.addPassthroughCopy("./src/assets/images"); //images are optimized only in production
+
+  // Layout Aliases
+  config.addLayoutAlias("default", "layouts/default.njk");
+  config.addLayoutAlias("page", "layouts/page.njk");
+  config.addLayoutAlias("post", "layouts/post.njk");
+  // NOTE: consider using nunjucks extends - https://mozilla.github.io/nunjucks/templating.html#extends
 };
