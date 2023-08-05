@@ -8,12 +8,12 @@ GRAY='\033[37m' #light gray
 NC='\033[0m' #no-color
 OPTIONS="${YELLOW}site${NC}, or ${YELLOW}purge${NC}"
 MALFUNCTION="👨‍🚀 Huston... We have a problem! Make sure you use ${OPTIONS}"
-FRESH="🧼 Scrubbed ${WHITE}node_modules${NC}, ${WHITE}dist/${NC}, ${WHITE}.cache/${NC} & ${GRAY}lock files${NC}, ✨"
-SITE="🧼 Scrubbed ${WHITE}dist/${NC} & ${WHITE}.cache/${NC} directories ✨"
-PURGE="${GREEN}🧹 All Clean ✨${NC} ${FRESH}${NC} Run ${YELLOW}pnpm install${NC} to start fresh 🤩"
+FRESH="🧼 Scrubbed ${WHITE}node_modules${NC}, ${WHITE}dist/${NC}, ${WHITE}all caches${NC} & ${GRAY}lock files${NC}, ✨"
+SITE="🧼 Scrubbed ${WHITE}dist/${NC} & ${WHITE}all cache${NC} directories ✨"
+PURGE="${GREEN}🧹 All Clean ✨${NC} ${FRESH}${NC} Run ${YELLOW}npm/yarn/pnpm install${NC} to start fresh 🤩"
 OOPS="🚀💥🔥 OOPS! We need a valid option – Try using ${OPTIONS}"
-DEVFILES="dist/ .cache/ .pnpm-debug.log"
-NODEFILES="node_modules package-lock.json pnpm-lock.yaml yarn.lock"
+DEVFILES="dist/ .cache/ .pnpm-debug.log .parcel-cache/"
+NODEFILES="node_modules package-lock.json pnpm-lock.yaml yarn.lock .yarn/"
 
 ################## DONT EDIT BELOW  👀 ########################
 if [ $# -eq 0 ]
