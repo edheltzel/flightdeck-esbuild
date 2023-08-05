@@ -4,7 +4,7 @@
   "description": "An opinionated Jamstack starter project for Eleventy.",
   "author": "Ed Heltzel",
   "license": "WTFPL",
-  "browserslist": "> 0.5%, last 2 versions, Firefox ESR, not dead",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
