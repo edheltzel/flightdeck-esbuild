@@ -1,12 +1,10 @@
-const isProd = process.env.ENVIRONMENT === "prod";
-const baseUrl = isProd
-  ? `https://flightdeck.systems/`
-  : `http://localhost:8080/`;
+const isDev = process.env.ENV === "development";
 
+const baseUrl = isDev ? `localhost:8080` : `https://google.com/`;
 const site = {
   baseUrl,
-  title: "Flightdeck For Eleventy",
-  description: "🚀 An opinionated Jamstack starter project for Eleventy.",
+  title: "The Flightdeck",
+  description: "Flightdeck is coming!",
   authorName: "Ed Heltzel",
   social: [
     {

@@ -1,6 +1,6 @@
 ---
 title: Codepen Embedding with Shortcode
-featured_image: /assets/images/spacex-9dF7pCyaM9s-unsplash.jpg
+featured_image: /assets/images/spacex/spacex-9dF7pCyaM9s-unsplash.jpeg
 categories: [""]
 ---
 

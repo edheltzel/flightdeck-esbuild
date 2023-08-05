@@ -10,6 +10,7 @@
       {%- set pageTagline %}
       {% if tagline %}{{ tagline }}
       {% endif %}{%- endset -%}
+
       {% if tagline %}
         <hgroup>
           <h1>{{ pageTitle | safe }}</h1>
@@ -18,6 +19,11 @@
       {% else %}
         <h1>{{ pageTitle | safe }}</h1>
       {% endif %}
+
+      <iframe src="https://giphy.com/embed/tyttpHbz8gAaBfi5auY" width="480" height="327" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+      <p>
+        <a href="https://giphy.com/gifs/giffffr-tyttpHbz8gAaBfi5auY">via GIPHY</a>
+      </p>
     {% endblock %}
   </header>
 

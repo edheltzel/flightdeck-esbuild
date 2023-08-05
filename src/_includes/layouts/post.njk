@@ -1,6 +1,6 @@
 {% extends "./page.njk" %}
 
 {% block content %}
-<small>{{ page.date | postDate }}</small>
-{{ content | safe }}
+    <small>{{ page.date | postDate }}</small>
+    {{ content | safe }}
 {% endblock %}
