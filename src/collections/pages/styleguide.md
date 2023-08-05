@@ -1,7 +1,6 @@
 ---
-title: Style Guide
+title: Style Guide 💅
 tagline: Semantic HTML with very minimal use of classes
-
 ---
 <!-- Typography-->
 
@@ -20,13 +19,33 @@ Aliquam lobortis vitae nibh nec rhoncus. Morbi mattis neque eget efficitur feugi
   <summary>See Code Examples</summary>
 
 ```jinja2
-{% raw %}{# Markdown #}
+{% raw %}{# Using just Markdown #}
   > This is a blockquote in **markdown**
 
-{# Shortcode #}
+{# Using a 11ty Shortcode #}
 {% blockquote  "This is a blockquote using a <strong>shortcode</strong>", "This is a citation" %}{% endraw %}
 ```
 </details>
+
+<!-- Code & Pre -->
+### Code
+
+```js
+// function expression
+let x = function(x, y) {
+   return x * y;
+}
+
+// function expression using arrow function
+let x = (x, y) => x * y;
+```
+`const x = 1;`
+
+    foo=bar
+
+
+
+
 
 <!-- Lists-->
 
@@ -100,7 +119,7 @@ A reference to the [image](#image).
 <!-- Buttons-->
 <section id="buttons">
   <h2>Buttons</h2>
-  <div class="grid">
+  <div class="grid" style="margin-top: 1rem">
     <button>Primary</button>
     <button class="secondary">Secondary</button>
     <button class="contrast">Contrast</button>
@@ -110,6 +129,13 @@ A reference to the [image](#image).
     <button class="outline secondary">Secondary outline</button>
     <button class="outline contrast">Contrast outline</button>
   </div>
+  <h4>Button Links</h4>
+  <div class="grid">
+    {% button "#", "Link Button" %}
+    {% button "https://google.com", "Go To Google.com 👉" %}
+  </div>
+</section><!-- End Buttons -->
+
 </section><!-- End Buttons -->
 
 <!-- Form elements-->

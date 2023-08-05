@@ -65,19 +65,22 @@
   --nav-link-spacing-vertical: 0.5rem;
   --nav-link-spacing-horizontal: 0.5rem;
 
-  // Font weight for form labels & fieldset legend
+  // Font weight for form labels & fieldsets legend
   --form-label-font-weight: var(--font-weight);
 
   // Transitions
   --transition: 0.2s ease-in-out;
+
+  // Modal (<dialog>)
+  --modal-overlay-backdrop-filter: blur(0.25rem);
 }
 
-// Responsive spacings
+// Responsives spacings
 @if $enable-responsive-spacings {
   // Sectioning
-  body > header,
-  body > main,
-  body > footer,
+  #{$semantic-root-element} > header,
+  #{$semantic-root-element} > main,
+  #{$semantic-root-element} > footer,
   section {
     @if map-get($breakpoints, "sm") {
       @media (min-width: map-get($breakpoints, "sm")) {
@@ -133,6 +136,7 @@
 
   // Modal
   dialog > article {
+
     --block-spacing-vertical: calc(var(--spacing) * 2);
     --block-spacing-horizontal: var(--spacing);
 
@@ -224,7 +228,7 @@ tfoot {
   }
 }
 
-:not(thead):not(tfoot) > * > td {
+:not(thead, tfoot) > * > td {
   --font-size: 0.875em;
 }
 
@@ -240,11 +244,4 @@ samp {
 
 kbd {
   --font-weight: bolder;
-}
-
-// Lists
-ul.grid {
-  li {
-    list-style: none;
-  }
 }

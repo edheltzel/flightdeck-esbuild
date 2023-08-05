@@ -1,8 +1,9 @@
 /**
- * Sets the version of assets.
+ * Get the current package version - version
  * @example {% version %}
  */
-const now = String(Date.now());
-module.exports = (config) => {
-  return now;
+const fdVersion = require('../../package.json').version;
+
+module.exports = (version) => {
+  return `v${fdVersion}`;
 };

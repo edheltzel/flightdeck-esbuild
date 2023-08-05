@@ -1,11 +1,11 @@
 <div id="top" align="center">
 <!-- PROJECT LOGO -->
-  <a href="https://github.com/flight-deck"><img src="https://rdm.sfo2.digitaloceanspaces.com/flightdeck/v3-flightdeck__logo--purple-haze-600x528.png" alt="Flightdeck Logo" width="400"></a>
+  <a href="https://github.com/edheltzel"><img src="https://rdm.sfo2.digitaloceanspaces.com/flightdeck/v3-flightdeck__logo--purple-haze-600x528.png" alt="Flightdeck Logo" width="400"></a>
   <h1>Flightdeck</h1>
-  <h4 style="padding-bottom: .5em">A starter project for <a href="https://www.11ty.dev/">Eleventy 🎈</a> using a minimal and opinionated workflow.</h4>
+  <h4 style="padding-bottom: .5em">An opinionated starter project for <a href="https://www.11ty.dev/">Eleventy 🎈</a>.</h4>
 <!-- PROJECT SHIELDS -->
 
-[![release](https://img.shields.io/github/release/flight-deck/flightdeck-for-eleventy.svg?style=for-the-badge&logo=github&logoColor=white&colorA=101119&colorB=6D57FF)](https://github.com/flight-deck/flightdeck-for-eleventy/releases/latest) [![eleventy](https://img.shields.io/badge/Eleventy-v1.0.0+-373277.svg?style=for-the-badge&logo=eleventy&logoColor=white&colorA=101119&colorB=7273D6)](https://github.com/11ty/eleventy/releases/latest) [![license](https://img.shields.io/badge/License-MIT-373277.svg?style=for-the-badge&l&logoColor=white&colorA=101119&colorB=42557B)](https://github.com/flight-deck/flightdeck-for-eleventy/blob/master/LICENSE)
+[![release](https://img.shields.io/github/release/edheltzel/flightdeck-for-11ty.svg?style=for-the-badge&logo=github&logoColor=white&colorA=101119&colorB=6D57FF)](https://github.com/edheltzel/flightdeck-for-11ty/releases/latest) [![eleventy](https://img.shields.io/badge/Eleventy-v1.0.0+-373277.svg?style=for-the-badge&logo=eleventy&logoColor=white&colorA=101119&colorB=7273D6)](https://github.com/11ty/eleventy/releases/latest) [![license](https://img.shields.io/badge/License-MIT-373277.svg?style=for-the-badge&l&logoColor=white&colorA=101119&colorB=42557B)](https://github.com/edheltzel/flightdeck-for-11ty/blob/master/LICENSE)
 
 </div>
 
@@ -47,7 +47,7 @@ This flavor of Flightdeck uses [Eleventy](https://www.11ty.dev/) with an opinion
 
 ### 💡 Inspiration
 
-Like other versions of Flightdeck, this is just an adaptation of the original [Flightdeck](https://github.com/flight-deck/Flightdeck-Jekyll) project that uses [Jekyll](https://jekyllrb.com/) for its static site generation and [Gulp](https://gulpjs.com/) for all assets bundling. (The [Hugo](https://github.com/flight-deck/Flightdeck-Hugo) version, takes full advantage of Hugo's asset pipeline.)
+Like other versions of Flightdeck, this is just an adaptation of the original [Flightdeck](https://github.com/edheltzel/Flightdeck-Jekyll) project that uses [Jekyll](https://jekyllrb.com/) for its static site generation and [Gulp](https://gulpjs.com/) for all assets bundling. (The [Hugo](https://github.com/edheltzel/Flightdeck-Hugo) version, takes full advantage of Hugo's asset pipeline.)
 
 Jérôme Coupé's post [Structuring Eleventy Projects](https://www.webstoemp.com/blog/eleventy-projects-structure/) served as inspiration for how this project is structured and over-time, things will shift as ideas change, but in 2022, we are shamelessly adopting the concept Jérôme Coupé outlines.
 
@@ -59,25 +59,28 @@ Jérôme Coupé's post [Structuring Eleventy Projects](https://www.webstoemp.com
 - [ESBuild](https://esbuild.github.io/)
 - [Nunjucks](https://mozilla.github.io/nunjucks/)
 - [Sass](https://sass-lang.com/)
-- [Optimizt](https://github.com/funbox/optimizt)
+- [Jampack](https://jampack.divriots.com/)
 
 <details>
   <summary>see all dependencies</summary>
   <pre>
     ❯ npm list
-    flightdeck-for-eleventy@0.1.0
-    ├── @11ty/eleventy@1.0.1
-    ├── @funboxteam/optimizt@4.0.0
-    ├── autoprefixer@10.4.7
-    ├── browserlist@1.0.1
-    ├── eleventy-plugin-embed-everything@1.14.0
-    ├── esbuild-sass-plugin@2.2.6
-    ├── esbuild@0.14.48
-    ├── html-minifier@4.0.0
-    ├── npm-run-all@4.1.5
-    ├── postcss-preset-env@7.7.2
-    ├── postcss@8.4.14
-    └── sass@1.53.0
+flightdeck-for-11ty@0.2.0 /Users/ed/Developer/oss/flightdeck/for-11ty-with-esbuild
+├── @11ty/eleventy-plugin-syntaxhighlight@5.0.0 -> ./node_modules/.pnpm/@11ty+eleventy-plugin-syntaxhighlight@5.0.0/node_modules/@11ty/eleventy-plugin-syntaxhighlight
+├── @11ty/eleventy@2.0.1 -> ./node_modules/.pnpm/@11ty+eleventy@2.0.1/node_modules/@11ty/eleventy
+├── @divriots/jampack@0.13.0 -> ./node_modules/.pnpm/@divriots+jampack@0.13.0/node_modules/@divriots/jampack
+├── browserlist@1.0.1 -> ./node_modules/.pnpm/browserlist@1.0.1/node_modules/browserlist
+├── cross-env@7.0.3 -> ./node_modules/.pnpm/cross-env@7.0.3/node_modules/cross-env
+├── css-declaration-sorter@7.0.3 -> ./node_modules/.pnpm/css-declaration-sorter@7.0.3_postcss@8.4.27/node_modules/css-declaration-sorter
+├── eleventy-plugin-embed-everything@1.16.0 -> ./node_modules/.pnpm/eleventy-plugin-embed-everything@1.16.0/node_modules/eleventy-plugin-embed-everything
+├── esbuild-sass-plugin@2.10.0 -> ./node_modules/.pnpm/esbuild-sass-plugin@2.10.0_esbuild@0.18.18/node_modules/esbuild-sass-plugin
+├── esbuild@0.18.18 -> ./node_modules/.pnpm/esbuild@0.18.18/node_modules/esbuild
+├── markdown-it-attrs@4.1.6 -> ./node_modules/.pnpm/markdown-it-attrs@4.1.6_markdown-it@13.0.1/node_modules/markdown-it-attrs
+├── markdown-it@13.0.1 -> ./node_modules/.pnpm/markdown-it@13.0.1/node_modules/markdown-it
+├── npm-run-all@4.1.5 -> ./node_modules/.pnpm/npm-run-all@4.1.5/node_modules/npm-run-all
+├── postcss-preset-env@7.8.3 -> ./node_modules/.pnpm/postcss-preset-env@7.8.3_postcss@8.4.27/node_modules/postcss-preset-env
+├── postcss@8.4.27 -> ./node_modules/.pnpm/postcss@8.4.27/node_modules/postcss
+└── sass@1.64.2 -> ./node_modules/.pnpm/sass@1.64.2/node_modules/sass
   </pre>
 </details>
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -93,7 +96,7 @@ All version of Flightdeck use NodeJS. So a very minimal and basic knowledge of N
 ### 🧯 Prerequisites
 
 We are assuming that you already have Node with NPM and Git installed on your system – it is also ideal that you have the latest [LTS](https://nodejs.org/en/download/) release of Node.
-**As of this writing the current LTS release is `16.16.0`**
+**As of this writing the current LTS release is `18.16.0`**
 
 #### 🤖 Dependencies
 
@@ -114,11 +117,11 @@ Also, You can swap `pnpm` in favor of `yarn` or `npm` without any friction.
 ### ⚙️ Installation
 
 ```shell
-git clone https://github.com/flight-deck/flightdeck-for-eleventy.git
+git clone https://github.com/edheltzel/flightdeck-for-11ty.git
 ```
 
 ```shell
-cd flightdeck-for-eleventy
+cd flightdeck-for-11ty
 pnpm install
 ```
 
@@ -126,12 +129,13 @@ pnpm install
 	<summary>See all NPM packages</summary>
   <pre>pnpm list
   Legend: production dependency, optional only, dev only
-  flightdeck-for-eleventy@0.1.0 ~/flightdeck-for-eleventy
-  devDependencies:
-  @11ty/eleventy 1.0.1 eleventy-plugin-embed-everything 1.14.0 npm-run-all 4.1.5
-  @funboxteam/optimizt 4.0.0 esbuild 0.14.48 postcss 8.4.14
-  autoprefixer 10.4.7 esbuild-sass-plugin 2.2.6 postcss-preset-env 7.7.2
-  browserlist 1.0.1 html-minifier 4.0.0 sass 1.53.0</pre>
+
+flightdeck-for-11ty@0.1.0 /Users/ed/Developer/oss/flightdeck/for-11ty-with-esbuild
+
+devDependencies:
+@11ty/eleventy 2.0.1                         browserlist 1.0.1                            eleventy-plugin-embed-everything 1.16.0      markdown-it 13.0.1                           postcss 8.4.27
+@11ty/eleventy-plugin-syntaxhighlight 5.0.0  cross-env 7.0.3                              esbuild 0.18.18                              markdown-it-attrs 4.1.6                      postcss-preset-env 7.8.3
+@divriots/jampack 0.13.0                     css-declaration-sorter 7.0.3                 esbuild-sass-plugin 2.10.0                   npm-run-all 4.1.5                            sass 1.64.2</pre>
 </details>
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -151,37 +155,36 @@ pnpm start
   <pre>pnpm run
 
 Lifecycle scripts:
-start
-cross-env ENVIRONMENT=dev eleventy --serve
+  start
+    eleventy --serve --incremental
 
 Commands available via "pnpm run":
-build
-cross-env ENVIRONMENT=prod eleventy
-images
-optimizt src/assets/images
-clean
-./.scrub site
-purge
-./.scrub purge</pre>
-
-Notice the funky `||` ? This is an attempt to provide cross platform compatibility for Linux/Unix, and Windows. If your terminal doesn’t know what it is, it will skip over it.
+  build
+    run-s clean build:11ty
+  build:11ty
+    cross-env ENV=production eleventy
+  preview
+    npx http-server ./dist -p 8080
+  clean
+    ./.scrub.sh site
+  purge
+    ./.scrub.sh purge</pre>
 
 - `build` command - executes the production build of your site with Eleventy, includes HTML minification, compressed Sass, optimized images, and bundled javascript.
-- `images` command - will optimize all image files inside of `/src/assets/images`, the files will be copied to `/dist/assets/images` with Eleventy's `addPassthroughCopy` but only when you run the development server.
+  - for our workflow, Cloudflare handles the DNS while Netlify does the building and hosting - Cloudflare's Auto Minify minifies the HTML, CSS, and JS. You can easily add minification to the build process by adding a plugin to Eleventy.
+- `preview` command - spins up a local server to preview the production build.
 - `clean` command - scrubs/removes the `dist/` and `.cache` directories
-- `purge` command - scrubs/removes the `dist/`, `.cache`, `node_modules`, and any lock files from npm, yarn, or pnpm.
-
-Both `clean` and `purge` are executed from a bash script keep the `package.json` as clean as possible.
-
+- `purge` command - scrubs/removes the `dist/`, `.cache`, `node_modules`, and any lock files from npm, yarn, or pnpm. - A fresh install.
+  - **NOTE: Both `clean` and `purge` are executed from a bash script**
 </details>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### ‍🚀 Deployments
 
-Deployments for this project are completely up you and your needs.
+Deployments for this project are completely up to you and your needs.
 
-We really like Netlify but also enjoy using CI/CD tools or even using our [Liftoff Deployment Script](https://github.com/flight-deck/Lifftoff-Deploy-Script)
+We really like Netlify but also enjoy using CI/CD tools or even using our [Liftoff Deployment Script](https://github.com/edheltzel/Lifftoff-Deploy-Script)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -189,9 +192,9 @@ We really like Netlify but also enjoy using CI/CD tools or even using our [Lifto
 
 ### 📁 File Structure
 
-Flightdeck is a very opinionated starter kit, so the file structure is very specific to our needs. The Eleventy configuration file is located under `_flightdeck` and is called `.manifest.js`.
+Flightdeck is a very opinionated starter kit, so the file structure is very specific to our needs.
 
-All the Eleventy configuration is done in this file, and it is broken down into sections for easier navigation and maintain. The `.manifest.js` file is where you will find the `addPassthroughCopy` and `addWatchTarget` methods along with custom filters, shortcodes, and Eleventy Plugins. All Eleventy configuration options are available, see the [Eleventy Docs](https://www.11ty.dev/docs/config/) for more information.
+All the Eleventy configuration is done in this file, and it is broken down into sections for easier navigation and maintain. All Eleventy configuration options are available, see the [Eleventy Docs](https://www.11ty.dev/docs/config/) for more information.
 
 
 <!-- USAGE -->
@@ -215,12 +218,13 @@ If you're looking to extend your project with other NPM modules, Eleventy plugin
 
 ## 🧭 Roadmap
 
-- [ ] Create a theme using Airframe - Flightdeck's classless CSS system
+- [ ] Create a theme using Airframe - A classless CSS system
 - [ ] Improve documentation
 - [ ] Add Dockerfile
-- [ ] Include in NPM package
+- [ ] Add Yeoman generator/npm package
+- [ ] Add our Eleventy plugins
 
-See the [open issues](https://github.com/flight-deck/flightdeck-for-eleventy/issues) for a full list of proposed features (and known bugs/issues).
+See the [open issues](https://github.com/edheltzel/flightdeck-for-11ty/issues) for a full list of proposed features (and known bugs/issues).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 

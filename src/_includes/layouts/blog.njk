@@ -1,20 +1,26 @@
 {% extends "./page.njk" %}
- {% block content %}
- {{ content | safe }}
+{% block content %}
+  {{ content | safe }}
 
-  {% for post in collections.blog | limit(4) %}
+  {% for post in collections.blog | limit(9) | reverse %}
+    {# TODO: use pagination instead of the limit() filter #}
     <article>
       <a href="{{ post.url }}">
-        <img class="featured__image" src="{{ post.data.featured_image | default('/assets/images/testing.jpg', true) }}" alt="{{ post.data.title }} post featured_image">
+        <picture>
+          <source src="{{ post.data.featured_image }}?as=webp" type="image/webp">
+          <img class="featured__image" src="{{ post.data.featured_image | default('/assets/images/spacex/testing.jpeg', true) }}" alt="{{ post.data.title }} post featured_image">
+        </picture>
       </a>
       <h2>{{ post.data.title }}</h2>
-      <p>{% if post.data.description %}
+      <p>
+        {% if post.data.description %}
           {{ post.data.description }}
-          {% else %}{{ post.templateContent | excerpt }}{% endif %}</p>
+        {% else %}{{ post.templateContent | excerpt }}
+        {% endif %}
+      </p>
       <footer>
-        <a href="{{ post.url }}" role="button" aria-label="Read More about {{ post.data.title }}">Read More‍ 👉</a>
+        <a href="{{ post.url }}" role="button" aria-label="Read More about {{ post.data.title }}">Read More 👉</a>
       </footer>
     </article>
-   {% endfor %}
- {% endblock %}
-
+  {% endfor %}
+{% endblock %}

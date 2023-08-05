@@ -1,16 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
-{%- include "partials/head.njk" -%}
+<html lang="en" data-theme="dark">
+  {%- include "partials/head.njk" -%}
 
-<body>
+  <body>
 
-  {% include "partials/navigation.njk" %}
-  <!-- Main-->
-  <main class="container" aria-label="Content">
-    {% block main %}{% endblock %}
+    {% include "partials/navigation.njk" %}
+    <!-- Main-->
+    <main class="container" aria-label="Content">
+      {% block main %}{% endblock %}
 
-    {% include "partials/footer.njk" %}
-  </main><!-- End Main -->
-</body>
+      {% include "components/button-themeSwitcher.njk" %}
+      {% include "partials/footer.njk" %}
+    </main>
+    <!-- End Main -->
+
+  </body>
 
 </html>

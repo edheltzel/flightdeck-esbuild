@@ -3,7 +3,7 @@
  */
 
 // Variables
-@import "../utilities/variables";
+@import "../variables";
 @import "default/colors";
 
 // Commons styles
@@ -17,7 +17,7 @@
 // Automatically enabled if user has Dark mode enabled
 @import "default/dark";
 @media only screen and (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
+  :root:not([data-theme]) {
     @include dark;
   }
 }
@@ -26,4 +26,12 @@
 // Enabled if forced with data-theme="dark"
 [data-theme="dark"] {
   @include dark;
+}
+
+// Accent-color
+progress,
+[type="checkbox"],
+[type="radio"],
+[type="range"] {
+  accent-color: var(--primary);
 }
