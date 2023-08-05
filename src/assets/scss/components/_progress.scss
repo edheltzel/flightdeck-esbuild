@@ -2,6 +2,11 @@
  * Progress
  */
 
+// Reboot based on :
+// - normalize.css v8.0.1 | WTFPL License | github.com/necolas/normalize.css
+// - sanitize.css v13.0.0 | CC0 1.0 Universal | github.com/csstools/sanitize.css
+// ––––––––––––––––––––
+
 // 1. Add the correct display in Edge 18- and IE
 // 2. Add the correct vertical alignment in Chrome, Edge, and Firefox
 progress {
@@ -9,7 +14,7 @@ progress {
   vertical-align: baseline; // 2
 }
 
-// Airframe system
+// Autopilot
 // ––––––––––––––––––––
 
 progress {
@@ -37,9 +42,11 @@ progress {
     border-radius: var(--border-radius);
     background: none;
   }
+
   &[value]::-webkit-progress-value {
     background-color: var(--progress-color);
   }
+
   &::-moz-progress-bar {
     background-color: var(--progress-color);
   }
@@ -47,18 +54,15 @@ progress {
   // Indeterminate state
   @media (prefers-reduced-motion: no-preference) {
     &:indeterminate {
-      background: var(--progress-background-color)
-        linear-gradient(
-          to right,
+      background: var(--progress-background-color) linear-gradient(to right,
           var(--progress-color) 30%,
-          var(--progress-background-color) 30%
-        )
-        top left / 150% 150% no-repeat;
-      animation: progressIndeterminate 1s linear infinite;
+          var(--progress-background-color) 30%) top left / 150% 150% no-repeat;
+      animation: progress-indeterminate 1s linear infinite;
 
       &[value]::-webkit-progress-value {
         background-color: transparent;
       }
+
       &::-moz-progress-bar {
         background-color: transparent;
       }
@@ -74,10 +78,11 @@ progress {
   }
 }
 
-@keyframes progressIndeterminate {
+@keyframes progress-indeterminate {
   0% {
     background-position: 200% 0;
   }
+
   100% {
     background-position: -200% 0;
   }

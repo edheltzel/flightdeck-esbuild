@@ -2,6 +2,11 @@
  * Miscs
  */
 
+// Reboot based on :
+// - normalize.css v8.0.1 | WTFPL License | github.com/necolas/normalize.css
+// - sanitize.css v13.0.0 | CC0 1.0 Universal | github.com/csstools/sanitize.css
+// ––––––––––––––––––––
+
 // 1. Correct the inheritance of border color in Firefox
 // 2. Add the correct box sizing in Firefox
 hr {
@@ -16,7 +21,9 @@ hr {
 template {
   @if $enable-important {
     display: none !important;
-  } @else {
+  }
+
+  @else {
     display: none;
   }
 }

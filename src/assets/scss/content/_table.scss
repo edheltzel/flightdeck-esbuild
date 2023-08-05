@@ -1,6 +1,11 @@
 /**
- * Table elements
+ * Table
  */
+
+// Reboot based on :
+// - normalize.css v8.0.1 | WTFPL License | github.com/necolas/normalize.css
+// - sanitize.css v13.0.0 | CC0 1.0 Universal | github.com/csstools/sanitize.css
+// ––––––––––––––––––––
 
 // 1. Collapse border spacing in all browsers (opinionated)
 // 2. Remove text indentation from table contents in Chrome, Edge, and Safari
@@ -11,7 +16,7 @@
   text-indent: 0; // 2
 }
 
-// Airframe
+// Autopilot
 // ––––––––––––––––––––
 
 // Cells
@@ -28,6 +33,7 @@ td {
 
 // Footer
 tfoot {
+
   th,
   td {
     border-top: var(--border-width) solid var(--table-border-color);
