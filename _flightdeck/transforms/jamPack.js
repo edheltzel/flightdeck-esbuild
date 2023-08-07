@@ -1,11 +1,16 @@
-// postbuild processing of images, html, css, and js files
-module.exports = (config) => {
-  config.on("eleventy.after", () => {
-    const spawn = require("child_process").spawn;
+/**
+ * Exports a function that runs AFTER eleventy
+ * @param {Object} config - eleventy config object
+ * @summary This executes the jampack optimization tool on the output after build.
+ * @link https://jampack.divriots.com/cli-options/
+ */
 
-    const Images = spawn("jampack ./dist --cleancache", {
-      stdio: "inherit",
-      shell: true,
+module.exports = (config) => {
+  config.on('eleventy.after', async () => {
+    const { spawn } = require('child_process');
+    const jamPack = spawn('jampack', ['./dist', '--cleancache'], { stdio: 'inherit', shell: true });
+    jamPack.on('error', (error) => {
+      console.error(`jampack error: ${error}`);
     });
   });
 };

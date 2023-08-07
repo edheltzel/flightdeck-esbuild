@@ -1,10 +1,10 @@
 ---
-title: Style Guide 💅
+title: Style Guide 💅 🎨
 tagline: Semantic HTML with very minimal use of classes
 ---
 <!-- Typography-->
 
-## Typography
+## Typography {.h1}
 
 Aliquam lobortis vitae nibh nec rhoncus. Morbi mattis neque eget efficitur feugiat. Vivamus porta nunc a erat mattis, mattis feugiat turpis pretium. Quisque sed tristique felis.
 
@@ -41,7 +41,11 @@ let x = (x, y) => x * y;
 ```
 `const x = 1;`
 
-    foo=bar
+```markdown
+<!-- using classes in markdown -->
+## Typography {.h1}
+
+```
 
 
 

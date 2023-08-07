@@ -16,6 +16,7 @@
 // Dark theme (Auto)
 // Automatically enabled if user has Dark mode enabled
 @import "default/dark";
+
 @media only screen and (prefers-color-scheme: dark) {
   :root:not([data-theme]) {
     @include dark;
@@ -34,4 +35,8 @@ progress,
 [type="radio"],
 [type="range"] {
   accent-color: var(--primary);
+}
+
+.h1 {
+  font-size: clamp(1rem, -6.7586rem + 24.8276vw, 10rem);
 }

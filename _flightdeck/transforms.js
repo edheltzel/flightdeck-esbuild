@@ -1,19 +1,15 @@
+/**
+ * Transforms
+ * @param {Object} config - eleventy config object
+ *
+ */
 const isProd = process.env.ENV === "production";
+const { markdownIt } = require("./transforms/markdownIt"); // markdown-it plugins
 const esBuild = require("./transforms/esBuild"); // scss compiling & js bundling
 const jamPack = require("./transforms/jamPack"); // image optimization
 
-const markdownIt = require("markdown-it");
-const markdownItAttrs = require("markdown-it-attrs");
-const markdownItOptions = {
-  html: true,
-  breaks: true,
-  linkify: true,
-};
-
-const markdownLib = markdownIt(markdownItOptions).use(markdownItAttrs);
-
 module.exports = (config) => {
-  config.setLibrary("md", markdownLib);
+  config.setLibrary("md", markdownIt);
   config.addPlugin(esBuild);
 
   if (isProd) {

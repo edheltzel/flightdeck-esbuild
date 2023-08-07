@@ -4,7 +4,17 @@ All notable changes to Flightdeck for 11ty will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.2.1] - 2023-08-07
+## [0.2.2] - 2022-08-07
+esbuild updates
+### Changed
+- package updates: esbuild@0.18.19
+- `esBuild.js` only runs postcss for production builds
+- `jamPack.js` includes error handling
+- `index.md` includes tagline and updates content, a little
+- moves markdown-it to `./src/__flightdeck/transforms/markdownIt.js`
+  - adds example of markdown-it in `styleguide.md`
+
+## [0.2.1] - 2022-08-01
 - removes duplicate index.md
 ## [0.2.0] - 2023-08-05
 Eleventy upgraded to 2.0.1 with Jampack for post optimizations
@@ -13,7 +23,7 @@ Eleventy upgraded to 2.0.1 with Jampack for post optimizations
 - adds `{% thefold %}` shortcode for jampack to optimizations [for above the fold content](https://jampack.divriots.com/features/optimize-above-the-fold/)
 - adds `./src/assets/seo` for robots.txt and redirects
 - add markdown it support
-- adds buttonlink component
+- adds button link component to shortcodes
 - adds sample data `animals.json` for testing
 - adds netlify config via toml
 ### Changed
