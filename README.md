@@ -184,7 +184,11 @@ Commands available via "pnpm run":
 
 Deployments for this project are completely up to you and your needs.
 
-We really like Netlify but also enjoy using CI/CD tools or even using our [Liftoff Deployment Script](https://github.com/edheltzel/Lifftoff-Deploy-Script)
+We really like Netlify + Cloudflare but also enjoy using CI/CD tools or even using our [Liftoff Deployment Script](https://github.com/edheltzel/Lifftoff-Deploy-Script) when we need to deploy to a server with limited access.
+
+##### Note - Environment Variables
+
+Don't forget to create your own `.env` with whatever environment variables you need for your project.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -192,10 +196,41 @@ We really like Netlify but also enjoy using CI/CD tools or even using our [Lifto
 
 ### 📁 File Structure
 
-Flightdeck is a very opinionated starter kit, so the file structure is very specific to our needs.
+Flightdeck is a very opinionated starter kit, so the file structure is very specific to our needs. All the Eleventy configuration is done in the `.eleventy.js` file, but it is broken down into sections for easier navigation and maintain. All Eleventy configuration options are available, see the [Eleventy Docs](https://www.11ty.dev/docs/config/) for more information.
 
-All the Eleventy configuration is done in this file, and it is broken down into sections for easier navigation and maintain. All Eleventy configuration options are available, see the [Eleventy Docs](https://www.11ty.dev/docs/config/) for more information.
-
+<details>
+  <summary>File Structure</summary>
+  <pre>.
+├── _flightdeck
+│  ├── components
+│  ├── filters
+│  ├── shortcodes
+│  └── transforms
+└── src
+   ├── _includes
+   │  ├── components
+   │  ├── data
+   │  ├── layouts
+   │  ├── macros
+   │  ├── partials
+   │  └── utilities
+   ├── assets
+   │  ├── fonts
+   │  ├── images
+   │  ├── js
+   │  ├── seo
+   │  └── styles
+   │     ├── components
+   │     ├── content
+   │     ├── layout
+   │     ├── themes
+   │     │  └── default
+   │     ├── utilities
+   │     └── vendors
+   └── collections
+      ├── blog
+      └── pages</pre>
+</details>
 
 <!-- USAGE -->
 
