@@ -1,5 +1,5 @@
 ---
-title: Style Guide 💅
+title: Style Guide 💅 🎨
 tagline: Semantic HTML with very minimal use of classes
 ---
 <!-- Typography-->

@@ -38,5 +38,5 @@ progress,
 }
 
 .h1 {
-  font-size: 3rem;
+  font-size: clamp(1rem, -6.7586rem + 24.8276vw, 10rem);
 }
