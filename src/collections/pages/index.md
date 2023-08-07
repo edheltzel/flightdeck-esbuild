@@ -1,6 +1,7 @@
 ---
 layout: page
-title: Eleventy + Nunjucks = 🤯
+title: Flightdeck for 11ty 🚀
+tagline: An opinionated Jamstack starter project for Eleventy.
 permalink: /
 ---
 
@@ -17,7 +18,7 @@ permalink: /
 </div>
 ```
 
-## Blah Blah Blah
+## Space Exploration
 
 <figure>
   <img
