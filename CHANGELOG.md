@@ -11,10 +11,12 @@ esbuild updates
 - `esBuild.js` only runs postcss for production builds
 - `jamPack.js` includes error handling
 - `index.md` includes tagline and updates content, a little
+- moves markdown-it to `./src/__flightdeck/transforms/markdownIt.js`
+  - adds example of markdown-it in `styleguide.md`
 
 ## [0.2.1] - 2022-08-01
 - removes duplicate index.md
-## [0.2.0] -
+## [0.2.0] - 2023-08-05
 Eleventy upgraded to 2.0.1 with Jampack for post optimizations
 ### Adds
 - [Jampack](https://jampack.divriots.com/) for post optimizations of images, html, css, and js.
