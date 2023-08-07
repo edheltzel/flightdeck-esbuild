@@ -1,6 +1,6 @@
 {
   "name": "flightdeck-for-eleventy",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "An opinionated Jamstack starter project for Eleventy.",
   "author": "Ed Heltzel",
   "license": "WTFPL",
