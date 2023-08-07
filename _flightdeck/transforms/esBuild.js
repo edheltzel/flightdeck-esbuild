@@ -7,6 +7,7 @@ const cssDeclarationSorter = require("css-declaration-sorter");
 const postcssPresetEnv = require("postcss-preset-env");
 
 module.exports = (config) => {
+  const flightdeck = console.log('\x1b[33m%s\x1b[0m', '[Flightdeck] ' + '>> esbuild complete');
   config.on("eleventy.before", async () => {
       await esbuild.build({
         bundle: true,
@@ -21,16 +22,20 @@ module.exports = (config) => {
         plugins: [
           sassPlugin({
             async transform(source, resolveDir) {
-              const { css } = await postcss([
-                postcss([cssDeclarationSorter({ order: "smacss" })]),
-                postcssPresetEnv({ stage: 0 }),
-              ]).process(source, { from: undefined });
+              let plugins = [];
+              if (isProd) {
+                plugins = [
+                  postcss([cssDeclarationSorter({ order: "smacss" })]),
+                  postcssPresetEnv({ stage: 0 }),
+                ];
+              }
+              const { css } = await postcss(plugins).process(source, { from: undefined });
               return css;
             },
           }),
         ]
       });
       // just some simple feedback to know esbuild and scss are running in yellow
-      console.log('\x1b[33m%s\x1b[0m', '[11ty] ⚡esbuild complete');
+      return flightdeck;
   });
 };
