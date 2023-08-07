@@ -13,7 +13,7 @@
     "cross-env": "^7.0.3",
     "css-declaration-sorter": "^7.0.3",
     "eleventy-plugin-embed-everything": "^1.16.0",
-    "esbuild": "^0.18.18",
+    "esbuild": "^0.18.19",
     "esbuild-sass-plugin": "^2.10.0",
     "markdown-it": "^13.0.1",
     "markdown-it-attrs": "^4.1.6",
