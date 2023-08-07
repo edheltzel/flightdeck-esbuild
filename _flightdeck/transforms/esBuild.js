@@ -1,5 +1,4 @@
 // esbuild & sass + autoprefixer
-
 const isProd = process.env.ENV === "production";
 const esbuild = require("esbuild");
 const { sassPlugin } = require("esbuild-sass-plugin");
@@ -9,7 +8,6 @@ const postcssPresetEnv = require("postcss-preset-env");
 
 module.exports = (config) => {
   config.on("eleventy.before", async () => {
-    try{
       await esbuild.build({
         bundle: true,
         entryPoints: {
@@ -17,7 +15,7 @@ module.exports = (config) => {
           "assets/styles/style": "./src/assets/styles/style.scss",
         },
         loader: { ".scss": "css" },
-        // minify: isProd, // NOTE: minification is handled by cloudflare auto minify
+        minify: isProd,
         outdir: "./dist",
         sourcemap: !isProd,
         plugins: [
@@ -32,10 +30,7 @@ module.exports = (config) => {
           }),
         ]
       });
-      console.log('%cesbuild complete', 'color: cyan');
-    } catch (error) {
-      console.log("%cesbuild error", 'color: red', error); //TODO: better error handling
-    };
-
+      // just some simple feedback to know esbuild and scss are running in yellow
+      console.log('\x1b[33m%s\x1b[0m', '[11ty] ⚡esbuild complete');
   });
 };
