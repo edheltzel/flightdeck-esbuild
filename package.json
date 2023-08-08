@@ -1,6 +1,6 @@
 {
   "name": "flightdeck-for-eleventy",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "An opinionated Jamstack starter project for Eleventy.",
   "author": "Ed Heltzel",
   "license": "WTFPL",
@@ -23,7 +23,7 @@
     "sass": "^1.64.2"
   },
   "scripts": {
-    "start": "eleventy --serve --incremental",
+    "start": "eleventy --serve",
     "build": "run-s clean build:11ty",
     "build:11ty": "cross-env ENV=production eleventy",
     "preview": "npx http-server ./dist -p 8080",
