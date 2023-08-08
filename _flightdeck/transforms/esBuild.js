@@ -11,10 +11,10 @@ const { sassPlugin } = require("esbuild-sass-plugin");
 const postcss = require("postcss");
 const cssDeclarationSorter = require("css-declaration-sorter");
 const postcssPresetEnv = require("postcss-preset-env");
-
+// TODO: need more testing of eleventy.before causes issues with --incremental builds
 module.exports = (config) => {
   const flightdeck = console.log('\x1b[33m%s\x1b[0m', '[Flightdeck] ' + '>> esbuild complete');
-  config.on("eleventy.before", async () => {
+  config.on("eleventy.after", async () => {
     await esbuild.build({
       bundle: true,
       entryPoints: {
