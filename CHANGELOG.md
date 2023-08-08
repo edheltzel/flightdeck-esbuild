@@ -4,6 +4,12 @@ All notable changes to Flightdeck for 11ty will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.3] - 2022-08-08
+### Changed
+- updates `esBuild.js` to use `eleventy.after`
+- changes `head.njk` to `meta.njk` for better naming convention
+- removes `--incremental` from npm start script
+
 ## [0.2.2] - 2022-08-07
 esbuild updates
 ### Changed
@@ -13,7 +19,6 @@ esbuild updates
 - `index.md` includes tagline and updates content, a little
 - moves markdown-it to `./src/__flightdeck/transforms/markdownIt.js`
   - adds example of markdown-it in `styleguide.md`
-
 ## [0.2.1] - 2022-08-01
 - removes duplicate index.md
 ## [0.2.0] - 2023-08-05
