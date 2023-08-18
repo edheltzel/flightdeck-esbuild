@@ -19,6 +19,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
       + sass 1.65.1
 
   ```
+- blog.json to include the correct permalink structure by include `/blog/` in the slug.
 
 
 ## [0.2.3] - 2022-08-08
