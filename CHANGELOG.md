@@ -4,6 +4,24 @@ All notable changes to Flightdeck for 11ty will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.4] - 2023-08-17
+### Changed
+- package updates:
+  ```shell
+          devDependencies:
+      - esbuild 0.18.19
+      + esbuild 0.18.20 (0.19.2 is available)
+      - esbuild-sass-plugin 2.10.0
+      + esbuild-sass-plugin 2.12.0
+      - postcss 8.4.27
+      + postcss 8.4.28
+      - sass 1.64.2
+      + sass 1.65.1
+
+  ```
+- blog.json to include the correct permalink structure by include `/blog/` in the slug.
+
+
 ## [0.2.3] - 2022-08-08
 ### Changed
 - updates `esBuild.js` to use `eleventy.after`
