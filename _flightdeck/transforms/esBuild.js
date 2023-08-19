@@ -5,16 +5,13 @@
  * @link https://esbuild.github.io/api/#build-api
  * @link https://github.com/glromeo/esbuild-sass-plugin
  */
+const { hrtime } = require('process');
 const isProd = process.env.ENV === "production";
 const esbuild = require("esbuild");
 const { sassPlugin } = require("esbuild-sass-plugin");
-const postcss = require("postcss");
-const cssDeclarationSorter = require("css-declaration-sorter");
-const postcssPresetEnv = require("postcss-preset-env");
-// TODO: need more testing of eleventy.before causes issues with --incremental builds
 module.exports = (config) => {
-  const flightdeck = console.log('\x1b[33m%s\x1b[0m', '[Flightdeck] ' + '>> esbuild complete');
   config.on("eleventy.after", async () => {
+    console.time('esbuild');
     await esbuild.build({
       bundle: true,
       entryPoints: {
@@ -26,21 +23,12 @@ module.exports = (config) => {
       outdir: "./dist",
       sourcemap: !isProd,
       plugins: [
-        sassPlugin({
-          async transform(source, resolveDir) {
-            let plugins = [];
-            if (isProd) {
-              plugins = [
-                postcss([cssDeclarationSorter({ order: "smacss" })]),
-                postcssPresetEnv({ stage: 0 }),
-              ];
-            }
-            const { css } = await postcss(plugins).process(source, { from: undefined });
-            return css;
-          },
-        }),
+        sassPlugin(),
       ]
     });
-    return flightdeck;
+    process.stdout.write('\x1b[33m[Flightdeck] >> completed  \x1b[0m');
+    console.timeEnd('esbuild');
+    const timeInfo = console.timeLog('esbuild');
+    process.stdout.write(` (${timeInfo} )\n`);
   });
 };
