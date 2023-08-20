@@ -10,20 +10,18 @@ module.exports = (config) => {
     */
     showVersion: true, // show the server version number on the command line
     showAllHosts: true, // show local network IP address for device testing
-    injectedScriptsFolder: ".flightdeck",
-
   });
 
-  // Watch Targets
+  /* --- Watch Targets --- */
   config.addWatchTarget("./src/assets");
 
-  // Passthrough Copy
-  config.addPassthroughCopy({ "./node_modules/alpinejs/dist/cdn.min.js": "assets/js/alpine.js" });
-  config.addPassthroughCopy("./src/assets/fonts");
-  config.addPassthroughCopy("./src/assets/seo"); //robots.txt, redirects, etc.
-  config.addPassthroughCopy("./src/assets/images"); //images are optimized only in production
+  /* --- Passthrough Copy --- */
+  config.addPassthroughCopy("./src/assets", {
+    ignore: ["**/styles/**/*", "**/js/**/*"],
+  }); // copy static files except styles and scripts - esbuild handles those
+  // config.addPassthroughCopy({ "./node_modules/alpinejs/dist/cdn.min.js": "assets/js/alpine.js" });
 
-  // Layout Aliases
+  /* --- Layout Aliases --- */
   config.addLayoutAlias("default", "layouts/default.njk");
   config.addLayoutAlias("page", "layouts/page.njk");
   config.addLayoutAlias("post", "layouts/post.njk");
