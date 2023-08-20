@@ -12,8 +12,8 @@ FRESH="🧼 Scrubbed ${WHITE}node_modules${NC}, ${WHITE}dist/${NC}, ${WHITE}all 
 SITE="🧼 Scrubbed ${WHITE}dist/${NC} & ${WHITE}all cache${NC} directories ✨"
 PURGE="${GREEN}🧹 All Clean ✨${NC} ${FRESH}${NC} Run ${YELLOW}npm/yarn/pnpm install${NC} to start fresh 🤩"
 OOPS="🚀💥🔥 OOPS! We need a valid option – Try using ${OPTIONS}"
-DEVFILES="dist/ .cache/ .pnpm-debug.log .parcel-cache/ .jampack/"
-NODEFILES="node_modules package-lock.json pnpm-lock.yaml yarn.lock .yarn/"
+DEVFILES=".pnpm-debug.log dist/ _site/"
+NODEFILES="node_modules package-lock.json pnpm-lock.yaml yarn.lock .yarn/ .jampack"
 
 ################## DONT EDIT BELOW  👀 ########################
 if [ $# -eq 0 ]

@@ -1,34 +1,35 @@
 {% extends "./default.njk" %}
 {% from 'macros/component.njk' import component %}
 {% block main %}
-  <header>
-    {% block pageTitle %}
-      {%- set pageTitle %}
-      {% if title %}{{ title }}
-      {% else %}{{ site.title }}
-      {% endif %}{%- endset -%}
-      {%- set pageTagline %}
-      {% if tagline %}{{ tagline }}
-      {% endif %}{%- endset -%}
-      {% if tagline %}
-        <hgroup>
-          <h1>{{ pageTitle | safe }}</h1>
-          <h2>{{ pageTagline | safe }}</h2>
-        </hgroup>
-      {% else %}
-        <h1>{{ pageTitle | safe }}</h1>
-      {% endif %}
-    {% endblock %}
-  </header>
-
-  <hr>
-  {% block content %}
-    <p>this is stuff i want to see reload</p>
-    <p>I think Brave Beta has a cache issue <span>but does regular Brave?</span>
-    </p>
-    something is going on
-
-    {{ content | safe }}
+<header>
+  {% block pageTitle %}
+  {%- set pageTitle %}
+  {% if title %}{{ title }}
+  {% else %}{{ site.title }}
+  {% endif %}{%- endset -%}
+  {%- set pageTagline %}
+  {% if tagline %}{{ tagline }}
+  {% endif %}{%- endset -%}
+  {% if tagline %}
+  <hgroup>
+    <h1>{{ pageTitle | safe }}</h1>
+    <h2>{{ pageTagline | safe }}</h2>
+  </hgroup>
+  {% else %}
+  <h1>{{ pageTitle | safe }}</h1>
+  {% endif %}
   {% endblock %}
+</header>
+{# used for jampack optimization #}
+{% thefold %}
+<hr>
+{% block content %}
+<p>this is stuff i want to see reload</p>
+<p>I think Brave Beta has a cache issue <span>but does regular Brave?</span>
+</p>
+something is going on
+
+{{ content | safe }}
+{% endblock %}
 
 {% endblock %}
