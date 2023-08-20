@@ -5,6 +5,7 @@
  * @link https://esbuild.github.io/api/#build-api
  * @link https://github.com/glromeo/esbuild-sass-plugin
  */
+const manifest = require('../manifest');
 const chalk = require('kleur');
 const flightdeck = require('../../package.json');
 const isProd = process.env.ENV === "production";
@@ -21,7 +22,7 @@ module.exports = (config) => {
       },
       loader: { ".scss": "css" },
       minify: isProd,
-      outdir: "./dist",
+      outdir: manifest.output,
       sourcemap: !isProd,
       plugins: [
         sassPlugin(),

@@ -1,4 +1,5 @@
 // Eleventy Configuration
+const manifest = require('./_flightdeck/manifest');
 const addWorkflow = require("./_flightdeck/workflow");
 const addFilters = require("./_flightdeck/filters");
 const addTransforms = require("./_flightdeck/transforms");
@@ -16,9 +17,9 @@ module.exports = (config) => {
 
   return {
     dir: {
-      input: "src",
-      output: "dist",
-      data: "_includes/data",
+      input: manifest.input,
+      output: manifest.output,
+      data: manifest.data,
     },
     markdownTemplateEngine: "njk",
   };
