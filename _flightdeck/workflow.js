@@ -16,9 +16,9 @@ module.exports = (config) => {
   config.addWatchTarget("./src/assets");
 
   /* --- Passthrough Copy --- */
-  config.addPassthroughCopy("./src/assets", {
-    ignore: ["**/styles/**/*", "**/js/**/*"],
-  }); // copy static files except styles and scripts - esbuild handles those
+  config.addPassthroughCopy("./src/assets/fonts");
+  config.addPassthroughCopy("./src/assets/images");
+  config.addPassthroughCopy("./src/assets/seo");
   // config.addPassthroughCopy({ "./node_modules/alpinejs/dist/cdn.min.js": "assets/js/alpine.js" });
 
   /* --- Layout Aliases --- */
