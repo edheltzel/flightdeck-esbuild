@@ -13,5 +13,5 @@ module.exports = (text, source) => {
       <cite>- ${source}</cite>
     </footer>
   </blockquote>
-`;
-};
+`
+}

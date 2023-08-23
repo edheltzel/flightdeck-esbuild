@@ -8,17 +8,17 @@
  */
 
 module.exports = (penUrl, penHeight = "300", tabs = "result", themeId = "") => {
-  const splitUrl = penUrl.split("/");
+  const splitUrl = penUrl.split("/")
 
   const splitProfileUrl = splitUrl.filter((string, index) => {
-    return index < splitUrl.length - 2 ? true : false;
-  });
+    return index < splitUrl.length - 2 ? true : false
+  })
 
-  const userProfile = splitProfileUrl.join("/");
-  const slugHash = splitUrl[splitUrl.length - 1];
-  const userName = splitProfileUrl[splitProfileUrl.length - 1];
+  const userProfile = splitProfileUrl.join("/")
+  const slugHash = splitUrl[splitUrl.length - 1]
+  const userName = splitProfileUrl[splitProfileUrl.length - 1]
 
   return `<p class="codepen" data-height="${penHeight}" data-theme-id="${themeId}" data-default-tab="${tabs}" data-slug-hash="${slugHash}" data-user="${userName}">
     <span><a href="${penUrl}">See the pen</a> (<a href="${userProfile}">@${userName}</a>) on <a href="https://codepen.io">CodePen</a>.</span>
-    </p><script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>`;
-};
+    </p><script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>`
+}
