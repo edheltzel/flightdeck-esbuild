@@ -60,6 +60,7 @@ Jérôme Coupé's post [Structuring Eleventy Projects](https://www.webstoemp.com
 - [Nunjucks](https://mozilla.github.io/nunjucks/)
 - [Sass](https://sass-lang.com/)
 - [Jampack](https://jampack.divriots.com/)
+- [Rome](https://rome.tools/)
 
 <details>
   <summary>see all dependencies</summary>
@@ -130,12 +131,12 @@ pnpm install
   <pre>pnpm list
   Legend: production dependency, optional only, dev only
 
-flightdeck-for-11ty@0.1.0 /Users/ed/Developer/oss/flightdeck/for-11ty-with-esbuild
+flightdeck-for-11ty@0.1.0 flightdeck/for-11ty-with-esbuild
 
 devDependencies:
-@11ty/eleventy 2.0.1                         browserlist 1.0.1                            eleventy-plugin-embed-everything 1.16.0      markdown-it 13.0.1                           postcss 8.4.27
-@11ty/eleventy-plugin-syntaxhighlight 5.0.0  cross-env 7.0.3                              esbuild 0.18.18                              markdown-it-attrs 4.1.6                      postcss-preset-env 7.8.3
-@divriots/jampack 0.13.0                     css-declaration-sorter 7.0.3                 esbuild-sass-plugin 2.10.0                   npm-run-all 4.1.5                            sass 1.64.2</pre>
+@11ty/eleventy 2.0.1                         browserlist 1.0.1                            esbuild 0.19.2                               markdown-it-attrs 4.1.6                      sass 1.66.0
+@11ty/eleventy-plugin-syntaxhighlight 5.0.0  cross-env 7.0.3                              esbuild-sass-plugin 2.12.0                   npm-run-all 4.1.5
+@divriots/jampack 0.13.0                     eleventy-plugin-embed-everything 1.16.0      markdown-it 13.0.1                           rome 12.1.3   </pre>
 </details>
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -156,7 +157,7 @@ pnpm start
 
 Lifecycle scripts:
   start
-    eleventy --serve --incremental
+    eleventy --serve
 
 Commands available via "pnpm run":
   build
@@ -164,7 +165,17 @@ Commands available via "pnpm run":
   build:11ty
     cross-env ENV=production eleventy
   preview
-    npx http-server ./dist -p 8080
+    npx http-server dist -p 4000
+  format
+    rome format .
+  format:fix
+    rome format . --write
+  lint
+    rome check .
+  lint:fix
+    rome check . --apply
+  lint:fix:unsafe
+    rome check . --apply-unsafe
   clean
     ./.scrub.sh site
   purge
@@ -173,6 +184,7 @@ Commands available via "pnpm run":
 - `build` command - executes the production build of your site with Eleventy, includes HTML minification, compressed Sass, optimized images, and bundled javascript.
   - for our workflow, Cloudflare handles the DNS while Netlify does the building and hosting - Cloudflare's Auto Minify minifies the HTML, CSS, and JS. You can easily add minification to the build process by adding a plugin to Eleventy.
 - `preview` command - spins up a local server to preview the production build.
+- `format`, `lint` commands - uses Rome for code formatting and linting.
 - `clean` command - scrubs/removes the `dist/` and `.cache` directories
 - `purge` command - scrubs/removes the `dist/`, `.cache`, `node_modules`, and any lock files from npm, yarn, or pnpm. - A fresh install.
   - **NOTE: Both `clean` and `purge` are executed from a bash script**
@@ -254,7 +266,7 @@ If you're looking to extend your project with other NPM modules, Eleventy plugin
 ## 🧭 Roadmap
 
 - [ ] Create a theme using Airframe - A classless CSS system
-- [ ] Improve documentation
+- [x] Improve documentation
 - [ ] Add Dockerfile
 - [ ] Add Yeoman generator/npm package
 - [ ] Add our Eleventy plugins

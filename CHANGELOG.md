@@ -3,6 +3,26 @@
 All notable changes to Flightdeck for 11ty will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+## [0.2.6] - 2023-08-23
+### Changed
+- all javascript files where updated using RomeJS - https://romejs.dev/
+- content testing updates
+
+### Added
+- RomeJS added
+- New npm scripts:
+```shell
+  format
+    rome format .
+  format:fix
+    rome format . --write
+  lint
+    rome check .
+  lint:fix
+    rome check . --apply
+  lint:fix:unsafe
+    rome check . --apply-unsafe
+```
 
 ## [0.2.5] - 2023-08-20
 ### Changed
