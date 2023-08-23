@@ -8,6 +8,7 @@
 const chalk = require("kleur");
 const manifest = require("../manifest");
 const flightdeck = require("../../package.json");
+
 const isProd = process.env.ENV === "production";
 const esbuild = require("esbuild");
 const { sassPlugin } = require("esbuild-sass-plugin");
@@ -32,5 +33,6 @@ module.exports = (config) => {
         `[Flightdeck] >> esbuild finished in ${endTime} seconds (${endTime * 1000}ms, v${flightdeck.version})`,
       ),
     );
+
   });
 };

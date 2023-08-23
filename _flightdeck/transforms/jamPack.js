@@ -10,6 +10,7 @@ module.exports = (config) => {
     const { spawn } = require("child_process");
     const jamPack = spawn("jampack", [manifest.output, manifest.jampack.flags], { stdio: "inherit", shell: true });
     jamPack.on("error", (error) => {
+
       console.error(`jampack error: ${error}`);
     });
   });

@@ -48,6 +48,30 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ### Removes
 - all postcss and postcss plugins, using jampack instead, if you need a postcss plugin see https://github.com/glromeo/esbuild-sass-plugin
 
+## [0.2.5] - 2023-08-20
+### Changed
+- esBuild.js
+  - updates console output to include esbuild completion time - I'm sure there is a better way to do
+  - updates esbuild to use `manifest.js`
+  - esbuild only does js and scss now
+- jamPack.js
+  - now handles autoprefixer with [ LightningCSS ](https://lightningcss.dev/)
+  - adds option to pass cli options through `manifest.js`
+  - keeps `.jampack` cache for faster image optimization (though you wont notice this on builds through ci/cd) see - https://jampack.divriots.com/cache/
+- .scrub.sh
+  - `.jampack` cache is flushed when purging
+- flightdeck updates
+- update all of flightdeck workflow to use the `manifest.js` where possible.
+- simple style hacks for testing
+- `workflow.js` passthrough copy now includes ignore and cleaned up comment taglines
+
+### Added
+- includes a manifest.js file in _flightdeck to stay DRY with eleventy config
+- adds `cross-evn` back, removed by mistake.
+
+### Removes
+- all postcss and postcss plugins, using jampack instead, if you need a postcss plugin see https://github.com/glromeo/esbuild-sass-plugin
+
 ## [0.2.4] - 2023-08-17
 ### Changed
 - package updates:
