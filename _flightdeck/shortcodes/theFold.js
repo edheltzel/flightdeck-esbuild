@@ -5,5 +5,5 @@
  * @example {% thefold %}
  */
 module.exports = (theFold) => {
-  return `<the-fold></the-fold>`
-}
+  return "<the-fold></the-fold>";
+};

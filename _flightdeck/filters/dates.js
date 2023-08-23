@@ -1,4 +1,4 @@
-const { DateTime } = require("luxon") //bundled with 11ty
+const { DateTime } = require("luxon"); //bundled with 11ty
 
 /**
  * Human readable date format for date
@@ -7,8 +7,8 @@ const { DateTime } = require("luxon") //bundled with 11ty
  * @example {{ page.date | postDate }}
  */
 const postDate = (date) => {
-  return DateTime.fromJSDate(date).toLocaleString(DateTime.DATE_MED)
-}
+  return DateTime.fromJSDate(date).toLocaleString(DateTime.DATE_MED);
+};
 
 /**
  * Human readable format for date with time
@@ -17,7 +17,7 @@ const postDate = (date) => {
  * @example {{ page.date | postDateTime }}
  */
 const postDateTime = (date) => {
-  return DateTime.fromJSDate(date).toLocaleString(DateTime.DATETIME_MED)
-}
+  return DateTime.fromJSDate(date).toLocaleString(DateTime.DATETIME_MED);
+};
 
-module.exports = { postDate, postDateTime }
+module.exports = { postDate, postDateTime };

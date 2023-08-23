@@ -1,4 +1,4 @@
-const site = require("../../src/_includes/data/site")
+const site = require("../../src/_includes/data/site");
 
 /**
  * Prefixes the given URL with the site's base URL.
@@ -7,5 +7,5 @@ const site = require("../../src/_includes/data/site")
  */
 
 module.exports = (url) => {
-  return new URL(url, site.baseUrl).href
-}
+  return new URL(url, site.baseUrl).href;
+};

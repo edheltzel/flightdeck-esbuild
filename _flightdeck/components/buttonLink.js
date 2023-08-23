@@ -6,5 +6,5 @@
  */
 
 module.exports = (link, text, target) => {
-  return `<a href="${link}" role="button" target="_${target || "blank"}">${text}</a>`
-}
+  return `<a href="${link}" role="button" target="_${target || "blank"}">${text}</a>`;
+};

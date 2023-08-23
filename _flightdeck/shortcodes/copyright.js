@@ -3,5 +3,5 @@
  * @example {% year %}
  */
 module.exports = (copyright) => {
-  return `&copy; ${new Date().getFullYear()}`
-}
+  return `&copy; ${new Date().getFullYear()}`;
+};

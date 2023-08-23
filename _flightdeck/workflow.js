@@ -1,7 +1,7 @@
-const fs = require("fs")
+const fs = require("fs");
 
 module.exports = (config) => {
-  config.setQuietMode(true) // reduce console
+  config.setQuietMode(true); // reduce console
   config.setServerOptions({
     /**
      * @link https://github.com/11ty/eleventy/issues/1305
@@ -10,19 +10,19 @@ module.exports = (config) => {
      */
     showVersion: true, // show the server version number on the command line
     showAllHosts: true, // show local network IP address for device testing
-  })
+  });
 
   /* --- Watch Targets --- */
-  config.addWatchTarget("./src/assets")
+  config.addWatchTarget("./src/assets");
 
   /* --- Passthrough Copy --- */
-  config.addPassthroughCopy("./src/assets/fonts")
-  config.addPassthroughCopy("./src/assets/images")
-  config.addPassthroughCopy("./src/assets/seo")
+  config.addPassthroughCopy("./src/assets/fonts");
+  config.addPassthroughCopy("./src/assets/images");
+  config.addPassthroughCopy("./src/assets/seo");
   // config.addPassthroughCopy({ "./node_modules/alpinejs/dist/cdn.min.js": "assets/js/alpine.js" });
 
   /* --- Layout Aliases --- */
-  config.addLayoutAlias("default", "layouts/default.njk")
-  config.addLayoutAlias("page", "layouts/page.njk")
-  config.addLayoutAlias("post", "layouts/post.njk")
-}
+  config.addLayoutAlias("default", "layouts/default.njk");
+  config.addLayoutAlias("page", "layouts/page.njk");
+  config.addLayoutAlias("post", "layouts/post.njk");
+};

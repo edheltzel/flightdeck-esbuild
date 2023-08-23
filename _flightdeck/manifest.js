@@ -5,4 +5,4 @@ module.exports = {
   jampack: {
     flags: "", // see - https://jampack.divriots.com/cli-options/
   },
-}
+};
