@@ -7,7 +7,7 @@ module.exports = (config) => {
      * @link https://github.com/11ty/eleventy/issues/1305
      * @see https://www.11ty.dev/docs/dev-server/
      * @description local dev server runs on port 8080 by default-> http://localhost:8080
-    */
+     */
     showVersion: true, // show the server version number on the command line
     showAllHosts: true, // show local network IP address for device testing
   });

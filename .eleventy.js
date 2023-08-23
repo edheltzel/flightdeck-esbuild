@@ -1,5 +1,5 @@
 // Eleventy Configuration
-const manifest = require('./_flightdeck/manifest');
+const manifest = require("./_flightdeck/manifest");
 const addWorkflow = require("./_flightdeck/workflow");
 const addFilters = require("./_flightdeck/filters");
 const addTransforms = require("./_flightdeck/transforms");
