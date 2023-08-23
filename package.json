@@ -29,7 +29,7 @@
     "format:fix": "rome format . --write",
     "lint": "rome check .",
     "lint:fix": "rome check . --apply",
-    "lint:fix:suggested": "rome check . --apply-suggested",
+    "lint:fix:unsafe": "rome check . --apply-unsafe",
     "clean": "./.scrub.sh site",
     "purge": "./.scrub.sh purge"
   }
