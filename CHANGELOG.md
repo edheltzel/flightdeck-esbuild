@@ -3,6 +3,18 @@
 All notable changes to Flightdeck for 11ty will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+## [0.2.7] - 2023-08-24
+### Changed
+ - Update packages:
+  - "sass": "^1.66.1"
+  - "esbuild-sass-plugin": "2.13.0"
+- Reduced total number of NPM scripts
+  - `pnpm run format` - **an INPUT must be passed**, if you want to write to disk add in a rome option/flag
+    -  see: `pnpm run format --help`
+  - `pnpm run lint` - **an INPUT must be passed**, if you want to write to disk add in a rome option/flag
+    -  see: `pnpm run lint --help`
+- Readme Updates
+
 ## [0.2.6] - 2023-08-23
 ### Changed
 - all javascript files where updated using RomeJS - https://romejs.dev/
