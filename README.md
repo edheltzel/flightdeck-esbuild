@@ -66,22 +66,20 @@ Jérôme Coupé's post [Structuring Eleventy Projects](https://www.webstoemp.com
   <summary>see all dependencies</summary>
   <pre>
     ❯ npm list
-flightdeck-for-11ty@0.2.0 /Users/ed/Developer/oss/flightdeck/for-11ty-with-esbuild
+flightdeck-for-eleventy@0.2.7
 ├── @11ty/eleventy-plugin-syntaxhighlight@5.0.0 -> ./node_modules/.pnpm/@11ty+eleventy-plugin-syntaxhighlight@5.0.0/node_modules/@11ty/eleventy-plugin-syntaxhighlight
 ├── @11ty/eleventy@2.0.1 -> ./node_modules/.pnpm/@11ty+eleventy@2.0.1/node_modules/@11ty/eleventy
 ├── @divriots/jampack@0.13.0 -> ./node_modules/.pnpm/@divriots+jampack@0.13.0/node_modules/@divriots/jampack
 ├── browserlist@1.0.1 -> ./node_modules/.pnpm/browserlist@1.0.1/node_modules/browserlist
 ├── cross-env@7.0.3 -> ./node_modules/.pnpm/cross-env@7.0.3/node_modules/cross-env
-├── css-declaration-sorter@7.0.3 -> ./node_modules/.pnpm/css-declaration-sorter@7.0.3_postcss@8.4.27/node_modules/css-declaration-sorter
 ├── eleventy-plugin-embed-everything@1.16.0 -> ./node_modules/.pnpm/eleventy-plugin-embed-everything@1.16.0/node_modules/eleventy-plugin-embed-everything
-├── esbuild-sass-plugin@2.10.0 -> ./node_modules/.pnpm/esbuild-sass-plugin@2.10.0_esbuild@0.18.18/node_modules/esbuild-sass-plugin
-├── esbuild@0.18.18 -> ./node_modules/.pnpm/esbuild@0.18.18/node_modules/esbuild
+├── esbuild-sass-plugin@2.13.0 -> ./node_modules/.pnpm/esbuild-sass-plugin@2.13.0_esbuild@0.19.2/node_modules/esbuild-sass-plugin
+├── esbuild@0.19.2 -> ./node_modules/.pnpm/esbuild@0.19.2/node_modules/esbuild
 ├── markdown-it-attrs@4.1.6 -> ./node_modules/.pnpm/markdown-it-attrs@4.1.6_markdown-it@13.0.1/node_modules/markdown-it-attrs
 ├── markdown-it@13.0.1 -> ./node_modules/.pnpm/markdown-it@13.0.1/node_modules/markdown-it
 ├── npm-run-all@4.1.5 -> ./node_modules/.pnpm/npm-run-all@4.1.5/node_modules/npm-run-all
-├── postcss-preset-env@7.8.3 -> ./node_modules/.pnpm/postcss-preset-env@7.8.3_postcss@8.4.27/node_modules/postcss-preset-env
-├── postcss@8.4.27 -> ./node_modules/.pnpm/postcss@8.4.27/node_modules/postcss
-└── sass@1.64.2 -> ./node_modules/.pnpm/sass@1.64.2/node_modules/sass
+├── rome@12.1.3 -> ./node_modules/.pnpm/rome@12.1.3/node_modules/rome
+└── sass@1.66.1 -> ./node_modules/.pnpm/sass@1.66.1/node_modules/sass
   </pre>
 </details>
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -168,35 +166,30 @@ Commands available via "pnpm run":
     npx http-server dist -p 4000
   format
     rome format .
-  format:fix
-    rome format . --write
   lint
     rome check .
-  lint:fix
-    rome check . --apply
-  lint:fix:unsafe
-    rome check . --apply-unsafe
   clean
     ./.scrub.sh site
   purge
     ./.scrub.sh purge</pre>
+</details>
 
 - `build` command - executes the production build of your site with Eleventy, includes HTML minification, compressed Sass, optimized images, and bundled javascript.
   - for our workflow, Cloudflare handles the DNS while Netlify does the building and hosting - Cloudflare's Auto Minify minifies the HTML, CSS, and JS. You can easily add minification to the build process by adding a plugin to Eleventy.
 - `preview` command - spins up a local server to preview the production build.
-- `format`, `lint` commands - uses Rome for code formatting and linting.
+- `format`, `lint` commands - use Rome for JS/TS/JSON formatting and linting.
+  - > **👀 NOTE: Both `format` and `lint` require an INPUT to be passed.** ie: `rome format .` 👈 this will find all JS/TS/JSON format issues for the entire project but will not fix them.
+  - > Any arguments passed to these commands will be passed to Rome. ie: `rome format src/assets/js --write` 👈 this will find all JS format issues and fix them in the `./src/assets/js/` only.
+  - > For more info: `pnpm run lint --help` – [Rome Lint Docs](https://docs.rome.tools/linter/#use-the-linter-via-cli) or `pnpm run format --help` – [Rome Format Docs](https://docs.rome.tools/formatter/#use-the-formatter-with-the-cli)
 - `clean` command - scrubs/removes the `dist/` and `.cache` directories
 - `purge` command - scrubs/removes the `dist/`, `.cache`, `node_modules`, and any lock files from npm, yarn, or pnpm. - A fresh install.
-  - **NOTE: Both `clean` and `purge` are executed from a bash script**
-</details>
+  - **👀 NOTE: Both `clean` and `purge` are executed from a bash script**
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### ‍🚀 Deployments
 
-Deployments for this project are completely up to you and your needs.
-
-We really like Netlify + Cloudflare but also enjoy using CI/CD tools or even using our [Liftoff Deployment Script](https://github.com/edheltzel/Lifftoff-Deploy-Script) when we need to deploy to a server with limited access.
+Deployments for this project are completely up to you and your needs, but we do provide a `netlify.toml` file that will work out-of-the-box with Netlify.
 
 ##### Note - Environment Variables
 
@@ -248,16 +241,17 @@ Flightdeck is a very opinionated starter kit, so the file structure is very spec
 
 ### 👀 Usage
 
-Flightdeck makes a lot of assumptions and is very opinionated - but having a good idea of how Eleventy's [data cascade](https://www.11ty.dev/docs/data-cascade/) works is always nice, as well as having some understanding on [template inherence](https://mozilla.github.io/nunjucks/templating.html#template-inheritance) works with Nunjucks will go a long way. **But is not needed**
+Flightdeck makes a lot of assumptions and is very opinionated - but having a good idea of how Eleventy's [data cascade](https://www.11ty.dev/docs/data-cascade/) works is always nice, as well as having some understanding on [template inherence](https://mozilla.github.io/nunjucks/templating.html#template-inheritance) in Nunjucks will go a long way. **But is not needed**
 
 **WIP** The Airframe CSS System uses a modified version of the [7-1 pattern](https://sass-guidelin.es/#the-7-1-pattern), but we combined a couple of concepts regarding naming conventions that fit our workflow. **Documentation coming soon**
 
-If you're looking to extend your project with other NPM modules, Eleventy plugins, or ESBuild Plugins, just reference the appropriate documentation.
+If you're looking to extend or further configure your project with other NPM modules, Eleventy plugins, or ESBuild Plugins, just reference the appropriate documentation.
 
 - [Eleventy Docs](https://11ty.dev)
 - [Nunjucks Docs](https://mozilla.github.io/nunjucks/templating.html)
 - [Sass Docs](https://sass-lang.com/documentation/)
 - [ESBuild Docs](https://esbuild.github.io/plugins/)
+- [Rome Docs](https://docs.rome.tools/)
 - [NPM Package Docs](https://docs.npmjs.com/using-npm-packages-in-your-projects)
 <p align="right">(<a href="#top">back to top</a>)</p>
 
