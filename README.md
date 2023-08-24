@@ -177,7 +177,7 @@ Commands available via "pnpm run":
 - `build` command - executes the production build of your site with Eleventy, includes HTML minification, compressed Sass, optimized images, and bundled javascript.
   - for our workflow, Cloudflare handles the DNS while Netlify does the building and hosting - Cloudflare's Auto Minify minifies the HTML, CSS, and JS. You can easily add minification to the build process by adding a plugin to Eleventy.
 - `preview` command - spins up a local server to preview the production build.
-- `format`, `lint` commands - use Rome for code formatting and linting.
+- `format`, `lint` commands - use Rome for JS/TS/JSON formatting and linting.
   - > **👀 NOTE: Both `format` and `lint` require an INPUT to be passed.** ie: `rome format .` 👈 this will find all JS/TS/JSON format issues for the entire project but will not fix them.
   - > Any arguments passed to these commands will be passed to Rome. ie: `rome format src/assets/js --write` 👈 this will find all JS format issues and fix them in the `./src/assets/js/` only.
   - > For more info: `pnpm run lint --help` – [Rome Lint Docs](https://docs.rome.tools/linter/#use-the-linter-via-cli) or `pnpm run format --help` – [Rome Format Docs](https://docs.rome.tools/formatter/#use-the-formatter-with-the-cli)
