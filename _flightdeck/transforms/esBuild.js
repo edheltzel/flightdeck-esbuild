@@ -33,6 +33,5 @@ module.exports = (config) => {
         `[Flightdeck] >> esbuild finished in ${endTime} seconds (${endTime * 1000}ms, v${flightdeck.version})`,
       ),
     );
-
   });
 };
