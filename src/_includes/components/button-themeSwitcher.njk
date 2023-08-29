@@ -1,23 +1,25 @@
 <button class="outline contrast switch" aria-label="switch between light and dark themes">
-    <div class="eclipse">
-        <svg class="lunar" viewBox="0 0 24 24" stroke-width=2 fill=none stroke-linecap=round stroke-linejoin=round stroke=white>
-          <path stroke=none d="M0 0h24v24H0z" />
-          <path d="M16.2 4a9.03 9.03 0 1 0 3.9 12a6.5 6.5 0 1 1 -3.9 -12" />
-        </svg>
-        <svg class="solar" viewBox="0 0 24 24" stroke-width=2 fill=none stroke-linecap=round stroke-linejoin=round
+  <div class="eclipse">
+    <svg class="lunar" viewBox="0 0 24 24" stroke-width=2 fill=none stroke-linecap=round stroke-linejoin=round stroke=white>
+      <path stroke=none d="M0 0h24v24H0z"/>
+      <path d="M16.2 4a9.03 9.03 0 1 0 3.9 12a6.5 6.5 0 1 1 -3.9 -12"/>
+    </svg>
+    <svg class="solar" viewBox="0 0 24 24" stroke-width=2 fill=none stroke-linecap=round stroke-linejoin=round
           stroke="#1b2832">
-          <circle cx=12 cy=12 r=4 />
-          <path d="M3 12h1M12 3v1M20 12h1M12 20v1M5.6 5.6l.7 .7M18.4 5.6l-.7 .7M17.7 17.7l.7 .7M6.3 17.7l-.7 .7" />
-        </svg>
-    </div>
+      <circle cx=12 cy=12 r=4/>
+      <path d="M3 12h1M12 3v1M20 12h1M12 20v1M5.6 5.6l.7 .7M18.4 5.6l-.7 .7M17.7 17.7l.7 .7M6.3 17.7l-.7 .7"/>
+    </svg>
+  </div>
 </button>
 <script>
-  ! function () {
+  !function () {
     const e = document.documentElement,
       t = document.querySelector(".switch");
     t.addEventListener("click", function () {
       let t = e.getAttribute("data-theme");
-      null === t || "" === t || "light" === t ? (t = "dark", e.setAttribute("data-theme", "dark")) : (t = "light", e.setAttribute("data-theme", "light"));
+      null === t || "" === t || "light" === t
+        ? (t = "dark", e.setAttribute("data-theme", "dark"))
+        : (t = "light", e.setAttribute("data-theme", "light"));
       "undefined" != typeof Storage && localStorage.setItem("theme", t);
     });
   }()
