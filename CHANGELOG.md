@@ -3,173 +3,19 @@
 All notable changes to Flightdeck for 11ty will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
 ## [0.2.7] - 2023-08-24
 ### Changed
- - Update packages:
-  - "sass": "^1.66.1"
-  - "esbuild-sass-plugin": "2.13.0"
-- Reduced total number of NPM scripts
-  - `pnpm run format` - **an INPUT must be passed**, if you want to write to disk add in a rome option/flag
-    -  see: `pnpm run format --help`
-  - `pnpm run lint` - **an INPUT must be passed**, if you want to write to disk add in a rome option/flag
-    -  see: `pnpm run lint --help`
-- Readme Updates
-
-## [0.2.6] - 2023-08-23
-### Changed
-- all javascript files where updated using RomeJS - https://romejs.dev/
-- content testing updates
-
-### Added
-- RomeJS added
-- New npm scripts:
-```shell
-  format
-    rome format .
-  format:fix
-    rome format . --write
-  lint
-    rome check .
-  lint:fix
-    rome check . --apply
-  lint:fix:unsafe
-    rome check . --apply-unsafe
-```
-
-## [0.2.5] - 2023-08-20
-### Changed
-- esBuild.js
-  - updates console output to include esbuild completion time - I'm sure there is a better way to do
-  - updates esbuild to use `manifest.js`
-  - esbuild only does js and scss now
-- jamPack.js
-  - now handles autoprefixer with [ LightningCSS ](https://lightningcss.dev/)
-  - adds option to pass cli options through `manifest.js`
-  - keeps `.jampack` cache for faster image optimization (though you wont notice this on builds through ci/cd) see - https://jampack.divriots.com/cache/
-- .scrub.sh
-  - `.jampack` cache is flushed when purging
-- flightdeck updates
-- update all of flightdeck workflow to use the `manifest.js` where possible.
-- simple style hacks for testing
-- `workflow.js` passthrough copy now includes ignore and cleaned up comment taglines
-
-### Added
-- includes a manifest.js file in _flightdeck to stay DRY with eleventy config
-- adds `cross-evn` back, removed by mistake.
-
+- Readme update
+  - all Rome converted to Biome
+- Package.json update
+  - format and lint scripts updated to biome
 ### Removes
-- all postcss and postcss plugins, using jampack instead, if you need a postcss plugin see https://github.com/glromeo/esbuild-sass-plugin
-
-## [0.2.5] - 2023-08-20
-### Changed
-- esBuild.js
-  - updates console output to include esbuild completion time - I'm sure there is a better way to do
-  - updates esbuild to use `manifest.js`
-  - esbuild only does js and scss now
-- jamPack.js
-  - now handles autoprefixer with [ LightningCSS ](https://lightningcss.dev/)
-  - adds option to pass cli options through `manifest.js`
-  - keeps `.jampack` cache for faster image optimization (though you wont notice this on builds through ci/cd) see - https://jampack.divriots.com/cache/
-- .scrub.sh
-  - `.jampack` cache is flushed when purging
-- flightdeck updates
-- update all of flightdeck workflow to use the `manifest.js` where possible.
-- simple style hacks for testing
-- `workflow.js` passthrough copy now includes ignore and cleaned up comment taglines
-
-### Added
-- includes a manifest.js file in _flightdeck to stay DRY with eleventy config
-- adds `cross-evn` back, removed by mistake.
-
-### Removes
-- all postcss and postcss plugins, using jampack instead, if you need a postcss plugin see https://github.com/glromeo/esbuild-sass-plugin
-
-## [0.2.4] - 2023-08-17
-### Changed
-- package updates:
-  ```shell
-          devDependencies:
-      - esbuild 0.18.19
-      + esbuild 0.18.20 (0.19.2 is available)
-      - esbuild-sass-plugin 2.10.0
-      + esbuild-sass-plugin 2.12.0
-      - postcss 8.4.27
-      + postcss 8.4.28
-      - sass 1.64.2
-      + sass 1.65.1
-
-  ```
-- blog.json to include the correct permalink structure by include `/blog/` in the slug.
-
-
-## [0.2.3] - 2022-08-08
-### Changed
-- updates `esBuild.js` to use `eleventy.after`
-- changes `head.njk` to `meta.njk` for better naming convention
-- removes `--incremental` from npm start script
-
-## [0.2.2] - 2022-08-07
-esbuild updates
-### Changed
-- package updates: esbuild@0.18.19
-- `esBuild.js` only runs postcss for production builds
-- `jamPack.js` includes error handling
-- `index.md` includes tagline and updates content, a little
-- moves markdown-it to `./src/__flightdeck/transforms/markdownIt.js`
-  - adds example of markdown-it in `styleguide.md`
-## [0.2.1] - 2022-08-01
-- removes duplicate index.md
-## [0.2.0] - 2023-08-05
-Eleventy upgraded to 2.0.1 with Jampack for post optimizations
-### Adds
-- [Jampack](https://jampack.divriots.com/) for post optimizations of images, html, css, and js.
-- adds `{% thefold %}` shortcode for jampack to optimizations [for above the fold content](https://jampack.divriots.com/features/optimize-above-the-fold/)
-- adds `./src/assets/seo` for robots.txt and redirects
-- add markdown it support
-- adds button link component to shortcodes
-- adds sample data `animals.json` for testing
-- adds netlify config via toml
-### Changed
-- updates all packages
-- updates `.manifest.js` back to `.eleventy.js` - this is the default for 11ty
-- updates `_flightdeck` files to support eleventy 2.0+
-  - updates `workflow.js` to support eleventy dev server
-- workspace settings for VSCode updates dictionary
-- updates `scss`
-- updates `esbuild.js` to use `eleventy.before`
-- collections include pages and blog (posts)
-- more test images
-- layouts updated to use `extends` and `blocks` for better inheritance
-- gitignore update
-- update readme
-
-### Removes
-- Removes `optimizt` in favor of `jampack`
-- Removes parcel2 in favor of `esbuild`
-- Removes eleventy browser sync from `workflow.js`
-
-
-## [0.1.1] -
-This includes the Flightdeck Airframe System, a Minimal CSS framework for semantic markup.
+- Rome is removed from the project - Rome has been sunsetted
+  - Biome is now the default format and linting tool
 
 ### Adds
-- Airframe System was added to start theming
-  - This includes the `scss` structure which was modified to fit the 7-1 pattern
-- Uses Nunjucks `extends` and `blocks` for layouts
-- PrismJS theme for code and pre -
-- Shortcodes and Macros
-  - Shortcodes will be more high-level components - ie: blockquote with citation, card with title, button, photo
-  - Macros will be limited to extending content only... 🤔
-- 11ty SyntaxHighlighting plugin
-
-### Changed
-- total project folder structure
-  - `_includes` sticks to the same naming convention as `scss` regarding components
-- `.flightdeck.config` has been renamed to `.flightdeck.js` - this is optional, if you would like to use `.eleventy.js` just update the npm run command for `start` and `build`
-- 11ty template inheritance is not the same as "vanilla" Nunjucks - so including macros is manual and has to be performed on very page where they are needed.
-  - this is limited to just a single include.
-  - [Ref Issue #613](https://github.com/11ty/eleventy/issues/613)
-- `esbundle.js` renamed to `esBuildAssets.js`
+- Biome is added to the project
 
 ### Deprecated
 Nothing for this release

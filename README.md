@@ -60,25 +60,25 @@ Jérôme Coupé's post [Structuring Eleventy Projects](https://www.webstoemp.com
 - [Nunjucks](https://mozilla.github.io/nunjucks/)
 - [Sass](https://sass-lang.com/)
 - [Jampack](https://jampack.divriots.com/)
-- [Rome](https://rome.tools/)
+- [Biome](https://biomejs.dev/)
 
 <details>
   <summary>see all dependencies</summary>
   <pre>
     ❯ npm list
-flightdeck-for-eleventy@0.2.7
+flightdeck-for-eleventy@0.2.7 ~/flightdeck/for-11ty-esbuild
 ├── @11ty/eleventy-plugin-syntaxhighlight@5.0.0 -> ./node_modules/.pnpm/@11ty+eleventy-plugin-syntaxhighlight@5.0.0/node_modules/@11ty/eleventy-plugin-syntaxhighlight
 ├── @11ty/eleventy@2.0.1 -> ./node_modules/.pnpm/@11ty+eleventy@2.0.1/node_modules/@11ty/eleventy
-├── @divriots/jampack@0.13.0 -> ./node_modules/.pnpm/@divriots+jampack@0.13.0/node_modules/@divriots/jampack
+├── @biomejs/biome@1.0.0 -> ./node_modules/.pnpm/@biomejs+biome@1.0.0/node_modules/@biomejs/biome
+├── @divriots/jampack@0.15.0 -> ./node_modules/.pnpm/@divriots+jampack@0.15.0/node_modules/@divriots/jampack
 ├── browserlist@1.0.1 -> ./node_modules/.pnpm/browserlist@1.0.1/node_modules/browserlist
 ├── cross-env@7.0.3 -> ./node_modules/.pnpm/cross-env@7.0.3/node_modules/cross-env
 ├── eleventy-plugin-embed-everything@1.16.0 -> ./node_modules/.pnpm/eleventy-plugin-embed-everything@1.16.0/node_modules/eleventy-plugin-embed-everything
-├── esbuild-sass-plugin@2.13.0 -> ./node_modules/.pnpm/esbuild-sass-plugin@2.13.0_esbuild@0.19.2/node_modules/esbuild-sass-plugin
+├── esbuild-sass-plugin@2.14.0 -> ./node_modules/.pnpm/esbuild-sass-plugin@2.14.0_esbuild@0.19.2/node_modules/esbuild-sass-plugin
 ├── esbuild@0.19.2 -> ./node_modules/.pnpm/esbuild@0.19.2/node_modules/esbuild
 ├── markdown-it-attrs@4.1.6 -> ./node_modules/.pnpm/markdown-it-attrs@4.1.6_markdown-it@13.0.1/node_modules/markdown-it-attrs
 ├── markdown-it@13.0.1 -> ./node_modules/.pnpm/markdown-it@13.0.1/node_modules/markdown-it
 ├── npm-run-all@4.1.5 -> ./node_modules/.pnpm/npm-run-all@4.1.5/node_modules/npm-run-all
-├── rome@12.1.3 -> ./node_modules/.pnpm/rome@12.1.3/node_modules/rome
 └── sass@1.66.1 -> ./node_modules/.pnpm/sass@1.66.1/node_modules/sass
   </pre>
 </details>
@@ -132,9 +132,10 @@ pnpm install
 flightdeck-for-11ty@0.1.0 flightdeck/for-11ty-with-esbuild
 
 devDependencies:
-@11ty/eleventy 2.0.1                         browserlist 1.0.1                            esbuild 0.19.2                               markdown-it-attrs 4.1.6                      sass 1.66.0
-@11ty/eleventy-plugin-syntaxhighlight 5.0.0  cross-env 7.0.3                              esbuild-sass-plugin 2.12.0                   npm-run-all 4.1.5
-@divriots/jampack 0.13.0                     eleventy-plugin-embed-everything 1.16.0      markdown-it 13.0.1                           rome 12.1.3   </pre>
+@11ty/eleventy 2.0.1                         browserlist 1.0.1                            esbuild-sass-plugin 2.14.0                   sass 1.66.1
+@11ty/eleventy-plugin-syntaxhighlight 5.0.0  cross-env 7.0.3                              markdown-it 13.0.1
+@biomejs/biome 1.0.0                         eleventy-plugin-embed-everything 1.16.0      markdown-it-attrs 4.1.6
+@divriots/jampack 0.15.0                     esbuild 0.19.2                               npm-run-all 4.1.5     </pre>
 </details>
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -165,9 +166,9 @@ Commands available via "pnpm run":
   preview
     npx http-server dist -p 4000
   format
-    rome format .
+    biome format .
   lint
-    rome check .
+    biome check .
   clean
     ./.scrub.sh site
   purge
@@ -177,10 +178,10 @@ Commands available via "pnpm run":
 - `build` command - executes the production build of your site with Eleventy, includes HTML minification, compressed Sass, optimized images, and bundled javascript.
   - for our workflow, Cloudflare handles the DNS while Netlify does the building and hosting - Cloudflare's Auto Minify minifies the HTML, CSS, and JS. You can easily add minification to the build process by adding a plugin to Eleventy.
 - `preview` command - spins up a local server to preview the production build.
-- `format`, `lint` commands - use Rome for JS/TS/JSON formatting and linting.
-  - > **👀 NOTE: Both `format` and `lint` require an INPUT to be passed.** ie: `rome format .` 👈 this will find all JS/TS/JSON format issues for the entire project but will not fix them.
-  - > Any arguments passed to these commands will be passed to Rome. ie: `rome format src/assets/js --write` 👈 this will find all JS format issues and fix them in the `./src/assets/js/` only.
-  - > For more info: `pnpm run lint --help` – [Rome Lint Docs](https://docs.rome.tools/linter/#use-the-linter-via-cli) or `pnpm run format --help` – [Rome Format Docs](https://docs.rome.tools/formatter/#use-the-formatter-with-the-cli)
+- `format`, `lint` commands - use Biome for JS/TS/JSON formatting and linting.
+  - > **👀 NOTE: Both `format` and `lint` require an INPUT to be passed.** ie: `biome format .` 👈 this will find all JS/TS/JSON format issues for the entire project but will not fix them.
+  - > Any arguments passed to these commands will be passed to Biome. ie: `biome format src/assets/js --write` 👈 this will find all JS format issues and fix them in the `./src/assets/js/` only.
+  - > For more info: `pnpm run lint --help` – [Biome Lint Docs](https://biomejs.dev/linter/#use-the-linter-via-cli) or `pnpm run format --help` – [Biome Format Docs](https://biomejs.dev/formatter/#use-the-formatter-with-the-cli)
 - `clean` command - scrubs/removes the `dist/` and `.cache` directories
 - `purge` command - scrubs/removes the `dist/`, `.cache`, `node_modules`, and any lock files from npm, yarn, or pnpm. - A fresh install.
   - **👀 NOTE: Both `clean` and `purge` are executed from a bash script**
@@ -251,7 +252,7 @@ If you're looking to extend or further configure your project with other NPM mod
 - [Nunjucks Docs](https://mozilla.github.io/nunjucks/templating.html)
 - [Sass Docs](https://sass-lang.com/documentation/)
 - [ESBuild Docs](https://esbuild.github.io/plugins/)
-- [Rome Docs](https://docs.rome.tools/)
+- [Biome Docs](https://docs.biomejs.dev/)
 - [NPM Package Docs](https://docs.npmjs.com/using-npm-packages-in-your-projects)
 <p align="right">(<a href="#top">back to top</a>)</p>
 
