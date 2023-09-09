@@ -24,7 +24,7 @@
     "start": "eleventy --serve",
     "build": "run-s clean build:11ty",
     "build:11ty": "cross-env ENV=production eleventy",
-    "preview": "npx http-server dist -p 4000",
+    "preview": "bunx http-server dist -p 4000",
     "format": "biome format",
     "lint": "biome check",
     "clean": "./.scrub.sh site",
