@@ -1,13 +1,11 @@
 {
   "name": "flightdeck-for-eleventy",
   "version": "0.2.7",
-  "description": "An opinionated Jamstack starter project for Eleventy.",
   "author": "Ed Heltzel",
-  "license": "WTFPL",
-  "browserslist": "> 0.5%, last 2 versions, not dead",
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
+    "@biomejs/biome": "^1.1.2",
     "@divriots/jampack": "^0.15.0",
     "browserlist": "^1.0.1",
     "cross-env": "^7.0.3",
@@ -19,6 +17,9 @@
     "npm-run-all": "^4.1.5",
     "sass": "^1.66.1"
   },
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "description": "An opinionated Jamstack starter project for Eleventy.",
+  "license": "WTFPL",
   "scripts": {
     "start": "eleventy --serve",
     "build": "run-s clean build:11ty",
@@ -28,8 +29,5 @@
     "lint": "biome check",
     "clean": "./.scrub.sh site",
     "purge": "./.scrub.sh purge"
-  },
-  "dependencies": {
-    "@biomejs/biome": "^1.1.2"
   }
 }
