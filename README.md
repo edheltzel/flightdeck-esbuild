@@ -62,26 +62,6 @@ Jérôme Coupé's post [Structuring Eleventy Projects](https://www.webstoemp.com
 - [Jampack](https://jampack.divriots.com/)
 - [Biome](https://biomejs.dev/)
 
-<details>
-  <summary>see all dependencies</summary>
-  <pre>
-    ❯ npm list
-flightdeck-for-eleventy@0.2.7 ~/flightdeck/for-11ty-esbuild
-├── @11ty/eleventy-plugin-syntaxhighlight@5.0.0 -> ./node_modules/.pnpm/@11ty+eleventy-plugin-syntaxhighlight@5.0.0/node_modules/@11ty/eleventy-plugin-syntaxhighlight
-├── @11ty/eleventy@2.0.1 -> ./node_modules/.pnpm/@11ty+eleventy@2.0.1/node_modules/@11ty/eleventy
-├── @biomejs/biome@1.0.0 -> ./node_modules/.pnpm/@biomejs+biome@1.0.0/node_modules/@biomejs/biome
-├── @divriots/jampack@0.15.0 -> ./node_modules/.pnpm/@divriots+jampack@0.15.0/node_modules/@divriots/jampack
-├── browserlist@1.0.1 -> ./node_modules/.pnpm/browserlist@1.0.1/node_modules/browserlist
-├── cross-env@7.0.3 -> ./node_modules/.pnpm/cross-env@7.0.3/node_modules/cross-env
-├── eleventy-plugin-embed-everything@1.16.0 -> ./node_modules/.pnpm/eleventy-plugin-embed-everything@1.16.0/node_modules/eleventy-plugin-embed-everything
-├── esbuild-sass-plugin@2.14.0 -> ./node_modules/.pnpm/esbuild-sass-plugin@2.14.0_esbuild@0.19.2/node_modules/esbuild-sass-plugin
-├── esbuild@0.19.2 -> ./node_modules/.pnpm/esbuild@0.19.2/node_modules/esbuild
-├── markdown-it-attrs@4.1.6 -> ./node_modules/.pnpm/markdown-it-attrs@4.1.6_markdown-it@13.0.1/node_modules/markdown-it-attrs
-├── markdown-it@13.0.1 -> ./node_modules/.pnpm/markdown-it@13.0.1/node_modules/markdown-it
-├── npm-run-all@4.1.5 -> ./node_modules/.pnpm/npm-run-all@4.1.5/node_modules/npm-run-all
-└── sass@1.66.1 -> ./node_modules/.pnpm/sass@1.66.1/node_modules/sass
-  </pre>
-</details>
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
@@ -99,18 +79,22 @@ We are assuming that you already have Node with NPM and Git installed on your sy
 
 #### 🤖 Dependencies
 
-`pnpm` is our package manager of choice – we highly recommend you enable Node's [corepack](https://nodejs.org/api/corepack.html), this way all the `pnpm` commands are work out-of-the-box.
+##### Package Managers
 
-> Please be aware that this certainly won't be the most recent version of PNPM and as of this writing, PNPM is at version [7.5.0](https://github.com/pnpm/pnpm/releases).
+Package managers are like dotfiles, everyone has their own preference. We have shifted to using [Bun](https://bun.sh/docs) as our primary package manager. **It’s very fast 🏎️💨**
 
-Also, You can swap `pnpm` in favor of `yarn` or `npm` without any friction.
+But, you can swap `bun` in favor of your preferences 👉 [PNPM](https://pnpm.io/), [Yarn](https://yarnpkg.com/), and [NPM](https://www.npmjs.com/)
+
+We still highly recommend you enable Node's [corepack](https://nodejs.org/api/corepack.html), this way all you have Yarn and PNPM in your toolbox without the need to install them separately.
+
+> Please be aware that this certainly won't be the most recent version of PNPM/Yarn.
 
 - pnpm
 
   ```sh
   corepack enable
 
-  corepack prepare pnpm@7.12.2 --activate
+  corepack prepare pnpm@latest --activate
   ```
 
 ### ⚙️ Installation
@@ -121,21 +105,28 @@ git clone https://github.com/edheltzel/flightdeck-for-11ty.git
 
 ```shell
 cd flightdeck-for-11ty
-pnpm install
+bun install
 ```
 
 <details>
-	<summary>See all NPM packages</summary>
-  <pre>pnpm list
-  Legend: production dependency, optional only, dev only
-
-flightdeck-for-11ty@0.1.0 flightdeck/for-11ty-with-esbuild
-
-devDependencies:
-@11ty/eleventy 2.0.1                         browserlist 1.0.1                            esbuild-sass-plugin 2.14.0                   sass 1.66.1
-@11ty/eleventy-plugin-syntaxhighlight 5.0.0  cross-env 7.0.3                              markdown-it 13.0.1
-@biomejs/biome 1.0.0                         eleventy-plugin-embed-everything 1.16.0      markdown-it-attrs 4.1.6
-@divriots/jampack 0.15.0                     esbuild 0.19.2                               npm-run-all 4.1.5     </pre>
+  <summary>see all dependencies</summary>
+  <pre>
+    ❯ npm list
+flightdeck-for-eleventy@0.2.7 ~/Developer/oss/flightdeck/for-11ty-esbuild
+├── @11ty/eleventy-plugin-syntaxhighlight@5.0.0
+├── @11ty/eleventy@2.0.1
+├── @biomejs/biome@1.0.0
+├── @divriots/jampack@0.15.0
+├── browserlist@1.0.1
+├── cross-env@7.0.3
+├── eleventy-plugin-embed-everything@1.16.0
+├── esbuild-sass-plugin@2.15.0
+├── esbuild@0.19.2
+├── markdown-it-attrs@4.1.6
+├── markdown-it@13.0.1
+├── npm-run-all@4.1.5
+└── sass@1.66.1
+  </pre>
 </details>
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -147,32 +138,38 @@ available, but the `start` command is where all the magic 🪄 happens – it w
 Again, the focus here is to keep Eleventy in control of the entire development and build processes, to keep things simple.
 
 ```shell
-pnpm start
+bun start
 ```
 
 <details>
   <summary>Available Run Commands</summary>
-  <pre>pnpm run
+  <pre>bun run
 
-Lifecycle scripts:
-  start
-    eleventy --serve
+flightdeck-for-eleventy scripts:
 
-Commands available via "pnpm run":
-  build
-    run-s clean build:11ty
-  build:11ty
-    cross-env ENV=production eleventy
-  preview
-    npx http-server dist -p 4000
-  format
-    biome format .
-  lint
-    biome check .
-  clean
-    ./.scrub.sh site
-  purge
-    ./.scrub.sh purge</pre>
+ bun run start
+   eleventy --serve
+
+ bun run build
+   run-s clean build:11ty
+
+ bun run build:11ty
+   cross-env ENV=production eleventy
+
+ bun run preview
+   bunx http-server dist -p 4000
+
+ bun run format
+   biome format
+
+ bun run lint
+   biome check
+
+ bun run clean
+   ./.scrub.sh site
+
+ bun run purge
+   ./.scrub.sh purge</pre>
 </details>
 
 - `build` command - executes the production build of your site with Eleventy, includes HTML minification, compressed Sass, optimized images, and bundled javascript.
@@ -181,9 +178,9 @@ Commands available via "pnpm run":
 - `format`, `lint` commands - use Biome for JS/TS/JSON formatting and linting.
   - > **👀 NOTE: Both `format` and `lint` require an INPUT to be passed.** ie: `biome format .` 👈 this will find all JS/TS/JSON format issues for the entire project but will not fix them.
   - > Any arguments passed to these commands will be passed to Biome. ie: `biome format src/assets/js --write` 👈 this will find all JS format issues and fix them in the `./src/assets/js/` only.
-  - > For more info: `pnpm run lint --help` – [Biome Lint Docs](https://biomejs.dev/linter/#use-the-linter-via-cli) or `pnpm run format --help` – [Biome Format Docs](https://biomejs.dev/formatter/#use-the-formatter-with-the-cli)
+  - > For more info: `bun run lint --help` – [Biome Lint Docs](https://biomejs.dev/linter/#use-the-linter-via-cli) or `bun run format --help` – [Biome Format Docs](https://biomejs.dev/formatter/#use-the-formatter-with-the-cli)
 - `clean` command - scrubs/removes the `dist/` and `.cache` directories
-- `purge` command - scrubs/removes the `dist/`, `.cache`, `node_modules`, and any lock files from npm, yarn, or pnpm. - A fresh install.
+- `purge` command - scrubs/removes the `dist/`, `.cache`, `node_modules`, and any lock files from npm, yarn, pnpm or bun. - 🧼 A fresh install.
   - **👀 NOTE: Both `clean` and `purge` are executed from a bash script**
 
 <p align="right">(<a href="#top">back to top</a>)</p>
