@@ -8,7 +8,6 @@
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
-    "@biomejs/biome": "1.0.0",
     "@divriots/jampack": "^0.15.0",
     "browserlist": "^1.0.1",
     "cross-env": "^7.0.3",
@@ -29,5 +28,8 @@
     "lint": "biome check",
     "clean": "./.scrub.sh site",
     "purge": "./.scrub.sh purge"
+  },
+  "dependencies": {
+    "@biomejs/biome": "^1.1.2"
   }
 }
