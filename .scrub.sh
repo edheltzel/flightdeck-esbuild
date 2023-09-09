@@ -10,10 +10,10 @@ OPTIONS="${YELLOW}site${NC}, or ${YELLOW}purge${NC}"
 MALFUNCTION="👨‍🚀 Huston... We have a problem! Make sure you use ${OPTIONS}"
 FRESH="🧼 Scrubbed ${WHITE}node_modules${NC}, ${WHITE}dist/${NC}, ${WHITE}all caches${NC} & ${GRAY}lock files${NC}, ✨"
 SITE="🧼 Scrubbed ${WHITE}dist/${NC} & ${WHITE}all cache${NC} directories ✨"
-PURGE="${GREEN}🧹 All Clean ✨${NC} ${FRESH}${NC} Run ${YELLOW}npm/yarn/pnpm install${NC} to start fresh 🤩"
+PURGE="${GREEN}🧹 All Clean ✨${NC} ${FRESH}${NC} Run ${YELLOW}npm/yarn/pnpm/bun install${NC} to start fresh 🤩"
 OOPS="🚀💥🔥 OOPS! We need a valid option – Try using ${OPTIONS}"
 DEVFILES=".pnpm-debug.log dist/ _site/"
-NODEFILES="node_modules package-lock.json pnpm-lock.yaml yarn.lock .yarn/ .jampack"
+NODEFILES="package-lock.json pnpm-lock.yaml yarn.lock bun.lockb .yarn/ .jampack/ node_modules/"
 
 ################## DONT EDIT BELOW  👀 ########################
 if [ $# -eq 0 ]
