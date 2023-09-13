@@ -1,32 +1,9 @@
 {
-  "files.exclude": {
-    "**/.sass-cache/": true,
-    "**/_site/": false, // set to true if you do not want to see the build output dir.
-    "**/dist/": false, // set to true if you do not want to see the build output dir.
-    "node_modules/": false
-  },
-  "search.exclude": {
-    "node_modules/": true,
-    "_site/**": true,
-    "dist/**": true,
-    "**/css/*": true,
-    "*.lock": true,
-    "**/.sass-cache/": true,
-    "**/.publish/": true,
-    ".vscode/**": true,
-    "package-lock.json": true
-  },
-  "emmet.includeLanguages": {
-    "*.njk": "html"
-  },
-  "files.associations": {
-    ".flightdeck.config": "javascript"
-  },
   "cSpell.customDictionaries": {
     "custom-dictionary-workspace": {
+      "addWords": true,
       "name": "custom-dictionary-workspace",
       "path": "${workspaceFolder:flightdeck-for-eleventy}/.vscode/cspell-custom-dictionary-workspace.txt",
-      "addWords": true,
       "scope": "workspace"
     }
   },
@@ -41,5 +18,25 @@
     "Laserwave",
     "postbuild",
     "thefold"
-  ]
+  ],
+  "emmet.includeLanguages": {
+    "*.njk": "html"
+  },
+  "files.exclude": {
+    "**/.sass-cache/": true,
+    "**/_site/": false,
+    "**/dist/": false,
+    "node_modules/": false
+  },
+  "search.exclude": {
+    "**/.publish/": true,
+    "**/.sass-cache/": true,
+    "**/css/*": true,
+    "*.lock": true,
+    ".vscode/**": false,
+    "_site/**": true,
+    "dist/**": true,
+    "node_modules/": true,
+    "package-lock.json": true
+  }
 }
