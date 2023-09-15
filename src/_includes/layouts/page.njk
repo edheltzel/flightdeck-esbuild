@@ -4,12 +4,17 @@
   <header>
     {% block pageTitle %}
       {%- set pageTitle %}
-      {% if title %}{{ title }}
-      {% else %}{{ site.title }}
-      {% endif %}{%- endset -%}
+      {% if title %}
+        {{ title }}
+      {% else %}
+        {{ site.title }}
+      {% endif %}
+      {%- endset -%}
       {%- set pageTagline %}
-      {% if tagline %}{{ tagline }}
-      {% endif %}{%- endset -%}
+      {% if tagline %}
+        {{ tagline }}
+      {% endif %}
+      {%- endset -%}
       {% if tagline %}
         <hgroup>
           <h1>{{ pageTitle | safe }}</h1>
@@ -24,12 +29,8 @@
   {% thefold %}
   <hr>
   {% block content %}
-    <p>this is stuff i want to see reload</p>
-    <p>I think Brave Beta has a cache issue <span>but does regular Brave?</span>
-    </p>
-something is going on
 
-{{ content | safe }}
+    {{ content | safe }}
 
   {% endblock %}
 

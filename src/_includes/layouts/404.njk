@@ -4,12 +4,18 @@
   <header>
     {% block pageTitle %}
       {%- set pageTitle %}
-      {% if title %}{{ title }}
-      {% else %}{{ site.title }}
-      {% endif %}{%- endset -%}
+      {% if title %}
+        {{ title }}
+      {% else %}
+        {{ site.title }}
+      {% endif %}
+      {%- endset -%}
+
       {%- set pageTagline %}
-      {% if tagline %}{{ tagline }}
-      {% endif %}{%- endset -%}
+      {% if tagline %}
+        {{ tagline }}
+      {% endif %}
+      {%- endset -%}
 
       {% if tagline %}
         <hgroup>

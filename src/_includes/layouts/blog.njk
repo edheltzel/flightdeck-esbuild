@@ -17,7 +17,8 @@
       <p>
         {% if post.data.description %}
           {{ post.data.description }}
-        {% else %}{{ post.templateContent | excerpt | safe }}
+        {% else %}
+          {{ post.templateContent | excerpt | safe }}
         {% endif %}
       </p>
       <footer>
