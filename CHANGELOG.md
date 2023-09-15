@@ -10,9 +10,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Readme update - covers [Bun](https://www.bun.sh) usage as package manager
 - `purge` script with now remove `bun.lockb`
 - `preview` script uses bunx in place of `npx`
-- lock files are not apart of the initial project.
+- `jampack` updated to `v0.20.2`
 
 ### Removes
+- lock files are not apart of the initial project.
 - pnpm-lock.yaml gone with a fresh install using bun
 
 ## [0.2.7] - 2023-08-24
