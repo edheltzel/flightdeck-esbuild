@@ -3,8 +3,8 @@ const isDev = process.env.ENV === "development";
 const baseUrl = isDev ? "localhost:8080" : "https://google.com/";
 const site = {
   baseUrl,
-  title: "The Flightdeck",
-  description: "Flightdeck prepare for takeoff",
+  title: "Flightdeck",
+  description: "prepare for takeoff",
   authorName: "Ed Heltzel",
   social: [
     {
