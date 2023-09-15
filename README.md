@@ -81,9 +81,11 @@ We are assuming that you already have Node with NPM and Git installed on your sy
 
 ##### Package Managers
 
-Package managers are like dotfiles, everyone has their own preference. We have shifted to using [Bun](https://bun.sh/docs) as our primary package manager. **It’s very fast 🏎️💨**
+**Package managers are like dotfiles, everyone has their own preference.**
 
-But, you can swap `bun` in favor of your preferences 👉 [PNPM](https://pnpm.io/), [Yarn](https://yarnpkg.com/), and [NPM](https://www.npmjs.com/)
+We have shifted to using [Bun](https://bun.sh/docs) as our primary package manager. **It’s very fast 🏎️💨**
+
+But, you can swap `bun` in favor of your preferences 👉 [PNPM](https://pnpm.io/), [Yarn](https://yarnpkg.com/), and [NPM](https://www.npmjs.com/). Use whatever you want 👍
 
 We still highly recommend you enable Node's [corepack](https://nodejs.org/api/corepack.html), this way all you have Yarn and PNPM in your toolbox without the need to install them separately.
 
