@@ -1,11 +1,10 @@
 {
   "name": "flightdeck-for-eleventy",
-  "version": "0.2.7",
+  "version": "0.2.9",
   "author": "Ed Heltzel",
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
-    "@biomejs/biome": "^1.2.0",
     "@divriots/jampack": "^0.20.2",
     "browserlist": "^1.0.1",
     "cross-env": "^7.0.3",
@@ -24,9 +23,7 @@
     "start": "eleventy --serve",
     "build": "run-s clean build:11ty",
     "build:11ty": "cross-env ENV=production eleventy",
-    "preview": "bunx http-server dist -p 4000",
-    "format": "biome format",
-    "lint": "biome check",
+    "preview": "npx http-server dist -p 4000",
     "clean": "./.scrub.sh site",
     "purge": "./.scrub.sh purge"
   }
