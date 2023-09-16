@@ -11,21 +11,15 @@ const flightdeck = require("../../package.json");
 
 const isProd = process.env.ENV === "production";
 const esbuild = require("esbuild");
-const { sassPlugin } = require("esbuild-sass-plugin");
 module.exports = (config) => {
   config.on("eleventy.after", async () => {
     const startTime = Date.now();
     await esbuild.build({
       bundle: true,
-      entryPoints: {
-        "assets/js/app": "./src/assets/js/app.js",
-        "assets/styles/style": "./src/assets/styles/style.scss",
-      },
-      loader: { ".scss": "css" },
+      entryPoints: { "assets/js/app": "./src/assets/js/app.js", },
       minify: isProd,
       outdir: manifest.output,
       sourcemap: !isProd,
-      plugins: [sassPlugin()],
     });
     const endTime = (Date.now() - startTime) / 1000;
     console.log(
