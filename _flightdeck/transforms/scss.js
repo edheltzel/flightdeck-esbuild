@@ -12,7 +12,7 @@ module.exports = (config) => {
   config.addPlugin(scss, [
     {
       sass: {
-        style: "compressed",
+        style: "expanded",
         sourceMap: true
       },
       postcss: postcss([autoprefixer])
