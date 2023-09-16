@@ -5,15 +5,17 @@
  * @see https://github.com/kentaroi/eleventy-sass/blob/main/docs/sass-options.md
  * @property loadPaths: ["node_modules/bootstrap/scss"],
  */
-const isProd = process.env.ENV === "production";
-const scssPlugin = require("eleventy-sass");
+const scss = require("eleventy-sass");
+const postcss = require("postcss");
+const autoprefixer = require("autoprefixer");
 module.exports = (config) => {
-  config.addPlugin(scssPlugin, [
+  config.addPlugin(scss, [
     {
       sass: {
-        style: "expanded",
+        style: "compressed",
         sourceMap: true
       },
+      postcss: postcss([autoprefixer])
     },
     {
       sass: {
