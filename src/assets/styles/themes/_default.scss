@@ -46,3 +46,7 @@ progress,
   background-clip: text;
   -webkit-background-clip: text;
 }
+
+.logo {
+  background: image-set(url(../images/logo.png) 2x, url(../images/logo.png) 1x);
+}
