@@ -83,11 +83,15 @@ We are assuming that you already have Node with NPM and Git installed on your sy
 
 **Package managers are like dotfiles, everyone has their own preference.**
 
-We have shifted to using [Bun](https://bun.sh/docs) as our primary package manager. **It’s very fast 🏎️💨**
+We have shifted to using [PNPM](https://pnpm.io/) as our primary package manager, but we are considering Bun as a replacement, that is why you will see a `bun.lockb` file in the project.
 
-But, you can swap `bun` in favor of your preferences 👉 [PNPM](https://pnpm.io/), [Yarn](https://yarnpkg.com/), and [NPM](https://www.npmjs.com/). Use whatever you want 👍
+But, you can swap `pnpm` in favor of your preferences 👉 [NPM](https://www.npmjs.com/) , [Yarn](https://yarnpkg.com/), and and [Bun](https://bun.sh/docs). Use whatever you want 👍
 
-We still highly recommend you enable Node's [corepack](https://nodejs.org/api/corepack.html), this way all you have Yarn and PNPM in your toolbox without the need to install them separately.
+If you do choose to use Bun, you might run into some issues with the `build` command. This is because of the `sharp` dependency that is used by `jampack`. 👀 see [issue 35](https://github.com/edheltzel/flightdeck-for-11ty/issues/35).
+
+We recommend using PNPM for building your project `pnpm run build`.
+
+It's highly recommended that you enable Node's [corepack](https://nodejs.org/api/corepack.html), this Yarn and PNPM are included in your toolbox without the need to install them separately.
 
 > Please be aware that this certainly won't be the most recent version of PNPM/Yarn.
 
@@ -107,13 +111,13 @@ git clone https://github.com/edheltzel/flightdeck-for-11ty.git
 
 ```shell
 cd flightdeck-for-11ty
-bun install
+pnpm install
 ```
 
 <details>
   <summary>see all dependencies</summary>
   <pre>
-    ❯ npm list
+    ❯ pnpm list
 flightdeck-for-eleventy@0.2.7 ~/Developer/oss/flightdeck/for-11ty-esbuild
 ├── @11ty/eleventy-plugin-syntaxhighlight@5.0.0
 ├── @11ty/eleventy@2.0.1
@@ -140,47 +144,31 @@ available, but the `start` command is where all the magic 🪄 happens – it w
 Again, the focus here is to keep Eleventy in control of the entire development and build processes, to keep things simple.
 
 ```shell
-bun start
+pnpm start
 ```
 
 <details>
   <summary>Available Run Commands</summary>
-  <pre>bun run
+  <pre>Lifecycle scripts:
+  start
+    eleventy --serve
 
-flightdeck-for-eleventy scripts:
-
- bun run start
-   eleventy --serve
-
- bun run build
-   run-s clean build:11ty
-
- bun run build:11ty
-   cross-env ENV=production eleventy
-
- bun run preview
-   bunx http-server dist -p 4000
-
- bun run format
-   biome format
-
- bun run lint
-   biome check
-
- bun run clean
-   ./.scrub.sh site
-
- bun run purge
-   ./.scrub.sh purge</pre>
+Commands available via "pnpm run":
+  build
+    run-s clean build:11ty
+  build:11ty
+    cross-env ENV=production eleventy
+  preview
+    npx http-server dist -p 4000
+  clean
+    ./.scrub.sh site
+  purge
+    ./.scrub.sh purge</pre>
 </details>
 
 - `build` command - executes the production build of your site with Eleventy, includes HTML minification, compressed Sass, optimized images, and bundled javascript.
   - for our workflow, Cloudflare handles the DNS while Netlify does the building and hosting - Cloudflare's Auto Minify minifies the HTML, CSS, and JS. You can easily add minification to the build process by adding a plugin to Eleventy.
 - `preview` command - spins up a local server to preview the production build.
-- `format`, `lint` commands - use Biome for JS/TS/JSON formatting and linting.
-  - > **👀 NOTE: Both `format` and `lint` require an INPUT to be passed.** ie: `biome format .` 👈 this will find all JS/TS/JSON format issues for the entire project but will not fix them.
-  - > Any arguments passed to these commands will be passed to Biome. ie: `biome format src/assets/js --write` 👈 this will find all JS format issues and fix them in the `./src/assets/js/` only.
-  - > For more info: `bun run lint --help` – [Biome Lint Docs](https://biomejs.dev/linter/#use-the-linter-via-cli) or `bun run format --help` – [Biome Format Docs](https://biomejs.dev/formatter/#use-the-formatter-with-the-cli)
 - `clean` command - scrubs/removes the `dist/` and `.cache` directories
 - `purge` command - scrubs/removes the `dist/`, `.cache`, `node_modules`, and any lock files from npm, yarn, pnpm or bun. - 🧼 A fresh install.
   - **👀 NOTE: Both `clean` and `purge` are executed from a bash script**

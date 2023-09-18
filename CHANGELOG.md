@@ -4,6 +4,24 @@ All notable changes to Flightdeck for 11ty will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.0] - 2023-09-16
+
+### Fixed
+- build command breaks when using bun - migrate back to pnpm
+  - this has something to do with jampack and the sharp dependency
+- background images work inside of scss files - this was a bug with esbuild-sass-plugin not correctly using the `loader` from esbuild.
+
+### Removes
+- Removes esbuild-sass-plugin
+- Removes esbuild console output
+- removes theme switcher
+- removes `bun.lock` from the project
+
+### Adds
+- adds `eleventy-sass` see `src/__flightdeck/transforms/scss.js` for configuration
+- postcss and autoprefixer are added back into the project via `eleventy-sass`
+
+
 ## [0.2.9] - 2023-09-15
 
 ### Changed
