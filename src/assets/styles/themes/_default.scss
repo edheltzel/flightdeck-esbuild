@@ -27,6 +27,16 @@
 // Enabled if forced with data-theme="dark"
 [data-theme="dark"] {
   @include dark;
+
+  a#mode {
+    .mode-moon {
+      display: none;
+    }
+
+    .mode-sunny {
+      display: block;
+    }
+  }
 }
 
 // Accent-color
