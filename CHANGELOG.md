@@ -9,7 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ### Fixed
 - build command breaks when using bun - migrate back to pnpm
   - this is due to jampack and the sharp dependency
-  - its a known issue with [Bun Issue #4549(https://github.com/oven-sh/bun/issues/4549)
+  - its a known issue with [Bun Issue #4549](https://github.com/oven-sh/bun/issues/4549)
 - background images work inside of scss files - this was a bug with esbuild-sass-plugin not correctly using the `loader` from esbuild.
 
 ### Removes
