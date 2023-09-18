@@ -11,6 +11,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
   - this is due to jampack and the sharp dependency
   - its a known issue with [Bun Issue #4549](https://github.com/oven-sh/bun/issues/4549)
 - background images work inside of scss files - this was a bug with esbuild-sass-plugin not correctly using the `loader` from esbuild.
+- resolved [issue #37](https://github.com/edheltzel/flightdeck-for-11ty/issues/37#issue-1900828922)
 
 ### Removes
 - Removes esbuild-sass-plugin
