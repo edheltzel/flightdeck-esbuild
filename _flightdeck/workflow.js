@@ -18,7 +18,7 @@ module.exports = (config) => {
   /* --- Passthrough Copy --- */
   config.addPassthroughCopy("./src/assets/fonts");
   config.addPassthroughCopy("./src/assets/images");
-  config.addPassthroughCopy({ "./src/_static": "./" }); // root level files ie: _redirects, robots.txt, etc
+  config.addPassthroughCopy({ "./src/_static": "./" }); // root level files ie: _redirects, robots.txt, favicon.io,etc
   // config.addPassthroughCopy({ "./node_modules/alpinejs/dist/cdn.min.js": "assets/js/alpine.js" });
 
   /* --- Layout Aliases --- */
