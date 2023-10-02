@@ -18,6 +18,9 @@
     "postcss": "^8.4.29",
     "sass": "^1.67.0"
   },
+  "trustedDependencies": [
+    "sharp"
+  ],
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "description": "An opinionated Jamstack starter project for Eleventy.",
   "license": "WTFPL",
