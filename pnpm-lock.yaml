@@ -12,28 +12,28 @@ devDependencies:
     specifier: ^5.0.0
     version: 5.0.0
   '@divriots/jampack':
-    specifier: ^0.20.2
-    version: 0.20.2(react-dom@16.14.0)(react@16.14.0)
+    specifier: ^0.21.0
+    version: 0.21.0(react-dom@16.14.0)(react@16.14.0)
   autoprefixer:
-    specifier: ^10.4.15
+    specifier: ^10.4.16
     version: 10.4.16(postcss@8.4.31)
   browserslist:
-    specifier: ^4.21.10
+    specifier: ^4.22.1
     version: 4.22.1
   cross-env:
     specifier: ^7.0.3
     version: 7.0.3
   eleventy-plugin-embed-everything:
-    specifier: ^1.16.0
+    specifier: ^1.17.0
     version: 1.17.0
   eleventy-sass:
     specifier: ^2.2.3
     version: 2.2.3(@11ty/eleventy@2.0.1)
   esbuild:
-    specifier: ^0.19.3
+    specifier: ^0.19.4
     version: 0.19.4
   markdown-it:
-    specifier: ^13.0.1
+    specifier: ^13.0.2
     version: 13.0.2
   markdown-it-attrs:
     specifier: ^4.1.6
@@ -42,10 +42,10 @@ devDependencies:
     specifier: ^4.1.5
     version: 4.1.5
   postcss:
-    specifier: ^8.4.29
+    specifier: ^8.4.31
     version: 8.4.31
   sass:
-    specifier: ^1.67.0
+    specifier: ^1.68.0
     version: 1.68.0
 
 packages:
@@ -196,12 +196,12 @@ packages:
       parse5: 7.1.2
       parse5-htmlparser2-tree-adapter: 7.0.0
       parse5-parser-stream: 7.1.2
-      undici: 5.25.3
+      undici: 5.25.4
       whatwg-mimetype: 3.0.0
     dev: true
 
-  /@divriots/jampack@0.20.2(react-dom@16.14.0)(react@16.14.0):
-    resolution: {integrity: sha512-6ovo+NQ7W+jeESbedMkquHJbNYcnTM9qS+kjLxUdeM+Qwcaz99UlXH0qoBCIng3Kb6ruVOGhM6/J2Ak+gBO/Ow==}
+  /@divriots/jampack@0.21.0(react-dom@16.14.0)(react@16.14.0):
+    resolution: {integrity: sha512-QPcNWaOgesUx1JhqrRMBSdPb0FR0hBv20QrYOxz6AxLfySVxnKiVleKZSNM7+bTTbsX9mF1wh+5kkcxS84SToQ==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:
@@ -225,7 +225,7 @@ packages:
       sharp: 0.32.6
       svgo: 3.0.2
       table: 6.8.1
-      undici: 5.25.3
+      undici: 5.25.4
     transitivePeerDependencies:
       - '@swc/helpers'
       - react
@@ -813,7 +813,7 @@ packages:
       postcss: ^8.1.0
     dependencies:
       browserslist: 4.22.1
-      caniuse-lite: 1.0.30001542
+      caniuse-lite: 1.0.30001543
       fraction.js: 4.3.6
       normalize-range: 0.1.2
       picocolors: 1.0.0
@@ -914,8 +914,8 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001542
-      electron-to-chromium: 1.4.538
+      caniuse-lite: 1.0.30001543
+      electron-to-chromium: 1.4.540
       node-releases: 2.0.13
       update-browserslist-db: 1.0.13(browserslist@4.22.1)
     dev: true
@@ -952,8 +952,8 @@ packages:
       tslib: 2.6.2
     dev: true
 
-  /caniuse-lite@1.0.30001542:
-    resolution: {integrity: sha512-UrtAXVcj1mvPBFQ4sKd38daP8dEcXXr5sQe6QNNinaPd0iA/cxg9/l3VrSdL73jgw5sKyuQ6jNgiKO12W3SsVA==}
+  /caniuse-lite@1.0.30001543:
+    resolution: {integrity: sha512-qxdO8KPWPQ+Zk6bvNpPeQIOH47qZSYdFZd6dXQzb2KzhnSXju4Kd7H1PkSJx6NICSMgo/IhRZRhhfPTHYpJUCA==}
     dev: true
 
   /chalk@2.4.2:
@@ -1341,8 +1341,8 @@ packages:
       jake: 10.8.7
     dev: true
 
-  /electron-to-chromium@1.4.538:
-    resolution: {integrity: sha512-1a2m63NEookb1beNFTGDihgF3CKL7ksZ7PSA0VloON5DpTEhnOVgaDes8xkrDhkXRxlcN8JymQDGnv+Nn+uvhg==}
+  /electron-to-chromium@1.4.540:
+    resolution: {integrity: sha512-aoCqgU6r9+o9/S7wkcSbmPRFi7OWZWiXS9rtjEd+Ouyu/Xyw5RSq2XN8s5Qp8IaFOLiRrhQCphCIjAxgG3eCAg==}
     dev: true
 
   /eleventy-plugin-embed-everything@1.17.0:
@@ -1501,7 +1501,7 @@ packages:
       get-symbol-description: 1.0.0
       globalthis: 1.0.3
       gopd: 1.0.1
-      has: 1.0.3
+      has: 1.0.4
       has-property-descriptors: 1.0.0
       has-proto: 1.0.1
       has-symbols: 1.0.3
@@ -1536,7 +1536,7 @@ packages:
     engines: {node: '>= 0.4'}
     dependencies:
       get-intrinsic: 1.2.1
-      has: 1.0.3
+      has: 1.0.4
       has-tostringtag: 1.0.0
     dev: true
 
@@ -1748,7 +1748,7 @@ packages:
     resolution: {integrity: sha512-2DcsyfABl+gVHEfCOaTrWgyt+tb6MSEGmKq+kI5HwLbIYgjgmMcV8KQ41uaKz1xxUcn9tJtgFbQUEVcEbd0FYw==}
     dependencies:
       function-bind: 1.1.1
-      has: 1.0.3
+      has: 1.0.4
       has-proto: 1.0.1
       has-symbols: 1.0.3
     dev: true
@@ -1875,11 +1875,9 @@ packages:
       has-symbols: 1.0.3
     dev: true
 
-  /has@1.0.3:
-    resolution: {integrity: sha512-f2dvO0VU6Oej7RkWJGrehjbzMAjFp5/VKPp5tTpWIV4JHHZK1/BxbFRtf/siA2SWTe09caDmVtYYzWEIbBS4zw==}
+  /has@1.0.4:
+    resolution: {integrity: sha512-qdSAmqLF6209RFj4VVItywPMbm3vWylknmB3nvNiUIs72xAimcM8nVYxYr7ncvZq5qzk9MKIZR8ijqD/1QuYjQ==}
     engines: {node: '>= 0.4.0'}
-    dependencies:
-      function-bind: 1.1.1
     dev: true
 
   /hasha@5.2.2:
@@ -1905,7 +1903,7 @@ packages:
       entities: 4.5.0
       param-case: 3.0.4
       relateurl: 0.2.7
-      terser: 5.20.0
+      terser: 5.21.0
     dev: true
 
   /htmlparser2@7.2.0:
@@ -1980,7 +1978,7 @@ packages:
     engines: {node: '>= 0.4'}
     dependencies:
       get-intrinsic: 1.2.1
-      has: 1.0.3
+      has: 1.0.4
       side-channel: 1.0.4
     dev: true
 
@@ -2040,7 +2038,7 @@ packages:
   /is-core-module@2.13.0:
     resolution: {integrity: sha512-Z7dk6Qo8pOCp3l4tsX2C5ZVas4V+UxwQodwZhLopL91TX8UyyHEXafPcyoeeWuLrwzHcr3igO78wNLwHJHsMCQ==}
     dependencies:
-      has: 1.0.3
+      has: 1.0.4
     dev: true
 
   /is-date-object@1.0.5:
@@ -3664,8 +3662,8 @@ packages:
       streamx: 2.15.1
     dev: true
 
-  /terser@5.20.0:
-    resolution: {integrity: sha512-e56ETryaQDyebBwJIWYB2TT6f2EZ0fL0sW/JRXNMN26zZdKi2u/E/5my5lG6jNxym6qsrVXfFRmOdV42zlAgLQ==}
+  /terser@5.21.0:
+    resolution: {integrity: sha512-WtnFKrxu9kaoXuiZFSGrcAvvBqAdmKx0SFNmVNYdJamMu9yyN3I/QF0FbH4QcqJQ+y1CJnzxGIKH0cSj+FGYRw==}
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
@@ -3782,8 +3780,8 @@ packages:
       which-boxed-primitive: 1.0.2
     dev: true
 
-  /undici@5.25.3:
-    resolution: {integrity: sha512-7lmhlz3K1+IKB6IUjkdzV2l0jKY8/0KguEMdEpzzXCug5pEGIp3DxUg0DEN65DrVoxHiRKpPORC/qzX+UglSkQ==}
+  /undici@5.25.4:
+    resolution: {integrity: sha512-450yJxT29qKMf3aoudzFpIciqpx6Pji3hEWaXqXmanbXF58LTAGCKxcJjxMXWu3iG+Mudgo3ZUfDB6YDFd/dAw==}
     engines: {node: '>=14.0'}
     dependencies:
       '@fastify/busboy': 2.0.0
