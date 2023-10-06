@@ -121,7 +121,7 @@ pnpm install
   <summary>see all dependencies</summary>
   <pre>
     ❯ pnpm list
-flightdeck-for-eleventy@0.3.3 ~/Developer/oss/flightdeck/for-11ty-esbuild
+flightdeck-for-eleventy@0.3.4 ~/Developer/oss/flightdeck/for-11ty-esbuild
 devDependencies:
 @11ty/eleventy 2.0.1                         browserslist 4.22.1                          esbuild 0.19.4                               postcss 8.4.31
 @11ty/eleventy-plugin-syntaxhighlight 5.0.0  cross-env 7.0.3                              markdown-it 13.0.2                           sass 1.68.0
