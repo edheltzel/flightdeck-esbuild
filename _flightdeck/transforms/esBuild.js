@@ -5,7 +5,6 @@
  * @link https://esbuild.github.io/api/#build-api
  * @link https://github.com/glromeo/esbuild-sass-plugin
  */
-const manifest = require("../manifest");
 const isProd = process.env.ENV === "production";
 const esbuild = require("esbuild");
 
@@ -13,9 +12,9 @@ module.exports = (config) => {
   config.on("eleventy.after", async () => {
     await esbuild.build({
       bundle: true,
-      entryPoints: { "assets/js/app": "./src/assets/js/app.js", },
+      entryPoints: { "assets/js/app": "./src/assets/js/app.js" },
       minify: isProd,
-      outdir: manifest.output,
+      outdir: "dist",
       sourcemap: !isProd,
     });
   });
