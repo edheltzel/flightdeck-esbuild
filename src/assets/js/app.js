@@ -1,33 +1,9 @@
-(() => {
-  // theme swap
-  const html = document.documentElement;
-  // Initialize theme
-  const initTheme = (theme) => {
-    if (theme === "dark") {
-      html.setAttribute("data-theme", "dark");
-    } else {
-      html.setAttribute("data-theme", "light");
-    }
-  };
+import { initTheme } from "./modules/vgsThemeSwitcher.js";
+import { VGSCursor } from "./modules/vgsCursor.js";
 
-  const theme = localStorage.getItem("theme");
-  initTheme(theme);
+initTheme("light");
+VGSCursor();
 
-  const eclipse = document.getElementById("mode");
-
-  const toggleTheme = (state) => {
-    if (state === "dark") {
-      localStorage.setItem("theme", "light");
-      html.setAttribute("data-theme", "light");
-    } else if (state === "light") {
-      localStorage.setItem("theme", "dark");
-      html.setAttribute("data-theme", "dark");
-    } else {
-      initTheme(state);
-    }
-  };
-
-  eclipse.addEventListener("click", () => {
-    toggleTheme(localStorage.getItem("theme"));
-  });
-})();
+console.log(initTheme);
+// const test = "test";
+// console.log(`That's one small step for man, and one giant leap for mankind with a ${test}`);

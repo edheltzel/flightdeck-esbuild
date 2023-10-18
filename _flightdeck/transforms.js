@@ -1,6 +1,7 @@
 /**
  * Transforms
  * @param {Object} config - eleventy config object
+ * @description jamPack will increase build time dramatically.
  *
  */
 const isProd = process.env.ENV === "production";

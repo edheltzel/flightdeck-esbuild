@@ -4,6 +4,26 @@ All notable changes to Flightdeck for 11ty will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.4] - 2023-10-06
+### Chore
+- 🧹 Package updates:
+  - jampack v0.21.1
+  - sass v1.69.0
+
+## [0.3.3] - 2023-10-03
+
+### Removes
+- flightdeck manifest file removed.
+
+### Chore
+- chore: jampack upgrade - includes support for adding custom cache directory
+
+
+## [0.3.2] - 2023-10-02
+Bun officially works with Flightdeck for 11ty 🎉
+### Fixed
+- [issue 35](https://github.com/edheltzel/flightdeck-for-11ty/issues/35) thanks to [ottodevs](https://github.com/edheltzel/flightdeck-for-11ty/issues/35#issuecomment-1741819809) workaround.
+
 ## [0.3.1] - 2023-09-20
 ### Adds
 - adds `.src/assets/_statics` for root level files: ie: `robots.txt`, `favicon.ico`, `humans.txt`, etc.

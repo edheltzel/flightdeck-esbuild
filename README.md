@@ -87,7 +87,10 @@ We have shifted to using [PNPM](https://pnpm.io/) as our primary package manager
 
 But, you can swap `pnpm` in favor of your preferences 👉 [NPM](https://www.npmjs.com/) , [Yarn](https://yarnpkg.com/), and and [Bun](https://bun.sh/docs). Use whatever you want 👍
 
-If you do choose to use Bun, you might run into some issues with the `build` command. This is because of the `sharp` dependency that is used by `jampack`. 👀 see [issue 35](https://github.com/edheltzel/flightdeck-for-11ty/issues/35).
+~~If you do choose to use Bun, you might run into some issues with the `build` command. This is because of the `sharp` dependency that is used by `jampack`. 👀 see [issue 35](https://github.com/edheltzel/flightdeck-for-11ty/issues/35).~~
+
+>**Thanks to [ottodevs](https://github.com/edheltzel/flightdeck-for-11ty/issues/35#issuecomment-1741819809) - we have a workaround for this issue with Bun.**
+
 
 We recommend using PNPM for building your project `pnpm run build`.
 
@@ -118,20 +121,12 @@ pnpm install
   <summary>see all dependencies</summary>
   <pre>
     ❯ pnpm list
-flightdeck-for-eleventy@0.2.7 ~/Developer/oss/flightdeck/for-11ty-esbuild
-├── @11ty/eleventy-plugin-syntaxhighlight@5.0.0
-├── @11ty/eleventy@2.0.1
-├── @biomejs/biome@1.0.0
-├── @divriots/jampack@0.15.0
-├── browserlist@1.0.1
-├── cross-env@7.0.3
-├── eleventy-plugin-embed-everything@1.16.0
-├── esbuild-sass-plugin@2.15.0
-├── esbuild@0.19.2
-├── markdown-it-attrs@4.1.6
-├── markdown-it@13.0.1
-├── npm-run-all@4.1.5
-└── sass@1.66.1
+flightdeck-for-eleventy@0.3.4 ~/Developer/oss/flightdeck/for-11ty-esbuild
+devDependencies:
+@11ty/eleventy 2.0.1                         browserslist 4.22.1                          esbuild 0.19.4                               postcss 8.4.31
+@11ty/eleventy-plugin-syntaxhighlight 5.0.0  cross-env 7.0.3                              markdown-it 13.0.2                           sass 1.68.0
+@divriots/jampack 0.21.0                     eleventy-plugin-embed-everything 1.17.0      markdown-it-attrs 4.1.6
+autoprefixer 10.4.16                         eleventy-sass 2.2.3                          npm-run-all 4.1.5
   </pre>
 </details>
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -167,7 +162,7 @@ Commands available via "pnpm run":
 </details>
 
 - `build` command - executes the production build of your site with Eleventy, includes HTML minification, compressed Sass, optimized images, and bundled javascript.
-  - for our workflow, Cloudflare handles the DNS while Netlify does the building and hosting - Cloudflare's Auto Minify minifies the HTML, CSS, and JS. You can easily add minification to the build process by adding a plugin to Eleventy.
+  - for our workflow, Cloudflare handles the DNS while Cloudflare Pages does the building and hosting - Cloudflare's Auto Minify minifies the HTML, CSS, and JS. You can easily add minification to the build process by adding a plugin to Eleventy.
 - `preview` command - spins up a local server to preview the production build.
 - `clean` command - scrubs/removes the `dist/` and `.cache` directories
 - `purge` command - scrubs/removes the `dist/`, `.cache`, `node_modules`, and any lock files from npm, yarn, pnpm or bun. - 🧼 A fresh install.
@@ -177,7 +172,7 @@ Commands available via "pnpm run":
 
 ### ‍🚀 Deployments
 
-Deployments for this project are completely up to you and your needs, but we do provide a `netlify.toml` file that will work out-of-the-box with Netlify.
+Deployments for this project are completely up to you and your needs, we are fans of Cloudflare Pages but we do provide a `netlify.toml` file that will work out-of-the-box with Netlify. Some other popular options include GitHub Pages, Vercel and Render. **Your call on what you use.**
 
 ##### Note - Environment Variables
 

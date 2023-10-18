@@ -17,7 +17,8 @@
     "kleur",
     "Laserwave",
     "postbuild",
-    "thefold"
+    "thefold",
+    "vgscursor"
   ],
   "emmet.includeLanguages": {
     "*.njk": "html"
