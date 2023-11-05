@@ -12,6 +12,7 @@ trim_trailing_whitespace = true
 
 [*.{md,markdown}]
 trim_trailing_whitespace = false
+indent_size = 4
 
 [*.{njk,nunjucks,liquid,html}]
 indent_style = space
