@@ -5,6 +5,7 @@
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
+    "@biomejs/biome": "1.4.0",
     "@divriots/jampack": "^0.21.1",
     "autoprefixer": "^10.4.16",
     "browserslist": "^4.22.1",
@@ -31,8 +32,5 @@
     "preview": "npx http-server dist -p 4000",
     "clean": "./.scrub.sh site",
     "purge": "./.scrub.sh purge"
-  },
-  "dependencies": {
-    "biome": "latest"
   }
 }
