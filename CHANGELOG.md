@@ -4,6 +4,23 @@ All notable changes to Flightdeck for 11ty will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.8] - 2023-12-01
+
+### Chore
+- 🧹 Package updates:
+  - biome v1.4.1
+
+## [0.3.7] - 2023-11-30
+
+### Chore
+- 🧹 Package updates:
+  - eleventy-sass v2.2.4
+  - esbuild v0.19.8
+  - biome
+
+### Adds
+- adds biome to the project as dev dependency
+
 ## [0.3.6] - 2023-11-05
 
 ### Chore
