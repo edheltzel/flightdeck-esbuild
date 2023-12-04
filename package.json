@@ -1,6 +1,6 @@
 {
   "name": "flightdeck-for-eleventy",
-  "version": "0.3.8",
+  "version": "0.3.9",
   "author": "Ed Heltzel",
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
