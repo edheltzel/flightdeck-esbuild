@@ -155,6 +155,12 @@ Commands available via "pnpm run":
     cross-env ENV=production eleventy
   preview
     npx http-server dist -p 4000
+  check
+   biome check
+  format
+   biome format
+  lint
+    biome lint
   clean
     ./.scrub.sh site
   purge
@@ -164,6 +170,9 @@ Commands available via "pnpm run":
 - `build` command - executes the production build of your site with Eleventy, includes HTML minification, compressed Sass, optimized images, and bundled javascript.
   - for our workflow, Cloudflare handles the DNS while Cloudflare Pages does the building and hosting - Cloudflare's Auto Minify minifies the HTML, CSS, and JS. You can easily add minification to the build process by adding a plugin to Eleventy.
 - `preview` command - spins up a local server to preview the production build.
+- `check` command - runs biome lint and format at the same time JS/TS, see `biome.json`.
+- `format` command - uses biome to format JS/TS, see `biome.json`.
+- `lint` command - uses biome to lint JS/TS, see `biome.json`.
 - `clean` command - scrubs/removes the `dist/` and `.cache` directories
 - `purge` command - scrubs/removes the `dist/`, `.cache`, `node_modules`, and any lock files from npm, yarn, pnpm or bun. - 🧼 A fresh install.
   - **👀 NOTE: Both `clean` and `purge` are executed from a bash script**
@@ -236,7 +245,9 @@ If you're looking to extend or further configure your project with other NPM mod
 - [ESBuild Docs](https://esbuild.github.io/plugins/)
 - [Biome Docs](https://docs.biomejs.dev/)
 - [NPM Package Docs](https://docs.npmjs.com/using-npm-packages-in-your-projects)
+
 <p align="right">(<a href="#top">back to top</a>)</p>
+
 
 <!-- ROADMAP -->
 
