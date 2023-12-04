@@ -6,6 +6,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [0.3.8] - 2023-12-01
 
+### Adds
+- Adds NPM Scripts for Biome:
+  - `npm run check` - runs `biome check` which does both `format` and `lint`
+  - `npm run format` - runs `biome format`
+  - `npm run lint` - runs `biome lint`
+see [Biome docs](https://biomejs.dev/reference/cli/#_top) to see the options for each command.
+ref: `biome.json`
+
+## [0.3.8] - 2023-12-01
+
 ### Chore
 - 🧹 Package updates:
   - biome v1.4.1
