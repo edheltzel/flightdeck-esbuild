@@ -13,16 +13,16 @@ module.exports = (config) => {
     {
       sass: {
         style: "expanded",
-        sourceMap: true
+        sourceMap: true,
       },
-      postcss: postcss([autoprefixer])
+      postcss: postcss([autoprefixer]),
     },
     {
       sass: {
         style: "compressed",
-        sourceMap: false
+        sourceMap: false,
       },
-      when: [{ ENV: "production" }]
-    }
+      when: [{ ENV: "production" }],
+    },
   ]);
 };
