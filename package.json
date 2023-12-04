@@ -22,7 +22,7 @@
   "trustedDependencies": [
     "sharp"
   ],
-  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "browserslist": "defaults, not IE 11, maintained node versions",
   "description": "An opinionated Jamstack starter project for Eleventy.",
   "license": "WTFPL",
   "scripts": {
