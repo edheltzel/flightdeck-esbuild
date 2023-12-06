@@ -7,6 +7,7 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
     "@biomejs/biome": "1.4.1",
     "@divriots/jampack": "^0.22.1",
+    "alpinejs": "^3.13.3",
     "autoprefixer": "^10.4.16",
     "browserslist": "^4.22.1",
     "cross-env": "^7.0.3",
