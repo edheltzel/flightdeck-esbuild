@@ -1,7 +1,19 @@
-import { initTheme } from "./modules/vgsThemeSwitcher.js";
+import Alpine from "alpinejs";
 import { VGSCursor } from "./modules/vgsCursor.js";
 
-initTheme("light");
-VGSCursor();
+Alpine.store("themeSwitcher", {
+  dark: false,
+  toggle() {
+    const html = document.documentElement;
+    this.dark = !this.dark;
+    if (this.dark) {
+      html.setAttribute("data-theme", "dark");
+    } else {
+      html.setAttribute("data-theme", "light");
+    }
+  },
+});
+window.Alpine = Alpine;
+Alpine.start();
 
-console.log(initTheme);
+VGSCursor();
