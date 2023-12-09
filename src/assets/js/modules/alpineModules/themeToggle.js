@@ -1,7 +1,7 @@
 import Alpine from "alpinejs";
 
-Alpine.store("themeSwitcher", {
-  dark: true,
+Alpine.store("themeSwitch", {
+  dark: false,
   toggle() {
     const html = document.documentElement;
     this.dark = !this.dark;
