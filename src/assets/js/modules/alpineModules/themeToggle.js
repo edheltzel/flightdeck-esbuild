@@ -7,8 +7,10 @@ Alpine.store("themeSwitch", {
     this.dark = !this.dark;
     if (this.dark) {
       html.setAttribute("data-theme", "dark");
+      localStorage.setItem("dark", JSON.stringify("dark"));
     } else {
       html.setAttribute("data-theme", "light");
+      localStorage.setItem("dark", JSON.stringify("light"));
     }
   },
 });
