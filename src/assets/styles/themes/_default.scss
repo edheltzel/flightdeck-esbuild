@@ -28,7 +28,7 @@
 [data-theme="dark"] {
   @include dark;
 
-  a#mode {
+  a.mode {
     .mode-moon {
       display: none;
     }
