@@ -28,11 +28,13 @@
 [data-theme="dark"] {
   @include dark;
 
-  a.mode {
+  // Hide moon icon
+  .mode {
     .mode-moon {
       display: none;
     }
 
+    // Show sun icon
     .mode-sunny {
       display: block;
     }
