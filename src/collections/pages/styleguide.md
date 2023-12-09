@@ -22,7 +22,7 @@ Aliquam lobortis vitae nibh nec rhoncus. Morbi mattis neque eget efficitur feugi
 {% raw %}{# Using just Markdown #}
   > This is a blockquote in **markdown**
 
-{# Using a 11ty Shortcode #}
+{# Using a Shortcode #}
 {% blockquote  "This is a blockquote using a <strong>shortcode</strong>", "This is a citation" %}{% endraw %}
 ```
 </details>
