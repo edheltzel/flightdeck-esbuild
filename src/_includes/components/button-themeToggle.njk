@@ -1,6 +1,5 @@
 <a id="mode"
-x-bind:value="lightMode"
-x-on:change="lightMode = !lightMode">
+@click="$store.themeSwitch.toggle()">
   <svg class="mode-sunny" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 512 512">
     <title>LIGHT</title>
     <line x1="256" y1="48" x2="256" y2="96" style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"></line>
