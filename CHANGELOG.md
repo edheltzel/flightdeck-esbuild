@@ -4,7 +4,17 @@ All notable changes to Flightdeck for 11ty will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.3.8] - 2023-12-01
+## [0.4.0] - 2023-12-11
+
+### Adds
+- Remove Alpine.js passthrough copy and import Alpine.js in app.js
+
+### Chore
+- 🧹 Package updates:
+  - esbuild
+  - markdown-it
+-
+## [0.3.9] - 2023-12-01
 
 ### Adds
 - Adds NPM Scripts for Biome:
