@@ -1,6 +1,7 @@
-/**
- * Import Visual Guidance System cursor module and initialize it
- */
+import Alpine from "alpinejs";
 import { VGSCursor } from "./modules/visualGuidanceSystem/vgsCursor.js";
+
+window.Alpine = Alpine;
+Alpine.start();
 
 VGSCursor();

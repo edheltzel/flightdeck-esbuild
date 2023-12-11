@@ -17,7 +17,6 @@ module.exports = (config) => {
   config.addWatchTarget("./src/assets");
 
   /* --- Passthrough Copy --- */
-  config.addPassthroughCopy({ "./node_modules/alpinejs/dist/cdn.min.js": "assets/js/alpine.js" });
   config.addPassthroughCopy("./src/assets/fonts");
   config.addPassthroughCopy("./src/assets/images");
   config.addPassthroughCopy({ "./src/_static": "./" }); // root level files ie: _redirects, robots.txt, favicon.io,etc
