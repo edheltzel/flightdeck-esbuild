@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Flightdeck for 11ty 🚀
+title:
 tagline: An opinionated Jamstack starter project for Eleventy.
 permalink: /
 ---
