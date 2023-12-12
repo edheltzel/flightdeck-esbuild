@@ -1,11 +1,10 @@
 ---
 layout: page
-title: {{ site.title | safe  }}
+title:
 tagline: An opinionated Jamstack starter project for Eleventy.
 permalink: /
 ---
 
-{{ site.title }}
 > "That's one small step for man, one giant leap for mankind
 >
 > --<cite>Neil Armstrong</cite>
