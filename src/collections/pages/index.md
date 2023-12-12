@@ -1,10 +1,11 @@
 ---
 layout: page
-title: Flightdeck for 11ty 🚀
+title: {{ site.title | safe  }}
 tagline: An opinionated Jamstack starter project for Eleventy.
 permalink: /
 ---
 
+{{ site.title }}
 > "That's one small step for man, one giant leap for mankind
 >
 > --<cite>Neil Armstrong</cite>
