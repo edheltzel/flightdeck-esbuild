@@ -22,11 +22,11 @@ permalink: /
 
 <figure>
   <img
-    src="/src/assets/images/spacex/spacex-YSvUYqf9Mjk-unsplash.jpg"
+    src="/assets/images/spacex/spacex-YSvUYqf9Mjk-unsplash.jpg"
     alt="rocket landing"
   />
   <figcaption>
-    Image from
-    <a href="https://unsplash.com/photos/MEW1f-yu2KI" target="_blank">unsplash.com</a>
+    An
+    <a href="https://unsplash.com/photos/MEW1f-yu2KI" target="_blank">unsplash.com</a> image.
   </figcaption>
 </figure>

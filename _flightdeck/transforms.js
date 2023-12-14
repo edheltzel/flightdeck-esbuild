@@ -15,7 +15,7 @@ module.exports = (config) => {
   config.setLibrary("md", markdownIt);
   config.addPlugin(scss);
   config.addPlugin(esBuild);
-  config.addPlugin(images, { silentSkip: true }); // Pass silentSkip option
+  config.addPlugin(images({ silentSkip: true })); // Pass silentSkip option
 
   if (isProd) {
     config.addPlugin(jamPack);

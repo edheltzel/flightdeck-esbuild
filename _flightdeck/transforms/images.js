@@ -7,6 +7,7 @@
  * @returns {Promise<void>} - A promise that resolves when all image processing tasks are completed.
  * @summary Image processing module for Flightdeck
  * @usage Place images in the `src/assets/images` directory and they will be processed and copied to the `dist/assets/images` directory.
+ * @todo Make the console less verbose when processing and finishing images
  * @todo Add support for SVGs
  * @todo Add support for AVIF
  */
@@ -17,7 +18,7 @@ const glob = require("glob-promise");
 const path = require("path");
 const crypto = require("crypto");
 
-module.exports = async (config) => {
+module.exports = (options = {}) => async (config) => {
   // Image folders
   const srcDir = "src/assets/images";
   const destDir = "dist/assets/images";
@@ -28,6 +29,9 @@ module.exports = async (config) => {
 
   // Flightdeck prefix
   const fd = "[FD]";
+
+  // Silent skip option
+  const silentSkip = options.silentSkip;
 
   // Ensure destination and cache directories
   fs.ensureDirSync(destDir);
@@ -59,7 +63,7 @@ module.exports = async (config) => {
 
       // Check if image has already been optimized
       if (cache[hash]) {
-        if (!config.silentSkip) {
+        if (!silentSkip) {
           console.log(chalk.default.green(`${fd} Image ${file} has already been optimized. Skipping...`));
         }
         return; // Skip this image
