@@ -22,7 +22,7 @@ permalink: /
 
 <figure>
   <img
-    src="/assets/images/spacex/testing.jpeg"
+    src="/src/assets/images/spacex/spacex-YSvUYqf9Mjk-unsplash.jpg"
     alt="rocket landing"
   />
   <figcaption>
