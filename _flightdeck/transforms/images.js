@@ -7,7 +7,6 @@
  * @returns {Promise<void>} - A promise that resolves when all image processing tasks are completed.
  * @summary Image processing module for Flightdeck
  * @usage Place images in the `src/assets/images` directory and they will be processed and copied to the `dist/assets/images` directory.
- * @todo Make the console less verbose when processing and finishing images
  * @todo Add support for SVGs
  * @todo Add support for AVIF
  */
@@ -17,11 +16,11 @@ const fs = require("fs-extra");
 const glob = require("glob-promise");
 const path = require("path");
 const crypto = require("crypto");
-
+const ProgressBar = require("progress");
 module.exports = (options = {}) => async (config) => {
   // Image folders
-  const srcDir = "src/assets/images";
-  const destDir = "dist/assets/images";
+  const srcDir = options.srcDir || "src/assets/images";
+  const destDir = options.destDir || "dist/assets/images";
 
   // Cache directory and file
   const cacheDir = ".cache";
@@ -32,6 +31,7 @@ module.exports = (options = {}) => async (config) => {
 
   // Silent skip option
   const silentSkip = options.silentSkip;
+  const lessVerbose = options.lessVerbose;
 
   // Ensure destination and cache directories
   fs.ensureDirSync(destDir);
@@ -53,6 +53,9 @@ module.exports = (options = {}) => async (config) => {
     // Import chalk dynamically
     const chalk = await import("chalk");
 
+    // Create a new progress bar
+    const bar = new ProgressBar(`${fd} Images processed :bar> :current/:total`, { total: files.length });
+
     // Process each file
     const promises = files.map(async (file) => {
       // Output path replaces srcDir with destDir
@@ -71,7 +74,9 @@ module.exports = (options = {}) => async (config) => {
 
       try {
         // Optimize original image
-        console.log(chalk.default.blue(`${fd} Processing image ${file}...`));
+        if (!lessVerbose) {
+          console.log(chalk.default.blue(`${fd} Processing image ${file}...`));
+        }
         await sharp(file).jpeg({ quality: 80 }).png({ quality: 80 }).webp({ quality: 80 }).toFile(outputPath);
 
         // Generate additional sizes
@@ -87,8 +92,12 @@ module.exports = (options = {}) => async (config) => {
 
         // Add image hash to cache
         cache[hash] = true;
+        // Update the progress bar
+        bar.tick();
 
-        console.log(chalk.default.green(`${fd} Finished processing image ${file}`));
+        if (!lessVerbose) {
+          console.log(chalk.default.green(`${fd} Finished processing image ${file}`));
+        }
       } catch (err) {
         console.error(chalk.default.red(`${fd} Error processing image ${file}: ${err.message}`));
       }
@@ -97,6 +106,10 @@ module.exports = (options = {}) => async (config) => {
     // Wait for all promises to resolve
     await Promise.all(promises);
 
+    if (!lessVerbose) {
+      const chalk = await import("chalk");
+      console.log(chalk.default.green(`${fd} Finished processing ${files.length} images`));
+    }
     // Save cache
     fs.writeFileSync(cacheFile, JSON.stringify(cache));
   });
