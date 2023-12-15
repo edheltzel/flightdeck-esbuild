@@ -9,6 +9,8 @@
  * @usage Place images in the `src/assets/images` directory and they will be processed and copied to the `dist/assets/images` directory.
  * @todo Add support for SVGs
  * @todo Add support for AVIF
+ * @todo Improve performance by optimizing the plugin
+ * @todo consider making this into a stand alone plugin
  */
 
 const sharp = require("sharp");
