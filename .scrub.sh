@@ -12,7 +12,7 @@ FRESH="🧼 Scrubbed ${WHITE}node_modules${NC}, ${WHITE}dist/${NC}, ${WHITE}all 
 SITE="🧼 Scrubbed ${WHITE}dist/${NC} & ${WHITE}all cache${NC} directories ✨"
 PURGE="${GREEN}🧹 All Clean ✨${NC} ${FRESH}${NC} Run ${YELLOW}npm/yarn/pnpm/bun install${NC} to start fresh 🤩"
 OOPS="🚀💥🔥 OOPS! We need a valid option – Try using ${OPTIONS}"
-DEVFILES=".pnpm-debug.log debug.log dist/ _site/"
+DEVFILES=".pnpm-debug.log debug.log dist/ _site/ .cache/images.json"
 NODEFILES="package-lock.json pnpm-lock.yaml yarn.lock bun.lockb .yarn/ .jampack/ node_modules/"
 
 ################## DONT EDIT BELOW  👀 ########################
