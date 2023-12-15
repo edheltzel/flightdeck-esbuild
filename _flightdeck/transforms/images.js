@@ -7,10 +7,14 @@
  * @returns {Promise<void>} - A promise that resolves when all image processing tasks are completed.
  * @summary Image processing module for Flightdeck
  * @usage Place images in the `src/assets/images` directory and they will be processed and copied to the `dist/assets/images` directory.
- * @todo Add support for SVGs
- * @todo Add support for AVIF
- * @todo Improve performance by optimizing the plugin
- * @todo consider making this into a stand alone plugin
+ * @todo Add support for SVGs and AVIFs
+ * @todo Split processing into tasks - optimize originals first, then generate sizes.
+ * @todo Use worker threads to parallelize image processing instead of awaiting each image serially. This would allow maximizing CPU utilization.
+ * @todo reduce how often sharp is called
+ * @todo Pre-generate common resized versions instead of generating per image.
+ * @todo Resize images using the "lanczos3" resampling algorithm instead of the default "bilinear" for better quality.
+ * @todo Cache optimized originals so sizes can be generated from that instead of source.
+ * @todo Use a faster hash algorithm than MD5 if possible.
  */
 
 const sharp = require("sharp");
