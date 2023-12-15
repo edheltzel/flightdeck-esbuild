@@ -7,14 +7,22 @@
  * @returns {Promise<void>} - A promise that resolves when all image processing tasks are completed.
  * @summary Image processing module for Flightdeck
  * @usage Place images in the `src/assets/images` directory and they will be processed and copied to the `dist/assets/images` directory.
- * @todo Add support for SVGs and AVIFs
- * @todo Split processing into tasks - optimize originals first, then generate sizes.
- * @todo Use worker threads to parallelize image processing instead of awaiting each image serially. This would allow maximizing CPU utilization.
- * @todo reduce how often sharp is called
- * @todo Pre-generate common resized versions instead of generating per image.
- * @todo Resize images using the "lanczos3" resampling algorithm instead of the default "bilinear" for better quality.
- * @todo Cache optimized originals so sizes can be generated from that instead of source.
- * @todo Use a faster hash algorithm than MD5 if possible.
+ * @todo's see list below:
+ * Add support for SVGs and AVIFs
+ * Use sharp's .toBuffer() and fs.writeFile() instead of .toFile() to avoid unnecessary filesystem operations.
+ * Load/save the cache asynchronously instead of blocking startup and exit.
+ * Increase sharp's concurrency setting to process more images in parallel.
+ * Use a faster hash algorithm like FNV or CityHash if available.
+ * Pre-generate common resized versions instead of per image.
+ * Resize images in a single sharp call instead of calling sharp multiple times.
+ * Use worker threads for parallel processing instead of awaiting promises.
+ * Limit glob scanning to only image files.
+ * Cache optimized originals so sizes come from that.
+ * Use a job queue like Bull to smooth out image processing.
+ * Split processing into tasks - optimize originals first, then sizes.
+ * Use Redis or Memcached to cache images instead of filesystem.
+ * Use AVIF instead of WebP for better compression.
+ * Resize images with the "lanczos3" resampling algorithm.
  */
 
 const sharp = require("sharp");
