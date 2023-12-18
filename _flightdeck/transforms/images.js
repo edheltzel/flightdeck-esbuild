@@ -8,7 +8,6 @@
  * @summary Image processing module for Flightdeck
  * @usage Place images in the `src/assets/images` directory and they will be processed and copied to the `dist/assets/images` directory.
  * @todo's see list below:
- * Use sharp's .toBuffer() and fs.writeFile() instead of .toFile() to avoid unnecessary filesystem operations.
  * Load/save the cache asynchronously instead of blocking startup and exit.
  * Increase sharp's concurrency setting to process more images in parallel.
  * Use a faster hash algorithm like FNV or CityHash if available.
@@ -30,6 +29,7 @@ const glob = require("glob-promise");
 const path = require("path");
 const crypto = require("crypto");
 const ProgressBar = require("progress");
+
 module.exports = (options = {}) => async (config) => {
   // Image folders
   const srcDir = options.srcDir || "src/assets/images";
@@ -86,21 +86,26 @@ module.exports = (options = {}) => async (config) => {
       }
 
       try {
-        // Optimize original image
+        // Process and save the original image
         if (!lessVerbose) {
           console.log(chalk.default.blue(`${fd} Processing image ${file}...`));
         }
-        await sharp(file).jpeg({ quality: 80 }).png({ quality: 80 }).webp({ quality: 80 }).toFile(outputPath);
+
+        const buffer = await sharp(file).jpeg({ quality: 80 }).png({ quality: 80 }).webp({ quality: 80 }).toBuffer();
+
+        fs.writeFileSync(outputPath, buffer);
 
         // Generate additional sizes
         for (const size of sizes) {
           const resizedOutputPath = outputPath.replace(/(\.\w+)$/, `-${size}$1`);
-          await sharp(file)
+          const resizedBuffer = await sharp(file)
             .resize(size)
             .jpeg({ quality: 80 })
             .png({ quality: 80 })
             .webp({ quality: 80 })
-            .toFile(resizedOutputPath);
+            .toBuffer();
+
+          fs.writeFileSync(resizedOutputPath, resizedBuffer);
         }
 
         // Add image hash to cache
@@ -120,7 +125,6 @@ module.exports = (options = {}) => async (config) => {
     await Promise.all(promises);
 
     if (!lessVerbose) {
-      const chalk = await import("chalk");
       console.log(chalk.default.green(`${fd} Finished processing ${files.length} images`));
     }
     // Save cache
