@@ -8,7 +8,6 @@
  * @summary Image processing module for Flightdeck
  * @usage Place images in the `src/assets/images` directory and they will be processed and copied to the `dist/assets/images` directory.
  * @todo's see list below:
- * Add support for SVGs and AVIFs
  * Use sharp's .toBuffer() and fs.writeFile() instead of .toFile() to avoid unnecessary filesystem operations.
  * Load/save the cache asynchronously instead of blocking startup and exit.
  * Increase sharp's concurrency setting to process more images in parallel.
