@@ -8,8 +8,7 @@
  * @summary Image processing module for Flightdeck
  * @usage Place images in the `src/assets/images` directory and they will be processed and copied to the `dist/assets/images` directory.
  * @todo's see list below:
- * Load/save the cache asynchronously instead of blocking startup and exit.
- * Increase sharp's concurrency setting to process more images in parallel.
+ * @todo might not benefit from this, but Increase sharp's concurrency setting to process more images in parallel.
  * Use a faster hash algorithm like FNV or CityHash if available.
  * Pre-generate common resized versions instead of per image.
  * Resize images in a single sharp call instead of calling sharp multiple times.
