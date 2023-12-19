@@ -22,7 +22,8 @@ permalink: /
 
 <figure>
   <img
-    src="/assets/images/spacex/spacex-YSvUYqf9Mjk-unsplash.jpg"
+    style="aspect-ratio: 16/9; "
+    src="/assets/images/taiki-ishikawa-lq1KA7HAdH0-unsplash.jpeg"
     alt="rocket landing"
   />
   <figcaption>

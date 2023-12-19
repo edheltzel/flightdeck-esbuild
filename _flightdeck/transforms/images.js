@@ -54,9 +54,16 @@ module.exports = (options = {}) => async (config) => {
   const sizes = [800, 1200, 1600];
 
   // Load cache
-  let cache = {};
-  if (fs.existsSync(cacheFile)) {
-    cache = JSON.parse(fs.readFileSync(cacheFile));
+  let cache;
+  try {
+    cache = await fs.readJson(cacheFile);
+  } catch (err) {
+    if (err.code === "ENOENT") {
+      // If the cache file doesn't exist, initialize an empty cache
+      cache = {};
+    } else {
+      throw err;
+    }
   }
 
   config.on("eleventy.after", async () => {
@@ -128,6 +135,6 @@ module.exports = (options = {}) => async (config) => {
       console.log(chalk.default.green(`${fd} Finished processing ${files.length} images`));
     }
     // Save cache
-    fs.writeFileSync(cacheFile, JSON.stringify(cache));
+    await fs.writeJson(cacheFile, cache);
   });
 };
