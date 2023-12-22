@@ -19,7 +19,6 @@
  * Split processing into tasks - optimize originals first, then sizes.
  * Use Redis or Memcached to cache images instead of filesystem.
  * Use AVIF instead of WebP for better compression.
- * Resize images with the "lanczos3" resampling algorithm.
  */
 
 const sharp = require("sharp");
@@ -73,9 +72,12 @@ module.exports = (options = {}) => async (config) => {
     const chalk = await import("chalk");
 
     // Create a new progress bar
-    const bar = new ProgressBar(`${fd} Images processed :bar> :current/:total images in :elapsed seconds`, {
-      total: files.length,
-    });
+    const bar = new ProgressBar(
+      `${chalk.default.yellow(`${fd} Images processed :bar> :current/:total images in, :elapsed seconds`)}`,
+      {
+        total: files.length,
+      },
+    );
 
     // Process each file
     const promises = files.map(async (file) => {
