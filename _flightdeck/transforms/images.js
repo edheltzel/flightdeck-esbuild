@@ -41,7 +41,7 @@ module.exports = (options = {}) => async (config) => {
   // Flightdeck prefix
   const fd = "[FD]";
 
-  // Silent skip option
+  // Options for skipping already processed images and logging
   const silentSkip = options.silentSkip;
   const lessVerbose = options.lessVerbose;
 
@@ -73,7 +73,9 @@ module.exports = (options = {}) => async (config) => {
     const chalk = await import("chalk");
 
     // Create a new progress bar
-    const bar = new ProgressBar(`${fd} Images processed :bar> :current/:total`, { total: files.length });
+    const bar = new ProgressBar(`${fd} Images processed :bar> :current/:total images in :elapsed seconds`, {
+      total: files.length,
+    });
 
     // Process each file
     const promises = files.map(async (file) => {

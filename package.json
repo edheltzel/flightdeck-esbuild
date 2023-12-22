@@ -36,7 +36,7 @@
   "description": "An opinionated Jamstack starter project for Eleventy.",
   "license": "WTFPL",
   "scripts": {
-    "start": "eleventy --serve",
+    "start": "eleventy --serve --incremental",
     "build": "run-s clean build:11ty",
     "build:11ty": "cross-env ENV=production eleventy",
     "preview": "npx http-server dist -p 4000",
