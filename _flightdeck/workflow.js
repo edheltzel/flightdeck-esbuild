@@ -18,7 +18,7 @@ module.exports = (config) => {
 
   /* --- Passthrough Copy --- */
   config.addPassthroughCopy("./src/assets/fonts");
-  config.addPassthroughCopy("./src/assets/images");
+  config.addPassthroughCopy("./src/assets/images"); // see _flightdeck/transforms/images.js
   config.addPassthroughCopy({ "./src/_static": "./" }); // root level files ie: _redirects, robots.txt, favicon.io,etc
 
   /* --- Layout Aliases --- */

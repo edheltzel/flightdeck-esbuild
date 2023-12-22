@@ -42,7 +42,6 @@
     "package-lock.json": true
   },
   "workbench.colorCustomizations": {
-    "statusBar.foreground": "#000",
-    "statusBar.background": "#ffd000"
+    "titleBar.activeForeground": "#be9e0b"
   }
 }
