@@ -4,6 +4,19 @@ All notable changes to Flightdeck for 11ty will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.4.2] - 2023-12-22
+
+Attempting to improve performance of image processing.
+
+### Adds
+- chalk usage is better for logging in the console
+
+### Changed
+
+`src/__flightdeck/transforms/images.js`
+- globbing for images is now more specific to the `src/assets/images` directory and specific file types
+- using fast-glob in place of glob-promise
+
 ## [0.4.1] - 2023-12-15
 
 ### Adds
