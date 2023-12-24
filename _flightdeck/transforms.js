@@ -5,7 +5,7 @@
  *
  */
 const isProd = process.env.ENV === "production";
-const jamPack = require("./transforms/jamPack"); // PROD only image and html optimization
+// const jamPack = require("./transforms/jamPack"); // PROD only image and html optimization
 const { markdownIt } = require("./transforms/markdownIt"); // markdown-it plugins
 const esBuild = require("./transforms/esBuild"); // scss compiling & js bundling
 const scss = require("./transforms/scss"); // scss compiling
@@ -24,7 +24,7 @@ module.exports = (config) => {
     }),
   ); // Pass silentSkip option
 
-  if (isProd) {
-    config.addPlugin(jamPack);
-  }
+  // if (isProd) {
+  // config.addPlugin(jamPack);
+  // }
 };

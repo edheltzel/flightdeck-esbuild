@@ -7,7 +7,10 @@
 module.exports = (config) => {
   config.on("eleventy.after", async () => {
     const { spawn } = require("child_process");
-    const jamPack = spawn("jampack", ["./dist", '--cache_folder=".cache"'], { stdio: "inherit", shell: true });
+    const jamPack = spawn("jampack", ["./dist", '--cache_folder=".cache"', "--onlycomp"], {
+      stdio: "inherit",
+      shell: true,
+    });
     jamPack.on("error", (error) => {
       console.error(`jampack error: ${error}`);
     });
