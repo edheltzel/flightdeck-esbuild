@@ -23,7 +23,6 @@ const sharp = require("sharp");
 const fs = require("fs-extra");
 const path = require("path");
 const glob = require("fast-glob");
-const crypto = require("crypto");
 const ProgressBar = require("progress");
 
 module.exports = (options = {}) => async (config) => {
@@ -51,7 +50,9 @@ module.exports = (options = {}) => async (config) => {
   }
 
   config.on("eleventy.after", async () => {
-    const files = await glob([`${srcDir}/**/*.{jpg,png,webp,jpeg}`]);
+    const files = await glob([`${srcDir}/**/*.{jpg,jpeg,png,webp,avif}`]);
+
+    const { hashFile } = await import("hasha");
 
     const { default: pc } = await import("picocolors");
 
@@ -71,8 +72,7 @@ module.exports = (options = {}) => async (config) => {
     const optimizeOriginals = files.map(async (file, index) => {
       const outputPath = file.replace(srcDir, destDir);
 
-      const hash = crypto.createHash("md5").update(fs.readFileSync(file)).digest("hex");
-
+      const hash = await hashFile(file, { algorithm: "md5" });
       if (cache[hash]) {
         if (!silentSkip) {
           console.log(pc.green(`${fd} Image ${file} has already been optimized. Skipping...`));
