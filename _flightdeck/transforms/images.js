@@ -52,22 +52,34 @@ module.exports = (options = {}) => async (config) => {
 
   config.on("eleventy.after", async () => {
     const files = await glob([`${srcDir}/**/*.{jpg,png,webp,jpeg}`]);
+
     const { default: chalk } = await import("chalk");
-    const bar = new ProgressBar(
-      `${chalk.yellow(`${fd} Images processed :bar> :current/:total images in, :elapsed seconds`)}`,
-      {
-        total: files.length,
-      },
+
+    // Create a new progress bar for optimizing originals
+    const barOptimize = new ProgressBar(
+      `${chalk.yellow(`${fd} Optimizing original images :bar> :current/:total images in, :elapsed seconds`)}`,
+      { total: files.length },
     );
 
-    const promises = files.map(async (file) => {
+    // Create a new progress bar for processing sizes
+    const barSizes = new ProgressBar(
+      `${chalk.yellowBright(
+        `${fd} Processing sizes of original images :bar> :current/:total images in, :elapsed seconds`,
+      )}`,
+      { total: files.length },
+    );
+
+    // Task 1: Optimize original images
+    const optimizeOriginals = files.map(async (file, index) => {
       const outputPath = file.replace(srcDir, destDir);
+
       const hash = crypto.createHash("md5").update(fs.readFileSync(file)).digest("hex");
 
       if (cache[hash]) {
         if (!silentSkip) {
           console.log(chalk.green(`${fd} Image ${file} has already been optimized. Skipping...`));
         }
+        barOptimize.tick();
         return;
       }
 
@@ -79,9 +91,31 @@ module.exports = (options = {}) => async (config) => {
         const buffer = await sharp(file).jpeg({ quality: 80 }).png({ quality: 80 }).webp({ quality: 80 }).toBuffer();
 
         fs.writeFileSync(outputPath, buffer);
+        cache[hash] = true;
+        barOptimize.tick();
+      } catch (err) {
+        console.error(`Error processing image ${file}: ${err}`);
+      }
+    });
 
-        for (const size of sizes) {
-          const resizedOutputPath = outputPath.replace(/(\.\w+)$/, `-${size}$1`);
+    await Promise.all(optimizeOriginals);
+
+    // Task 2: Process sizes
+    const processSizes = files.map(async (file) => {
+      const outputPath = file.replace(srcDir, destDir);
+
+      for (const size of sizes) {
+        const resizedOutputPath = outputPath.replace(/(\.\w+)$/, `-${size}$1`);
+
+        // Check if resized image already exists
+        if (fs.existsSync(resizedOutputPath)) {
+          if (!silentSkip) {
+            console.log(chalk.green(`${fd} Resized image ${resizedOutputPath} already exists. Skipping...`));
+          }
+          continue; // Skip this resized image
+        }
+
+        try {
           const resizedBuffer = await sharp(file)
             .resize(size)
             .jpeg({ quality: 80 })
@@ -90,20 +124,20 @@ module.exports = (options = {}) => async (config) => {
             .toBuffer();
 
           fs.writeFileSync(resizedOutputPath, resizedBuffer);
+          if (!lessVerbose) {
+            console.log(chalk.green(`${fd} Created resized image ${resizedOutputPath}`));
+          }
+        } catch (err) {
+          console.error(chalk.red(`${fd} Error processing resized image ${resizedOutputPath}: ${err.message}`));
         }
-
-        cache[hash] = true;
-        bar.tick();
-
-        if (!lessVerbose) {
-          console.log(chalk.green(`${fd} Finished processing image ${file}`));
-        }
-      } catch (err) {
-        console.error(chalk.red(`${fd} Error processing image ${file}: ${err.message}`));
       }
+      // Update the progress bar for sizes
+      barSizes.tick();
     });
 
-    await Promise.all(promises);
+    await Promise.all(processSizes);
+
+    await Promise.all(processSizes);
 
     if (!lessVerbose) {
       console.log(chalk.green(`${fd} Finished processing ${files.length} images`));
