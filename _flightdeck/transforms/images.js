@@ -53,19 +53,17 @@ module.exports = (options = {}) => async (config) => {
   config.on("eleventy.after", async () => {
     const files = await glob([`${srcDir}/**/*.{jpg,png,webp,jpeg}`]);
 
-    const { default: chalk } = await import("chalk");
+    const { default: pc } = await import("picocolors");
 
     // Create a new progress bar for optimizing originals
     const barOptimize = new ProgressBar(
-      `${chalk.yellow(`${fd} Optimizing original images :bar> :current/:total images in, :elapsed seconds`)}`,
+      `${pc.yellow(`${fd} Optimizing original images :bar> :current/:total images in, :elapsed seconds`)}`,
       { total: files.length },
     );
 
     // Create a new progress bar for processing sizes
     const barSizes = new ProgressBar(
-      `${chalk.yellowBright(
-        `${fd} Processing sizes of original images :bar> :current/:total images in, :elapsed seconds`,
-      )}`,
+      `${pc.yellow(`${fd} Processing sizes of original images :bar> :current/:total images in, :elapsed seconds`)}`,
       { total: files.length },
     );
 
@@ -77,7 +75,7 @@ module.exports = (options = {}) => async (config) => {
 
       if (cache[hash]) {
         if (!silentSkip) {
-          console.log(chalk.green(`${fd} Image ${file} has already been optimized. Skipping...`));
+          console.log(pc.green(`${fd} Image ${file} has already been optimized. Skipping...`));
         }
         barOptimize.tick();
         return;
@@ -85,7 +83,7 @@ module.exports = (options = {}) => async (config) => {
 
       try {
         if (!lessVerbose) {
-          console.log(chalk.blue(`${fd} Processing image ${file}...`));
+          console.log(pc.blue(`${fd} Processing image ${file}...`));
         }
 
         const buffer = await sharp(file).jpeg({ quality: 80 }).png({ quality: 80 }).webp({ quality: 80 }).toBuffer();
@@ -110,7 +108,7 @@ module.exports = (options = {}) => async (config) => {
         // Check if resized image already exists
         if (fs.existsSync(resizedOutputPath)) {
           if (!silentSkip) {
-            console.log(chalk.green(`${fd} Resized image ${resizedOutputPath} already exists. Skipping...`));
+            console.log(pc.green(`${fd} Resized image ${resizedOutputPath} already exists. Skipping...`));
           }
           continue; // Skip this resized image
         }
@@ -125,10 +123,10 @@ module.exports = (options = {}) => async (config) => {
 
           fs.writeFileSync(resizedOutputPath, resizedBuffer);
           if (!lessVerbose) {
-            console.log(chalk.green(`${fd} Created resized image ${resizedOutputPath}`));
+            console.log(pc.green(`${fd} Created resized image ${resizedOutputPath}`));
           }
         } catch (err) {
-          console.error(chalk.red(`${fd} Error processing resized image ${resizedOutputPath}: ${err.message}`));
+          console.error(pc.red(`${fd} Error processing resized image ${resizedOutputPath}: ${err.message}`));
         }
       }
       // Update the progress bar for sizes
@@ -140,7 +138,7 @@ module.exports = (options = {}) => async (config) => {
     await Promise.all(processSizes);
 
     if (!lessVerbose) {
-      console.log(chalk.green(`${fd} Finished processing ${files.length} images`));
+      console.log(pc.green(`${fd} Finished processing ${files.length} images`));
     }
 
     await fs.writeJson(cacheFile, cache);
