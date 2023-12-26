@@ -4,6 +4,7 @@
  * @param {number} height - optional: value in pixels
  * @param {string} tabs - optional: values -> html/html,result/css/css,result/js/js,result
  * @param {string} themeId - optional: values -> light, dark, default -> custom themes are a pro feature
+ * @usage {% codepen "penUrl", "height", "tabs", "themeId" %}
  * @example {% codepen "https://codepen.io/jacobberglund/pen/bwrGvx", 900, "css,result", "178" %}
  */
 

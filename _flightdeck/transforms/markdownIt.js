@@ -6,5 +6,7 @@ const markdownItOptions = {
   breaks: true,
   linkify: true,
 };
+
 const markdownIt = mdIt(markdownItOptions).use(mdItAttrs);
+
 exports.markdownIt = markdownIt;
