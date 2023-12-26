@@ -10,9 +10,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - `{% Image 'src' 'alt text' 'sizes: optional' %}` shortcode for responsive images
     - shortcode uses the eleventy-img plugin to generate responsive images
     - see `_flightdeck/shortcodes/image.js` for usage
+- Filters update
+    - adds stripFileExtension.js
+    - adds postLimit.js
+    - removes limit.js
 
 ### Changed
 - `_flightdeck/transforms/images.js` is a WIP and will be updated to use the eleventy-img plugin for image optimization
+- `_flightdeck/filters/limit.js` is removed in favor of `postLimit.js` and `stripFileExtension.js`
 
 ### Chore
 - 🧹 Package updates:
