@@ -10,8 +10,8 @@ module.exports = (config) => {
   addWorkflow(config); // dev server, layout aliases, watch, passthrough copy
   addFilters(config); // universal filters
   addTransforms(config); // esbuild, scss, jampack transforms
-  addShortcodes(config); // copyright year, youtube embeds, etc.
   addPlugins(config); // eleventy plugins
+  addShortcodes(config); // copyright year, youtube embeds, etc.
   addComponents(config); // custom components for Flightdeck Airframe
 
   return {

@@ -4,11 +4,24 @@ All notable changes to Flightdeck for 11ty will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.4.4] -
+
+### Adds
+- `{% Image 'src' 'alt text' 'sizes: optional' %}` shortcode for responsive images
+    - shortcode uses the eleventy-img plugin to generate responsive images
+    - see `_flightdeck/shortcodes/image.js` for usage
+
+### Changed
+- `_flightdeck/transforms/images.js` is a WIP and will be updated to use the eleventy-img plugin for image optimization
+
+### Chore
+- 🧹 Package updates:
+    - removes unused packages
+
 ## [0.4.3] - 2023-12-24
 
 ### Changed
 - Updates esbuild to v0.19.10
-
 
 ## [0.4.2] - 2023-12-22
 
