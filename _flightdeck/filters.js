@@ -5,15 +5,15 @@
  * @link https://www.11ty.dev/docs/filters/
  */
 const baseUrl = require("./filters/baseUrl");
-const postLimit = require("./filters/postLimit");
-const stripFile = require("./filters/stripFileExtension");
+const limit = require("./filters/postLimit");
+const strip = require("./filters/stripFileExtension");
 const date = require("./filters/dates");
 const excerpt = require("./filters/excerpt");
 
 module.exports = (config) => {
   config.addFilter("excerpt", excerpt);
-  config.addFilter("limit", postLimit.postLimit);
-  config.addFilter("stripFilename", stripFile.stripFileExtension);
+  config.addFilter("postLimit", limit.postLimit);
+  config.addFilter("stripExt", strip.stripFileExtension);
   config.addFilter("baseUrl", baseUrl);
   config.addFilter("postDate", date.postDate);
   config.addFilter("postDateTime", date.postDateTime);
