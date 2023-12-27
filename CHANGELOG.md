@@ -14,9 +14,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
     - adds stripFileExtension.js
     - adds postLimit.js
     - removes limit.js
+- Adds `_flightdeck/transforms/images.js` for image processing that live inside of `./src/assets/images`
+    - uses the eleventy-img plugin to optimize images
+    - see `_flightdeck/transforms/images.js` for usage
 
 ### Changed
-- `_flightdeck/transforms/images.js` is a WIP and will be updated to use the eleventy-img plugin for image optimization
+- `_flightdeck/transforms/images.js` now uses the eleventy-img plugin for image optimization
 - `_flightdeck/filters/limit.js` is removed in favor of `postLimit.js` and `stripFileExtension.js`
 
 ### Chore
