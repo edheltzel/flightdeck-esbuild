@@ -2,7 +2,6 @@
  * Transforms
  * @summary This adds custom transforms to Eleventy, keeping Eleventy in control of the entire development and build processes.
  *
- *
  * @file
  * This module exports a function that adds several transformations to an Eleventy config object.
  *
