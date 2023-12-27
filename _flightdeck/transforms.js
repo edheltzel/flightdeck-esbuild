@@ -1,30 +1,24 @@
 /**
  * Transforms
- * @param {Object} config - eleventy config object
- * @description jamPack will increase build time dramatically.
+ * @summary This adds custom transforms to Eleventy, keeping Eleventy in control of the entire development and build processes.
+ *
+ *
+ * @file
+ * This module exports a function that adds several transformations to an Eleventy config object.
+ *
+ * @module transforms
+ *
+ * @param {Object} config - The Eleventy config object to which the transformations will be added.
  *
  */
 const isProd = process.env.ENV === "production";
-const jamPack = require("./transforms/jamPack"); // PROD only image and html optimization
 const { markdownIt } = require("./transforms/markdownIt"); // markdown-it plugins
-const esBuild = require("./transforms/esBuild"); // scss compiling & js bundling
+const esBuild = require("./transforms/esBuild"); // s bundling
 const scss = require("./transforms/scss"); // scss compiling
 const images = require("./transforms/images"); // image optimization
-
 module.exports = (config) => {
   config.setLibrary("md", markdownIt);
-  config.addPlugin(scss);
   config.addPlugin(esBuild);
-  config.addPlugin(
-    images({
-      silentSkip: true,
-      lessVerbose: true,
-      srcDir: "src/assets/images",
-      destDir: "dist/assets/images",
-    }),
-  ); // Pass silentSkip option
-
-  if (isProd) {
-    config.addPlugin(jamPack);
-  }
+  config.addPlugin(scss);
+  config.addPlugin(images);
 };
