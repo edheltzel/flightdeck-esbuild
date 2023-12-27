@@ -1,3 +1,14 @@
+/**
+ * @file images.js
+ * @description This module provides an image optimization transform using @11ty/eleventy-img.
+ * It exports a function that hooks into the Eleventy build process, specifically the 'eleventy.after' event.
+ * When this event is triggered, the module optimizes all images in the specified base directory.
+ * The optimized images are saved in the specified output directory.
+ * The image optimization process includes resizing the images to a width of 1600 pixels and applying various Sharp options.
+ * @requires @11ty/eleventy-img
+ * @requires path
+ * @requires fast-glob
+ */
 const Image = require("@11ty/eleventy-img");
 const path = require("path");
 const glob = require("fast-glob");
