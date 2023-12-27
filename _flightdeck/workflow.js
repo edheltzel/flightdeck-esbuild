@@ -1,7 +1,22 @@
+/**
+ * This module exports a function that configures a server and sets up watch targets, passthrough copies, and layout aliases for a web application.
+ *
+ * @module workflow
+ *
+ * @param {Object} config - The configuration object for the server.
+ *
+ * @property {Function} config.setQuietMode - Sets the server to quiet mode to reduce console output.
+ * @property {Function} config.setServerOptions - Sets options for the server.
+ * @property {Function} config.addWatchTarget - Adds a directory or file to be watched for changes.
+ * @property {Function} config.addPassthroughCopy - Adds a directory or file to be copied directly to the output folder.
+ * @property {Function} config.addLayoutAlias - Adds an alias for a layout.
+ *
+ */
+
 const fs = require("fs");
 
 module.exports = (config) => {
-  config.setQuietMode(true); // reduce console
+  config.setQuietMode(true);
   config.setServerOptions({
     /**
      * @link https://github.com/11ty/eleventy/issues/1305
