@@ -21,14 +21,17 @@ async function optimizeImages() {
       await Image(imageFile, {
         formats: ["auto"],
         urlPath: outputUrlPath,
+        widths: [1600],
         outputDir: outputPath,
-        concurrency: 10, // process 10 images concurrently
         filenameFormat: (id, src, width, format, options) => {
           const name = path.basename(src, path.extname(src));
           return `${name}.${format}`;
         },
         sharpOptions: {
-          quality: 70,
+          quality: 80,
+          compressionLevel: 9,
+          progressive: true,
+          optimizeScans: true,
           withMetadata: false,
         },
       });
@@ -37,5 +40,7 @@ async function optimizeImages() {
 }
 
 module.exports = (config) => {
-  optimizeImages();
+  config.on("eleventy.after", async () => {
+    await optimizeImages();
+  });
 };
