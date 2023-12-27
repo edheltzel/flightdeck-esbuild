@@ -14,7 +14,7 @@ module.exports = (config) => {
   config.setLibrary("md", markdownIt);
   config.addPlugin(esBuild);
   config.addPlugin(scss);
-  // config.addPlugin(images);
+  config.addPlugin(images);
   // if (isProd) {
   // config.addPlugin(jamPack);
   // }
