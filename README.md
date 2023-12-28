@@ -42,7 +42,7 @@
 
 <!-- Too Long Didn’t Read -->
 
-## 🥱 TL;DR
+## [🥱 TL;DR](#tldr)
 
 ```shell
     git clone git@github.com:edheltzel/flightdeck-for-11ty-esbuild.git flightdeck && cd flightdeck && pnpm install && pnpm start
