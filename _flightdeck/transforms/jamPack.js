@@ -4,6 +4,7 @@
  * @summary This executes the jampack optimization tool on the output after build.
  * @link https://jampack.divriots.com/cli-options/
  */
+
 module.exports = (config) => {
   config.on("eleventy.after", async () => {
     const { spawn } = require("child_process");
