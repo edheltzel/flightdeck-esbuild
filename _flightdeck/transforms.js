@@ -9,10 +9,12 @@
  *
  * @param {Object} config - The Eleventy config object to which the transformations will be added.
  *
+ * @todo drop scss for css + lightningCSS
  */
+
 const isProd = process.env.ENV === "production";
 const { markdownIt } = require("./transforms/markdownIt"); // markdown-it plugins
-const esBuild = require("./transforms/esBuild"); // s bundling
+const esBuild = require("./transforms/esBuild"); // js bundling
 const scss = require("./transforms/scss"); // scss compiling
 const images = require("./transforms/images"); // image optimization
 module.exports = (config) => {
