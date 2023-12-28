@@ -56,13 +56,13 @@
 
 <!-- ABOUT THE PROJECT -->
 
-## 🌟 About The Project
+## [ 🌟 About The Project ](#about-the-project)
 
 The Flightdeck objective is to provide a unified starting point for all your Jamstack websites, by leveraging popular static-site-generators _(SSG)_.
 
 This flavor of Flightdeck uses [Eleventy](https://www.11ty.dev/) with an opinionated workflow, keeping Eleventy in control of the entire development and build processes.
 
-### 💡 Inspiration
+### [ 💡 Inspiration ](#inspiration)
 
 Like other versions of Flightdeck, this is just an adaptation of the original [Flightdeck](https://github.com/edheltzel/flightdeck-for-jekyll) project that uses [Jekyll](https://jekyllrb.com/) for its static site generation and [Gulp](https://gulpjs.com/) for all assets bundling. ►►► 🫠 For other versions of Flightdeck, [👉 look here](https://github.com/edheltzel?tab=repositories&q=flightdeck)
 
@@ -70,7 +70,7 @@ Jérôme Coupé's post [Structuring Eleventy Projects](https://www.webstoemp.com
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-### 👾 Tech Stack
+### [ 👾 Tech Stack ](#built-with)
 
 - [Eleventy](https://www.11ty.dev/)
 - [ESBuild](https://esbuild.github.io/)
@@ -83,20 +83,20 @@ Jérôme Coupé's post [Structuring Eleventy Projects](https://www.webstoemp.com
 
 <!-- GETTING STARTED -->
 
-## 🧰 Getting Started
+## [ 🧰 Getting Started ](#getting-started)
 
 All version of Flightdeck use NodeJS. So a very minimal and basic knowledge of Node and Git should be had when using Flightdeck as your launchpad.
 
 > In the future, we plan to include Docker and make all Flightdeck starters available as a Yeoman and/or NPM package.
 
-### 🧯 Prerequisites
+### [🧯 Prerequisites ](#prerequisites)
 
 We are assuming that you already have Node with NPM and Git installed on your system – it is also ideal that you have the latest [LTS](https://nodejs.org/en/download/) release of Node.
 **As of this writing the current LTS release is `18.16.0`**
 
-#### 🤖 Dependencies
+#### [ 🤖 Dependencies ](#dependencies)
 
-##### Package Managers
+##### [ Package Managers ](#package-managers)
 
 **Package managers are like dotfiles, everyone has their own preference.**
 
@@ -123,7 +123,7 @@ It's highly recommended that you enable Node's [corepack](https://nodejs.org/api
   corepack prepare pnpm@latest --activate
   ```
 
-### ⚙️ Installation
+### ⚙[ Installation ](#installation)
 
 ```shell
 git clone https://github.com/edheltzel/flightdeck-for-11ty.git
@@ -157,7 +157,7 @@ autoprefixer 10.4.16                         fast-glob 3.3.2
 </details>
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-### 🏃‍♂️ Run Locally
+### [🏃‍♂️ Run Locally ](#run-locally)
 
 There are just a few npm-:150
 available, but the `start` command is where all the magic 🪄 happens – it will spin up the development server from Eleventy.
@@ -205,7 +205,7 @@ Commands available via "pnpm run":
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-### ‍🚀 Deployments
+### [ ‍🚀 Deployments ](#deployments)
 
 Deployments for this project are completely up to you and your needs, we are fans of Cloudflare Pages but we do provide a `netlify.toml` file that will work out-of-the-box with Netlify. Some other popular options include GitHub Pages, Vercel and Render. **Your call on what you use.**
 
@@ -217,7 +217,7 @@ Don't forget to create your own `.env` with whatever environment variables you n
 
 <!-- File Structure -->
 
-### 📁 File Structure
+### [📁 File Structure ](#file-structure)
 
 Flightdeck is a very opinionated starter kit, so the file structure is very specific to our needs. All the Eleventy configuration is done in the `.eleventy.js` file, but it is broken down into sections for easier navigation and maintain. All Eleventy configuration options are available, see the [Eleventy Docs](https://www.11ty.dev/docs/config/) for more information.
 
@@ -262,7 +262,7 @@ Flightdeck is a very opinionated starter kit, so the file structure is very spec
 
 <!-- USAGE -->
 
-### 👀 Usage
+### [ 👀 Usage ](#usage)
 
 Flightdeck makes a lot of assumptions and is very opinionated - but having a good idea of how Eleventy's [data cascade](https://www.11ty.dev/docs/data-cascade/) works is always nice, as well as having some understanding on [template inherence](https://mozilla.github.io/nunjucks/templating.html#template-inheritance) in Nunjucks will go a long way. **But is not needed**
 
@@ -282,7 +282,7 @@ If you're looking to extend or further configure your project with other NPM mod
 
 <!-- ROADMAP -->
 
-## 🧭 Roadmap
+## [ 🧭 Roadmap ](#roadmap)
 
 - [x] Improve documentation
 - [ ] Create a theme using Airframe - A classless CSS system
@@ -296,7 +296,7 @@ See the [open issues](https://github.com/edheltzel/flightdeck-for-11ty/issues) f
 
 <!-- CONTRIBUTING -->
 
-## 👋 Contributing
+## [ 👋 Contributing ](#contributing)
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
@@ -313,7 +313,7 @@ Don't forget to give the project a star! Thanks again!
 
 <!-- LICENSE -->
 
-## ⚠️ License
+## [ ⚠️ License ](#license)
 
 Distributed under the WTFPL License. See `LICENSE` for more information.
 
