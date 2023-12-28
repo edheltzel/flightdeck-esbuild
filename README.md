@@ -10,9 +10,12 @@
 </div>
 
 <!-- TABLE OF CONTENTS -->
+
 <details open>
   <summary>📔 Table of Contents</summary>
   <ol>
+    <li>
+      <a href="#tldr">TL;DR</a>
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
@@ -37,6 +40,20 @@
   </ol>
 </details>
 
+<!-- Too Long Didn’t Read -->
+
+## 🥱 TL;DR
+
+```shell
+    git clone git@github.com:edheltzel/flightdeck-for-11ty-esbuild.git flightdeck && cd flightdeck && pnpm install && pnpm start
+```
+
+**Build your project**
+
+```shell
+    pnpm run build
+```
+
 <!-- ABOUT THE PROJECT -->
 
 ## 🌟 About The Project
@@ -59,7 +76,7 @@ Jérôme Coupé's post [Structuring Eleventy Projects](https://www.webstoemp.com
 - [ESBuild](https://esbuild.github.io/)
 - [Nunjucks](https://mozilla.github.io/nunjucks/)
 - [Sass](https://sass-lang.com/)
-- [Jampack](https://jampack.divriots.com/)
+- ~~[Jampack](https://jampack.divriots.com/)~~
 - [Biome](https://biomejs.dev/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -120,13 +137,22 @@ pnpm install
 <details>
   <summary>see all dependencies</summary>
   <pre>
-    ❯ pnpm list
-flightdeck-for-eleventy@0.3.4 ~/Developer/oss/flightdeck/for-11ty-esbuild
+    pn list
+Legend: production dependency, optional only, dev only
+
+flightdeck-for-eleventy@0.4.3 /Users/ed/Developer/oss/flightdeck/for-11ty-esbuild
+
+dependencies:
+@alpinejs/persist 3.13.3
+alpinejs 3.13.3
+
 devDependencies:
-@11ty/eleventy 2.0.1                         browserslist 4.22.1                          esbuild 0.19.4                               postcss 8.4.31
-@11ty/eleventy-plugin-syntaxhighlight 5.0.0  cross-env 7.0.3                              markdown-it 13.0.2                           sass 1.68.0
-@divriots/jampack 0.21.0                     eleventy-plugin-embed-everything 1.17.0      markdown-it-attrs 4.1.6
-autoprefixer 10.4.16                         eleventy-sass 2.2.3                          npm-run-all 4.1.5
+@11ty/eleventy 2.0.1                         browserslist 4.22.2                          markdown-it 14.0.0
+@11ty/eleventy-img 3.1.8                     cross-env 7.0.3                              markdown-it-attrs 4.1.6
+@11ty/eleventy-plugin-syntaxhighlight 5.0.0  eleventy-plugin-embed-everything 1.17.0      npm-run-all 4.1.5
+@biomejs/biome 1.4.1                         eleventy-sass 2.2.4                          postcss 8.4.32
+@divriots/jampack 0.23.1                     esbuild 0.19.10                              sass 1.69.5
+autoprefixer 10.4.16                         fast-glob 3.3.2
   </pre>
 </details>
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -211,11 +237,15 @@ Flightdeck is a very opinionated starter kit, so the file structure is very spec
    │  ├── macros
    │  ├── partials
    │  └── utilities
+   ├── _static
    ├── assets
    │  ├── fonts
    │  ├── images
+   │  │  └── spacex [optional]
    │  ├── js
-   │  ├── seo
+   │  │  └── modules
+   │  │     ├── alpineModules
+   │  │     └── visualGuidanceSystem
    │  └── styles
    │     ├── components
    │     ├── content
@@ -226,7 +256,8 @@ Flightdeck is a very opinionated starter kit, so the file structure is very spec
    │     └── vendors
    └── collections
       ├── blog
-      └── pages</pre>
+      └── pages
+</pre>
 </details>
 
 <!-- USAGE -->
@@ -235,7 +266,7 @@ Flightdeck is a very opinionated starter kit, so the file structure is very spec
 
 Flightdeck makes a lot of assumptions and is very opinionated - but having a good idea of how Eleventy's [data cascade](https://www.11ty.dev/docs/data-cascade/) works is always nice, as well as having some understanding on [template inherence](https://mozilla.github.io/nunjucks/templating.html#template-inheritance) in Nunjucks will go a long way. **But is not needed**
 
-**WIP** The Airframe CSS System uses a modified version of the [7-1 pattern](https://sass-guidelin.es/#the-7-1-pattern), but we combined a couple of concepts regarding naming conventions that fit our workflow. **Documentation coming soon**
+**WIP** The Autopilot CSS System uses a modified version of the [7-1 pattern](https://sass-guidelin.es/#the-7-1-pattern), but we combined a couple of concepts regarding naming conventions that fit our workflow. **Documentation coming soon**
 
 If you're looking to extend or further configure your project with other NPM modules, Eleventy plugins, or ESBuild Plugins, just reference the appropriate documentation.
 
@@ -253,8 +284,8 @@ If you're looking to extend or further configure your project with other NPM mod
 
 ## 🧭 Roadmap
 
-- [ ] Create a theme using Airframe - A classless CSS system
 - [x] Improve documentation
+- [ ] Create a theme using Airframe - A classless CSS system
 - [ ] Add Dockerfile
 - [ ] Add Yeoman generator/npm package
 - [ ] Add our Eleventy plugins
