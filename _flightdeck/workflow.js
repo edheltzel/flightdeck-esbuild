@@ -1,6 +1,6 @@
 /**
  * Workflow Configuration
- * @summary keeps the main eleventy config file clean and is used to configure the local dev server and build directory.
+ * @summary keeps the main eleventy config file clean and is used to configure the local dev server.
  *
  * @param {Object} config - The Eleventy config object to be configured.
  * @property {Object} setServerOptions - Configure the local dev server.
@@ -14,7 +14,7 @@ const fs = require("fs");
 module.exports = (config) => {
   config.setQuietMode(true); // reduce console
   config.setServerOptions({
-    port: 4000, // old habits die hard - 4000 is the default port for Jekyll
+    port: 4000, // old habits die hard - 4000 is the default port for Jekyll ¯\_(ツ)_/¯
     showVersion: true, // show the server version number on the command line
     showAllHosts: false, // show local network IP address for device testing
   });
