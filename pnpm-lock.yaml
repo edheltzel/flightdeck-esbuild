@@ -49,6 +49,9 @@ devDependencies:
   fast-glob:
     specifier: ^3.3.2
     version: 3.3.2
+  lightningcss:
+    specifier: ^1.22.1
+    version: 1.22.1
   markdown-it:
     specifier: ^14.0.0
     version: 14.0.0
