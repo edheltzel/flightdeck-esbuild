@@ -14,6 +14,7 @@ module.exports = (config) => {
   addShortcodes(config); // copyright year, youtube embeds, etc.
   addComponents(config); // custom components for Flightdeck Airframe
 
+  // 11ty configuration options
   return {
     dir: {
       input: "src",
