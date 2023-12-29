@@ -14,12 +14,12 @@
 
 const isProd = process.env.ENV === "production";
 const { markdownIt } = require("./transforms/markdownIt"); // markdown-it plugins
-const esBuild = require("./transforms/esBuild"); // js bundling
-const scss = require("./transforms/scss"); // scss compiling
-const images = require("./transforms/images"); // image optimization
+const { transformJs } = require("./transforms/esBuild"); // js bundling
+const { transformScss } = require("./transforms/scss"); // scss compiling
+const { transformImages } = require("./transforms/images"); // image optimization
 module.exports = (config) => {
   config.setLibrary("md", markdownIt);
-  config.addPlugin(esBuild);
-  config.addPlugin(scss);
-  config.addPlugin(images);
+  config.addPlugin(transformJs);
+  config.addPlugin(transformScss);
+  config.addPlugin(transformImages);
 };

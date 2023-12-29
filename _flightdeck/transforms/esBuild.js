@@ -8,7 +8,7 @@
 const isProd = process.env.ENV === "production";
 const esbuild = require("esbuild");
 
-module.exports = (config) => {
+const transformJs = (config) => {
   config.on("eleventy.after", async () => {
     await esbuild.build({
       bundle: true,
@@ -19,3 +19,5 @@ module.exports = (config) => {
     });
   });
 };
+
+module.exports = { transformJs };

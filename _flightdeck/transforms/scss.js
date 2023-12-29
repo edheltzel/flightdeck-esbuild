@@ -20,7 +20,7 @@ const scss = require("eleventy-sass");
 const postcss = require("postcss");
 const autoprefixer = require("autoprefixer");
 
-module.exports = (config) => {
+const transformScss = (config) => {
   config.addPlugin(scss, [
     {
       sass: {
@@ -37,4 +37,8 @@ module.exports = (config) => {
       when: [{ ENV: "production" }],
     },
   ]);
+};
+
+module.exports = {
+  transformScss,
 };
