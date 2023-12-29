@@ -12,7 +12,7 @@ Aliquam lobortis vitae nibh nec rhoncus. Morbi mattis neque eget efficitur feugi
 
 > This is a blockquote in **markdown**
 
-{% blockquote "This is a blockquote using a <strong>shortcode</strong>.<br> It support custom HTML also", 'A tweet from <a href="https://twitter.com/jeromecoupe/status/1419726998881062915">jeromecoupe</a>' %}
+{% blockquote "This is a blockquote using a <strong>shortcode</strong>.<br> It support custom HTML also", 'A tweet from <a href="https://twitter.com/jeromecoupe/status/1419726998881062915">jerome coupe</a>' %}
 
 
 <details>
