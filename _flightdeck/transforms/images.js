@@ -13,7 +13,7 @@ const Image = require("@11ty/eleventy-img");
 const path = require("path");
 const glob = require("fast-glob");
 
-async function optimizeImages() {
+const optimizeImages = async () => {
   const baseDirectory = "./src/assets/images";
   const outputDirectory = "./dist/assets/images";
 
@@ -48,10 +48,12 @@ async function optimizeImages() {
       });
     }),
   );
-}
+};
 
-module.exports = (config) => {
-  config.on("eleventy.after", async () => {
-    await optimizeImages();
-  });
+module.exports = {
+  transformImages: (config) => {
+    config.on("eleventy.after", async () => {
+      await optimizeImages();
+    });
+  },
 };

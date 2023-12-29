@@ -1,6 +1,6 @@
 /**
  * Flightdeck's Autopilot UI Components
- * @summary This adds custom ui components for Autopilot design system.
+ * @summary This adds custom ui components for Autopilot CSS system.
  * @link https://www.11ty.dev/docs/shortcodes/
  *
  * @file
