@@ -31,7 +31,12 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
+    <li>
+      <a href="#usage">Usage</a>
+      <ul>
+        <li><a href="#autopilot-system">Autopilot System</a></li>
+      </ul>
+    </li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
@@ -266,7 +271,24 @@ Flightdeck is a very opinionated starter kit, so the file structure is very spec
 
 Flightdeck makes a lot of assumptions and is very opinionated - but having a good idea of how Eleventy's [data cascade](https://www.11ty.dev/docs/data-cascade/) works is always nice, as well as having some understanding on [template inherence](https://mozilla.github.io/nunjucks/templating.html#template-inheritance) in Nunjucks will go a long way. **But is not needed**
 
-**WIP** The Autopilot CSS System uses a modified version of the [7-1 pattern](https://sass-guidelin.es/#the-7-1-pattern), but we combined a couple of concepts regarding naming conventions that fit our workflow. **Documentation coming soon**
+For making changes to the way Flightdeck pilots Eleventy, you will want to reference the `./_flightdeck` directory. This is where all the Eleventy configuration is done, but it is broken down into sections for easier navigation and maintainability.
+
+Inside the `./_flightdeck` directory, you will find the following directories:
+
+- `./_flightdeck/components` - where all the Flightdeck UI components are defined. See `_flightdeck/components/__info.md` for more information.
+- `./_flightdeck/filters` - where all Universal filters are added to Eleventy templates. Currently we use Nunjucks for our templates, so all filters are added to the Nunjucks environment, but are easily adapted to other template engines, like Liquid.
+- `./_flightdeck/shortcodes` - where all shortcodes are added to extend the functionality of the content you are creating. We consider shortcodes content altering and not UI focused. The idea is to create shortcodes that make writing content easier and more enjoyable.
+- `./_flightdeck/transforms` - where all transforms are added to templates, javascript, styles, and images.
+
+All the directories have a corresponding file that is used to import all the files in the directory. Each of these files are imported into `.eleventy.js` as modules.
+- `./_flightdeck/components.js`
+- `./_flightdeck/filters.js`
+- `./_flightdeck/shortcodes.js`
+- `./_flightdeck/transforms.js`
+- `./_flightdeck/workflow.js` - this file controls the development server provided by Eleventy.
+
+
+All Eleventy configuration options are available, see the [Eleventy Docs](https://www.11ty.dev/docs/config/) for more information.
 
 If you're looking to extend or further configure your project with other NPM modules, Eleventy plugins, or ESBuild Plugins, just reference the appropriate documentation.
 
@@ -276,6 +298,10 @@ If you're looking to extend or further configure your project with other NPM mod
 - [ESBuild Docs](https://esbuild.github.io/plugins/)
 - [Biome Docs](https://docs.biomejs.dev/)
 - [NPM Package Docs](https://docs.npmjs.com/using-npm-packages-in-your-projects)
+
+#### [ 👨‍🚀 Autopilot System](#autopilot-system)
+
+**WIP** The Autopilot System, is a modular classless CSS system that uses a modified version of the [7-1 pattern](https://sass-guidelin.es/#the-7-1-pattern). We combined a couple of concepts regarding naming conventions that fit our workflow. **Documentation coming soon**
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
