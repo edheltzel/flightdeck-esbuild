@@ -8,6 +8,7 @@
  * @module transforms
  *
  * @param {Object} config - The Eleventy config object to which the transformations will be added.
+ * @param {boolean} useImageTransforms - Whether or not to use image transforms (default: true).
  *
  * @todo drop scss for css + lightningCSS
  */
@@ -17,9 +18,12 @@ const { markdownIt } = require("./transforms/markdownIt"); // markdown-it plugin
 const { transformJs } = require("./transforms/esBuild"); // js bundling
 const { transformScss } = require("./transforms/scss"); // scss compiling
 const { transformImages } = require("./transforms/images"); // image optimization
-module.exports = (config) => {
+
+module.exports = (config, options) => {
   config.setLibrary("md", markdownIt);
   config.addPlugin(transformJs);
   config.addPlugin(transformScss);
-  config.addPlugin(transformImages);
+  if (options.useImageTransforms) {
+    config.addPlugin(transformImages);
+  }
 };

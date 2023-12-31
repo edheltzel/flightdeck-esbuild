@@ -11,7 +11,7 @@
 
 const fs = require("fs");
 
-module.exports = (config) => {
+module.exports = (config, options) => {
   config.setQuietMode(true); // reduce console
   config.setServerOptions({
     port: 4000, // old habits die hard - 4000 is the default port for Jekyll ¯\_(ツ)_/¯
@@ -25,6 +25,10 @@ module.exports = (config) => {
   /* --- Passthrough Copy --- */
   config.addPassthroughCopy("./src/assets/fonts");
   config.addPassthroughCopy({ "./src/_static": "./" }); // root level files ie: _redirects, robots.txt, favicon.io,etc
+
+  if (!options.useImageTransforms) {
+    config.addPassthroughCopy("./src/assets/images");
+  }
 
   /* --- Layout Aliases --- */
   config.addLayoutAlias("default", "layouts/default.njk");

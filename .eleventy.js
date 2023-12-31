@@ -7,11 +7,14 @@ const addPlugins = require("./_flightdeck/plugins");
 const addComponents = require("./_flightdeck/components");
 
 module.exports = (config) => {
-  addWorkflow(config); // dev server, layout aliases, watch, passthrough copy
-  addFilters(config); // universal filters
-  addTransforms(config); // esbuild, scss, jampack transforms
+  const options = {
+    useImageTransforms: true,
+  };
+  addWorkflow(config, options); // dev server, layout aliases, watch, passthrough copy
+  addTransforms(config, options); // esbuild, scss, image optimization
   addPlugins(config); // eleventy plugins
   addShortcodes(config); // copyright year, youtube embeds, etc.
+  addFilters(config); // universal filters
   addComponents(config); // custom components for Flightdeck Airframe
 
   // 11ty configuration options
