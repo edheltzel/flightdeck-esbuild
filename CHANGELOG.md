@@ -4,9 +4,24 @@ All notable changes to Flightdeck for 11ty will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.4.3] - 2023-12-31
+
+### Adds
+
+Includes a conditional `useImageTransforms`
+
+### Chore
+
+- 🧹 Package updates:
+    - Updates esbuild to v0.19.11
+    - Updates sass to v1.69.6
+
+
+
 ## [0.4.3] - 2023-12-27
 
 ### Adds
+
 - `{% Image 'src' 'alt text' 'sizes: optional' %}` shortcode for responsive images
     - shortcode uses the eleventy-img plugin to generate responsive images
     - see `_flightdeck/shortcodes/image.js` for usage
@@ -19,10 +34,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
     - see `_flightdeck/transforms/images.js` for usage
 
 ### Changed
+
 - `_flightdeck/transforms/images.js` now uses the eleventy-img plugin for image optimization
 - `_flightdeck/filters/limit.js` is removed in favor of `postLimit.js` and `stripFileExtension.js`
 
 ### Chore
+
 - 🧹 Package updates:
     - removes unused packages
     - Updates esbuild to v0.19.10
@@ -32,6 +49,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 Attempting to improve performance of image processing.
 
 ### Adds
+
 - chalk usage is better for logging in the console
 
 ### Changed
@@ -43,29 +61,35 @@ Attempting to improve performance of image processing.
 ## [0.4.1] - 2023-12-15
 
 ### Adds
+
 - adds options to reduce verbose output of image processing
 
 ### Changed
+
 - `scrub.sh` to include `.cache/images.json` when running `npm run clean`
 
 ## [0.4.0] - 2023-12-14
 
 ### Adds
+
 - Adds custom plugin for image processing using the sharp library
 
 ## [0.3.10] - 2023-12-11
 
 ### Adds
+
 - Remove Alpine.js passthrough copy and import Alpine.js in app.js
 
 ### Chore
+
 - 🧹 Package updates:
   - esbuild
   - markdown-it
--
+
 ## [0.3.9] - 2023-12-01
 
 ### Adds
+
 - Adds NPM Scripts for Biome:
   - `npm run check` - runs `biome check` which does both `format` and `lint`
   - `npm run format` - runs `biome format`
@@ -76,29 +100,34 @@ ref: `biome.json`
 ## [0.3.8] - 2023-12-01
 
 ### Chore
+
 - 🧹 Package updates:
   - biome v1.4.1
 
 ## [0.3.7] - 2023-11-30
 
 ### Chore
+
 - 🧹 Package updates:
   - eleventy-sass v2.2.4
   - esbuild v0.19.8
   - biome
 
 ### Adds
+
 - adds biome to the project as dev dependency
 
 ## [0.3.6] - 2023-11-05
 
 ### Chore
+
 - 🧹 Package updates:
   - sass v1.69.5
 
 ## [0.3.4] - 2023-10-06
 
 ### Chore
+
 - 🧹 Package updates:
   - jampack v0.21.1
   - sass v1.69.0
@@ -106,27 +135,36 @@ ref: `biome.json`
 ## [0.3.3] - 2023-10-03
 
 ### Removes
+
 - flightdeck manifest file removed.
 
 ### Chore
+
 - chore: jampack upgrade - includes support for adding custom cache directory
 
 
 ## [0.3.2] - 2023-10-02
+
 Bun officially works with Flightdeck for 11ty 🎉
+
 ### Fixed
+
 - [issue 35](https://github.com/edheltzel/flightdeck-for-11ty/issues/35) thanks to [ottodevs](https://github.com/edheltzel/flightdeck-for-11ty/issues/35#issuecomment-1741819809) workaround.
 
 ## [0.3.1] - 2023-09-20
+
 ### Adds
+
 - adds `.src/assets/_statics` for root level files: ie: `robots.txt`, `favicon.ico`, `humans.txt`, etc.
 
 ### Removes
+
 - removes `robots.njk` from pages collection
 
 ## [0.3.0] - 2023-09-16
 
 ### Fixed
+
 - build command breaks when using bun - migrate back to pnpm
   - this is due to jampack and the sharp dependency
   - its a known issue with [Bun Issue #4549](https://github.com/oven-sh/bun/issues/4549)
@@ -134,12 +172,14 @@ Bun officially works with Flightdeck for 11ty 🎉
 - resolved [issue #37](https://github.com/edheltzel/flightdeck-for-11ty/issues/37#issue-1900828922)
 
 ### Removes
+
 - Removes esbuild-sass-plugin
 - Removes esbuild console output
 - removes theme switcher
 - removes `bun.lock` from the project
 
 ### Adds
+
 - adds `eleventy-sass` see `src/__flightdeck/transforms/scss.js` for configuration
 - postcss and autoprefixer are added back into the project via `eleventy-sass`
 
@@ -147,47 +187,50 @@ Bun officially works with Flightdeck for 11ty 🎉
 ## [0.2.9] - 2023-09-15
 
 ### Changed
+
 - Removes Biome from the project - the core concept of this project is to quickly get started with 11ty. Adding Biome should be optional.
 
 ## [0.2.8] - 2023-09-15
 
 ### Changed
+
 - Readme update - covers [Bun](https://www.bun.sh) usage as package manager
 - `purge` script with now remove `bun.lockb`
 - `preview` script uses bunx in place of `npx`
 - `jampack` updated to `v0.20.2`
 
 ### Removes
+
 - lock files are not apart of the initial project.
 - pnpm-lock.yaml gone with a fresh install using bun
 
 ## [0.2.7] - 2023-08-24
 
 ### Changed
+
 - Readme update
   - all Rome converted to Biome
 - Package.json update
   - format and lint scripts updated to biome
 
 ### Removes
+
 - Rome is removed from the project - Rome has been sunsetted
   - Biome is now the default format and linting tool
 
 ### Adds
+
 - Biome is added to the project
 
-### Deprecated
-Nothing for this release
-
 ### Removes
+
 - Removed layout includes for Nunjucks `extends` and `blocks`
 
 ### Fixed
+
 - Readme now has better getting started section
 - Scss inheritance for vendor styles - ie: prismJS template for codeblocks
 
-### Security
-Nothing for this release
 
 ## [0.1.0] - 2022-07-03
 
@@ -230,7 +273,6 @@ This brought focus back to using Eleventy as the "single-source-of-truth", to si
 ### Changed
 
 - Scss no lives at `assets/styles`
--
 
 ## [0.0.3] - 2022-06-22
 
