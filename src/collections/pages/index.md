@@ -5,6 +5,10 @@ tagline: An opinionated Jamstack starter project for Eleventy.
 permalink: /
 ---
 
+## Flightdeck {.h1}
+
+---
+
 > "That's one small step for man, one giant leap for mankind
 >
 > --<cite>Neil Armstrong</cite>
@@ -18,7 +22,7 @@ permalink: /
 </div>
 ```
 
-## Space Exploration
+## Space Exploration ️🚀
 
 <figure>
   <img
@@ -32,7 +36,7 @@ permalink: /
   </figcaption>
 </figure>
 
-### To The Moon 🌙 🔭
+### To The Moon 🌙
 
 <!-- ![The Moon](/assets/images/spacex/testing.jpeg)
 
