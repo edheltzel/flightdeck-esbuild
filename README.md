@@ -289,7 +289,11 @@ All the directories have a corresponding file that is used to import all the fil
 - `./_flightdeck/transforms.js`
 - `./_flightdeck/workflow.js` - this file controls the development server provided by Eleventy.
 
-Flightdeck comes with an image transforms file `images.js` that watches for changes to images in the `./src/assets/images` directory. When an image is added, removed, or changed, the image is optimized and copied to the `./dist/assets/images` directory. This is done using the [Eleventy Image Plugin](https://www.11ty.dev/docs/plugins/image/). This feature does add a little overhead to the build process, but it is worth it, if you don't have a large number of images. If you would rather not include this feature just set `useImageTransform` to false in `.eleventy.js`
+Flightdeck comes with a custom image transform plugin that watches for changes in the `./src/assets/images` directory and then optimizes any new or changes images copies it to the `./dist/assets/images` directory. Since we are using the the [Eleventy Image Plugin](https://www.11ty.dev/docs/plugins/image) which is smart enough to know if an image has already been optimized, we don't need to worry about that. **Just set it and forget it.**
+
+> **PLEASE NOTE:** This feature does add a little overhead to the initial build process.
+
+If you would rather not include this feature just set `useImageTransform: false`  in `.eleventy.js` and you're good to go.
 
 
 All Eleventy configuration options are available, see the [Eleventy Docs](https://www.11ty.dev/docs/config/) for more information.
