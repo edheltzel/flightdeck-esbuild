@@ -8,7 +8,7 @@ const addComponents = require("./_flightdeck/components");
 
 module.exports = (config) => {
   const options = {
-    useImageTransforms: true,
+    useImageTransform: true,
   };
   addWorkflow(config, options); // dev server, layout aliases, watch, passthrough copy
   addTransforms(config, options); // esbuild, scss, image optimization

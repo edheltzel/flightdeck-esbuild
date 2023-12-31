@@ -23,7 +23,7 @@ module.exports = (config, options) => {
   config.setLibrary("md", markdownIt);
   config.addPlugin(transformJs);
   config.addPlugin(transformScss);
-  if (options.useImageTransforms) {
+  if (options.useImageTransform) {
     config.addPlugin(transformImages);
   }
 };
