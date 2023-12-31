@@ -269,6 +269,8 @@ Flightdeck is a very opinionated starter kit, so the file structure is very spec
 
 ### [ 👀 Usage ](#usage)
 
+The core concept of Flightdeck to keep 11ty in charge of all the DX so you can focus on creating content.
+
 Flightdeck makes a lot of assumptions and is very opinionated - but having a good idea of how Eleventy's [data cascade](https://www.11ty.dev/docs/data-cascade/) works is always nice, as well as having some understanding on [template inherence](https://mozilla.github.io/nunjucks/templating.html#template-inheritance) in Nunjucks will go a long way. **But is not needed**
 
 For making changes to the way Flightdeck pilots Eleventy, you will want to reference the `./_flightdeck` directory. This is where all the Eleventy configuration is done, but it is broken down into sections for easier navigation and maintainability.
