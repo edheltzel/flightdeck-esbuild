@@ -9,7 +9,7 @@
 
 </div>
 
-<!-- TABLE OF CONTENTS -->
+<!-- #region TABLE OF CONTENTS -->
 
 <details open>
   <summary>📔 Table of Contents</summary>
@@ -34,7 +34,7 @@
     <li>
       <a href="#usage">Usage</a>
       <ul>
-        <li><a href="#autopilot-system">Autopilot System</a></li>
+        <li><a href="#autopilot">Autopilot</a></li>
       </ul>
     </li>
     <li><a href="#roadmap">Roadmap</a></li>
@@ -44,8 +44,9 @@
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
+<!-- #endregion TABLE OF CONTENTS -->
 
-<!-- Too Long Didn’t Read -->
+<!-- #region Too Long Didn’t Read -->
 
 ## [🥱 TL;DR](#tldr)
 
@@ -59,6 +60,7 @@
     pnpm run build
 ```
 
+<!-- #endregion Too Long Didn’t Read -->
 <!-- ABOUT THE PROJECT -->
 
 ## [ 🌟 About The Project ](#about-the-project)
@@ -307,9 +309,15 @@ If you're looking to extend or further configure your project with other NPM mod
 - [Biome Docs](https://docs.biomejs.dev/)
 - [NPM Package Docs](https://docs.npmjs.com/using-npm-packages-in-your-projects)
 
-#### [ 👨‍🚀 Autopilot System](#autopilot-system)
 
-**WIP** The Autopilot System, is a modular classless CSS system that uses a modified version of the [7-1 pattern](https://sass-guidelin.es/#the-7-1-pattern). We combined a couple of concepts regarding naming conventions that fit our workflow. **Documentation coming soon**
+<!-- #region Autopilot -->
+#### [ 👨‍🚀 Autopilot](#autopilot)
+
+**WIP** Autopilot, is a custom "version" or theme for [ Pico CSS framework ](https://v2.picocss.com/docs/sass), a minimal css framework for semantic HTML.
+
+The goal of Autopilot, is to provide a simple, yet powerful, set of tools to help build your UI components with a CSS reset "on steroids".
+
+<!-- #endregion Autopilot -->
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -319,7 +327,7 @@ If you're looking to extend or further configure your project with other NPM mod
 ## [ 🧭 Roadmap ](#roadmap)
 
 - [x] Improve documentation
-- [ ] Create a theme using Airframe - A classless CSS system
+- [ ] Create a theme using Autopilot UI Components
 - [ ] Add Dockerfile
 - [ ] Add Yeoman generator/npm package
 - [ ] Add our Eleventy plugins

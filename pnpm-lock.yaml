@@ -28,6 +28,9 @@ devDependencies:
   '@divriots/jampack':
     specifier: ^0.23.1
     version: 0.23.1(react-dom@16.14.0)(react@16.14.0)
+  '@picocss/pico':
+    specifier: 2.0.0-rc1
+    version: 2.0.0-rc1
   autoprefixer:
     specifier: ^10.4.16
     version: 10.4.16(postcss@8.4.32)
@@ -807,6 +810,11 @@ packages:
     dependencies:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.16.0
+    dev: true
+
+  /@picocss/pico@2.0.0-rc1:
+    resolution: {integrity: sha512-t/3AeCLwU1DC1QlNYHZUOaw0BuJqroMmEMopPPjZN7asV9aXrUi04GnNZxnrD9LYxOSnh03RxwGLJ9VofRyF2A==}
+    engines: {node: '>=18.19.0'}
     dev: true
 
   /@proload/core@0.3.3:
