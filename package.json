@@ -36,6 +36,7 @@
     "start": "eleventy --serve --incremental",
     "build": "run-s clean build:11ty",
     "build:11ty": "cross-env ENV=production eleventy",
+    "debug": "DEBUG=Eleventy* eleventy",
     "preview": "npx http-server dist -p 4000",
     "check": "biome check",
     "format": "biome format",
