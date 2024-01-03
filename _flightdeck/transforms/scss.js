@@ -21,28 +21,24 @@ const postcss = require("postcss");
 const autoprefixer = require("autoprefixer");
 
 const transformScss = (config) => {
-  const devOptions = {
-    sass: {
-      style: "expanded",
-      sourceMap: true,
-      loadPaths: ["./node_modules/@picocss/pico/scss/pico", "./src/assets/styles"],
+  config.addPlugin(scss, [
+    {
+      sass: {
+        style: "expanded",
+        sourceMap: true,
+        loadPaths: ["./node_modules/@picocss/pico/scss/pico", "./src/assets/styles"],
+      },
+      postcss: postcss([autoprefixer]),
     },
-    postcss: postcss([autoprefixer]),
-  };
-
-  const prodOptions = {
-    sass: {
-      style: "compressed",
-      sourceMap: false,
-      loadPaths: ["./node_modules/@picocss/pico/scss/pico"],
+    {
+      sass: {
+        style: "compressed",
+        sourceMap: false,
+        loadPaths: ["./node_modules/@picocss/pico/scss/pico"],
+      },
+      when: [{ ENV: "production" }],
     },
-    when: [{ ENV: "production" }],
-  };
-
-  // console.log('Development loadPaths:', devOptions.sass.loadPaths);
-  // console.log('Production loadPaths:', prodOptions.sass.loadPaths);
-
-  config.addPlugin(scss, [devOptions, prodOptions]);
+  ]);
 };
 
 module.exports = {
