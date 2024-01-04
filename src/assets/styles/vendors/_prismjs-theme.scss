@@ -5,6 +5,7 @@
  * Ported for PrismJS by Simon Jespersen [https://github.com/simjes]
  */
 
+
 code[class*="language-"],
 pre[class*="language-"] {
   font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace; /* this is the default */
@@ -104,7 +105,7 @@ pre[class*="language-"] {
 .token.regex,
 .token.char,
 .token.string {
-  color: #{$primary-hue};
+  color: var(--autopilot-muted-color);
 }
 
 .token.entity,

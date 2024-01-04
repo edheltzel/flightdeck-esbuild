@@ -1,4 +1,30 @@
-// Autopilot System
-// --------------------
+// AutoPilot Theme
+@use "themes/autopilot";
 
-@use "autopilot";
+// Pico without default theme
+@use "pico" with (
+  $css-var-prefix: "--autopilot-",
+  $enable-semantic-container: true,
+  $enable-classes: true,
+  $modules: (
+    "themes/default": false,
+  )
+);
+
+// Vendors
+@use "vendors/prismjs-theme"; // prismJS Laserwave theme
+
+:root{
+  --clip-text-color-1: palevioletred;
+  --clip-text-color-2: papayawhip;
+  --clip-text-color-3: crimson;
+}
+.h1 {
+  font-size: clamp(1rem, -6.7586rem + 24.8276vw, 10rem);
+  color: transparent;
+  font-weight: bold;
+  position: relative;
+  background-image: linear-gradient(90deg, var(--clip-text-color-1), var(--clip-text-color-2), var(--clip-text-color-3));
+  background-clip: text;
+  -webkit-background-clip: text;
+}
