@@ -26,7 +26,10 @@ const transformScss = (config) => {
       sass: {
         style: "expanded",
         sourceMap: true,
-        loadPaths: ["./node_modules/@picocss/pico/scss/pico", "./src/assets/styles"],
+        loadPaths: [
+          "node_modules/@picocss/pico/scss/",
+          "src/assets/styles/themes"
+        ],
       },
       postcss: postcss([autoprefixer]),
     },
@@ -34,7 +37,7 @@ const transformScss = (config) => {
       sass: {
         style: "compressed",
         sourceMap: false,
-        loadPaths: ["./node_modules/@picocss/pico/scss/pico"],
+        loadPaths: ["node_modules/@picocss/pico/scss/"],
       },
       when: [{ ENV: "production" }],
     },
