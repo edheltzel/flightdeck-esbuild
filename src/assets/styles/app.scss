@@ -1,0 +1,32 @@
+/**
+ * App Stylesheet
+ *
+ * This is the main stylesheet that imports all other Sass partials and CSS.
+ *
+ * It follows the 7-1 architecture pattern with a mix of the 5-1 and ITCSS concepts
+ * @see https://sass-guidelin.es/#architecture
+ * @see https://matthewelsom.com/blog/simple-scss-playbook.html
+ * @see https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/
+ *
+ * 1. Config - Global configuration and additional imports
+ * 2. Themes - Color palette and theme styles
+ * 3. Vendors - 3rd party styles like PrismJS
+ * 4. Abstracts - Sass helpers, variables, mixins
+ * 5. Base - Resets, normalize, element defaults
+ * 6. Components - Reusable UI components
+ * 7. Layout - Major page components
+ * 8. Pages - Page-specific styles
+ * 9. Shame - Quick fixes
+ */
+
+// Framework Configuration
+@use "config";
+
+// Theme
+@use "themes/autopilot"; // TODO: WIP - not ready yet
+
+// Vendors
+@use "vendors/prismjs-theme"; // Laserwave theme
+
+// Shame styles (for quick/hot fixes)
+@use "abstracts/shame"; // Shame styles (for quick fixes)
