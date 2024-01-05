@@ -26,10 +26,7 @@ const transformScss = (config) => {
       sass: {
         style: "expanded",
         sourceMap: true,
-        loadPaths: [
-          "node_modules/@picocss/pico/scss/",
-          "src/assets/styles/themes"
-        ],
+        loadPaths: ["node_modules/@picocss/pico/scss/"],
       },
       postcss: postcss([autoprefixer]),
     },
