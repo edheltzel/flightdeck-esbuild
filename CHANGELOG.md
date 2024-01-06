@@ -4,6 +4,24 @@ All notable changes to Flightdeck for 11ty will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.4.5] - 2024-01-06
+
+### Adds
+
+- uses PicoCSS for a minimal CSS framework
+- adds AutoPilot theme
+    - includes a modified version of the 7-1 pattern for Sass
+- `scss.js` includes `loadPaths` for PicoCSS
+
+
+### Chore
+
+- 🧹 Package updates:
+    - @divriots/jampack to 0.23.2
+    - eleventy-plugin-embed-everything to 1.18.1
+    - postcss to 8.4.33
+    - sass to 1.69.6
+
 ## [0.4.4] - 2023-12-31
 
 ### Adds
