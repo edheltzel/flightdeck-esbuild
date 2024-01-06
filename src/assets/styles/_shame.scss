@@ -1,4 +1,5 @@
-// Style overrides and hacks
+// Shame file for quick and dirty styles that need to be fixed later.
+
 :root{
   --clip-text-color-1: palevioletred;
   --clip-text-color-2: papayawhip;
@@ -15,6 +16,16 @@
   -webkit-background-clip: text;
 }
 
-p{
-  color: var(--testTest);
+[data-theme="dark"] {
+  // Hide moon icon
+  .theme-toggle {
+    .mode-moon {
+      display: none;
+    }
+
+    // Show sun icon
+    .mode-sunny {
+      display: block;
+    }
+  }
 }
