@@ -6,7 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [0.4.5a] - 2024-01-08
 
+### Adds
+
+- updates PicoCSS to include modules to include only the items as needed.
+
 ### Chore
+
 - 🧹 Package updates:
     - biome to 1.4.1
     - pico to 2.0.0-rc2
