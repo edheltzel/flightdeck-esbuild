@@ -1,3 +1,12 @@
+//
+// This file imports the color schemes
+// 1. light theme
+// 2. dark theme
+// 3. high contrast theme (not implemented yet)
+// This file is meant to be customized, so you can add your own color schemes
+// and import them here.
+//
+
 @use "sass:map";
 @forward "pico";
 @use "settings" as *;
