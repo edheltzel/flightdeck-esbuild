@@ -8,7 +8,7 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
     "@biomejs/biome": "1.5.0",
     "@divriots/jampack": "^0.23.2",
-    "@picocss/pico": "1.5.11",
+    "@picocss/pico": "2.0.0-rc2",
     "autoprefixer": "^10.4.16",
     "browserslist": "^4.22.2",
     "cross-env": "^7.0.3",

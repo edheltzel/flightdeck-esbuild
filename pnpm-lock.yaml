@@ -29,8 +29,8 @@ devDependencies:
     specifier: ^0.23.2
     version: 0.23.2(react-dom@16.14.0)(react@16.14.0)
   '@picocss/pico':
-    specifier: 1.5.11
-    version: 1.5.11
+    specifier: 2.0.0-rc2
+    version: 2.0.0-rc2
   autoprefixer:
     specifier: ^10.4.16
     version: 10.4.16(postcss@8.4.33)
@@ -1375,8 +1375,9 @@ packages:
       fastq: 1.16.0
     dev: true
 
-  /@picocss/pico@1.5.11:
-    resolution: {integrity: sha512-cDaFiSyNPtuSTwSQt/05xsw8+g2ek4/S58tgh9Nc7miJCCdUrY9PAyl4OPWRJtYgJDdEvkUA9GuGj0J4nDP4Cw==}
+  /@picocss/pico@2.0.0-rc2:
+    resolution: {integrity: sha512-0bT9gKwqJqHxh8b07MM3Rd3sXtMZItFIw8kkKoMVsYDooozOKYUYudADG+02Q96gYFvymcVTbHloS3GPyw6zow==}
+    engines: {node: '>=18.19.0'}
     dev: true
 
   /@proload/core@0.3.3:
