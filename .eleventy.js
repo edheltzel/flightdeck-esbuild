@@ -1,6 +1,16 @@
 /**
  * Eleventy Configuration
  * @module .eleventy
+ * @see {@link https://www.11ty.dev/docs/config/}
+ * @param {Object} config - Eleventy's configuration object
+ * @returns {Object} - Returns Eleventy's configuration options
+ *
+ * @const options - Custom options for Flightdeck
+ * @type {Object}
+ * @property {boolean} useImageTransform - Whether to use image transforms or not
+ * @default true
+ * @requires ./_flightdeck/transforms
+ * @todo add more options
  */
 
 const addWorkflow = require("./_flightdeck/workflow");
@@ -10,18 +20,8 @@ const addShortcodes = require("./_flightdeck/shortcodes");
 const addPlugins = require("./_flightdeck/plugins");
 const addComponents = require("./_flightdeck/components");
 
-/**
- * Eleventy configuration function
- * @param {Object} config - Eleventy's configuration object
- * @returns {Object} - Returns Eleventy's configuration options
- */
 module.exports = (config) => {
-  /**
-   * Custom options for Flightdeck
-   * @type {Object}
-   * @property {boolean} useImageTransform - Whether to use image transforms or not
-   * @todo add more options
-   */
+
   const options = {
     useImageTransform: true,
   };
