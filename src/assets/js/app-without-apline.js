@@ -1,5 +1,5 @@
-import { initTheme } from "./modules/visualGuidanceSystem/vgsThemeSwitcher.js";
-import { VGSCursor } from "./modules/visualGuidanceSystem/vgsCursor.js";
+import { initTheme } from "./modules/visualGuidanceSystem/vgs-themeToggle.js";
+import { VGSCursor } from "./modules/visualGuidanceSystem/vgs-cursor.js";
 
 initTheme("light");
 VGSCursor();

@@ -1,11 +1,11 @@
 /**
  * @file This is the main entry point for the application. It imports and initializes Alpine.js and VGSCursor.
  * @requires module:alpinejs
- * @requires module:./modules/visualGuidanceSystem/vgsCursor.js
+ * @requires module:./modules/visualGuidanceSystem/vgs-cursor.js
  */
 
 import Alpine from "alpinejs";
-import { VGSCursor } from "./modules/visualGuidanceSystem/vgsCursor.js";
+import { VGSCursor } from "./modules/visualGuidanceSystem/vgs-cursor.js";
 
 // Assigning Alpine to the global window object
 window.Alpine = Alpine;
