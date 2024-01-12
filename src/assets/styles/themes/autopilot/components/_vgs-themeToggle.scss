@@ -18,7 +18,7 @@
     transform: scale(0.9, 0.9);
   }
 
-  .mode-moon {
+  .lunar-eclipse {
     display: block;
 
     line {
@@ -34,7 +34,7 @@
     transform: rotate(1deg);
   }
 
-  .mode-sunny {
+  .solar-eclipse {
     display: none;
 
     line {
@@ -53,12 +53,12 @@
 
   // Hide moon icon
   .theme-toggle {
-    .mode-moon {
+    .lunar-eclipse {
       display: none;
     }
 
     // Show sun icon
-    .mode-sunny {
+    .solar-eclipse {
       display: block;
     }
   }
