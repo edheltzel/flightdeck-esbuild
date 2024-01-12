@@ -1,11 +1,12 @@
 // Shame file for quick and dirty styles that need to be fixed later.
 
-:root{
+:root {
   --clip-text-color-1: palevioletred;
   --clip-text-color-2: papayawhip;
   --clip-text-color-3: crimson;
   --testTest: wheat;
 }
+
 .h1 {
   font-size: clamp(1rem, -6.7586rem + 24.8276vw, 10rem);
   color: transparent;
@@ -14,18 +15,4 @@
   background-image: linear-gradient(90deg, var(--clip-text-color-1), var(--clip-text-color-2), var(--clip-text-color-3));
   background-clip: text;
   -webkit-background-clip: text;
-}
-
-[data-theme="dark"] {
-  // Hide moon icon
-  .theme-toggle {
-    .mode-moon {
-      display: none;
-    }
-
-    // Show sun icon
-    .mode-sunny {
-      display: block;
-    }
-  }
 }

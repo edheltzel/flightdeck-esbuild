@@ -30,6 +30,8 @@
       fill: var(--autopilot-contrast);
       stroke: var(--autopilot-contrast);
     }
+
+    transform: rotate(1deg);
   }
 
   .mode-sunny {
@@ -43,6 +45,21 @@
     circle {
       fill: none;
       stroke: var(--autopilot-contrast);
+    }
+  }
+}
+
+[data-theme="dark"] {
+
+  // Hide moon icon
+  .theme-toggle {
+    .mode-moon {
+      display: none;
+    }
+
+    // Show sun icon
+    .mode-sunny {
+      display: block;
     }
   }
 }
