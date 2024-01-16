@@ -11,10 +11,10 @@ const esbuild = require("esbuild");
 const transformJs = (config) => {
   config.on("eleventy.after", async () => {
     await esbuild.build({
-      bundle: true,
       entryPoints: { "assets/js/app": "./src/assets/js/app.js" },
-      minify: isProd,
+      bundle: true,
       outdir: "dist",
+      minify: isProd,
       sourcemap: !isProd,
     });
   });
