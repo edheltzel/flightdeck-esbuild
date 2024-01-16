@@ -14,37 +14,24 @@
   }
 
   &:active {
-    -webkit-transform: scale(0.9, 0.9);
-    transform: scale(0.9, 0.9);
+    transform: scale(.75);
+    transition: ease-in-out .1s;
   }
 
   .lunar-eclipse {
-    display: block;
+    display: none;
 
-    line {
-      stroke: var(--autopilot-contrast);
-      fill: none;
-    }
-
-    circle {
+    path {
       fill: var(--autopilot-contrast);
-      stroke: var(--autopilot-contrast);
     }
 
-    transform: rotate(1deg);
   }
 
   .solar-eclipse {
-    display: none;
+    display: block;
 
-    line {
-      stroke: var(--autopilot-contrast);
-      fill: none;
-    }
-
-    circle {
-      fill: none;
-      stroke: var(--autopilot-contrast);
+    path {
+      fill: var(--autopilot-contrast);
     }
   }
 }
@@ -54,12 +41,12 @@
   // Hide moon icon
   .theme-toggle {
     .lunar-eclipse {
-      display: none;
+      display: block;
     }
 
     // Show sun icon
     .solar-eclipse {
-      display: block;
+      display: none;
     }
   }
 }
