@@ -21,9 +21,8 @@ const addPlugins = require("./_flightdeck/plugins");
 const addComponents = require("./_flightdeck/components");
 
 module.exports = (config) => {
-
   const options = {
-    useImageTransform: true,
+    useImageTransform: false,
   };
 
   // Configure 11ty development server, layout aliases, watch, passthrough copy

@@ -11,7 +11,7 @@
 
 <!-- #region TABLE OF CONTENTS -->
 
-<details open>
+<details>
   <summary>📔 Table of Contents</summary>
   <ol>
     <li>

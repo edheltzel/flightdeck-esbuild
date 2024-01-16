@@ -7,7 +7,7 @@
 
 // Default: Light theme
 @mixin theme {
-  #{$css-var-prefix}background-color: #{$pink-100};
+  #{$css-var-prefix}background-color: #{$white};
 
   // Text color
   #{$css-var-prefix}color: #{$zinc-750};
@@ -113,33 +113,23 @@
     #{$css-var-prefix}form-element-active-background-color: #{$white};
     #{$css-var-prefix}form-element-active-border-color: var(#{$css-var-prefix}primary-border);
     #{$css-var-prefix}form-element-focus-color: var(#{$css-var-prefix}primary-border);
-    #{$css-var-prefix}form-element-disabled-background-color: var(
-      #{$css-var-prefix}form-element-background-color
-    );
-    #{$css-var-prefix}form-element-disabled-border-color: var(
-      #{$css-var-prefix}form-element-border-color
-    );
+    #{$css-var-prefix}form-element-disabled-background-color: var(#{$css-var-prefix}form-element-background-color);
+    #{$css-var-prefix}form-element-disabled-border-color: var(#{$css-var-prefix}form-element-border-color);
     #{$css-var-prefix}form-element-disabled-opacity: 0.5;
     #{$css-var-prefix}form-element-invalid-border-color: #{mix($red-500, $zinc-350)};
     #{$css-var-prefix}form-element-invalid-active-border-color: #{mix($red-500, $zinc-350, 75%)};
-    #{$css-var-prefix}form-element-invalid-focus-color: var(
-      #{$css-var-prefix}form-element-invalid-active-border-color
-    );
+    #{$css-var-prefix}form-element-invalid-focus-color: var(#{$css-var-prefix}form-element-invalid-active-border-color);
     #{$css-var-prefix}form-element-valid-border-color: #{mix($jade-450, $zinc-350)};
     #{$css-var-prefix}form-element-valid-active-border-color: #{mix($jade-450, $zinc-350, 75%)};
-    #{$css-var-prefix}form-element-valid-focus-color: var(
-      #{$css-var-prefix}form-element-valid-active-border-color
-    );
+    #{$css-var-prefix}form-element-valid-focus-color: var(#{$css-var-prefix}form-element-valid-active-border-color);
 
     // Focus for buttons, radio and select
-    input:is(
-        [type="submit"],
-        [type="button"],
-        [type="reset"],
-        [type="checkbox"],
-        [type="radio"],
-        [type="file"]
-      ) {
+    input:is([type="submit"],
+      [type="button"],
+      [type="reset"],
+      [type="checkbox"],
+      [type="radio"],
+      [type="file"]) {
       #{$css-var-prefix}form-element-focus-color: var(#{$css-var-prefix}primary-focus);
     }
   }

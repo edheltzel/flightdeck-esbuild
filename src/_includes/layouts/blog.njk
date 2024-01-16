@@ -2,7 +2,7 @@
 {% block content %}
   {{ content | safe }}
 
-  {% for post in collections.blog | postLimit(1) | reverse %}
+  {% for post in collections.blog | postLimit(4) | reverse %}
     {# TODO: use pagination instead of the limit() filter #}
     <article>
       <a href="{{ post.url }}">
