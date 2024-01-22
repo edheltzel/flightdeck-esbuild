@@ -20,4 +20,4 @@ Alpine.start();
  * Invokes VGSCursor function
  * @see {@link ./modules/visualGuidanceSystem/vgsCursor.js|VGSCursor}
  */
-VGSCursor();
+document.addEventListener('DOMContentLoaded', VGSCursor);

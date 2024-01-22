@@ -42,6 +42,7 @@ export function VGSCursor() {
      */
     let isHovering = false;
 
+    const targetElements = "a, .vgs-pointer, button";
     /**
      * Updates the position of the cursor based on the mouse position.
      * @function updateCursor
@@ -64,7 +65,7 @@ export function VGSCursor() {
      * @returns {void}
      */
     function handleMouseOver(event) {
-      if (event.target.matches("a, .cursor-pointer")) {
+      if (event.target.matches(targetElements)) {
         innerCursor.classList.add("cursor-hover");
         outerCursor.classList.add("cursor-hover");
         isHovering = true;
@@ -79,8 +80,8 @@ export function VGSCursor() {
      */
     function handleMouseOut(event) {
       if (
-        !event.target.matches("a, .cursor-pointer") &&
-        (!event.relatedTarget || !event.relatedTarget.matches("a, .cursor-pointer"))
+        !event.target.matches(targetElements) &&
+        (!event.relatedTarget || !event.relatedTarget.matches(targetElements))
       ) {
         innerCursor.classList.remove("cursor-hover");
         outerCursor.classList.remove("cursor-hover");
