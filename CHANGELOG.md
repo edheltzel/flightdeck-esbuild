@@ -17,6 +17,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - 🧹 Package updates:
     - biome to 1.5.3
     - alpinejs to 3.13.4
+    - picocss to 2.0.0-rc3
 
 ## [0.4.5a] - 2024-01-08
 
