@@ -1,9 +1,8 @@
 @use "sass:map";
-@forward "pico";
-@use "colors" as *;
-@use "settings" as *;
-@use "../../../../../../node_modules/@picocss/pico/scss/pico/utils/box-shadow";
-@use "../../../../../../node_modules/@picocss/pico/scss/pico/utils/functions";
+@use "../../colors" as *;
+@use "../../settings" as *;
+@use "../../helpers/functions";
+@use "theme-colors";
 
 // Default: Light theme
 @mixin theme {
@@ -13,23 +12,23 @@
   #{$css-var-prefix}color: #{$zinc-750};
 
   // Text selection color
-  #{$css-var-prefix}text-selection-color: #{rgba($azure-400, 0.25)};
+  #{$css-var-prefix}text-selection-color: theme-colors.get("text-selection-color", "light");
 
   // Muted colors
   #{$css-var-prefix}muted-color: #{$zinc-550};
   #{$css-var-prefix}muted-border-color: #{mix($slate-100, $slate-50)};
 
   // Primary colors
-  #{$css-var-prefix}primary: #{$azure-550};
-  #{$css-var-prefix}primary-background: #{$azure-550};
+  #{$css-var-prefix}primary: theme-colors.get("primary", "light");
+  #{$css-var-prefix}primary-background: theme-colors.get("primary-background", "light");
   #{$css-var-prefix}primary-border: var(#{$css-var-prefix}primary-background);
-  #{$css-var-prefix}primary-underline: #{rgba($azure-550, 0.5)};
-  #{$css-var-prefix}primary-hover: #{$azure-650};
-  #{$css-var-prefix}primary-hover-background: #{$azure-600};
+  #{$css-var-prefix}primary-underline: theme-colors.get("primary-underline", "light");
+  #{$css-var-prefix}primary-hover: theme-colors.get("primary-hover", "light");
+  #{$css-var-prefix}primary-hover-background: theme-colors.get("primary-hover-background", "light");
   #{$css-var-prefix}primary-hover-border: var(#{$css-var-prefix}primary-hover-background);
   #{$css-var-prefix}primary-hover-underline: var(#{$css-var-prefix}primary-hover);
-  #{$css-var-prefix}primary-focus: #{rgba($azure-400, 0.5)};
-  #{$css-var-prefix}primary-inverse: #{$white};
+  #{$css-var-prefix}primary-focus: theme-colors.get("primary-focus", "light");
+  #{$css-var-prefix}primary-inverse: theme-colors.get("primary-inverse", "light");
 
   // Secondary colors
   #{$css-var-prefix}secondary: #{$slate-550};
@@ -56,7 +55,7 @@
   #{$css-var-prefix}contrast-inverse: #{$white};
 
   // Box shadow
-  #{$css-var-prefix}box-shadow: box-shadow.shadow($slate-400);
+  #{$css-var-prefix}box-shadow: functions.shadow($slate-400);
 
   // Typography
   @if map.get($modules, "content/typography") {
@@ -113,23 +112,27 @@
     #{$css-var-prefix}form-element-active-background-color: #{$white};
     #{$css-var-prefix}form-element-active-border-color: var(#{$css-var-prefix}primary-border);
     #{$css-var-prefix}form-element-focus-color: var(#{$css-var-prefix}primary-border);
-    #{$css-var-prefix}form-element-disabled-background-color: var(#{$css-var-prefix}form-element-background-color);
-    #{$css-var-prefix}form-element-disabled-border-color: var(#{$css-var-prefix}form-element-border-color);
     #{$css-var-prefix}form-element-disabled-opacity: 0.5;
     #{$css-var-prefix}form-element-invalid-border-color: #{mix($red-500, $zinc-350)};
     #{$css-var-prefix}form-element-invalid-active-border-color: #{mix($red-500, $zinc-350, 75%)};
-    #{$css-var-prefix}form-element-invalid-focus-color: var(#{$css-var-prefix}form-element-invalid-active-border-color);
+    #{$css-var-prefix}form-element-invalid-focus-color: var(
+      #{$css-var-prefix}form-element-invalid-active-border-color
+    );
     #{$css-var-prefix}form-element-valid-border-color: #{mix($jade-450, $zinc-350)};
     #{$css-var-prefix}form-element-valid-active-border-color: #{mix($jade-450, $zinc-350, 75%)};
-    #{$css-var-prefix}form-element-valid-focus-color: var(#{$css-var-prefix}form-element-valid-active-border-color);
+    #{$css-var-prefix}form-element-valid-focus-color: var(
+      #{$css-var-prefix}form-element-valid-active-border-color
+    );
 
     // Focus for buttons, radio and select
-    input:is([type="submit"],
-      [type="button"],
-      [type="reset"],
-      [type="checkbox"],
-      [type="radio"],
-      [type="file"]) {
+    input:is(
+        [type="submit"],
+        [type="button"],
+        [type="reset"],
+        [type="checkbox"],
+        [type="radio"],
+        [type="file"]
+      ) {
       #{$css-var-prefix}form-element-focus-color: var(#{$css-var-prefix}primary-focus);
     }
   }
@@ -137,8 +140,9 @@
   // Switch (input[type="checkbox"][role="switch"])
   @if map.get($modules, "forms/checkbox-radio-switch") {
     #{$css-var-prefix}switch-background-color: #{$slate-200};
-    #{$css-var-prefix}switch-color: var(#{$css-var-prefix}primary-inverse);
     #{$css-var-prefix}switch-checked-background-color: var(#{$css-var-prefix}primary-background);
+    #{$css-var-prefix}switch-color: #{$white};
+    #{$css-var-prefix}switch-thumb-box-shadow: theme-colors.get("switch-thumb-box-shadow", "light");
   }
 
   // Range (input[type="range"])

@@ -212,7 +212,7 @@ A reference to the [image](#image).
   <!-- Color-->
 
 <label for="color">Color
-<input type="color" id="color" name="color" value="#0eaaaa">
+<input type="color" id="color" name="color" value="#0090D0">
 </label>
 
   </div>

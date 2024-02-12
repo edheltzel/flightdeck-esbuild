@@ -2,11 +2,8 @@
  * App Style Sheet
  */
 
-// Config
+// Config and Theme
 @use "config";
-
-// Theme
-@use "themes/autopilot"; // TODO: WIP - not ready yet
 
 // Shame styles (for quick/hot fixes)
 @use "shame";
