@@ -12,16 +12,16 @@
     "autoprefixer": "^10.4.17",
     "browserslist": "^4.23.0",
     "cross-env": "^7.0.3",
+    "del-cli": "^5.1.0",
     "eleventy-plugin-embed-everything": "^1.18.2",
     "eleventy-sass": "^2.2.4",
-    "esbuild": "^0.20.0",
+    "esbuild": "^0.20.1",
     "fast-glob": "^3.3.2",
     "jest": "^29.7.0",
     "markdown-it": "^14.0.0",
     "markdown-it-attrs": "^4.1.6",
-    "npm-run-all": "^4.1.5",
     "postcss": "^8.4.35",
-    "sass": "^1.71.0"
+    "sass": "^1.71.1"
   },
   "dependencies": {
     "@alpinejs/persist": "^3.13.5",
@@ -33,16 +33,22 @@
   "browserslist": "defaults, not IE 11, maintained node versions",
   "description": "An opinionated Jamstack starter project for Eleventy.",
   "license": "WTFPL",
+  "config": {
+    "echoClean": "🧼 Scrubbed dist/ & all cache directories ✨",
+    "echoPurge": "🧹 All Clean ✨ Run `pnpm install` to start fresh ✨",
+    "lockFiles": "pnpm-lock.yaml node_modules/",
+    "devFiles": "dist/ .cache/ .jampack/ *.log"
+  },
   "scripts": {
     "start": "eleventy --serve",
-    "build": "run-s clean build:11ty",
+    "build": "pnpm run clean && pnpm run build:11ty",
     "build:11ty": "cross-env ENV=production eleventy",
     "debug": "DEBUG=Eleventy* eleventy",
-    "preview": "npx http-server dist -p 4000",
+    "preview": "pnpm dlx http-server dist -p 4000",
     "check": "biome check",
     "format": "biome format",
     "lint": "biome lint",
-    "clean": "./.scrub.sh site",
-    "purge": "./.scrub.sh purge"
+    "clean": "del-cli $npm_package_config_devFiles && echo $npm_package_config_echoClean",
+    "purge": "del-cli $npm_package_config_devFiles && del-cli $npm_package_config_lockFiles && echo $npm_package_config_echoPurge"
   }
 }
