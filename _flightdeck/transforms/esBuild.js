@@ -19,8 +19,7 @@ const transformJs = (config) => {
       sourcemap: !isProd,
       splitting: true,
       format: 'esm',
-      logLevel: 'warning',
-      outbase: 'src/assets/js',
+      logLevel: 'info',
       metafile: true,
     });
   });
