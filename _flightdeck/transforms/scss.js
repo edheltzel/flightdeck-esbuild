@@ -19,6 +19,7 @@
 const scss = require("eleventy-sass");
 const postcss = require("postcss");
 const autoprefixer = require("autoprefixer");
+const cssDeclarationSorter = require("css-declaration-sorter");
 
 const transformScss = (config) => {
   config.addPlugin(scss, [
@@ -27,8 +28,7 @@ const transformScss = (config) => {
         style: "expanded",
         sourceMap: true,
         loadPaths: ["node_modules/@picocss/pico/scss"],
-      },
-      postcss: postcss([autoprefixer]),
+      }
     },
     {
       sass: {
@@ -36,6 +36,10 @@ const transformScss = (config) => {
         sourceMap: false,
         loadPaths: ["node_modules/@picocss/pico/scss/"],
       },
+      postcss: postcss([
+        autoprefixer,
+        cssDeclarationSorter({ order: "concentric-css" })
+      ]),
       when: [{ ENV: "production" }],
     },
   ]);
