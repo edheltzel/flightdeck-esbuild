@@ -18,11 +18,13 @@
     "eleventy-plugin-embed-everything": "^1.18.2",
     "eleventy-sass": "^2.2.4",
     "esbuild": "^0.20.1",
+    "esbuild-sass-plugin": "^3.1.0",
     "fast-glob": "^3.3.2",
     "jest": "^29.7.0",
     "markdown-it": "^14.0.0",
     "markdown-it-attrs": "^4.1.6",
     "postcss": "^8.4.35",
+    "postcss-preset-env": "^9.4.0",
     "sass": "^1.71.1"
   },
   "dependencies": {
@@ -42,7 +44,7 @@
     "devFiles": "dist/ .cache/ .jampack/ *.log"
   },
   "scripts": {
-    "start": "eleventy --serve",
+    "start": "eleventy --serve --incremental",
     "build": "pnpm run clean && pnpm run build:11ty",
     "build:11ty": "cross-env ENV=production eleventy",
     "debug": "DEBUG=Eleventy* eleventy",
