@@ -1,9 +1,9 @@
 // Shame file for quick and dirty styles that need to be fixed later.
 
 :root {
-  --clip-text-color-1: palevioletred;
-  --clip-text-color-2: papayawhip;
-  --clip-text-color-3: crimson;
+  --clip-text-color-1: hotpink;
+  --clip-text-color-2: wheat;
+  --clip-text-color-3: gold;
   --testTest: wheat;
 }
 
@@ -16,3 +16,8 @@
   background-clip: text;
   -webkit-background-clip: text;
 }
+
+// button {
+//   margin-top: .5rem;
+//   margin-bottom: .5rem;
+// }

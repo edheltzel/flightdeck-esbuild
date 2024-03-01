@@ -6,10 +6,10 @@
 @use "pico" with ($css-var-prefix: "--autopilot-",
   $enable-semantic-container: true,
   $enable-classes: true,
-  $theme-color: "sand",
-  $modules: ("themes/default": true,
+  $theme-color: "pink",
+  $modules: (
+    // "themes/default": true,
   ));
 
 // Autopilot Theme
-// @use "themes/default"; WIP - trying to figure out paths
-@use "themes/autopilot/vendors/_vendors"
+@use "themes/autopilot";
