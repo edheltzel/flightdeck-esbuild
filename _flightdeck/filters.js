@@ -20,7 +20,7 @@ const excerpt = require("./filters/excerpt");
 module.exports = (config) => {
   config.addFilter("excerpt", excerpt);
   config.addFilter("postLimit", limit.postLimit);
-  config.addFilter("stripExt", strip.stripFileExtension);
+  config.addFilter("removeExt", strip.stripFileExtension);
   config.addFilter("baseUrl", baseUrl);
   config.addFilter("postDate", date.postDate);
   config.addFilter("postDateTime", date.postDateTime);
