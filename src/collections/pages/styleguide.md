@@ -2,6 +2,7 @@
 title: Style Guide 💅 🎨
 tagline: Semantic HTML with very minimal use of classes
 ---
+
 <!-- Typography-->
 
 ## Typography {.h1}
