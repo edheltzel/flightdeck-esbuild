@@ -296,7 +296,7 @@ Flightdeck comes with a custom image transform plugin that watches for changes i
 
 > **PLEASE NOTE:** This feature does add a little overhead to the initial build process.
 
-If you would rather not include this feature just set `useImageTransform: false`  in `.eleventy.js` and you're good to go.
+If you would rather not include this feature just set `useImageDirTransform: false`  in `.eleventy.js` and you're good to go.
 
 
 All Eleventy configuration options are available, see the [Eleventy Docs](https://www.11ty.dev/docs/config/) for more information.
