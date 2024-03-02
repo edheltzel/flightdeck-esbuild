@@ -6,9 +6,9 @@
 @use "pico" with ($css-var-prefix: "--autopilot-",
   $enable-semantic-container: true,
   $enable-classes: true,
-  $theme-color: "pink",
+  $theme-color: "red",
   $modules: (
-    // "themes/default": true,
+    "themes/default": false,
   ));
 
 // Autopilot Theme

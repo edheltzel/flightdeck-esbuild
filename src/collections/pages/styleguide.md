@@ -12,7 +12,7 @@ Aliquam lobortis vitae nibh nec rhoncus. Morbi mattis neque eget efficitur feugi
 
 > This is a blockquote in **markdown**
 
-{% blockquote "This is a blockquote using a <strong>shortcode</strong>.<br> It support custom HTML also", 'A tweet from <a href="https://twitter.com/jeromecoupe/status/1419726998881062915">jerome coupe</a>' %}
+{% blockquote "This is a blockquote using a <u>shortcode</u>.<br> It support custom HTML also", 'A tweet from <a href="https://twitter.com/jeromecoupe/status/1419726998881062915">jerome coupe</a>' %}
 
 
 <details>
@@ -55,10 +55,26 @@ let x = (x, y) => x * y;
 
 ### Lists
 
+<section class="grid">
+  <div>
+
+#### Unordered list
 - Aliquam lobortis lacus eu libero ornare facilisis.
 - Nam et magna at libero scelerisque egestas.
 - Suspendisse id nisl ut leo finibus vehicula quis eu ex.
 - Proin ultricies turpis et volutpat vehicula.
+
+  </div>
+  <div>
+
+#### Ordered list
+
+1. Aliquam lobortis lacus eu libero ornare facilisis.
+2. Nam et magna at libero scelerisque egestas.
+3. Suspendisse id nisl ut leo finibus vehicula quis eu ex.
+4. Proin ultricies turpis et volutpat vehicula.
+  </div>
+</section>
 
   <!-- Inline text elements-->
 
