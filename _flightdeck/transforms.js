@@ -17,8 +17,7 @@ const isProd = process.env.ENV === "production";
 const { markdownIt } = require("./transforms/markdownIt"); // markdown-it plugins
 const { transformJs } = require("./transforms/esBuild"); // js bundling
 const { transformScss } = require("./transforms/scss"); // scss compiling
-const { transformImageDir } = require("./transforms/images"); // image optimization
-
+const { transformImageDir } = require("./transforms/allimages"); // optimize all images in src/assets/images
 module.exports = (config, options) => {
   config.setLibrary("md", markdownIt);
   config.addPlugin(transformJs);
