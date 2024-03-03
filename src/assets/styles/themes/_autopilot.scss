@@ -4,8 +4,14 @@
 // Colors schemes
 @use "autopilot/schemes";
 
-// Vendors
-@use "autopilot/vendors/_vendors";
+// Base
+@use "autopilot/base/_base";
+
+// Components
+@use "autopilot/components/_components";
+
+//Utilities
+@use "autopilot/utilities/_utilities";
 
 // Shame styles (for quick/hot fixes)
 @use "autopilot/shame";

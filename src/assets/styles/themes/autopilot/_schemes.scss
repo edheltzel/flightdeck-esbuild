@@ -13,6 +13,14 @@
   [data-theme="light"],
   :root:not([data-theme="dark"]) {
     @include light.theme;
+    .theme-toggle {
+      .lunar-eclipse {
+        display: none;
+      }
+      .solar-eclipse {
+        display: block;
+      }
+    }
   }
 
   // Dark color scheme (Auto)
@@ -21,12 +29,28 @@
     :root:not([data-theme]) {
       @include dark.theme;
     }
+    .theme-toggle {
+      .lunar-eclipse {
+        display: none;
+      }
+      .solar-eclipse {
+        display: block;
+      }
+    }
   }
 
   // Dark color scheme (Forced)
   // Enabled if forced with data-theme="dark"
   [data-theme="dark"] {
     @include dark.theme;
+    .theme-toggle {
+      .solar-eclipse {
+        display: none;
+      }
+      .lunar-eclipse {
+        display: block;
+      }
+    }
   }
 
   #{$parent-selector} progress,
