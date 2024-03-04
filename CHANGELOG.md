@@ -5,13 +5,15 @@ All notable changes to Flightdeck for 11ty will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
-## [0.4.5] - 2024-03-04
+## [0.4.6] - 2024-03-04
 
-- package updates
-- updates packages
-- resolves theme issue for Autopilot
-- fixes alpinejs for modal support
-- misc updates and fixes with styles
+## What's Changed
+* 01 11 ui cleanup by @edheltzel in https://github.com/edheltzel/flightdeck-for-11ty-esbuild/pull/48
+* 01 11 ui cleanup by @edheltzel in https://github.com/edheltzel/flightdeck-for-11ty-esbuild/pull/49
+* dev by @edheltzel in https://github.com/edheltzel/flightdeck-for-11ty-esbuild/pull/50
+
+
+**Full Changelog**: https://github.com/edheltzel/flightdeck-for-11ty-esbuild/compare/v0.4.5...v0.4.6
 
 
 ## [0.4.5-a] - 2024-01-08
