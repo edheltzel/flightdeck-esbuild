@@ -14,7 +14,7 @@ const fs = require("fs");
 module.exports = (config, options) => {
   config.setQuietMode(true); // reduce console
   config.setServerOptions({
-    port: 4000, // old habits die hard - 4000 is the default port for Jekyll ¯\_(ツ)_/¯
+    port: 4000, // old habits die hard - 4000 is the default port for Jekyll
     showVersion: true, // show the server version number on the command line
     showAllHosts: false, // show local network IP address for device testing
   });
@@ -26,8 +26,8 @@ module.exports = (config, options) => {
   config.addPassthroughCopy("./src/assets/fonts");
   config.addPassthroughCopy({ "./src/_static": "./" }); // root level files ie: _redirects, robots.txt, favicon.io,etc
 
-  if (!options.useImageTransform) {
-    config.addPassthroughCopy("./src/assets/images");
+  if (!options.useImageDirTransform) {
+    config.addPassthroughCopy("./src/assets/images"); // copy images if useImageDirTransform is false
   }
 
   /* --- Layout Aliases --- */

@@ -5,21 +5,18 @@ All notable changes to Flightdeck for 11ty will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
-## [0.4.5b] - 2024-01-22
+## [0.4.6] - 2024-03-04
 
-### Adds
+## What's Changed
+* 01 11 ui cleanup by @edheltzel in https://github.com/edheltzel/flightdeck-for-11ty-esbuild/pull/48
+* 01 11 ui cleanup by @edheltzel in https://github.com/edheltzel/flightdeck-for-11ty-esbuild/pull/49
+* dev by @edheltzel in https://github.com/edheltzel/flightdeck-for-11ty-esbuild/pull/50
 
-- Updates Visual Guidance System utilities
-    - custom cursor for links and buttons
 
-### Chore
+**Full Changelog**: https://github.com/edheltzel/flightdeck-for-11ty-esbuild/compare/v0.4.5...v0.4.6
 
-- 🧹 Package updates:
-    - biome to 1.5.3
-    - alpinejs to 3.13.4
-    - picocss to 2.0.0-rc3
 
-## [0.4.5a] - 2024-01-08
+## [0.4.5-a] - 2024-01-08
 
 ### Adds
 
@@ -53,7 +50,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Adds
 
-Includes a conditional `useImageTransforms`
+Includes a conditional `useImageDirTransform`
 
 ### Chore
 

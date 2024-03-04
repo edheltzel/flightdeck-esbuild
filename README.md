@@ -109,7 +109,7 @@ We are assuming that you already have Node with NPM and Git installed on your sy
 
 We have shifted to using [PNPM](https://pnpm.io/) as our primary package manager, but we are considering Bun as a replacement, that is why you will see a `bun.lockb` file in the project.
 
-But, you can swap `pnpm` in favor of your preferences 👉 [NPM](https://www.npmjs.com/) , [Yarn](https://yarnpkg.com/), and and [Bun](https://bun.sh/docs). Use whatever you want 👍
+But, you can swap `pnpm` in favor of your preferences 👉 [NPM](https://www.npmjs.com/) , [Yarn](https://yarnpkg.com/), and and [Bun](https://bun.sh/docs). Use whatever you want 👍 just be sure to update the scripts in `package.json` with what ever flavor you choose to use.
 
 ~~If you do choose to use Bun, you might run into some issues with the `build` command. This is because of the `sharp` dependency that is used by `jampack`. 👀 see [issue 35](https://github.com/edheltzel/flightdeck-for-11ty/issues/35).~~
 
@@ -147,19 +147,17 @@ pnpm install
     pn list
 Legend: production dependency, optional only, dev only
 
-flightdeck-for-eleventy@0.4.3 /Users/ed/Developer/oss/flightdeck/for-11ty-esbuild
+flightdeck-for-eleventy@0.4.5-a /Users/ed/Developer/oss/flightdeck/for-11ty-esbuild
 
 dependencies:
-@alpinejs/persist 3.13.3
-alpinejs 3.13.3
+@alpinejs/persist 3.13.5
+alpinejs 3.13.5
 
 devDependencies:
-@11ty/eleventy 2.0.1                         browserslist 4.22.2                          markdown-it 14.0.0
-@11ty/eleventy-img 3.1.8                     cross-env 7.0.3                              markdown-it-attrs 4.1.6
-@11ty/eleventy-plugin-syntaxhighlight 5.0.0  eleventy-plugin-embed-everything 1.17.0      npm-run-all 4.1.5
-@biomejs/biome 1.4.1                         eleventy-sass 2.2.4                          postcss 8.4.32
-@divriots/jampack 0.23.1                     esbuild 0.19.10                              sass 1.69.5
-autoprefixer 10.4.16                         fast-glob 3.3.2
+@11ty/eleventy 2.0.1                         @picocss/pico 2.0.3                          eleventy-plugin-embed-everything 1.18.2      markdown-it 14.0.0
+@11ty/eleventy-img 4.0.2                     autoprefixer 10.4.17                         eleventy-sass 2.2.4                          markdown-it-attrs 4.1.6
+@11ty/eleventy-plugin-syntaxhighlight 5.0.0  browserslist 4.23.0                          esbuild 0.20.1                               postcss 8.4.35
+@biomejs/biome 1.5.3                         cross-env 7.0.3                              fast-glob 3.3.2                              sass 1.71.1
   </pre>
 </details>
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -183,21 +181,23 @@ pnpm start
 
 Commands available via "pnpm run":
   build
-    run-s clean build:11ty
+    pnpm run clean && pnpm run build:11ty
   build:11ty
     cross-env ENV=production eleventy
+  debug
+    DEBUG=Eleventy* eleventy
   preview
-    npx http-server dist -p 4000
+    pnpm dlx http-server dist -p 4000
   check
-   biome check
+    biome check
   format
-   biome format
+    biome format
   lint
     biome lint
   clean
-    ./.scrub.sh site
+    del-cli $npm_package_config_devFiles && echo $npm_package_config_echoClean
   purge
-    ./.scrub.sh purge</pre>
+    del-cli $npm_package_config_devFiles && del-cli $npm_package_config_lockFiles && echo $npm_package_config_echoPurge</pre>
 </details>
 
 - `build` command - executes the production build of your site with Eleventy, includes HTML minification, compressed Sass, optimized images, and bundled javascript.
@@ -296,7 +296,7 @@ Flightdeck comes with a custom image transform plugin that watches for changes i
 
 > **PLEASE NOTE:** This feature does add a little overhead to the initial build process.
 
-If you would rather not include this feature just set `useImageTransform: false`  in `.eleventy.js` and you're good to go.
+If you would rather not include this feature just set `useImageDirTransform: false`  in `.eleventy.js` and you're good to go.
 
 
 All Eleventy configuration options are available, see the [Eleventy Docs](https://www.11ty.dev/docs/config/) for more information.

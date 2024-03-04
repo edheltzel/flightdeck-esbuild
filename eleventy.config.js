@@ -7,7 +7,7 @@
  *
  * @const options - Custom options for Flightdeck
  * @type {Object}
- * @property {boolean} useImageTransform - Whether to use image transforms or not
+ * @property {boolean} useImageDirTransform - Whether to use image transforms or not
  * @default true
  * @requires ./_flightdeck/transforms
  * @todo add more options
@@ -22,7 +22,7 @@ const addComponents = require("./_flightdeck/components");
 
 module.exports = (config) => {
   const options = {
-    useImageTransform: false,
+    useImageDirTransform: false,
   };
 
   // Configure 11ty development server, layout aliases, watch, passthrough copy

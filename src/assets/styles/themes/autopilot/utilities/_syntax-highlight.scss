@@ -8,7 +8,8 @@
 
 code[class*="language-"],
 pre[class*="language-"] {
-  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace; /* this is the default */
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  /* this is the default */
   /* The following properties are standard, please leave them as they are */
   // font-size: 1em;
   direction: ltr;
@@ -45,17 +46,21 @@ pre[class*="language-"] ::selection {
 
 /* Properties specific to code blocks */
 pre[class*="language-"] {
-  padding: 1em; /* this is standard */
-  margin: 0.5em 0; /* this is the default */
-  overflow: auto; /* this is standard */
+  padding: 1em;
+  /* this is standard */
+  margin: 0.5em 0;
+  /* this is the default */
+  overflow: auto;
+  /* this is standard */
   border-radius: 0.5em;
 }
 
 /* Properties specific to inline code */
-:not(pre) > code[class*="language-"] {
+:not(pre)>code[class*="language-"] {
   padding: 0.2em 0.3em;
   border-radius: 0.5rem;
-  white-space: normal; /* this is standard */
+  white-space: normal;
+  /* this is standard */
 }
 
 .token.comment,

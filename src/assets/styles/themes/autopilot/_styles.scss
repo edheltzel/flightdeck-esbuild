@@ -1,10 +1,9 @@
 @use "sass:map";
-@forward "pico";
-@use "settings" as *;
-@use "colors" as *;
-@use "utils/functions";
+@use "../../colors" as *;
+@use "../../settings" as *;
+@use "../../helpers/functions";
+@use "theme-colors";
 
-@if map.get($modules, "themes/default") {
   /**
    * Styles
    */
@@ -13,21 +12,11 @@
     // Typography
     #{$css-var-prefix}font-family-emoji: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
       "Noto Color Emoji";
-    #{$css-var-prefix}font-family-sans-serif: system-ui,
-    "Segoe UI",
-    Roboto,
-    Helvetica,
-    Arial,
-    sans-serif,
-    var(#{$css-var-prefix}font-family-emoji);
-    #{$css-var-prefix}font-family-monospace: ui-monospace,
-    SFMono-Regular,
-    "SF Mono",
-    Menlo,
-    Consolas,
-    "Liberation Mono",
-    monospace,
-    var(#{$css-var-prefix}font-family-emoji);
+    #{$css-var-prefix}font-family-sans-serif: system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu,
+      Cantarell, Helvetica, Arial, "Helvetica Neue", sans-serif,
+      var(#{$css-var-prefix}font-family-emoji);
+    #{$css-var-prefix}font-family-monospace: ui-monospace, SFMono-Regular, "SF Mono", Menlo,
+      Consolas, "Liberation Mono", monospace, var(#{$css-var-prefix}font-family-emoji);
     #{$css-var-prefix}font-family: var(#{$css-var-prefix}font-family-sans-serif);
     #{$css-var-prefix}line-height: 1.5;
     #{$css-var-prefix}font-weight: 400;
@@ -62,8 +51,12 @@
     }
 
     // Spacings for body > header, body > main, body > footer, section, article
-    @if map.get($modules, "layout/landmarks") or map.get($modules, "layout/section") or map.get($modules, "components/card") or map.get($modules, "components/modal") {
-      #{$css-var-prefix}block-spacing-vertical: calc(var(#{$css-var-prefix}spacing) * 2);
+    @if map.get($modules, "layout/landmarks") or
+      map.get($modules, "layout/section") or
+      map.get($modules, "components/card") or
+      map.get($modules, "components/modal")
+    {
+      #{$css-var-prefix}block-spacing-vertical: var(#{$css-var-prefix}spacing);
       #{$css-var-prefix}block-spacing-horizontal: var(#{$css-var-prefix}spacing);
     }
 
@@ -86,8 +79,16 @@
     // Group (role="group")
     @if map.get($modules, "components/group") {
       #{$css-var-prefix}group-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-      #{$css-var-prefix}group-box-shadow-focus-with-button: 0 0 0 var(#{$css-var-prefix}outline-width) var(#{$css-var-prefix}primary-focus);
-      #{$css-var-prefix}group-box-shadow-focus-with-input: 0 0 0 0.0625rem var(#{$css-var-prefix}form-element-border-color);
+      #{$css-var-prefix}group-box-shadow-focus-with-button: 0
+        0
+        0
+        var(#{$css-var-prefix}outline-width)
+        var(#{$css-var-prefix}primary-focus);
+      #{$css-var-prefix}group-box-shadow-focus-with-input: 0
+        0
+        0
+        0.0625rem
+        var(#{$css-var-prefix}form-element-border-color);
     }
 
     // Modal (<dialog>)
@@ -111,28 +112,11 @@
     }
 
     // Chevron icons
-    @if map.get($modules, "forms/basics") or map.get($modules, "components/accordion") or map.get($modules, "components/dropdown") {
+    @if map.get($modules, "forms/basics") or
+      map.get($modules, "components/accordion") or
+      map.get($modules, "components/dropdown")
+    {
       #{$css-var-prefix}icon-chevron: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#{functions.display-rgb($zinc-400)}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-    }
-
-    // Chevron icons
-    // Change the icon color to white for accordion and dropdown buttons
-    @if map.get($modules, "components/accordion") or map.get($modules, "components/dropdown") {
-      details {
-        summary {
-          $selector: '&[role="button"]';
-
-          @if $enable-classes {
-            $selector: "#{$selector}:not(.outline)";
-          }
-
-          #{$selector} {
-            &::after {
-              filter: brightness(0) invert(1);
-            }
-          }
-        }
-      }
     }
 
     // Datetime icons
@@ -155,60 +139,36 @@
     @if map.get($modules, "components/loading") {
       // Inspired by https://codepen.io/aleksander351/pen/KzgKPo
       #{$css-var-prefix}icon-loading: url("data:image/svg+xml,%3Csvg fill='none' height='24' width='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' %3E%3Cstyle%3E g %7B animation: rotate 2s linear infinite; transform-origin: center center; %7D circle %7B stroke-dasharray: 75,100; stroke-dashoffset: -5; animation: dash 1.5s ease-in-out infinite; stroke-linecap: round; %7D @keyframes rotate %7B 0%25 %7B transform: rotate(0deg); %7D 100%25 %7B transform: rotate(360deg); %7D %7D @keyframes dash %7B 0%25 %7B stroke-dasharray: 1,100; stroke-dashoffset: 0; %7D 50%25 %7B stroke-dasharray: 44.5,100; stroke-dashoffset: -17.5; %7D 100%25 %7B stroke-dasharray: 44.5,100; stroke-dashoffset: -62; %7D %7D %3C/style%3E%3Cg%3E%3Ccircle cx='12' cy='12' r='10' fill='none' stroke='#{functions.display-rgb($zinc-400)}' stroke-width='4' /%3E%3C/g%3E%3C/svg%3E");
-
-      // Change the icon color to white for buttons
-      [aria-busy="true"]:not(input, select, textarea) {
-        $selector: '&:is(button, [type="submit"], [type="button"], [type="reset"], [role="button"])';
-
-        @if $enable-classes {
-          $selector: "#{$selector}:not(.outline)";
-        }
-
-        #{$selector} {
-          &::before {
-            filter: brightness(0) invert(1);
-          }
-        }
-      }
     }
   }
 
   // Responsives spacings
   @if $enable-responsive-spacings {
-
     // Landmarks and section
     @if map.get($modules, "layout/landmarks") or map.get($modules, "layout/section") {
-
-      #{$semantic-root-element}>header,
-      #{$semantic-root-element}>main,
-      #{$semantic-root-element}>footer,
+      #{$semantic-root-element} > header,
+      #{$semantic-root-element} > main,
+      #{$semantic-root-element} > footer,
       section {
         @each $key, $values in $breakpoints {
           @if $values {
             @media (min-width: map.get($values, "breakpoint")) {
-              $multiplier: 2;
-
-              @if $key =="sm" {
-                $multiplier: 2.5;
+              $multiplier: 1;
+              @if $key == "sm" {
+                $multiplier: 1.25;
+              } @else if $key == "md" {
+                $multiplier: 1.5;
+              } @else if $key == "lg" {
+                $multiplier: 1.75;
+              } @else if $key == "xl" {
+                $multiplier: 2;
+              } @else if $key == "xxl" {
+                $multiplier: 2.25;
               }
 
-              @else if $key =="md" {
-                $multiplier: 3;
-              }
-
-              @else if $key =="lg" {
-                $multiplier: 3.5;
-              }
-
-              @else if $key =="xl" {
-                $multiplier: 4;
-              }
-
-              @else if $key =="xxl" {
-                $multiplier: 4.5;
-              }
-
-              #{$css-var-prefix}block-spacing-vertical: calc(var(#{$css-var-prefix}spacing) * $multiplier );
+              #{$css-var-prefix}block-spacing-vertical: calc(
+                var(#{$css-var-prefix}spacing) * $multiplier
+              );
             }
           }
         }
@@ -222,51 +182,25 @@
           @if $values {
             @media (min-width: map.get($values, "breakpoint")) {
               $multiplier: 1;
-
-              @if $key =="sm" {
+              @if $key == "sm" {
                 $multiplier: 1.25;
-              }
-
-              @else if $key =="md" {
+              } @else if $key == "md" {
                 $multiplier: 1.5;
-              }
-
-              @else if $key =="lg" {
+              } @else if $key == "lg" {
                 $multiplier: 1.75;
-              }
-
-              @else if $key =="xl" {
+              } @else if $key == "xl" {
                 $multiplier: 2;
-              }
-
-              @else if $key =="xxl" {
+              } @else if $key == "xxl" {
                 $multiplier: 2.25;
               }
 
-              #{$css-var-prefix}block-spacing-horizontal: calc(var(#{$css-var-prefix}spacing) * $multiplier );
+              #{$css-var-prefix}block-spacing-vertical: calc(
+                var(#{$css-var-prefix}spacing) * $multiplier
+              );
+              #{$css-var-prefix}block-spacing-horizontal: calc(
+                var(#{$css-var-prefix}spacing) * $multiplier
+              );
             }
-          }
-        }
-      }
-    }
-
-    // Modal
-    @if map.get($modules, "components/modal") {
-      dialog>article {
-        #{$css-var-prefix}block-spacing-vertical: calc(var(#{$css-var-prefix}spacing) * 2);
-        #{$css-var-prefix}block-spacing-horizontal: var(#{$css-var-prefix}spacing);
-
-        @if map.get($breakpoints, "sm") {
-          @media (min-width: map.get(map.get($breakpoints, "sm"), "breakpoint")) {
-            #{$css-var-prefix}block-spacing-vertical: calc(var(#{$css-var-prefix}spacing) * 2.5);
-            #{$css-var-prefix}block-spacing-horizontal: calc(var(#{$css-var-prefix}spacing) * 1.25);
-          }
-        }
-
-        @if map.get($breakpoints, "md") {
-          @media (min-width: map.get(map.get($breakpoints, "md"), "breakpoint")) {
-            #{$css-var-prefix}block-spacing-vertical: calc(var(#{$css-var-prefix}spacing) * 3);
-            #{$css-var-prefix}block-spacing-horizontal: calc(var(#{$css-var-prefix}spacing) * 1.5);
           }
         }
       }
@@ -279,8 +213,7 @@
       #{$css-var-prefix}text-decoration: underline;
 
       // Secondary & Contrast
-      @if enable-classes {
-
+      @if $enable-classes {
         &.secondary,
         &.contrast {
           #{$css-var-prefix}text-decoration: underline;
@@ -291,7 +224,6 @@
 
   // Typography
   @if map.get($modules, "content/typography") {
-
     // Small
     small {
       #{$css-var-prefix}font-size: 0.875em;
@@ -346,10 +278,8 @@
 
   // Table
   @if map.get($modules, "content/table") {
-
     thead,
     tfoot {
-
       th,
       td {
         #{$css-var-prefix}font-weight: 600;
@@ -360,7 +290,6 @@
 
   // Code
   @if map.get($modules, "content/code") {
-
     pre,
     code,
     kbd,
@@ -374,12 +303,14 @@
   }
 
   // Inputs and Selects
-  input:not([type="submit"],
-    [type="button"],
-    [type="reset"],
-    [type="checkbox"],
-    [type="radio"],
-    [type="file"]),
+  input:not(
+      [type="submit"],
+      [type="button"],
+      [type="reset"],
+      [type="checkbox"],
+      [type="radio"],
+      [type="file"]
+    ),
   :where(select, textarea) {
     #{$css-var-prefix}outline-width: 0.0625rem;
   }
@@ -390,7 +321,6 @@
 
   // Checkboxes, Radios and Switches
   @if map.get($modules, "forms/checkbox-radio-switch") {
-
     [type="checkbox"],
     [type="radio"] {
       #{$css-var-prefix}border-width: 0.125rem;
@@ -408,7 +338,6 @@
         #{$css-var-prefix}outline-width: 0.0625rem;
       }
     }
-
     nav {
       details.dropdown {
         summary:focus-visible {
@@ -427,19 +356,30 @@
     [role="search"],
     [role="group"] {
       @if $enable-classes {
-
-        &:has(button.secondary:focus,
-          [type="submit"].secondary:focus,
-          [type="button"].secondary:focus,
-          [role="button"].secondary:focus) {
-          #{$css-var-prefix}group-box-shadow-focus-with-button: 0 0 0 var(#{$css-var-prefix}outline-width) var(#{$css-var-prefix}secondary-focus);
+        &:has(
+            button.secondary:focus,
+            [type="submit"].secondary:focus,
+            [type="button"].secondary:focus,
+            [role="button"].secondary:focus
+          ) {
+          #{$css-var-prefix}group-box-shadow-focus-with-button: 0
+            0
+            0
+            var(#{$css-var-prefix}outline-width)
+            var(#{$css-var-prefix}secondary-focus);
         }
 
-        &:has(button.contrast:focus,
-          [type="submit"].contrast:focus,
-          [type="button"].contrast:focus,
-          [role="button"].contrast:focus) {
-          #{$css-var-prefix}group-box-shadow-focus-with-button: 0 0 0 var(#{$css-var-prefix}outline-width) var(#{$css-var-prefix}contrast-focus);
+        &:has(
+            button.contrast:focus,
+            [type="submit"].contrast:focus,
+            [type="button"].contrast:focus,
+            [role="button"].contrast:focus
+          ) {
+          #{$css-var-prefix}group-box-shadow-focus-with-button: 0
+            0
+            0
+            var(#{$css-var-prefix}outline-width)
+            var(#{$css-var-prefix}contrast-focus);
         }
       }
 
@@ -451,4 +391,41 @@
       }
     }
   }
-}
+
+  // Chevron icons
+  // Change the icon color to white for accordion and dropdown buttons
+  @if map.get($modules, "components/accordion") or map.get($modules, "components/dropdown") {
+    #{$parent-selector} details {
+      summary {
+        $selector: '&[role="button"]';
+        @if $enable-classes {
+          $selector: "#{$selector}:not(.outline)";
+        }
+        #{$selector} {
+          &::after {
+            filter: brightness(0) invert(1);
+          }
+        }
+      }
+    }
+  }
+
+  // Loading icon (animated)
+  @if map.get($modules, "components/loading") {
+    // Change the icon color to white for buttons
+    #{$parent-selector} [aria-busy="true"]:not(input, select, textarea) {
+      $selector: '&:is(button, [type="submit"], [type="button"], [type="reset"], [role="button"])';
+      @if $enable-classes {
+        $selector: "#{$selector}:not(.outline)";
+      }
+      #{$selector} {
+        &::before {
+          @if theme-colors.get("primary-inverse", "dark") == $white {
+            filter: brightness(0) invert(1);
+          } @else {
+            filter: brightness(0) invert(0);
+          }
+        }
+      }
+    }
+  }

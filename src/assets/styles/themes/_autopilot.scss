@@ -1,24 +1,17 @@
-/**
- * Autopilot theme config
- */
-
-// Styles - core
-// @use "autopilot/styles";
+// Styles
+@use "autopilot/styles";
 
 // Colors schemes
-@use "autopilot/schemes/__schemes";
-
-// Abstracts
-@use "autopilot/abstracts/__abstracts";
+@use "autopilot/schemes";
 
 // Base
-@use "themes/autopilot/base/__base";
+@use "autopilot/base/_base";
 
 // Components
-@use "themes/autopilot/components/__components";
+@use "autopilot/components/_components";
 
-// Layout
-@use "themes/autopilot/layouts/__layouts";
+//Utilities
+@use "autopilot/utilities/_utilities";
 
-// Vendors
-@use "autopilot/vendors/__vendors";
+// Shame styles (for quick/hot fixes)
+@use "autopilot/shame";

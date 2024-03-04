@@ -19,6 +19,7 @@
 const scss = require("eleventy-sass");
 const postcss = require("postcss");
 const autoprefixer = require("autoprefixer");
+const cssDeclarationSorter = require("css-declaration-sorter");
 
 const transformScss = (config) => {
   config.addPlugin(scss, [
@@ -26,16 +27,19 @@ const transformScss = (config) => {
       sass: {
         style: "expanded",
         sourceMap: true,
-        loadPaths: ["node_modules/@picocss/pico/scss"],
-      },
-      postcss: postcss([autoprefixer]),
+        loadPaths: ["node_modules/@picocss/pico/scss", "node_modules/@picocss/pico/scss/themes/default"],
+      }
     },
     {
       sass: {
         style: "compressed",
         sourceMap: false,
-        loadPaths: ["node_modules/@picocss/pico/scss/"],
+        loadPaths: ["node_modules/@picocss/pico/scss", "node_modules/@picocss/pico/scss/themes/default"],
       },
+      postcss: postcss([
+        autoprefixer,
+        cssDeclarationSorter({ order: "concentric-css" })
+      ]),
       when: [{ ENV: "production" }],
     },
   ]);
