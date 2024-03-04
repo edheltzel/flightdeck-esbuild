@@ -13,12 +13,10 @@
  */
 const codepen = require("./shortcodes/codepen");
 const copyright = require("./shortcodes/copyright");
-const version = require("./shortcodes/version");
 const image = require("./shortcodes/image");
 
 module.exports = (config) => {
   config.addShortcode("codepen", codepen);
   config.addShortcode("copyright", copyright);
-  config.addShortcode("version", version);
   config.addShortcode("Image", image);
 };
