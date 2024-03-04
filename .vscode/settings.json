@@ -25,7 +25,6 @@
     "postbuild",
     "prismjs",
     "spacex",
-    "thefold",
     "vgscursor"
   ],
   "emmet.includeLanguages": {
