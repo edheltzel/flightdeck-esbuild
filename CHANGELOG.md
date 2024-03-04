@@ -5,21 +5,16 @@ All notable changes to Flightdeck for 11ty will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
-## [0.4.5b] - 2024-01-22
+## [0.4.5] - 2024-03-04
 
-### Adds
+- package updates
+- updates packages
+- resolves theme issue for Autopilot
+- fixes alpinejs for modal support
+- misc updates and fixes with styles
 
-- Updates Visual Guidance System utilities
-    - custom cursor for links and buttons
 
-### Chore
-
-- 🧹 Package updates:
-    - biome to 1.5.3
-    - alpinejs to 3.13.4
-    - picocss to 2.0.0-rc3
-
-## [0.4.5a] - 2024-01-08
+## [0.4.5-a] - 2024-01-08
 
 ### Adds
 
