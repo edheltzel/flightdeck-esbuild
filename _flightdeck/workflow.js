@@ -14,7 +14,7 @@ const fs = require("fs");
 module.exports = (config, options) => {
   config.setQuietMode(true); // reduce console
   config.setServerOptions({
-    port: 4000, // old habits die hard - 4000 is the default port for Jekyll ¯\_(ツ)_/¯
+    port: 4000, // old habits die hard - 4000 is the default port for Jekyll
     showVersion: true, // show the server version number on the command line
     showAllHosts: false, // show local network IP address for device testing
   });
