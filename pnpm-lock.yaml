@@ -6,11 +6,11 @@ settings:
 
 dependencies:
   '@alpinejs/persist':
-    specifier: ^3.13.5
-    version: 3.13.5
+    specifier: ^3.13.6
+    version: 3.13.6
   alpinejs:
-    specifier: ^3.13.5
-    version: 3.13.5
+    specifier: ^3.13.6
+    version: 3.13.6
 
 devDependencies:
   '@11ty/eleventy':
@@ -102,8 +102,8 @@ packages:
       - utf-8-validate
     dev: true
 
-  /@11ty/eleventy-fetch@4.0.0:
-    resolution: {integrity: sha512-wGAd0r+8DUWr22fK5r07dOKuNY6ltA7hX+sJzngGZL1yJmuUVdM/xPQZ+iq0BFgf/ZeRdpVEzf2D0cpVZUuiTg==}
+  /@11ty/eleventy-fetch@4.0.1:
+    resolution: {integrity: sha512-yIiLM5ziBmg86i4TlXpBdcIygJHvh/GgPJyAiFOckO9H4y9cQDM8eIcJCUQ4Mum0NEVui/OjhEut2R08xw0vlQ==}
     engines: {node: '>=14'}
     dependencies:
       debug: 4.3.4
@@ -119,7 +119,7 @@ packages:
     resolution: {integrity: sha512-MSCkZRJk9rWa7nojx9HBMZJePOrm+V3XNpT091qguj61SG5UsgXbxAkoeejO3npmKIQJTyVIV/rrA6d7xZYOvw==}
     engines: {node: '>=18'}
     dependencies:
-      '@11ty/eleventy-fetch': 4.0.0
+      '@11ty/eleventy-fetch': 4.0.1
       brotli-size: 4.0.0
       debug: 4.3.4
       entities: 4.5.0
@@ -204,8 +204,8 @@ packages:
     engines: {node: '>=14'}
     dev: true
 
-  /@alpinejs/persist@3.13.5:
-    resolution: {integrity: sha512-nmULi5Kp/v5/h4FtGpqyzzMPlulc2fmQ+Olhk0NwTcBKSCZDg6OtXgS998rnHpcWO0jsjCmvXn/Pul2av7D8lA==}
+  /@alpinejs/persist@3.13.6:
+    resolution: {integrity: sha512-o9GeebMWVnhGzEOnKqQYFs5WvP9ShhXS98/rC0ieDMmoRX9sNGDnKg2TKQLkw3mClovPwQgo7si9nfnT7Jpc5w==}
     dev: false
 
   /@babel/code-frame@7.23.5:
@@ -1245,8 +1245,8 @@ packages:
       indent-string: 5.0.0
     dev: true
 
-  /alpinejs@3.13.5:
-    resolution: {integrity: sha512-1d2XeNGN+Zn7j4mUAKXtAgdc4/rLeadyTMWeJGXF5DzwawPBxwTiBhFFm6w/Ei8eJxUZeyNWWSD9zknfdz1kEw==}
+  /alpinejs@3.13.6:
+    resolution: {integrity: sha512-/F7pVR+11r1A0KVw+eY1DcjTFlRQn9arD3p5/2Q4vq0N2WDC/dHpg+Pz7ZMiVQlHE7ZmZmcqTRm1wYTdDLMiEg==}
     dependencies:
       '@vue/reactivity': 3.1.5
     dev: false
@@ -1344,7 +1344,7 @@ packages:
       postcss: ^8.1.0
     dependencies:
       browserslist: 4.23.0
-      caniuse-lite: 1.0.30001593
+      caniuse-lite: 1.0.30001594
       fraction.js: 4.3.7
       normalize-range: 0.1.2
       picocolors: 1.0.0
@@ -1419,8 +1419,8 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001593
-      electron-to-chromium: 1.4.691
+      caniuse-lite: 1.0.30001594
+      electron-to-chromium: 1.4.693
       node-releases: 2.0.14
       update-browserslist-db: 1.0.13(browserslist@4.23.0)
     dev: true
@@ -1451,8 +1451,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /caniuse-lite@1.0.30001593:
-    resolution: {integrity: sha512-UWM1zlo3cZfkpBysd7AS+z+v007q9G1+fLTUU42rQnY6t2axoogPW/xol6T7juU5EUoOhML4WgBIdG+9yYqAjQ==}
+  /caniuse-lite@1.0.30001594:
+    resolution: {integrity: sha512-VblSX6nYqyJVs8DKFMldE2IVCJjZ225LW00ydtUWwh5hk9IfkTOffO6r8gJNsH0qqqeAF8KrbMYA2VEwTlGW5g==}
     dev: true
 
   /chalk@2.4.2:
@@ -1772,8 +1772,8 @@ packages:
       jake: 10.8.7
     dev: true
 
-  /electron-to-chromium@1.4.691:
-    resolution: {integrity: sha512-vJ+/LmKja/St8Ofq4JGMFVZuwG7ECU6akjNSn2/g6nv8xbIBOWGlEs+WA8/3XaWkU0Nlyu0iFGgOxC4mpgFjgA==}
+  /electron-to-chromium@1.4.693:
+    resolution: {integrity: sha512-/if4Ueg0GUQlhCrW2ZlXwDAm40ipuKo+OgeHInlL8sbjt+hzISxZK949fZeJaVsheamrzANXvw1zQTvbxTvSHw==}
     dev: true
 
   /eleventy-plugin-embed-everything@1.18.2:
@@ -1801,7 +1801,7 @@ packages:
   /eleventy-plugin-embed-soundcloud@1.2.7:
     resolution: {integrity: sha512-0+VNeEcMiRySmyTmPmMhCwkbds44k9W4jWqUwjvk665TRagiXcCdj/BK2wl8vyiVrn/0arWeSCpol4NBb6BIvA==}
     dependencies:
-      '@11ty/eleventy-fetch': 4.0.0
+      '@11ty/eleventy-fetch': 4.0.1
     transitivePeerDependencies:
       - encoding
       - supports-color
@@ -1826,7 +1826,7 @@ packages:
   /eleventy-plugin-embed-twitter@1.4.0:
     resolution: {integrity: sha512-1e2oI0OJiVStywT48h6/IJDT4+XlH5EEVT1z87qV8wABAA022m2ozKuog21EEoI217aV2AM89R/FZ1oo1eD/mA==}
     dependencies:
-      '@11ty/eleventy-fetch': 4.0.0
+      '@11ty/eleventy-fetch': 4.0.1
       deepmerge: 4.3.1
     transitivePeerDependencies:
       - encoding
@@ -1840,9 +1840,9 @@ packages:
   /eleventy-plugin-youtube-embed@1.10.2:
     resolution: {integrity: sha512-N0068hshDe+sG50SEk4zLbwClaTeyl000WiqmNACRG2Iwb2/iTVV4IGTv7d1yWz/5DGVpsHMniboHJSyChvc9w==}
     dependencies:
-      '@11ty/eleventy-fetch': 4.0.0
+      '@11ty/eleventy-fetch': 4.0.1
       deepmerge: 4.3.1
-      lite-youtube-embed: 0.3.1
+      lite-youtube-embed: 0.3.2
       string-replace-async: 3.0.2
     transitivePeerDependencies:
       - encoding
@@ -2448,8 +2448,8 @@ packages:
     resolution: {integrity: sha512-+dAZZ2mM+/m+vY9ezfoueVvrgnHIGi5FvgSymbIgJOFwiznWyA59mav95L+Mc6xPtL3s9gm5eNTlNtxJLbNM1g==}
     dev: true
 
-  /lite-youtube-embed@0.3.1:
-    resolution: {integrity: sha512-FKGosMCkPsv4IHanvbYq76MhgRXlBTi4zDLee1Z0vFmKWxmwo8MFe/ESbBOidE/Ni0Q3QIdUkVmagWJ270mpyQ==}
+  /lite-youtube-embed@0.3.2:
+    resolution: {integrity: sha512-b1dgKyF4PHhinonmr3PB172Nj0qQgA/7DE9EmeIXHR1ksnFEC2olWjNJyJGdsN2cleKHRjjsmrziKlwXtPlmLQ==}
     dev: true
 
   /locate-path@6.0.0:
