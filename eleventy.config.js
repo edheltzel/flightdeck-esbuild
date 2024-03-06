@@ -33,7 +33,7 @@ module.exports = (config) => {
   // Custom plugins that integrate esbuild, scss, image optimization
   addTransforms(config, options);
 
-  // Add eleventy plugins
+  // Add eleventy plugins and configurations
   addPlugins(config);
 
   // Custom shortcodes for Nunjucks/Liquid template copyright year, youtube embeds, etc.
