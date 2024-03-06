@@ -6,10 +6,10 @@ tagline: Semantic HTML with very minimal use of classes
 <!-- Preview -->
 <section id="preview">
 
-  <h2>Preview</h2>
-  <p>
-      Sed ultricies dolor non ante vulputate hendrerit. Vivamus sit amet suscipit sapien Nulla iaculis eros a elit pharetra egestas.
-    </p>
+  ## Preview
+
+  Sed ultricies dolor non ante vulputate hendrerit. Vivamus sit amet suscipit sapien Nulla iaculis eros a elit pharetra egestas.
+
   <form>
     <div class="grid">
       <input
@@ -38,17 +38,23 @@ tagline: Semantic HTML with very minimal use of classes
 </section>
 <!-- ./ Preview -->
 
+<hr>
+
 <!-- Typography-->
 <section id="typography">
 
-  <h2 class="h1">Typography</h2>
-  <p>
-    Aliquam lobortis vitae nibh nec rhoncus. Morbi mattis neque eget efficitur feugiat.
-    Vivamus porta nunc a erat mattis, mattis feugiat turpis pretium. Quisque sed tristique
-    felis.
-    </p>
+  ## Typography {: .h1}
+
+  Adding classes to markdown `{: h1}` is possible through the use of the `markdown-it-attrs` package.
+
+  Aliquam lobortis vitae nibh nec rhoncus. Morbi mattis neque eget efficitur feugiat. Vivamus porta nunc a erat mattis, mattis feugiat turpis pretium. Quisque sed tristique felis.
 
   <!-- Blockquote-->
+  Support for both HTML and Markdown blockquotes is available. Along with a custom shortcode to create a blockquote with a citation.
+
+  >
+
+
   <blockquote>
     "Maecenas vehicula metus tellus, vitae congue turpis hendrerit non. Nam at dui sit amet
     ipsum cursus ornare."
@@ -396,8 +402,8 @@ tagline: Semantic HTML with very minimal use of classes
   </details>
   <details open>
     <summary>Accordion 2</summary>
+      This is just an html <code>details</code> tag
     <ul>
-      <li>This is really just an html <code>details</code> tag</li>
       <li>Nunc quis eros vel odio pretium tincidunt nec quis neque.</li>
       <li>Quisque sed eros non eros ornare elementum.</li>
       <li>Cras sed libero aliquet, porta dolor quis, dapibus ipsum.</li>
