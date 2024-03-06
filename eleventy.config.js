@@ -4,12 +4,14 @@
  * @see {@link https://www.11ty.dev/docs/config/}
  * @param {Object} config - Eleventy's configuration object
  * @returns {Object} - Returns Eleventy's configuration options
+ * @requires ./_flightdeck/*
  *
  * @const options - Custom options for Flightdeck
  * @type {Object}
- * @property {boolean} useImageDirTransform - Whether to use image transforms or not
- * @default true
+ * @property {boolean} useImageDirTransform - this will transform all images in ./src/assets/images
+ * @default false - Set to true to use image transforms
  * @requires ./_flightdeck/transforms
+ *
  * @todo add more options
  */
 
