@@ -5,7 +5,7 @@
   <h4 style="padding-bottom: .5em">An opinionated starter project for <a href="https://www.11ty.dev/">Eleventy 🎈</a>.</h4>
 <!-- PROJECT SHIELDS -->
 
-[![release](https://img.shields.io/github/release/edheltzel/flightdeck-for-11ty.svg?style=for-the-badge&logo=github&logoColor=white&colorA=101119&colorB=6D57FF)](https://github.com/edheltzel/flightdeck-for-11ty/releases/latest) [![eleventy](https://img.shields.io/badge/Eleventy-v1.0.0+-373277.svg?style=for-the-badge&logo=eleventy&logoColor=white&colorA=101119&colorB=7273D6)](https://github.com/11ty/eleventy/releases/latest) [![license](https://img.shields.io/badge/License-MIT-373277.svg?style=for-the-badge&l&logoColor=white&colorA=101119&colorB=42557B)](https://github.com/edheltzel/flightdeck-for-11ty/blob/master/LICENSE)
+[![release](https://img.shields.io/github/release/edheltzel/flightdeck.svg?style=for-the-badge&logo=github&logoColor=white&colorA=101119&colorB=6D57FF)](https://github.com/edheltzel/flightdeck/releases/latest) [![eleventy](https://img.shields.io/badge/Eleventy-v1.0.0+-373277.svg?style=for-the-badge&logo=eleventy&logoColor=white&colorA=101119&colorB=7273D6)](https://github.com/11ty/eleventy/releases/latest) [![license](https://img.shields.io/badge/License-MIT-373277.svg?style=for-the-badge&l&logoColor=white&colorA=101119&colorB=42557B)](https://github.com/edheltzel/flightdeck/blob/master/LICENSE)
 
 </div>
 
@@ -51,7 +51,7 @@
 ## [🥱 TL;DR](#tldr)
 
 ```shell
-    git clone git@github.com:edheltzel/flightdeck-for-11ty-esbuild.git flightdeck && cd flightdeck && pnpm install && pnpm start
+    git clone git@github.com:edheltzel/flightdeck.git flightdeck && cd flightdeck && pnpm install && pnpm start
 ```
 
 **Build your project**
@@ -111,9 +111,9 @@ We have shifted to using [PNPM](https://pnpm.io/) as our primary package manager
 
 But, you can swap `pnpm` in favor of your preferences 👉 [NPM](https://www.npmjs.com/) , [Yarn](https://yarnpkg.com/), and and [Bun](https://bun.sh/docs). Use whatever you want 👍 just be sure to update the scripts in `package.json` with what ever flavor you choose to use.
 
-~~If you do choose to use Bun, you might run into some issues with the `build` command. This is because of the `sharp` dependency that is used by `jampack`. 👀 see [issue 35](https://github.com/edheltzel/flightdeck-for-11ty/issues/35).~~
+~~If you do choose to use Bun, you might run into some issues with the `build` command. This is because of the `sharp` dependency that is used by `jampack`. 👀 see [issue 35](https://github.com/edheltzel/flightdeck/issues/35).~~
 
->**Thanks to [ottodevs](https://github.com/edheltzel/flightdeck-for-11ty/issues/35#issuecomment-1741819809) - we have a workaround for this issue with Bun.**
+>**Thanks to [ottodevs](https://github.com/edheltzel/flightdeck/issues/35#issuecomment-1741819809) - we have a workaround for this issue with Bun.**
 
 
 We recommend using PNPM for building your project `pnpm run build`.
@@ -133,11 +133,11 @@ It's highly recommended that you enable Node's [corepack](https://nodejs.org/api
 ### ⚙[ Installation ](#installation)
 
 ```shell
-git clone https://github.com/edheltzel/flightdeck-for-11ty.git
+git clone https://github.com/edheltzel/flightdeck.git
 ```
 
 ```shell
-cd flightdeck-for-11ty
+cd flightdeck
 pnpm install
 ```
 
@@ -333,7 +333,7 @@ The goal of Autopilot, is to provide a simple, yet powerful, set of tools to hel
 - [ ] Add Yeoman generator/npm package
 - [ ] Add our Eleventy plugins
 
-See the [open issues](https://github.com/edheltzel/flightdeck-for-11ty/issues) for a full list of proposed features (and known bugs/issues).
+See the [open issues](https://github.com/edheltzel/flightdeck/issues) for a full list of proposed features (and known bugs/issues).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
