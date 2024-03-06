@@ -4,10 +4,12 @@
  */
 
 import Alpine from "alpinejs";
+import toggleTheme from "./modules/toggleTheme";
 
 // Assigning Alpine to the global window object
 window.Alpine = Alpine;
 
+Alpine.data("theme", toggleTheme);
 /**
  * Starts Alpine.js
  * @see {@link https://github.com/alpinejs/alpine#start|Alpine.start}

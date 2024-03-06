@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"
-x-data="themeSwap()"
+x-data="theme"
 :data-theme="[darkMode ? 'dark' : 'light']"
 
 >
@@ -18,19 +18,6 @@ x-data="themeSwap()"
       {% include "partials/footer.njk" %}
     </main>
     <!-- End Main -->
-    <script>
-      function themeSwap() {
-        return {
-          darkMode: localStorage.getItem('darkMode') === 'true',
-          toggleDarkMode() {
-            this.darkMode = !this
-              .darkMode
-              localStorage
-              .setItem('darkMode', this.darkMode)
-          }
-        }
-      }
-    </script>
   </body>
 
 </html>
