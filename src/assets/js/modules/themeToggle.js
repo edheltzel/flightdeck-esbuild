@@ -11,7 +11,7 @@ import Alpine from "alpinejs";
  * @property {boolean} dark - Represents whether the dark theme is active or not.
  * @property {function} toggle - Toggles the theme between dark and light.
  */
-Alpine.store("themeSwitch", {
+Alpine.store("toggleTheme", {
   dark: false,
   toggle() {
     const html = document.documentElement;
