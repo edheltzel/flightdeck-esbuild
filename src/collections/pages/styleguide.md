@@ -43,7 +43,7 @@ tagline: Semantic HTML with very minimal use of classes
 <!-- Typography-->
 <section id="typography">
 
-  ## Typography {: .h1}
+  ## Typography {.h1}
 
   Adding classes to markdown `{: h1}` is possible through the use of the `markdown-it-attrs` package.
 
@@ -52,115 +52,107 @@ tagline: Semantic HTML with very minimal use of classes
   <!-- Blockquote-->
   Support for both HTML and Markdown blockquotes is available. Along with a custom shortcode to create a blockquote with a citation.
 
-  >
+  > This is a blockquote in **markdown**.
 
+  {% blockquote "This is a blockquote using a <strong>shortcode</strong>.<br> It supports custom HTML also", 'A tweet from <a href="https://twitter.com/jeromecoupe/status/1419726998881062915">jeromecoupe</a>' %}
 
-  <blockquote>
-    "Maecenas vehicula metus tellus, vitae congue turpis hendrerit non. Nam at dui sit amet
-    ipsum cursus ornare."
-    <footer>
-      <cite>- Phasellus eget lacinia</cite>
-    </footer>
-  </blockquote>
 
   <!-- Lists-->
-  <h3>Lists</h3>
-  <ul>
-    <li>Aliquam lobortis lacus eu libero ornare facilisis.</li>
-    <li>Nam et magna at libero scelerisque egestas.</li>
-    <li>Suspendisse id nisl ut leo finibus vehicula quis eu ex.</li>
-    <li>Proin ultricies turpis et volutpat vehicula.</li>
-  </ul>
+  ### Lists
+
+  - Aliquam lobortis lacus eu libero ornare facilisis
+  - Nam et magna at libero scelerisque egestas
+  - Suspendisse id nisl ut leo finibus vehicula quis eu ex
+  - Proin ultricies turpis et volutpat vehicula
+
+  1. Aliquam lobortis lacus eu libero ornare facilisis
+  2. Nam et magna at libero scelerisque egestas
+  3. Suspendisse id nisl ut leo finibus vehicula quis eu ex
+  4. Proin ultricies turpis et volutpat vehicula
 
   <!-- Inline text elements-->
-  <h3>Inline text elements</h3>
+  ### Inline text elements
+
   <div class="grid">
-    <p>
-      <a href="#" onclick="event.preventDefault()">Primary link</a>
-    </p>
-    <p>
-      <a href="#" class="secondary" onclick="event.preventDefault()">Secondary link</a>
-    </p>
-    <p>
-      <a href="#" class="contrast" onclick="event.preventDefault()">Contrast link</a>
-    </p>
+
+    [Primary link](#)
+
+    [Secondary link](#){.secondary}
+
+    [Contrast link](#){.contrast}
+
   </div>
   <div class="grid">
-    <p>
-      <strong>Bold</strong>
-    </p>
-    <p>
-      <em>Italic</em>
-    </p>
-    <p>
-      <u>Underline</u>
-    </p>
+
+    **Bold**
+
+    _Italic_
+
+    <u>Underline</u>
+
   </div>
   <div class="grid">
-    <p>
-      <del>Deleted</del>
-    </p>
-    <p>
-      <ins>Inserted</ins>
-    </p>
-    <p>
-      <s>Strikethrough</s>
-    </p>
+
+    <del>Deleted</del>
+
+    <ins>Inserted</ins>
+
+    ~~Strikethrough~~
+
   </div>
   <div class="grid">
-    <p>
-      <small>Small </small>
-    </p>
-    <p>Text <sub>Sub</sub>
-    </p>
-    <p>Text <sup>Sup</sup>
-    </p>
+
+    <small>Small </small>
+
+    Text <sub>Sub</sub>
+
+    Text <sup>Sup</sup>
+
   </div>
   <div class="grid">
-    <p>
-      <abbr title="Abbreviation" data-tooltip="Abbreviation">Abbr.</abbr>
-    </p>
-    <p>
-      <kbd>Kbd</kbd>
-    </p>
-    <p>
-      <mark>Highlighted</mark>
-    </p>
+
+    <abbr title="Abbreviation" data-tooltip="Abbreviation">Abbr.</abbr>
+
+    <kbd>Kbd</kbd>
+
+    <mark>Highlighted</mark>
+
   </div>
 
   <!-- Headings-->
-  <h3>Heading 3</h3>
-  <p>
-    Integer bibendum malesuada libero vel eleifend. Fusce iaculis turpis ipsum, at efficitur
+  ### Heading 3
+
+  Integer bibendum malesuada libero vel eleifend. Fusce iaculis turpis ipsum, at efficitur
     sem scelerisque vel. Aliquam auctor diam ut purus cursus fringilla. Class aptent taciti
     sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-  </p>
-  <h4>Heading 4</h4>
-  <p>
-    Cras fermentum velit vitae auctor aliquet. Nunc non congue urna, at blandit nibh. Donec ac
+
+  #### Heading 4
+
+  Cras fermentum velit vitae auctor aliquet. Nunc non congue urna, at blandit nibh. Donec ac
     fermentum felis. Vivamus tincidunt arcu ut lacus hendrerit, eget mattis dui finibus.
-  </p>
-  <h5>Heading 5</h5>
-  <p>
-    Donec nec egestas nulla. Sed varius placerat felis eu suscipit. Mauris maximus ante in
+
+  ##### Heading 5
+
+  Donec nec egestas nulla. Sed varius placerat felis eu suscipit. Mauris maximus ante in
     consequat luctus. Morbi euismod sagittis efficitur. Aenean non eros orci. Vivamus ut diam
     sem.
-  </p>
-  <h6>Heading 6</h6>
-  <p>
-    Ut sed quam non mauris placerat consequat vitae id risus. Vestibulum tincidunt nulla ut
+
+  ###### Heading 6
+
+  Ut sed quam non mauris placerat consequat vitae id risus. Vestibulum tincidunt nulla ut
     tortor posuere, vitae malesuada tortor molestie. Sed nec interdum dolor. Vestibulum id
     auctor nisi, a efficitur sem. Aliquam sollicitudin efficitur turpis, sollicitudin
     hendrerit ligula semper id. Nunc risus felis, egestas eu tristique eget, convallis in
-    velit.</p>
+    velit.
 
   <!-- Medias-->
   <figure>
     {% Image "/assets/images/flightdeck.jpeg",
     "A picture of the a flightdeck" %}
     <figcaption>
-    Image from
-    <a href="https://unsplash.com/photos/black-and-gray-audio-mixer-lq1KA7HAdH0" target="_blank">unsplash.com</a>
+
+    Image from [unsplash.com](https://unsplash.com/photos/black-and-gray-audio-mixer-lq1KA7HAdH0)
+
     </figcaption>
   </figure>
 </section>
@@ -168,12 +160,15 @@ tagline: Semantic HTML with very minimal use of classes
 
 <!-- Buttons-->
 <section id="buttons">
-  <h2>Buttons</h2>
+
+  ## Buttons
+
   <p class="grid">
     <button>Primary</button>
     <button class="secondary">Secondary</button>
     <button class="contrast">Contrast</button>
   </p>
+
   <p class="grid">
     <button class="outline">Primary outline</button>
     <button class="outline secondary">Secondary outline</button>
@@ -310,7 +305,9 @@ tagline: Semantic HTML with very minimal use of classes
 
 <!-- Tables -->
 <section id="tables">
-  <h2>Tables</h2>
+
+   ## Tables
+
   <div class="overflow-auto">
     <table class="striped">
       <thead>
@@ -388,7 +385,9 @@ tagline: Semantic HTML with very minimal use of classes
 </modal>
 <!-- Accordions -->
 <section id="accordions">
-  <h2>Accordions</h2>
+
+  ## Accordions
+
   <details>
     <summary>Accordion 1</summary>
     <p>
@@ -412,15 +411,17 @@ tagline: Semantic HTML with very minimal use of classes
 </section>
 <!-- ./ Accordions -->
 
+<hr>
 <!-- Article-->
 <article id="article">
-  <h2>Article</h2>
-  <p>
-    Nullam dui arcu, malesuada et sodales eu, efficitur vitae dolor. Sed ultricies dolor non
+
+  ## Article
+
+  Nullam dui arcu, malesuada et sodales eu, efficitur vitae dolor. Sed ultricies dolor non
     ante vulputate hendrerit. Vivamus sit amet suscipit sapien. Nulla iaculis eros a elit
     pharetra egestas. Nunc placerat facilisis cursus. Sed vestibulum metus eget dolor pharetra
     rutrum.
-  </p>
+
   <footer>
     <small>Duis nec elit placerat, suscipit nibh quis, finibus neque.</small>
   </footer>
@@ -429,7 +430,9 @@ tagline: Semantic HTML with very minimal use of classes
 
 <!-- Group -->
 <section id="group">
-  <h2>Group</h2>
+
+  ## Group
+
   <form>
     <fieldset role="group">
       <input name="email" type="email" placeholder="Enter your email" autocomplete="email"/>
@@ -441,7 +444,9 @@ tagline: Semantic HTML with very minimal use of classes
 
 <!-- Progress -->
 <section id="progress">
-  <h2>Progress bar</h2>
+
+  ## Progress bar
+
   <progress id="progress-1" value="25" max="100"></progress>
   <progress id="progress-2"></progress>
 </section>
@@ -449,7 +454,9 @@ tagline: Semantic HTML with very minimal use of classes
 
 <!-- Loading -->
 <section id="loading">
-  <h2>Loading</h2>
+
+  ## Loading
+
   <article aria-busy="true"></article>
   <button aria-busy="true">Please wait…</button>
 </section>
