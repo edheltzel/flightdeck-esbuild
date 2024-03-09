@@ -67,7 +67,7 @@
 
 The Flightdeck objective is to provide a unified starting point for all your Jamstack websites, by leveraging popular static-site-generators _(SSG)_.
 
-This flavor of Flightdeck uses [Eleventy](https://www.11ty.dev/) with an opinionated workflow, keeping Eleventy in control of the entire development and build processes.
+This flavor of Flightdeck uses [Eleventy](https://www.11ty.dev/) with an opinionated workflow without the support additional tools like Webpack, Parcel, or Gulp. This is to keep things simple and to **keep Eleventy in control of the entire development and build processes**.
 
 ### [ 💡 Inspiration ](#inspiration)
 
