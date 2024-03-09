@@ -7,9 +7,7 @@
   $enable-semantic-container: true,
   $enable-classes: true,
   $theme-color: "indigo",
-  $modules: (
-    "themes/default": false,
-  ));
+  $modules: ("themes/default": false, ));
 
 // Autopilot Theme
 @use "themes/autopilot";
