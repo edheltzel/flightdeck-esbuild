@@ -154,7 +154,7 @@ dependencies:
 alpinejs 3.13.5
 
 devDependencies:
-@11ty/eleventy 2.0.1                         @picocss/pico 2.0.3                          eleventy-plugin-embed-everything 1.18.2      markdown-it 14.0.0
+@11ty/eleventy 2.0.1                         ~~@picocss/pico 2.0.3~~                          eleventy-plugin-embed-everything 1.18.2      markdown-it 14.0.0
 @11ty/eleventy-img 4.0.2                     autoprefixer 10.4.17                         eleventy-sass 2.2.4                          markdown-it-attrs 4.1.6
 @11ty/eleventy-plugin-syntaxhighlight 5.0.0  browserslist 4.23.0                          esbuild 0.20.1                               postcss 8.4.35
 @biomejs/biome 1.5.3                         cross-env 7.0.3                              fast-glob 3.3.2                              sass 1.71.1
