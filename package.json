@@ -51,6 +51,7 @@
     "check": "biome check",
     "format": "biome format",
     "lint": "biome lint",
+    "lint:css": "stylelint \"src/**/*.css\" --fix",
     "clean": "del-cli $npm_package_config_devFiles && echo $npm_package_config_echoClean",
     "purge": "del-cli $npm_package_config_devFiles && del-cli $npm_package_config_lockFiles && echo $npm_package_config_echoPurge"
   }
