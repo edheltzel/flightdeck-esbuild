@@ -1,6 +1,5 @@
 const css = require("lightningcss");
 const path = require("node:path");
-
 /**
  * Configures LightningCSS for FlightDeck:
  * - Registers "css" as a template format.
@@ -9,7 +8,10 @@ const path = require("node:path");
  *   - Bundles CSS using LightningCSS with minification, sourcemaps, and drafts enabled.
  *   - Resolves and tracks CSS @import dependencies.
  *   - Returns compiled CSS code.
+ * @ref grease
+ * @ref https://11ty.rocks/posts/process-css-with-lightningcss/
  */
+
 module.exports = (config) => {
   // Add "css" as a template format
   config.addTemplateFormats("css");
@@ -50,7 +52,7 @@ module.exports = (config) => {
       });
 
       // Add imported files as dependencies
-      config.addDependencies(inputPath, files);
+      this.addDependencies(inputPath, files);
 
       // Return the compiled CSS code
       return () => result.code.toString();
