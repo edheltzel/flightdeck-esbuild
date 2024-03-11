@@ -21,12 +21,12 @@ const postcss = require("postcss");
 const autoprefixer = require("autoprefixer");
 const cssDeclarationSorter = require("css-declaration-sorter");
 
-const transformStyles = (config) => {
+const transformScss = (config) => {
   config.addPlugin(scss, [
     {
       sass: {
         style: "expanded",
-        sourceMap: true,
+        sourceMap: false,
         loadPaths: ["node_modules/@picocss/pico/scss", "node_modules/@picocss/pico/scss/themes/default"],
       },
     },
@@ -43,5 +43,5 @@ const transformStyles = (config) => {
 };
 
 module.exports = {
-  transformStyles,
+  transformScss,
 };

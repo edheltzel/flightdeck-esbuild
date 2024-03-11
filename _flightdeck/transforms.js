@@ -15,14 +15,21 @@
 
 const isProd = process.env.ENV === "production";
 const { markdownIt } = require("./transforms/markdownIt"); // markdown-it plugins
-const { transformJs } = require("./transforms/esBuild"); // js bundling
-const { transformStyles } = require("./transforms/styles"); // scss compiling
 const { transformImageDir } = require("./transforms/allimages"); // optimize all images in src/assets/images
+const minifyHtml = require("./transforms/minifyHtml");
+const { transformJs } = require("./transforms/esBuild"); // js bundling
+const lightningCss = require("./transforms/lightning");
+// const { transformScss } = require("./transforms/scss"); // scss compiling
+
 module.exports = (config, options) => {
   config.setLibrary("md", markdownIt);
   config.addPlugin(transformJs);
-  config.addPlugin(transformStyles);
+  config.addPlugin(lightningCss);
+  // config.addPlugin(transformScss);
   if (options.useImageDirTransform) {
     config.addPlugin(transformImageDir);
+  }
+  if (isProd) {
+    config.addPlugin(minifyHtml);
   }
 };
