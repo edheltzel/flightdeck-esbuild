@@ -9,26 +9,31 @@
 code[class*="language-"],
 pre[class*="language-"] {
   font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+
   /* this is the default */
+
   /* The following properties are standard, please leave them as they are */
+
   /* font-size: 1em; */
   direction: ltr;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
   word-break: normal;
+
   /* line-height: 1.5; */
-  -moz-tab-size: 2;
-  -o-tab-size: 2;
   tab-size: 2;
+  tab-size: 2;
+  tab-size: 2;
+
   /* The following properties are also standard */
-  -webkit-hyphens: none;
-  -moz-hyphens: none;
-  -ms-hyphens: none;
+  hyphens: none;
+  hyphens: none;
+  hyphens: none;
   hyphens: none;
 }
 
-code[class*="language-"]::-moz-selection,
+code[class*="language-"]::selection,
 code[class*="language-"] ::-moz-selection,
 pre[class*="language-"]::-moz-selection,
 pre[class*="language-"] ::-moz-selection {
@@ -47,10 +52,13 @@ pre[class*="language-"] ::selection {
 /* Properties specific to code blocks */
 pre[class*="language-"] {
   padding: 1em;
+
   /* this is standard */
   margin: 0.5em 0;
+
   /* this is the default */
   overflow: auto;
+
   /* this is standard */
   border-radius: 0.5em;
 }
@@ -60,6 +68,7 @@ pre[class*="language-"] {
   padding: 0.2em 0.3em;
   border-radius: 0.5rem;
   white-space: normal;
+
   /* this is standard */
 }
 
@@ -116,7 +125,7 @@ pre[class*="language-"] {
 .token.entity,
 .token.url,
 .token.variable {
-  color: #ffffff;
+  color: #fff;
 }
 
 /* The following rules are pretty similar across themes, but feel free to adjust them */
