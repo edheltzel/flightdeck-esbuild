@@ -413,7 +413,7 @@ tagline: Semantic HTML with very minimal use of classes
 
 <hr>
 <!-- Article-->
-<article id="article">
+<article id="article"  >
 
   ## Article
 
@@ -447,7 +447,7 @@ tagline: Semantic HTML with very minimal use of classes
 
   ## Progress bar
 
-  <progress id="progress-1" value="25" max="100"></progress>
+  <progress id="progress-1" value="25" max="100" ></progress>
   <progress id="progress-2"></progress>
 </section>
 <!-- ./ Progress -->
