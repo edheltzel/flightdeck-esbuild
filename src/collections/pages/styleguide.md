@@ -3,6 +3,18 @@ title: Style Guide 💅 🎨
 tagline: Semantic HTML with very minimal use of classes
 ---
 
+- [ ] update to use grid correctly
+- [ ] update layouts to use sematic markup for containers
+- [ ] combine autopilot and declarative scaffold
+- [ ] create layout with new grid system
+- [ ] improve nunjucks layouts and partials
+- [ ] update naming convention to be consistent
+- [ ] document the new grid system
+- [ ] update the style guide to use the new grid system
+
+
+
+
 <!-- Preview -->
 <section id="preview">
 
