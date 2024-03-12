@@ -11,6 +11,7 @@ tagline: Semantic HTML with very minimal use of classes
 - [ ] update naming convention to be consistent
 - [ ] document the new grid system
 - [ ] update the style guide to use the new grid system
+- [ ] review lightncingcss for more performance options
 
 
 
