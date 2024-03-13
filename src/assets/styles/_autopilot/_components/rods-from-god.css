@@ -1,8 +1,8 @@
 /* Rods from God */
 @media all and (min-width: 56.25em) {
 
-  .lines::after,
-  .lines::before {
+  .rfg::after,
+  .rfg::before {
     content: "";
     display: block;
     position: absolute;
@@ -10,14 +10,14 @@
     width: 2px;
     top: -50%;
     left: 20vw;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, rgba(var(--autopilot-animated-rgb), .15) 75%, rgba(0, 0, 0, 0) 0);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, rgba(var(--autopilot-animated-rgb), .35) 75%, rgba(0, 0, 0, 0) 0);
     animation: rodsFromGod var(--autopilot-animated-lines-time) cubic-bezier(.4, .26, 0, .97) 0s infinite forwards;
     /* background: red; */
     z-index: -1
   }
 }
 
-.lines::before {
+.rfg::before {
   animation-delay: 2s;
   left: 40vw
 }
@@ -32,12 +32,12 @@
   }
 }
 
-.lines--right::after {
+.rfg--right::after {
   animation-delay: 4s;
   left: 60vw
 }
 
-.lines--right::before {
+.rfg--right::before {
   animation-delay: 6s;
   left: 80vw
 }

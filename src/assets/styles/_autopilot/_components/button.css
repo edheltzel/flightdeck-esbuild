@@ -76,3 +76,10 @@
     }
   }
 }
+
+
+/* theme toggle button */
+.theme-toggle {
+  margin-top: 0.2rem;
+  cursor: pointer;
+}
