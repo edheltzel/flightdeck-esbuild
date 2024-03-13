@@ -6,6 +6,7 @@ permalink: /
 ---
 
 ## Flightdeck {.h1}
+
 <hr>
 
 > "That's one small step for man, one giant leap for mankind
@@ -24,7 +25,7 @@ permalink: /
 ## Space Exploration ️🚀
 
 <figure>
-  {% Image "/assets/images/flightdeck.jpeg",
+  {% image "/assets/images/flightdeck.jpeg",
   "A picture of the a flightdeck" %}
   <figcaption>
 
