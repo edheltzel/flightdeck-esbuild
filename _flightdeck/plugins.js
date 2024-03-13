@@ -4,7 +4,7 @@
  * @link https://www.11ty.dev/docs/plugins/
  *
  * @file
- * This module exports a function that adds several plugins to an Eleventy config object.
+ * This module exports a function that adds several plugins to the Eleventy.
  *
  * @module plugins
  *

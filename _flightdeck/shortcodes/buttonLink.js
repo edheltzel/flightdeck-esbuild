@@ -1,7 +1,8 @@
 /**
  * Button Component for Links – FlightDeck Autopilot
  * @param {string} link - The link to a page or external url
- * @param {string} text - The text to display in the blockquote
+ * @param {string} text - The text to display in the link
+ * @param {string} target - The target for the link
  * @example {% button "https://google.com", "Click Me", "self"%}
  */
 

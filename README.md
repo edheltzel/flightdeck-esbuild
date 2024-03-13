@@ -233,7 +233,6 @@ Flightdeck is a very opinionated starter kit, so the file structure is very spec
   <summary>File Structure</summary>
   <pre>.
 ├── _flightdeck
-│  ├── components
 │  ├── filters
 │  ├── shortcodes
 │  └── transforms
