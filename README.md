@@ -214,7 +214,7 @@ Commands available via "pnpm run":
 
 ### [ ‍🚀 Deployments ](#deployments)
 
-Deployments for this project are completely up to you and your needs, we are fans of Cloudflare Pages, which is why you'll find a `.node-version` file, [Cloudflare Pages currently supports Node v18.17.1](https://developers.cloudflare.com/pages/configuration/language-support-and-tools/#supported-languages-and-tools). We also provide a `netlify.toml` file that will work out-of-the-box with Netlify. Some other popular options include GitHub Pages, Vercel and Render. **Your call on what you use.**
+Deployments for this project are completely up to you and your needs, we are fans of [Cloudflare Pages](https://pages.cloudflare.com/), which is why you'll find a `.node-version` file, [Cloudflare Pages currently supports Node v18.17.1](https://developers.cloudflare.com/pages/configuration/language-support-and-tools/#supported-languages-and-tools). Some other really good and popular options are GitHub Pages, Vercel, Netlify, and Render. **Your call on what you use.**
 
 
 ##### Note - Environment Variables
