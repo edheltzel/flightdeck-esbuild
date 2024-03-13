@@ -160,7 +160,7 @@ tagline: Semantic HTML with very minimal use of classes
 
   <!-- Medias-->
   <figure>
-    {% Image "/assets/images/flightdeck.jpeg",
+    {% image "/assets/images/flightdeck.jpeg",
     "A picture of the a flightdeck" %}
     <figcaption>
 
