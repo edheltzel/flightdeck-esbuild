@@ -15,7 +15,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - removes unused files by @edheltzel in `_flightdeck/transforms`
 - phasing out Scss in favor of [lightningcss](https://lightningcss.com)
   - Scss is still available in the project, but the focus is on regular CSS with lightningcss
-
+- custom styling
+- adds more vgs elements
 
 **Full Changelog**: https://github.com/edheltzel/flightdeck-for-11ty-esbuild/compare/v0.4.5...v0.4.6
 
@@ -68,7 +69,7 @@ Includes a conditional `useImageDirTransform`
 
 ### Adds
 
-- `{% Image 'src' 'alt text' 'sizes: optional' %}` shortcode for responsive images
+- `{% image 'src' 'alt text' 'sizes: optional' %}` shortcode for responsive images
     - shortcode uses the eleventy-img plugin to generate responsive images
     - see `_flightdeck/shortcodes/image.js` for usage
 - Filters update
