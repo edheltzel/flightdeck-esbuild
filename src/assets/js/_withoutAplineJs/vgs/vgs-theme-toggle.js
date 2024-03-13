@@ -1,4 +1,9 @@
-// Export the functions
+/**
+ * Flightdeck's Visual Global Solutions (VGS)
+ * Flightdeck - VGS Theme Toggle
+ * @description Initializes a theme toggle that switches between light and dark themes.
+ * @function initTheme
+ */
 export const initTheme = () => {
   const html = document.documentElement;
 
