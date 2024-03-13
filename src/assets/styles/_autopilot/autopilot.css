@@ -311,6 +311,16 @@ details summary[role="button"]::after {
   --autopilot-form-element-focus-color: var(--autopilot-primary-focus);
 }
 
+[data-theme=light] .theme-toggle .lunar-eclipse,
+:root:not([data-theme=dark]) .theme-toggle .lunar-eclipse {
+  display: none;
+}
+
+[data-theme=light] .theme-toggle .solar-eclipse,
+:root:not([data-theme=dark]) .theme-toggle .solar-eclipse {
+  display: block;
+}
+
 @media only screen and (prefers-color-scheme: dark) {
   :root:not([data-theme]) {
     --autopilot-animated-rgb: 82, 78, 210;
@@ -421,6 +431,14 @@ details summary[role="button"]::after {
     [type="radio"],
     [type="file"]) {
     --autopilot-form-element-focus-color: var(--autopilot-primary-focus);
+  }
+
+  .theme-toggle .lunar-eclipse {
+    display: none;
+  }
+
+  .theme-toggle .solar-eclipse {
+    display: block;
   }
 }
 
@@ -533,6 +551,14 @@ details summary[role="button"]::after {
   [type="radio"],
   [type="file"]) {
   --autopilot-form-element-focus-color: var(--autopilot-primary-focus);
+}
+
+[data-theme=dark] .theme-toggle .solar-eclipse {
+  display: none;
+}
+
+[data-theme=dark] .theme-toggle .lunar-eclipse {
+  display: block;
 }
 
 progress,
