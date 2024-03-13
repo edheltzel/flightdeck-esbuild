@@ -1,10 +1,10 @@
 /**
- * Exports a function that runs BEFORE eleventy
+ * ESBuild Transform function
+ * @callback transformJs
  * @param {Object} config - eleventy config object
- * @summary This executes the esbuild tool on the output before build.
+ * @async eleventy.after hook to run esbuild
+ * @summary This executes the esbuild on the output after the eleventy build.
  * @link https://esbuild.github.io/api/#build-api
- * @link https://github.com/glromeo/esbuild-sass-plugin
- * @todo Update script to include more options
  */
 const isProd = process.env.ENV === "production";
 const esbuild = require("esbuild");
@@ -18,8 +18,8 @@ const transformJs = (config) => {
       minify: isProd,
       sourcemap: !isProd,
       splitting: true,
-      format: 'esm',
-      logLevel: 'info',
+      format: "esm",
+      logLevel: "info",
       metafile: true,
     });
   });

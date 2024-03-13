@@ -1,8 +1,8 @@
 /**
- * Flightdeck - VGS Cursor - A visual guidance system (VGS)
+ * Flightdeck's Visual Guidance System (VGS).
+ * Flightdeck - VGS Cursor
  * @description Initializes a custom cursor that interacts with links.
  * @function VGSCursor
- * @returns {void}
  */
 export function VGSCursor() {
   /**

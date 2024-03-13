@@ -3,6 +3,19 @@ title: Style Guide 💅 🎨
 tagline: Semantic HTML with very minimal use of classes
 ---
 
+- [ ] update to use grid correctly
+- [ ] update layouts to use sematic markup for containers
+- [ ] combine autopilot and declarative scaffold
+- [ ] create layout with new grid system
+- [ ] improve nunjucks layouts and partials
+- [ ] update naming convention to be consistent
+- [ ] document the new grid system
+- [ ] update the style guide to use the new grid system
+- [ ] review lightncingcss for more performance options
+
+
+
+
 <!-- Preview -->
 <section id="preview">
 
@@ -147,7 +160,7 @@ tagline: Semantic HTML with very minimal use of classes
 
   <!-- Medias-->
   <figure>
-    {% Image "/assets/images/flightdeck.jpeg",
+    {% image "/assets/images/flightdeck.jpeg",
     "A picture of the a flightdeck" %}
     <figcaption>
 
@@ -413,7 +426,7 @@ tagline: Semantic HTML with very minimal use of classes
 
 <hr>
 <!-- Article-->
-<article id="article">
+<article id="article"  >
 
   ## Article
 
@@ -447,7 +460,7 @@ tagline: Semantic HTML with very minimal use of classes
 
   ## Progress bar
 
-  <progress id="progress-1" value="25" max="100"></progress>
+  <progress id="progress-1" value="25" max="100" ></progress>
   <progress id="progress-2"></progress>
 </section>
 <!-- ./ Progress -->

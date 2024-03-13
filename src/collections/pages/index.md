@@ -7,7 +7,7 @@ permalink: /
 
 ## Flightdeck {.h1}
 
----
+<hr>
 
 > "That's one small step for man, one giant leap for mankind
 >
@@ -25,22 +25,19 @@ permalink: /
 ## Space Exploration ️🚀
 
 <figure>
-  <img
-    style="aspect-ratio: 16/9; "
-    src="/assets/images/taiki-ishikawa-lq1KA7HAdH0-unsplash.jpeg"
-    alt="rocket landing"
-  />
+  {% image "/assets/images/flightdeck.jpeg",
+  "A picture of the a flightdeck" %}
   <figcaption>
-    An
-    <a href="https://unsplash.com/photos/MEW1f-yu2KI" target="_blank">unsplash.com</a> image.
+
+  Image from [unsplash.com](https://unsplash.com/photos/black-and-gray-audio-mixer-lq1KA7HAdH0)
+
   </figcaption>
 </figure>
 
 ### To The Moon 🌙
+<figure>
 
-<!-- ![The Moon](/assets/images/spacex/testing.jpeg)
+  ![Launchpad](/assets/images/spacex/spacex-9dF7pCyaM9s-unsplash.jpeg)
+  Image using markdown syntax
 
-
-{% Image "/assets/images/spacex/anirudh-w_WZRYHb-D0-unsplash.jpeg", "This is the alt text"  %} -->
-{% Image "/assets/images/spacex/spacex-9dF7pCyaM9s-unsplash.jpeg", "This is the alt text"  %}
-<!-- {% Image "/assets/images/adam-miller.jpg", "This is the alt text", "(min-width: 30em) 50vw, 100vw" %} -->
+</figure>

@@ -4,12 +4,12 @@
 //
 
 @use "pico" with ($css-var-prefix: "--autopilot-",
-  $enable-semantic-container: true,
-  $enable-classes: true,
+  $parent-selector: ".autopilot",
+  $enable-semantic-container: false,
+  $enable-classes: false,
   $theme-color: "indigo",
-  $modules: (
-    "themes/default": false,
+  $modules: ("themes/default": false,
   ));
 
 // Autopilot Theme
-@use "themes/autopilot";
+@use "themes/autopilot"
