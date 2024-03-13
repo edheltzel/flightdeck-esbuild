@@ -18,5 +18,5 @@ const image = require("./shortcodes/image");
 module.exports = (config) => {
   config.addShortcode("codepen", codepen);
   config.addShortcode("copyright", copyright);
-  config.addShortcode("Image", image);
+  config.addShortcode("image", image);
 };

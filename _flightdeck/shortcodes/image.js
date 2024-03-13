@@ -4,10 +4,8 @@
  * @param {string} alt - The alternative text for the image.
  * @param {string} sizes - The responsive sizes attribute for the image.
  * @returns {Promise<string>} - The generated HTML for the image element.
- * @usage {% Image "image path", "atl-text" %}
- * @example {% Image "/assets/images/moon.jpg", "A picture of the moon" %}
- * @field rootPath - is set to keep the path to the image file relative to the src directory.
- * this keeps the path consistent between markdown image tags and the Image shortcode.
+ * @usage {% image "image path", "atl-text" %}
+ * @example {% image "/assets/images/moon.jpg", "A picture of the moon" %}
  */
 
 // Import Image library
