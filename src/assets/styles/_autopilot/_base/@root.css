@@ -27,18 +27,7 @@
 
   /* font stacks */
 
-  --text-main:
-    "Trispace",
-    -apple-system,
-    blinkmacsystemfont,
-    "Segoe UI",
-    roboto,
-    helvetica,
-    arial,
-    sans-serif,
-    "Apple Color Emoji",
-    "Segoe UI Emoji",
-    "Segoe UI Symbol";
+  --text-main: var(--autopilot-font-family);
 
   /* size */
   --text-base: max(1.6em, min(calc(0.5em + 1vw), 2.4em));
