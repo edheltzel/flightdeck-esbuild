@@ -3,11 +3,11 @@ mainly testing stuff */
 :root {
   --clip-text-color-1: hotpink;
   --clip-text-color-2: blanchedalmond;
-  --clip-text-color-3: crimson;
+  --clip-text-color-3: plum;
 }
 
 .h1 {
-  font-size: clamp(1rem, -6.7586rem + 24.8276vw, 10rem);
+  font-size: clamp(1rem, -6.7586rem + 24.8276vw, 9rem);
   color: transparent;
   font-weight: bold;
   position: relative;
