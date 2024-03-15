@@ -331,6 +331,7 @@ tagline: Semantic HTML with very minimal use of classes
 <!-- ./ Tables -->
 
 <!-- Modal example with AlpineJS -->
+
 <modal x-data="{ dialogOpen: false }">
   <dialog x-bind:open="dialogOpen" @close="dialogOpen = false" @keydown.window.escape="dialogOpen = false">
     <article>
