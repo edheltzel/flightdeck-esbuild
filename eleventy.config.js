@@ -20,7 +20,6 @@ const addFilters = require("./_flightdeck/filters");
 const addTransforms = require("./_flightdeck/transforms");
 const addShortcodes = require("./_flightdeck/shortcodes");
 const addPlugins = require("./_flightdeck/plugins");
-const addComponents = require("./_flightdeck/components");
 
 module.exports = (config) => {
   const options = {
@@ -36,14 +35,11 @@ module.exports = (config) => {
   // Add eleventy plugins and configurations
   addPlugins(config);
 
-  // Custom shortcodes for Nunjucks/Liquid template copyright year, youtube embeds, etc.
+  // Custom shortcodes for Nunjucks/Liquid template - ui components go here
   addShortcodes(config);
 
   // Custom universal filters for Nunjucks/Liquid templates
   addFilters(config);
-
-  // Custom components for Flightdeck Autopilot UI
-  addComponents(config);
 
   // 11ty configuration options
   return {

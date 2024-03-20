@@ -1,7 +1,7 @@
 ---
 layout: page
 title:
-tagline: An opinionated Jamstack starter project for Eleventy.
+tagline: An opinionated starter project for Eleventy.
 permalink: /
 ---
 
@@ -9,11 +9,12 @@ permalink: /
 
 <hr>
 
-> "That's one small step for man, one giant leap for mankind
->
-> --<cite>Neil Armstrong</cite>
+<article>
+{% blockquote "That's one small step for man, one giant leap for mankind", "Neil Armstrong" %}
+</article>
 
-```html
+
+``` html
 <!-- AlpineJS -->
 <div x-data="{ search: '' }">
   <input type="text" x-model="search" />
@@ -21,23 +22,3 @@ permalink: /
   Searching for: <span x-text="search"></span>
 </div>
 ```
-
-## Space Exploration ️🚀
-
-<figure>
-  {% image "/assets/images/flightdeck.jpeg",
-  "A picture of the a flightdeck" %}
-  <figcaption>
-
-  Image from [unsplash.com](https://unsplash.com/photos/black-and-gray-audio-mixer-lq1KA7HAdH0)
-
-  </figcaption>
-</figure>
-
-### To The Moon 🌙
-<figure>
-
-  ![Launchpad](/assets/images/spacex/spacex-9dF7pCyaM9s-unsplash.jpeg)
-  Image using markdown syntax
-
-</figure>

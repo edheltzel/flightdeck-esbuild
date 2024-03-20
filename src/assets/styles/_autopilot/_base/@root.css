@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 :root {
   /* color */
   --color-alpha: 100%;
@@ -27,18 +29,7 @@
 
   /* font stacks */
 
-  --text-main:
-    "Trispace",
-    -apple-system,
-    blinkmacsystemfont,
-    "Segoe UI",
-    roboto,
-    helvetica,
-    arial,
-    sans-serif,
-    "Apple Color Emoji",
-    "Segoe UI Emoji",
-    "Segoe UI Symbol";
+  --text-main: var(--autopilot-font-family);
 
   /* size */
   --text-base: max(1.6em, min(calc(0.5em + 1vw), 2.4em));
@@ -121,7 +112,7 @@
     0 10px 10px -2px hsl(var(--shadow-color) / 4%),
     0 20px 20px -2px hsl(var(--shadow-color) / 5%),
     0 40px 40px -2px hsl(var(--shadow-color) / 7%);
-
+  --autopilot-animated-lines-time: 8s;
   --autopilot-font-family-emoji: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --autopilot-font-family-sans-serif: system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, Helvetica, Arial, "Helvetica Neue", sans-serif, var(--autopilot-font-family-emoji);
   --autopilot-font-family-monospace: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace, var(--autopilot-font-family-emoji);
@@ -165,4 +156,187 @@
     --color-sheet-hsl: var(--color-charcoal);
     --color-sheet: hsl(var(--color-charcoal) / var(--color-alpha));
   }
+}
+
+@media (min-width: 576px) {
+  :root {
+    --autopilot-font-size: 106.25%;
+  }
+}
+
+@media (min-width: 768px) {
+  :root {
+    --autopilot-font-size: 112.5%;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --autopilot-font-size: 118.75%;
+  }
+}
+
+@media (min-width: 1280px) {
+  :root {
+    --autopilot-font-size: 125%;
+  }
+}
+
+@media (min-width: 1536px) {
+  :root {
+    --autopilot-font-size: 131.25%;
+  }
+}
+
+a {
+  --autopilot-text-decoration: underline;
+}
+
+a.secondary,
+a.contrast {
+  --autopilot-text-decoration: underline;
+}
+
+small {
+  --autopilot-font-size: 0.875em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  --autopilot-font-weight: 700;
+}
+
+h1 {
+  --autopilot-font-size: 2rem;
+  --autopilot-line-height: 1.125;
+  --autopilot-typography-spacing-top: 3rem;
+}
+
+h2 {
+  --autopilot-font-size: 1.75rem;
+  --autopilot-line-height: 1.15;
+  --autopilot-typography-spacing-top: 2.625rem;
+}
+
+h3 {
+  --autopilot-font-size: 1.5rem;
+  --autopilot-line-height: 1.175;
+  --autopilot-typography-spacing-top: 2.25rem;
+}
+
+h4 {
+  --autopilot-font-size: 1.25rem;
+  --autopilot-line-height: 1.2;
+  --autopilot-typography-spacing-top: 1.874rem;
+}
+
+h5 {
+  --autopilot-font-size: 1.125rem;
+  --autopilot-line-height: 1.225;
+  --autopilot-typography-spacing-top: 1.6875rem;
+}
+
+h6 {
+  --autopilot-font-size: 1rem;
+  --autopilot-line-height: 1.25;
+  --autopilot-typography-spacing-top: 1.5rem;
+}
+
+thead th,
+thead td,
+tfoot th,
+tfoot td {
+  --autopilot-font-weight: 600;
+  --autopilot-border-width: 0.1875rem;
+}
+
+pre,
+code,
+kbd,
+samp {
+  --autopilot-font-family: var(--autopilot-font-family-monospace);
+}
+
+kbd {
+  --autopilot-font-weight: bolder;
+}
+
+input:not([type=submit],
+  [type=button],
+  [type=reset],
+  [type=checkbox],
+  [type=radio],
+  [type=file]),
+:where(select, textarea) {
+  --autopilot-outline-width: 0.0625rem;
+}
+
+[type=search] {
+  --autopilot-border-radius: 5rem;
+}
+
+[type=checkbox],
+[type=radio] {
+  --autopilot-border-width: 0.125rem;
+}
+
+[type=checkbox][role=switch] {
+  --autopilot-border-width: 0.1875rem;
+}
+
+details.dropdown summary:not([role=button]) {
+  --autopilot-outline-width: 0.0625rem;
+}
+
+nav details.dropdown summary:focus-visible {
+  --autopilot-outline-width: 0.125rem;
+}
+
+[role=search] {
+  --autopilot-border-radius: 5rem;
+}
+
+[role=search]:has(button.secondary:focus,
+  [type=submit].secondary:focus,
+  [type=button].secondary:focus,
+  [role=button].secondary:focus),
+[role=group]:has(button.secondary:focus,
+  [type=submit].secondary:focus,
+  [type=button].secondary:focus,
+  [role=button].secondary:focus) {
+  --autopilot-group-box-shadow-focus-with-button: 0 0 0 var(--autopilot-outline-width) var(--autopilot-secondary-focus);
+}
+
+[role=search]:has(button.contrast:focus,
+  [type=submit].contrast:focus,
+  [type=button].contrast:focus,
+  [role=button].contrast:focus),
+[role=group]:has(button.contrast:focus,
+  [type=submit].contrast:focus,
+  [type=button].contrast:focus,
+  [role=button].contrast:focus) {
+  --autopilot-group-box-shadow-focus-with-button: 0 0 0 var(--autopilot-outline-width) var(--autopilot-contrast-focus);
+}
+
+[role=search] button,
+[role=search] [type=submit],
+[role=search] [type=button],
+[role=search] [role=button],
+[role=group] button,
+[role=group] [type=submit],
+[role=group] [type=button],
+[role=group] [role=button] {
+  --autopilot-form-element-spacing-horizontal: 2rem;
+}
+
+details summary[role=button]:not(.outline)::after {
+  filter: brightness(0) invert(1);
+}
+
+[aria-busy=true]:not(input, select, textarea):is(button, [type=submit], [type=button], [type=reset], [role=button]):not(.outline)::before {
+  filter: brightness(0) invert(1);
 }

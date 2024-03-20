@@ -9,8 +9,6 @@
  * @description local dev server runs on port 8080 by default-> http://localhost:8080
  */
 
-const fs = require("fs");
-
 module.exports = (config, options) => {
   config.setQuietMode(true); // reduce console
   config.setServerOptions({

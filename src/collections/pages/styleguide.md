@@ -2,20 +2,6 @@
 title: Style Guide 💅 🎨
 tagline: Semantic HTML with very minimal use of classes
 ---
-
-- [ ] update to use grid correctly
-- [ ] update layouts to use sematic markup for containers
-- [ ] combine autopilot and declarative scaffold
-- [ ] create layout with new grid system
-- [ ] improve nunjucks layouts and partials
-- [ ] update naming convention to be consistent
-- [ ] document the new grid system
-- [ ] update the style guide to use the new grid system
-- [ ] review lightncingcss for more performance options
-
-
-
-
 <!-- Preview -->
 <section id="preview">
 
@@ -24,7 +10,7 @@ tagline: Semantic HTML with very minimal use of classes
   Sed ultricies dolor non ante vulputate hendrerit. Vivamus sit amet suscipit sapien Nulla iaculis eros a elit pharetra egestas.
 
   <form>
-    <div class="grid">
+    <div>
       <input
         type="text"
         name="firstname"
@@ -58,9 +44,8 @@ tagline: Semantic HTML with very minimal use of classes
 
   ## Typography {.h1}
 
-  Adding classes to markdown `{: h1}` is possible through the use of the `markdown-it-attrs` package.
+  Adding classes to markdown `{.h1}` is possible through the use of the `markdown-it-attrs` package.
 
-  Aliquam lobortis vitae nibh nec rhoncus. Morbi mattis neque eget efficitur feugiat. Vivamus porta nunc a erat mattis, mattis feugiat turpis pretium. Quisque sed tristique felis.
 
   <!-- Blockquote-->
   Support for both HTML and Markdown blockquotes is available. Along with a custom shortcode to create a blockquote with a citation.
@@ -78,59 +63,85 @@ tagline: Semantic HTML with very minimal use of classes
   - Suspendisse id nisl ut leo finibus vehicula quis eu ex
   - Proin ultricies turpis et volutpat vehicula
 
-  1. Aliquam lobortis lacus eu libero ornare facilisis
-  2. Nam et magna at libero scelerisque egestas
-  3. Suspendisse id nisl ut leo finibus vehicula quis eu ex
-  4. Proin ultricies turpis et volutpat vehicula
-
   <!-- Inline text elements-->
   ### Inline text elements
 
-  <div class="grid">
-
-    [Primary link](#)
-
-    [Secondary link](#){.secondary}
-
-    [Contrast link](#){.contrast}
-
+  <div class="grid --autofit">
+    <p><a href="#" onclick="event.preventDefault()">Primary link</a></p>
+    <p>
+      <a href="#" class="secondary" onclick="event.preventDefault()">Secondary link</a>
+    </p>
+    <p>
+      <a href="#" class="contrast" onclick="event.preventDefault()">Contrast link</a>
+    </p>
   </div>
-  <div class="grid">
-
-    **Bold**
-
-    _Italic_
-
-    <u>Underline</u>
-
+  <div class="grid --autofit">
+    <p><strong>Bold</strong></p>
+    <p><em>Italic</em></p>
+    <p><u>Underline</u></p>
   </div>
-  <div class="grid">
-
-    <del>Deleted</del>
-
-    <ins>Inserted</ins>
-
-    ~~Strikethrough~~
-
+  <div class="grid --autofit">
+    <p><del>Deleted</del></p>
+    <p><ins>Inserted</ins></p>
+    <p><s>Strikethrough</s></p>
   </div>
-  <div class="grid">
-
-    <small>Small </small>
-
-    Text <sub>Sub</sub>
-
-    Text <sup>Sup</sup>
-
+  <div class="grid --autofit">
+    <p><small>Small </small></p>
+    <p>Text <sub>Sub</sub></p>
+    <p>Text <sup>Sup</sup></p>
   </div>
-  <div class="grid">
-
-    <abbr title="Abbreviation" data-tooltip="Abbreviation">Abbr.</abbr>
-
-    <kbd>Kbd</kbd>
-
-    <mark>Highlighted</mark>
-
+  <div class="grid --autofit">
+    <p>
+      <abbr title="Abbreviation" data-tooltip="Abbreviation">Abbr.</abbr>
+    </p>
+    <p><kbd>Kbd</kbd></p>
+    <p><mark>Highlighted</mark></p>
   </div>
+
+#### Markdown Syntax
+
+<div class="grid --autofit">
+
+   [Primary link](#)
+
+  <p>
+    <a href="#" class="secondary" onclick="event.preventDefault()">Secondary link</a>
+  </p>
+  <p>
+    <a href="#" class="contrast" onclick="event.preventDefault()">Contrast link</a>
+  </p>
+
+
+</div>
+<div class="grid --autofit">
+
+   **Bold**
+
+   _Italic_
+
+<p><u>Underline</u></p>
+
+
+</div>
+
+<div class="grid --autofit">
+<p><del>Deleted</del></p>
+<p><ins>Inserted</ins></p>
+
+   ~~Strike through~~
+</div>
+<div class="grid --autofit">
+<p><small>Small</small></p>
+<p>Text <sub>Sub</sub></p>
+<p>Text <sup>Sup</sup></p>
+</div>
+<div class="grid --autofit">
+<p><abbr title="Abbreviation" data-tooltip="Abbreviation">Abbr.</abbr></p>
+
+<p><kbd>Kbd</kbd></p>
+
+<p><mark>Highlighted</mark></p>
+</div>
 
   <!-- Headings-->
   ### Heading 3
@@ -176,13 +187,13 @@ tagline: Semantic HTML with very minimal use of classes
 
   ## Buttons
 
-  <p class="grid">
+  <p class="grid --autofit">
     <button>Primary</button>
     <button class="secondary">Secondary</button>
     <button class="contrast">Contrast</button>
   </p>
 
-  <p class="grid">
+  <p class="grid --autofit">
     <button class="outline">Primary outline</button>
     <button class="outline secondary">Secondary outline</button>
     <button class="outline contrast">Contrast outline</button>
@@ -194,41 +205,35 @@ tagline: Semantic HTML with very minimal use of classes
 <section id="form">
   <form>
     <h2>Form elements</h2>
-
     <!-- Search -->
     <label for="search">Search</label>
     <input type="search" id="search" name="search" placeholder="Search"/>
-
     <!-- Text -->
     <label for="text">Text</label>
     <input type="text" id="text" name="text" placeholder="Text"/>
     <small>Curabitur consequat lacus at lacus porta finibus.</small>
-
     <!-- Select -->
     <label for="select">Select</label>
     <select id="select" name="select" required>
       <option value="" selected>Select…</option>
       <option>…</option>
     </select>
-
     <!-- File browser -->
     <label for="file">File browser
       <input type="file" id="file" name="file"/>
     </label>
-
     <!-- Range slider control -->
     <label for="range">Range slider
       <input type="range" min="0" max="100" value="50" id="range" name="range"/>
     </label>
-
     <!-- States -->
-    <div class="grid">
+    <div class="grid --autofit">
       <label for="valid">
-    Valid
-    <input type="text" id="valid" name="valid" placeholder="Valid" aria-invalid="false"/>
+        Valid
+        <input type="text" id="valid" name="valid" placeholder="Valid" aria-invalid="false"/>
       </label>
       <label for="invalid">
-    Invalid
+        Invalid
         <input
         type="text"
         id="invalid"
@@ -237,32 +242,28 @@ tagline: Semantic HTML with very minimal use of classes
         aria-invalid="true"/>
       </label>
       <label for="disabled">
-    Disabled
-    <input type="text" id="disabled" name="disabled" placeholder="Disabled" disabled/>
+        Disabled
+        <input type="text" id="disabled" name="disabled" placeholder="Disabled" disabled/>
       </label>
     </div>
-
-    <div class="grid">
+    <div class="grid --autofit">
       <!-- Date-->
-      <label for="date"
-    >Date
-    <input type="date" id="date" name="date"/>
+      <label for="date">
+        Date
+      <input type="date" id="date" name="date"/>
       </label>
-
       <!-- Time-->
-      <label for="time"
-    >Time
-    <input type="time" id="time" name="time"/>
+      <label for="time">
+        Time
+        <input type="time" id="time" name="time"/>
       </label>
-
       <!-- Color-->
-      <label for="color"
-    >Color
-    <input type="color" id="color" name="color" value="#0eaaaa"/>
+      <label for="color">
+        Color
+        <input type="color" id="color" name="color" value="#0eaaaa"/>
       </label>
     </div>
-
-    <div class="grid">
+    <div class="grid --autofit">
       <!-- Checkboxes -->
       <fieldset>
         <legend>
@@ -270,14 +271,13 @@ tagline: Semantic HTML with very minimal use of classes
         </legend>
         <label for="checkbox-1">
           <input type="checkbox" id="checkbox-1" name="checkbox-1" checked/>
-    Checkbox
-    </label>
+          Checkbox
+        </label>
         <label for="checkbox-2">
           <input type="checkbox" id="checkbox-2" name="checkbox-2"/>
-    Checkbox
-    </label>
+          Checkbox
+        </label>
       </fieldset>
-
       <!-- Radio buttons -->
       <fieldset>
         <legend>
@@ -285,14 +285,13 @@ tagline: Semantic HTML with very minimal use of classes
         </legend>
         <label for="radio-1">
           <input type="radio" id="radio-1" name="radio" value="radio-1" checked/>
-    Radio button
-    </label>
+          Radio button
+        </label>
         <label for="radio-2">
           <input type="radio" id="radio-2" name="radio" value="radio-2"/>
-    Radio button
-    </label>
+          Radio button
+        </label>
       </fieldset>
-
       <!-- Switch -->
       <fieldset>
         <legend>
@@ -300,15 +299,14 @@ tagline: Semantic HTML with very minimal use of classes
         </legend>
         <label for="switch-1">
           <input type="checkbox" id="switch-1" name="switch-1" role="switch" checked/>
-    Switch
-    </label>
+          Switch
+        </label>
         <label for="switch-2">
           <input type="checkbox" id="switch-2" name="switch-2" role="switch"/>
-    Switch
-    </label>
+          Switch
+        </label>
       </fieldset>
     </div>
-
     <!-- Buttons -->
     <input type="reset" value="Reset" onclick="event.preventDefault()"/>
     <input type="submit" value="Submit" onclick="event.preventDefault()"/>
@@ -371,7 +369,9 @@ tagline: Semantic HTML with very minimal use of classes
   </div>
 </section>
 <!-- ./ Tables -->
+
 <!-- Modal example with AlpineJS -->
+
 <modal x-data="{ dialogOpen: false }">
   <dialog x-bind:open="dialogOpen" @close="dialogOpen = false" @keydown.window.escape="dialogOpen = false">
     <article>
@@ -396,6 +396,7 @@ tagline: Semantic HTML with very minimal use of classes
   </section>
   <!-- ./ Modal Button -->
 </modal>
+
 <!-- Accordions -->
 <section id="accordions">
 

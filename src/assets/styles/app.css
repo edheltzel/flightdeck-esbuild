@@ -1,4 +1,4 @@
-/* autopilot */
+/* autopilot design system */
 @layer base, components, utilities;
 
 @import "_autopilot/autopilot.css";

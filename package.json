@@ -7,7 +7,7 @@
     "@11ty/eleventy-img": "^4.0.2",
     "@11ty/eleventy-navigation": "^0.3.5",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
-    "@biomejs/biome": "1.6.0",
+    "@biomejs/biome": "1.6.1",
     "@picocss/pico": "2.0.6",
     "autoprefixer": "^10.4.18",
     "browserslist": "^4.23.0",
@@ -16,15 +16,15 @@
     "del-cli": "^5.1.0",
     "eleventy-plugin-embed-everything": "^1.18.2",
     "eleventy-sass": "^2.2.4",
-    "esbuild": "^0.20.1",
+    "esbuild": "^0.20.2",
     "fast-glob": "^3.3.2",
     "html-minifier": "^4.0.0",
-    "lightningcss": "^1.24.0",
+    "lightningcss": "^1.24.1",
     "markdown-it": "^14.0.0",
     "markdown-it-attrs": "^4.1.6",
     "postcss": "^8.4.35",
-    "postcss-preset-env": "^9.5.0",
-    "sass": "^1.71.1"
+    "postcss-preset-env": "^9.5.1",
+    "sass": "^1.72.0"
   },
   "dependencies": {
     "@alpinejs/persist": "^3.13.7",
@@ -39,7 +39,7 @@
   "config": {
     "echoClean": "🧼 Scrubbed dist/ & all cache directories ✨",
     "echoPurge": "🧹 All Clean ✨ Run `pnpm install` to start fresh ✨",
-    "lockFiles": "pnpm-lock.yaml node_modules/",
+    "lockFiles": "pnpm-lock.yaml bun.lockb package-lock.json yarn.lock node_modules/",
     "devFiles": "dist/ .cache/ .jampack/ *.log"
   },
   "scripts": {

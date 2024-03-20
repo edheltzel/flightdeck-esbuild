@@ -1,0 +1,117 @@
+/**
+ * Progress
+ */
+progress,
+[type=checkbox],
+[type=radio],
+[type=range] {
+  accent-color: var(--autopilot-primary);
+}
+
+progress,
+[type=checkbox],
+[type=radio],
+[type=range] {
+  accent-color: var(--autopilot-primary);
+}
+
+progress {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+progress {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  display: inline-block;
+  appearance: none;
+  width: 100%;
+  height: 0.5rem;
+  margin-bottom: calc(var(--autopilot-spacing) * 0.5);
+  overflow: hidden;
+  border: 0;
+  border-radius: var(--autopilot-border-radius);
+  background-color: var(--autopilot-progress-background-color);
+  color: var(--autopilot-progress-color);
+}
+
+progress::-webkit-progress-bar {
+  border-radius: var(--autopilot-border-radius);
+  background: none;
+}
+
+progress[value]::-webkit-progress-value {
+  background-color: var(--autopilot-progress-color);
+  -webkit-transition: inline-size var(--autopilot-transition);
+  transition: inline-size var(--autopilot-transition);
+}
+
+progress::-moz-progress-bar {
+  background-color: var(--autopilot-progress-color);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  progress:indeterminate {
+    background: var(--autopilot-progress-background-color) linear-gradient(to right, var(--autopilot-progress-color) 30%, var(--autopilot-progress-background-color) 30%) top left/150% 150% no-repeat;
+    animation: progress-indeterminate 1s linear infinite;
+  }
+
+  progress:indeterminate[value]::-webkit-progress-value {
+    background-color: transparent;
+  }
+
+  progress:indeterminate::-moz-progress-bar {
+    background-color: transparent;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  [dir=rtl] progress:indeterminate {
+    animation-direction: reverse;
+  }
+}
+
+@keyframes progress-indeterminate {
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/**
+ * Loading ([aria-busy=true])
+ */
+[aria-busy=true]:not(input, select, textarea, html) {
+  white-space: nowrap;
+}
+
+[aria-busy=true]:not(input, select, textarea, html)::before {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  background-image: var(--autopilot-icon-loading);
+  background-size: 1em auto;
+  background-repeat: no-repeat;
+  content: "";
+  vertical-align: -0.125em;
+}
+
+[aria-busy=true]:not(input, select, textarea, html):not(:empty)::before {
+  margin-inline-end: calc(var(--autopilot-spacing) * 0.5);
+}
+
+[aria-busy=true]:not(input, select, textarea, html):empty {
+  text-align: center;
+}
+
+button[aria-busy=true],
+[type=submit][aria-busy=true],
+[type=button][aria-busy=true],
+[type=reset][aria-busy=true],
+[role=button][aria-busy=true],
+a[aria-busy=true] {
+  pointer-events: none;
+}
