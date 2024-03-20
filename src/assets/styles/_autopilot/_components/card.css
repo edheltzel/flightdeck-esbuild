@@ -17,3 +17,38 @@ simple centered layout
     left: 0;
   }
 }
+
+/**
+ * Card (<article>)
+ */
+article {
+  margin-bottom: var(--autopilot-block-spacing-vertical);
+  padding: var(--autopilot-block-spacing-vertical) var(--autopilot-block-spacing-horizontal);
+  border-radius: var(--autopilot-border-radius);
+  background: var(--autopilot-card-background-color);
+  box-shadow: var(--autopilot-card-box-shadow);
+}
+
+article > header,
+article > footer {
+  margin-right: calc(var(--autopilot-block-spacing-horizontal) * -1);
+  margin-left: calc(var(--autopilot-block-spacing-horizontal) * -1);
+  padding: calc(var(--autopilot-block-spacing-vertical) * 0.66) var(--autopilot-block-spacing-horizontal);
+  background-color: var(--autopilot-card-sectioning-background-color);
+}
+
+article > header {
+  margin-top: calc(var(--autopilot-block-spacing-vertical) * -1);
+  margin-bottom: var(--autopilot-block-spacing-vertical);
+  border-bottom: var(--autopilot-border-width) solid var(--autopilot-card-border-color);
+  border-top-right-radius: var(--autopilot-border-radius);
+  border-top-left-radius: var(--autopilot-border-radius);
+}
+
+article > footer {
+  margin-top: var(--autopilot-block-spacing-vertical);
+  margin-bottom: calc(var(--autopilot-block-spacing-vertical) * -1);
+  border-top: var(--autopilot-border-width) solid var(--autopilot-card-border-color);
+  border-bottom-right-radius: var(--autopilot-border-radius);
+  border-bottom-left-radius: var(--autopilot-border-radius);
+}
