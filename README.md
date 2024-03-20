@@ -360,3 +360,16 @@ Don't forget to give the project a star! Thanks again!
 Distributed under the WTFPL License. See `LICENSE` for more information.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
+
+
+## Todo's
+
+- [X] update to use grid correctly
+- [X] update layouts to use sematic markup for containers
+- [X] combine autopilot and declarative scaffold
+- [ ] create layout with new grid system
+- [ ] improve nunjucks layouts and partials
+- [X] update naming convention to be consistent
+- [ ] document the new grid system
+- [X] update the style guide to use the new grid system
+- [X] review lightncingcss for more performance options

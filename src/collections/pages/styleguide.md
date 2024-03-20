@@ -2,16 +2,6 @@
 title: Style Guide 💅 🎨
 tagline: Semantic HTML with very minimal use of classes
 ---
-
-- [X] update to use grid correctly
-- [ ] update layouts to use sematic markup for containers
-- [ ] combine autopilot and declarative scaffold
-- [ ] create layout with new grid system
-- [ ] improve nunjucks layouts and partials
-- [ ] update naming convention to be consistent
-- [ ] document the new grid system
-- [ ] update the style guide to use the new grid system
-- [ ] review lightncingcss for more performance options
 <!-- Preview -->
 <section id="preview">
 
@@ -76,32 +66,82 @@ tagline: Semantic HTML with very minimal use of classes
   <!-- Inline text elements-->
   ### Inline text elements
 
-    [Primary link](#)
+  <div class="grid --autofit">
+    <p><a href="#" onclick="event.preventDefault()">Primary link</a></p>
+    <p>
+      <a href="#" class="secondary" onclick="event.preventDefault()">Secondary link</a>
+    </p>
+    <p>
+      <a href="#" class="contrast" onclick="event.preventDefault()">Contrast link</a>
+    </p>
+  </div>
+  <div class="grid --autofit">
+    <p><strong>Bold</strong></p>
+    <p><em>Italic</em></p>
+    <p><u>Underline</u></p>
+  </div>
+  <div class="grid --autofit">
+    <p><del>Deleted</del></p>
+    <p><ins>Inserted</ins></p>
+    <p><s>Strikethrough</s></p>
+  </div>
+  <div class="grid --autofit">
+    <p><small>Small </small></p>
+    <p>Text <sub>Sub</sub></p>
+    <p>Text <sup>Sup</sup></p>
+  </div>
+  <div class="grid --autofit">
+    <p>
+      <abbr title="Abbreviation" data-tooltip="Abbreviation">Abbr.</abbr>
+    </p>
+    <p><kbd>Kbd</kbd></p>
+    <p><mark>Highlighted</mark></p>
+  </div>
 
-    **Bold**
+#### Markdown Syntax
 
-    _Italic_
+<div class="grid --autofit">
 
-    <u>Underline</u>
+   [Primary link](#)
+
+  <p>
+    <a href="#" class="secondary" onclick="event.preventDefault()">Secondary link</a>
+  </p>
+  <p>
+    <a href="#" class="contrast" onclick="event.preventDefault()">Contrast link</a>
+  </p>
 
 
-    <del>Deleted</del>
+</div>
+<div class="grid --autofit">
 
-    <ins>Inserted</ins>
+   **Bold**
 
-    ~~Strike through~~
+   _Italic_
 
-    <small>Small</small>
+<p><u>Underline</u></p>
 
-    Text <sub>Sub</sub>
 
-    Text <sup>Sup</sup>
+</div>
 
-    <abbr title="Abbreviation" data-tooltip="Abbreviation">Abbr.</abbr>
+<div class="grid --autofit">
+<p><del>Deleted</del></p>
+<p><ins>Inserted</ins></p>
 
-    <kbd>Kbd</kbd>
+   ~~Strike through~~
+</div>
+<div class="grid --autofit">
+<p><small>Small</small></p>
+<p>Text <sub>Sub</sub></p>
+<p>Text <sup>Sup</sup></p>
+</div>
+<div class="grid --autofit">
+<p><abbr title="Abbreviation" data-tooltip="Abbreviation">Abbr.</abbr></p>
 
-    <mark>Highlighted</mark>
+<p><kbd>Kbd</kbd></p>
+
+<p><mark>Highlighted</mark></p>
+</div>
 
   <!-- Headings-->
   ### Heading 3
