@@ -8,6 +8,13 @@ progress,
   accent-color: var(--autopilot-primary);
 }
 
+progress,
+[type=checkbox],
+[type=radio],
+[type=range] {
+  accent-color: var(--autopilot-primary);
+}
+
 progress {
   display: inline-block;
   vertical-align: baseline;
