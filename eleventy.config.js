@@ -12,7 +12,6 @@
  * @default false - Set to true to use image transforms
  * @requires ./_flightdeck/transforms
  *
- * @todo add more options
  */
 
 const addWorkflow = require("./_flightdeck/workflow");
