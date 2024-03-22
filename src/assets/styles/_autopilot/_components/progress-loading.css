@@ -21,8 +21,6 @@ progress {
 }
 
 progress {
-  -webkit-appearance: none;
-  -moz-appearance: none;
   display: inline-block;
   appearance: none;
   width: 100%;
@@ -42,7 +40,6 @@ progress::-webkit-progress-bar {
 
 progress[value]::-webkit-progress-value {
   background-color: var(--autopilot-progress-color);
-  -webkit-transition: inline-size var(--autopilot-transition);
   transition: inline-size var(--autopilot-transition);
 }
 
@@ -51,9 +48,11 @@ progress::-moz-progress-bar {
 }
 
 @media (prefers-reduced-motion: no-preference) {
+
   progress:indeterminate {
     background: var(--autopilot-progress-background-color) linear-gradient(to right, var(--autopilot-progress-color) 30%, var(--autopilot-progress-background-color) 30%) top left/150% 150% no-repeat;
-    animation: progress-indeterminate 1s linear infinite;
+
+    animation: progress-indeterminate var(--autopilot-progress-time) linear infinite;
   }
 
   progress:indeterminate[value]::-webkit-progress-value {

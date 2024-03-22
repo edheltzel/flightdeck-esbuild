@@ -13,7 +13,6 @@
   --color-sheet: hsl(var(--color-peach) / var(--color-alpha));
 
   /* spacing */
-
   --space-scale: 2;
   --space-base-s: 2rem;
   --space-base: max(1.5rem, min(calc(0.5rem + 1.5vw), 3rem));
@@ -28,7 +27,6 @@
   /* text properties */
 
   /* font stacks */
-
   --text-main: var(--autopilot-font-family);
 
   /* size */
@@ -112,7 +110,11 @@
     0 10px 10px -2px hsl(var(--shadow-color) / 4%),
     0 20px 20px -2px hsl(var(--shadow-color) / 5%),
     0 40px 40px -2px hsl(var(--shadow-color) / 7%);
-  --autopilot-animated-lines-time: 8s;
+
+  /** animation */
+  --autopilot-rods-from-god: 8s;
+  --autopilot-progress-time: 3s;
+
   --autopilot-font-family-emoji: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --autopilot-font-family-sans-serif: system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, Helvetica, Arial, "Helvetica Neue", sans-serif, var(--autopilot-font-family-emoji);
   --autopilot-font-family-monospace: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace, var(--autopilot-font-family-emoji);
