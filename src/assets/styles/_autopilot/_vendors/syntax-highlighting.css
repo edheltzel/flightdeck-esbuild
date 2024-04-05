@@ -23,22 +23,9 @@ pre[class*="language-"] {
 
   /* line-height: 1.5; */
   tab-size: 2;
-  tab-size: 2;
-  tab-size: 2;
 
   /* The following properties are also standard */
   hyphens: none;
-  hyphens: none;
-  hyphens: none;
-  hyphens: none;
-}
-
-code[class*="language-"]::selection,
-code[class*="language-"] ::-moz-selection,
-pre[class*="language-"]::-moz-selection,
-pre[class*="language-"] ::-moz-selection {
-  background: #eb64b927;
-  color: inherit;
 }
 
 code[class*="language-"]::selection,

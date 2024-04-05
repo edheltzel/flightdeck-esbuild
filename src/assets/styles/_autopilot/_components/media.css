@@ -26,7 +26,7 @@ img {
 }
 
 :where(svg:not([fill])) {
-  fill: currentColor;
+  fill: currentcolor;
 }
 
 svg:not(:root) {

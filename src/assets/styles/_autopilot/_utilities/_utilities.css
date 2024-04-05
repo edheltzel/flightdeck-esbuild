@@ -1,8 +1,8 @@
-@import "animate.css";
-@import "border.css";
-@import "color.css";
-@import "display.css";
-@import "flex.css";
-@import "grid.css";
-@import "space.css";
-@import "text.css";
+@import url("animate.css");
+@import url("border.css");
+@import url("color.css");
+@import url("display.css");
+@import url("flex.css");
+@import url("grid.css");
+@import url("space.css");
+@import url("text.css");

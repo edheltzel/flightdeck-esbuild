@@ -1,8 +1,9 @@
 /**
  * Input type file
  */
-[type=file] {
+[type="file"] {
   --autopilot-color: var(--autopilot-muted-color);
+
   margin-left: calc(var(--autopilot-outline-width) * -1);
   padding: calc(var(--autopilot-form-element-spacing-vertical) * 0.5) 0;
   padding-left: var(--autopilot-outline-width);
@@ -11,16 +12,16 @@
   background: none;
 }
 
-[type=file]::file-selector-button {
+[type="file"]::file-selector-button {
   margin-right: calc(var(--autopilot-spacing) / 2);
   padding: calc(var(--autopilot-form-element-spacing-vertical) * 0.5) var(--autopilot-form-element-spacing-horizontal);
 }
 
-[type=file]:is(:hover, :active, :focus)::file-selector-button {
+[type="file"]:is(:hover, :active, :focus)::file-selector-button {
   --autopilot-background-color: var(--autopilot-secondary-hover-background);
   --autopilot-border-color: var(--autopilot-secondary-hover-border);
 }
 
-[type=file]:focus::file-selector-button {
-  --autopilot-box-shadow: var(--autopilot-button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--autopilot-outline-width) var(--autopilot-secondary-focus);
+[type="file"]:focus::file-selector-button {
+  --autopilot-box-shadow: var(--autopilot-button-hover-box-shadow, 0 0 0 rgb(0 0 0 / 0%)), 0 0 0 var(--autopilot-outline-width) var(--autopilot-secondary-focus);
 }
