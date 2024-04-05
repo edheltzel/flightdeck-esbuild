@@ -13,7 +13,6 @@
     "browserslist": "^4.23.0",
     "cross-env": "^7.0.3",
     "css-declaration-sorter": "^7.2.0",
-    "del-cli": "^5.1.0",
     "eleventy-plugin-embed-everything": "^1.18.2",
     "eleventy-sass": "^2.2.4",
     "esbuild": "^0.20.2",
@@ -42,12 +41,6 @@
   "browserslist": "> 0.2% and not dead",
   "description": "An opinionated Jamstack starter project for Eleventy.",
   "license": "WTFPL",
-  "config": {
-    "echoClean": "🧼 Scrubbed dist/ & all cache directories ✨",
-    "echoPurge": "🧹 All Clean ✨ Run `pnpm install` to start fresh ✨",
-    "lockFiles": "pnpm-lock.yaml bun.lockb package-lock.json yarn.lock node_modules/",
-    "devFiles": "dist/ .cache/ .jampack/ *.log"
-  },
   "scripts": {
     "start": "eleventy --serve",
     "build": "pnpm run clean && pnpm run build:11ty",
@@ -58,7 +51,7 @@
     "format": "biome format",
     "lint": "biome lint",
     "lint:css": "stylelint \"src/**/*.css\" --fix",
-    "clean": "del-cli $npm_package_config_devFiles && echo $npm_package_config_echoClean",
-    "purge": "del-cli $npm_package_config_devFiles && del-cli $npm_package_config_lockFiles && echo $npm_package_config_echoPurge"
+    "clean": "./.scrub.sh site",
+    "purge": "./.scrub.sh purge"
   }
 }

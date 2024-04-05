@@ -14,7 +14,7 @@ FRESH="${TITLE} ${WHITE}node_modules${NC}, ${WHITE}dist/${NC}, ${WHITE}all cache
 SITE="${TITLE} ${WHITE}dist/${NC} & ${WHITE}all cache${NC} directories ✨"
 PURGE="${GREEN}🧹 All Clean ✨${NC} ${FRESH}${NC} Run ${YELLOW}npm/yarn/pnpm/bun install${NC} to start fresh 🤩"
 OOPS="🚀💥🔥 OOPS! We need a valid option – Try using ${OPTIONS}"
-DEVFILES="dist/ .cache/ .pnpm-debug.log .parcel-cache/"
+DEVFILES="dist/ .cache/ *.log"
 NODEFILES="node_modules package-lock.json pnpm-lock.yaml yarn.lock .yarn/ bun.lockb"
 
 #################### DONT EDIT BELOW  👀 ####################
