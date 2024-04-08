@@ -4,6 +4,27 @@ All notable changes to Flightdeck for 11ty will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.5.0] - 2024-04-08
+
+## What's Changed
+
+- removes pnpm in favor of Bun v1.1.2 release
+- package updates to latest versions
+- Update npm scripts to use bun instead of pnpm
+- drops sass for lightningcss
+- Add lightningcss-cli package to package.json
+- adds stylelint
+- Add stylelint and stylelint-config-standard packages
+- adds `scrub.sh` back to the mix since Bun shell supports bash on Windows
+- Refactor `scrub.sh` script for better readability and maintainability
+- package update cleanup
+- Update themeToggle button to use the correct path for the eclipse.svg icon
+- Refactor file structure in styles directory
+- Remove unused component macro and update layouts
+- check-in empty directory to git
+- Refactor README.md: Add "To Do" section and update Autopilot theme description
+
+**Full Changelog**: https://github.com/edheltzel/flightdeck-for-11ty-esbuild/compare/v0.4.6...v0.5.0
 
 ## [0.4.6] - 2024-03-04
 
