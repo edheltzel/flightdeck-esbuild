@@ -38,6 +38,7 @@
       </ul>
     </li>
     <li><a href="#roadmap">Roadmap</a></li>
+    li><a href="#to-do">To Do</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -283,23 +284,22 @@ For making changes to the way Flightdeck pilots Eleventy, you will want to refer
 
 Inside the `./_flightdeck` directory, you will find the following directories:
 
-- `./_flightdeck/components` - where all the Flightdeck UI components are defined. See `_flightdeck/components/__info.md` for more information.
 - `./_flightdeck/filters` - where all Universal filters are added to Eleventy templates. Currently we use Nunjucks for our templates, so all filters are added to the Nunjucks environment, but are easily adapted to other template engines, like Liquid.
 - `./_flightdeck/shortcodes` - where all shortcodes are added to extend the functionality of the content you are creating. We consider shortcodes content altering and not UI focused. The idea is to create shortcodes that make writing content easier and more enjoyable.
 - `./_flightdeck/transforms` - where all transforms are added to templates, javascript, styles, and images.
 
 All the directories have a corresponding file that is used to import all the files in the directory. Each of these files are imported into `.eleventy.js` as modules.
-- `./_flightdeck/components.js`
 - `./_flightdeck/filters.js`
+- `./_flightdeck/plugins.js` - this file controls Eleventy plugins to that modify content.
 - `./_flightdeck/shortcodes.js`
 - `./_flightdeck/transforms.js`
 - `./_flightdeck/workflow.js` - this file controls the development server provided by Eleventy.
 
-Flightdeck comes with a custom image transform plugin that watches for changes in the `./src/assets/images` directory and then optimizes any new or changes images copies it to the `./dist/assets/images` directory. Since we are using the the [Eleventy Image Plugin](https://www.11ty.dev/docs/plugins/image) which is smart enough to know if an image has already been optimized, we don't need to worry about that. **Just set it and forget it.**
+Flightdeck comes with a custom image transform plugin that watches for changes in the `./src/assets/images` directory and then optimizes any new or changed images, copies it to the output destination directory `./dist/assets/images`. Since we are using the the [Eleventy Image Plugin](https://www.11ty.dev/docs/plugins/image) under-the-hood, it is smart enough to know if an image has already been optimized, we don't need to worry about that. **Just set it and forget it.**
 
-> **PLEASE NOTE:** This feature does add a little overhead to the initial build process.
+> **PLEASE NOTE:** This feature does add a little overhead to the initial build process, which is why it is disabled by default.
 
-If you would rather not include this feature just set `useImageDirTransform: false`  in `.eleventy.js` and you're good to go.
+If you would like the enable this feature just set `useImageDirTransform: true`  in `.eleventy.js` and you're good to go.
 
 
 All Eleventy configuration options are available, see the [Eleventy Docs](https://www.11ty.dev/docs/config/) for more information.
@@ -315,11 +315,11 @@ If you're looking to extend or further configure your project with other NPM mod
 
 
 <!-- #region Autopilot -->
-#### [ 👨‍🚀 Autopilot](#autopilot)
+#### [ 👨‍🚀 Autopilot Theme](#autopilot)
 
-**WIP** Autopilot, is a custom "version" or theme for [ Pico CSS framework ](https://v2.picocss.com/docs/sass), a minimal css framework for semantic HTML.
+**WIP** Autopilot, is a custom minimal css framework for semantic HTML.
 
-The goal of Autopilot, is to provide a simple, yet powerful, set of tools to help build your UI components with a CSS reset "on steroids".
+The goal of Autopilot, is to provide a simple, yet powerful, set of default styles to help build your UI components.
 
 <!-- #endregion Autopilot -->
 
@@ -331,10 +331,22 @@ The goal of Autopilot, is to provide a simple, yet powerful, set of tools to hel
 ## [ 🧭 Roadmap ](#roadmap)
 
 - [x] Improve documentation
-- [ ] Create a theme using Autopilot UI Components
+- [x] Create a theme using Autopilot UI Components
 - [ ] Add Dockerfile
 - [ ] Add Yeoman generator/npm package
 - [ ] Add our Eleventy plugins
+
+### [ 📝 To Do ](#to-do)
+- [ ] create layout with new grid system
+- [ ] improve nunjucks layouts and partials
+- [ ] document the new grid system
+- [x] review lightncingcss for more performance options
+- [x] replace scss with lightncingcss
+- [x] combine autopilot and declarative scaffold
+- [x] update naming convention to be consistent
+- [x] update layouts to use sematic markup for containers
+- [x] add utility classes for grid correctly
+- [x] update the style guide to use the grid utility classes
 
 See the [open issues](https://github.com/edheltzel/flightdeck/issues) for a full list of proposed features (and known bugs/issues).
 
@@ -364,16 +376,3 @@ Don't forget to give the project a star! Thanks again!
 Distributed under the WTFPL License. See `LICENSE` for more information.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-
-## Todo's
-
-- [X] update to use grid correctly
-- [X] update layouts to use sematic markup for containers
-- [X] combine autopilot and declarative scaffold
-- [ ] create layout with new grid system
-- [ ] improve nunjucks layouts and partials
-- [X] update naming convention to be consistent
-- [ ] document the new grid system
-- [X] update the style guide to use the new grid system
-- [X] review lightncingcss for more performance options
