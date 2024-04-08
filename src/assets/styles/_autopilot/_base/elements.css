@@ -1,6 +1,7 @@
 /* ----------------------------------------------------------------------------
 element styles
 ---------------------------------------------------------------------------- */
+
 /**
  * Document
  * Content-box & Responsive typography
@@ -20,8 +21,6 @@ element styles
 
 :where(:root) {
   -webkit-tap-highlight-color: transparent;
-  -webkit-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
   text-size-adjust: 100%;
   background-color: var(--autopilot-background-color);
   color: var(--autopilot-color);
@@ -30,10 +29,8 @@ element styles
   line-height: var(--autopilot-line-height);
   font-family: var(--autopilot-font-family);
   text-underline-offset: var(--autopilot-text-underline-offset);
-  text-rendering: optimizeLegibility;
+  text-rendering: optimizelegibility;
   overflow-wrap: break-word;
-  -moz-tab-size: 4;
-  -o-tab-size: 4;
   tab-size: 4;
 }
 
@@ -160,6 +157,7 @@ hgroup > * {
 hgroup > *:not(:first-child):last-child {
   --autopilot-color: var(--autopilot-muted-color);
   --autopilot-font-weight: unset;
+
   font-size: 1rem;
 }
 
@@ -213,7 +211,7 @@ del {
   color: var(--autopilot-del-color);
 }
 
-::-moz-selection {
+::selection {
   background-color: var(--autopilot-text-selection-color);
 }
 

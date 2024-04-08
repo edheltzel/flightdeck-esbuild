@@ -3,7 +3,6 @@ space: manipulate the space between elements
 ---------------------------------------------------------------------------- */
 
 .space {
-
   &.--top-none {
     margin-top: 0;
   }
@@ -265,7 +264,6 @@ space: manipulate the space between elements
   }
 
   @media (--viewport-medium) {
-
     &.--top-none\@m {
       margin-top: 0;
     }

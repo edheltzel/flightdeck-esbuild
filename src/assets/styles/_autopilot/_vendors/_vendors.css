@@ -1,2 +1,2 @@
-@import 'syntax-highlighting.css';
-@import "alpinejs.css";
+@import url('syntax-highlighting.css');
+@import url("alpinejs.css");

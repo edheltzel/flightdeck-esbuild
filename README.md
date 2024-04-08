@@ -38,6 +38,7 @@
       </ul>
     </li>
     <li><a href="#roadmap">Roadmap</a></li>
+    li><a href="#to-do">To Do</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -51,13 +52,13 @@
 ## [🥱 TL;DR](#tldr)
 
 ```shell
-    git clone git@github.com:edheltzel/flightdeck.git flightdeck && cd flightdeck && pnpm install && pnpm start
+    git clone git@github.com:edheltzel/flightdeck.git flightdeck && cd flightdeck && bun install && bun start
 ```
 
 **Build your project**
 
 ```shell
-    pnpm run build
+   bun run build
 ```
 
 <!-- #endregion Too Long Didn’t Read -->
@@ -107,18 +108,11 @@ We are assuming that you already have Node with NPM and Git installed on your sy
 
 **Package managers are like dotfiles, everyone has their own preference.**
 
-We have shifted to using [PNPM](https://pnpm.io/) as our primary package manager, but we are considering Bun as a replacement, that is why you will see a `bun.lockb` file in the project.
+We have shifted to using [Bun](https://bun.sh/) as our primary package manager.
 
-But, you can swap `pnpm` in favor of your preferences 👉 [NPM](https://www.npmjs.com/) , [Yarn](https://yarnpkg.com/), and and [Bun](https://bun.sh/docs). Use whatever you want 👍 just be sure to update the scripts in `package.json` with what ever flavor you choose to use.
+But, you can swap `bun` in favor of your preferences 👉 [NPM](https://www.npmjs.com/) , [Yarn](https://yarnpkg.com/), and and [Pnpm](https://pnpm.io). Use whatever you want 👍 just be sure to update the `preview` script in `package.json` with what ever flavor you choose to use.
 
-~~If you do choose to use Bun, you might run into some issues with the `build` command. This is because of the `sharp` dependency that is used by `jampack`. 👀 see [issue 35](https://github.com/edheltzel/flightdeck/issues/35).~~
-
->**Thanks to [ottodevs](https://github.com/edheltzel/flightdeck/issues/35#issuecomment-1741819809) - we have a workaround for this issue with Bun.**
-
-
-We recommend using PNPM for building your project `pnpm run build`.
-
-It's highly recommended that you enable Node's [corepack](https://nodejs.org/api/corepack.html), this Yarn and PNPM are included in your toolbox without the need to install them separately.
+It's highly recommended that you enable Node's [corepack](https://nodejs.org/api/corepack.html), this way Yarn and PNPM are included in your toolbox without the need to install them separately.
 
 > Please be aware that this certainly won't be the most recent version of PNPM/Yarn.
 
@@ -175,29 +169,40 @@ pnpm start
 
 <details>
   <summary>Available Run Commands</summary>
-  <pre>Lifecycle scripts:
-  start
+  <pre>package.json scripts (11 found):
+
+  $ bun run start
     eleventy --serve
 
-Commands available via "pnpm run":
-  build
+  $ bun run build
     pnpm run clean && pnpm run build:11ty
-  build:11ty
+
+  $ bun run build:11ty
     cross-env ENV=production eleventy
-  debug
+
+  $ bun run debug
     DEBUG=Eleventy* eleventy
-  preview
-    pnpm dlx http-server dist -p 4000
-  check
+
+  $ bun run preview
+    bunx http-server dist -p 4000
+
+  $ bun run check
     biome check
-  format
+
+  $ bun run format
     biome format
-  lint
+
+  $ bun run lint
     biome lint
-  clean
-    del-cli $npm_package_config_devFiles && echo $npm_package_config_echoClean
-  purge
-    del-cli $npm_package_config_devFiles && del-cli $npm_package_config_lockFiles && echo $npm_package_config_echoPurge</pre>
+
+  $ bun run lint:css
+    stylelint \"src/**/*.css\" --fix
+
+  $ bun run clean
+    ./.scrub.sh site
+
+  $ bun run purge
+    ./.scrub.sh purge</pre>
 </details>
 
 - `build` command - executes the production build of your site with Eleventy, includes HTML minification, compressed Sass, optimized images, and bundled javascript.
@@ -206,6 +211,7 @@ Commands available via "pnpm run":
 - `check` command - runs biome lint and format at the same time JS/TS, see `biome.json`.
 - `format` command - uses biome to format JS/TS, see `biome.json`.
 - `lint` command - uses biome to lint JS/TS, see `biome.json`.
+- `lint:css` command - uses stylelint to find issues in your css.
 - `clean` command - scrubs/removes the `dist/` and `.cache` directories
 - `purge` command - scrubs/removes the `dist/`, `.cache`, `node_modules`, and any lock files from npm, yarn, pnpm or bun. - 🧼 A fresh install.
   - **👀 NOTE: Both `clean` and `purge` are executed from a bash script**
@@ -254,13 +260,12 @@ Flightdeck is a very opinionated starter kit, so the file structure is very spec
    │  │     ├── alpineModules
    │  │     └── visualGuidanceSystem
    │  └── styles
-   │     ├── components
-   │     ├── content
-   │     ├── layout
-   │     ├── themes
-   │     │  └── default
-   │     ├── utilities
-   │     └── vendors
+   │     ├── _autopilot
+   │     │  └── _base
+   │     │  └── _components
+   │     │  └── _layouts
+   │     │  └── _utilities
+   │     │  └── _vendors
    └── collections
       ├── blog
       └── pages
@@ -279,23 +284,22 @@ For making changes to the way Flightdeck pilots Eleventy, you will want to refer
 
 Inside the `./_flightdeck` directory, you will find the following directories:
 
-- `./_flightdeck/components` - where all the Flightdeck UI components are defined. See `_flightdeck/components/__info.md` for more information.
 - `./_flightdeck/filters` - where all Universal filters are added to Eleventy templates. Currently we use Nunjucks for our templates, so all filters are added to the Nunjucks environment, but are easily adapted to other template engines, like Liquid.
 - `./_flightdeck/shortcodes` - where all shortcodes are added to extend the functionality of the content you are creating. We consider shortcodes content altering and not UI focused. The idea is to create shortcodes that make writing content easier and more enjoyable.
 - `./_flightdeck/transforms` - where all transforms are added to templates, javascript, styles, and images.
 
 All the directories have a corresponding file that is used to import all the files in the directory. Each of these files are imported into `.eleventy.js` as modules.
-- `./_flightdeck/components.js`
 - `./_flightdeck/filters.js`
+- `./_flightdeck/plugins.js` - this file controls Eleventy plugins to that modify content.
 - `./_flightdeck/shortcodes.js`
 - `./_flightdeck/transforms.js`
 - `./_flightdeck/workflow.js` - this file controls the development server provided by Eleventy.
 
-Flightdeck comes with a custom image transform plugin that watches for changes in the `./src/assets/images` directory and then optimizes any new or changes images copies it to the `./dist/assets/images` directory. Since we are using the the [Eleventy Image Plugin](https://www.11ty.dev/docs/plugins/image) which is smart enough to know if an image has already been optimized, we don't need to worry about that. **Just set it and forget it.**
+Flightdeck comes with a custom image transform plugin that watches for changes in the `./src/assets/images` directory and then optimizes any new or changed images, copies it to the output destination directory `./dist/assets/images`. Since we are using the the [Eleventy Image Plugin](https://www.11ty.dev/docs/plugins/image) under-the-hood, it is smart enough to know if an image has already been optimized, we don't need to worry about that. **Just set it and forget it.**
 
-> **PLEASE NOTE:** This feature does add a little overhead to the initial build process.
+> **PLEASE NOTE:** This feature does add a little overhead to the initial build process, which is why it is disabled by default.
 
-If you would rather not include this feature just set `useImageDirTransform: false`  in `.eleventy.js` and you're good to go.
+If you would like the enable this feature just set `useImageDirTransform: true`  in `.eleventy.js` and you're good to go.
 
 
 All Eleventy configuration options are available, see the [Eleventy Docs](https://www.11ty.dev/docs/config/) for more information.
@@ -311,11 +315,11 @@ If you're looking to extend or further configure your project with other NPM mod
 
 
 <!-- #region Autopilot -->
-#### [ 👨‍🚀 Autopilot](#autopilot)
+#### [ 👨‍🚀 Autopilot Theme](#autopilot)
 
-**WIP** Autopilot, is a custom "version" or theme for [ Pico CSS framework ](https://v2.picocss.com/docs/sass), a minimal css framework for semantic HTML.
+**WIP** Autopilot, is a custom minimal css framework for semantic HTML.
 
-The goal of Autopilot, is to provide a simple, yet powerful, set of tools to help build your UI components with a CSS reset "on steroids".
+The goal of Autopilot, is to provide a simple, yet powerful, set of default styles to help build your UI components.
 
 <!-- #endregion Autopilot -->
 
@@ -327,10 +331,22 @@ The goal of Autopilot, is to provide a simple, yet powerful, set of tools to hel
 ## [ 🧭 Roadmap ](#roadmap)
 
 - [x] Improve documentation
-- [ ] Create a theme using Autopilot UI Components
+- [x] Create a theme using Autopilot UI Components
 - [ ] Add Dockerfile
 - [ ] Add Yeoman generator/npm package
 - [ ] Add our Eleventy plugins
+
+### [ 📝 To Do ](#to-do)
+- [ ] create layout with new grid system
+- [ ] improve nunjucks layouts and partials
+- [ ] document the new grid system
+- [x] review lightncingcss for more performance options
+- [x] replace scss with lightncingcss
+- [x] combine autopilot and declarative scaffold
+- [x] update naming convention to be consistent
+- [x] update layouts to use sematic markup for containers
+- [x] add utility classes for grid correctly
+- [x] update the style guide to use the grid utility classes
 
 See the [open issues](https://github.com/edheltzel/flightdeck/issues) for a full list of proposed features (and known bugs/issues).
 
@@ -360,16 +376,3 @@ Don't forget to give the project a star! Thanks again!
 Distributed under the WTFPL License. See `LICENSE` for more information.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-
-## Todo's
-
-- [X] update to use grid correctly
-- [X] update layouts to use sematic markup for containers
-- [X] combine autopilot and declarative scaffold
-- [ ] create layout with new grid system
-- [ ] improve nunjucks layouts and partials
-- [X] update naming convention to be consistent
-- [ ] document the new grid system
-- [X] update the style guide to use the new grid system
-- [X] review lightncingcss for more performance options

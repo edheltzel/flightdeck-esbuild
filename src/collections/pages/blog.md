@@ -5,10 +5,6 @@ tagline: "These are the voyages of the starship Enterprise. Its five-year missio
 permalink: "/blog/"
 ---
 
-{% from "macros/component.njk" import component %}
 This is new - Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa rem earum esse pariatur perferendis magnam natus sed reiciendis impedit. Quae deserunt adipisci aut, aperiam unde minima fugit quisquam eaque praesentium!
 
-{{ component('blockquote', {
-  text:'blah blah blah blah',
-  source: 'mr blah blah'
-}) }}
+{% blockquote "Blah blah blah blah", "Mr. Blah Blah" %}

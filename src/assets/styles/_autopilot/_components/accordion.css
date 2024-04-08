@@ -58,12 +58,12 @@ details summary:focus-visible:not([role]) {
   color: var(--autopilot-primary);
 }
 
-details summary[role=button] {
+details summary[role="button"] {
   width: 100%;
   text-align: left;
 }
 
-details summary[role=button]::after {
+details summary[role="button"]::after {
   height: calc(1rem * var(--autopilot-line-height, 1.5));
 }
 
@@ -71,7 +71,7 @@ details[open] > summary {
   margin-bottom: var(--autopilot-spacing);
 }
 
-details[open] > summary:not([role]):not(:focus) {
+details[open] > summary:not([role], :focus) {
   color: var(--autopilot-accordion-open-summary-color);
 }
 
@@ -79,11 +79,11 @@ details[open] > summary::after {
   transform: rotate(0);
 }
 
-[dir=rtl] details summary {
+[dir="rtl"] details summary {
   text-align: right;
 }
 
-[dir=rtl] details summary::after {
+[dir="rtl"] details summary::after {
   float: left;
   background-position: left center;
 }

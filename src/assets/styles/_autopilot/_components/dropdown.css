@@ -35,8 +35,6 @@ details.dropdown summary:not([role]) {
   color: var(--autopilot-form-element-placeholder-color);
   line-height: inherit;
   cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
   user-select: none;
   transition: background-color var(--autopilot-transition), border-color var(--autopilot-transition), color var(--autopilot-transition), box-shadow var(--autopilot-transition);
 }
@@ -55,13 +53,13 @@ details.dropdown summary:not([role]):focus-visible {
   outline: none;
 }
 
-details.dropdown summary:not([role])[aria-invalid=false] {
+details.dropdown summary:not([role])[aria-invalid="false"] {
   --autopilot-form-element-border-color: var(--autopilot-form-element-valid-border-color);
   --autopilot-form-element-active-border-color: var(--autopilot-form-element-valid-focus-color);
   --autopilot-form-element-focus-color: var(--autopilot-form-element-valid-focus-color);
 }
 
-details.dropdown summary:not([role])[aria-invalid=true] {
+details.dropdown summary:not([role])[aria-invalid="true"] {
   --autopilot-form-element-border-color: var(--autopilot-form-element-invalid-border-color);
   --autopilot-form-element-active-border-color: var(--autopilot-form-element-invalid-focus-color);
   --autopilot-form-element-focus-color: var(--autopilot-form-element-invalid-focus-color);
@@ -73,7 +71,7 @@ nav details.dropdown {
 }
 
 nav details.dropdown summary::after {
-  transform: rotate(0deg) translateX(0rem);
+  transform: rotate(0deg) translateX(0);
 }
 
 nav details.dropdown summary:not([role]) {
@@ -92,7 +90,6 @@ details.dropdown summary + ul {
   left: 0;
   flex-direction: column;
   width: 100%;
-  min-width: -moz-fit-content;
   min-width: fit-content;
   margin: 0;
   margin-top: var(--autopilot-outline-width);
@@ -107,7 +104,7 @@ details.dropdown summary + ul {
   transition: opacity var(--autopilot-transition), transform 0s ease-in-out 1s;
 }
 
-details.dropdown summary + ul[dir=rtl] {
+details.dropdown summary + ul[dir="rtl"] {
   right: 0;
   left: auto;
 }
@@ -142,7 +139,7 @@ details.dropdown summary + ul li a:hover,
 details.dropdown summary + ul li a:focus,
 details.dropdown summary + ul li a:active,
 details.dropdown summary + ul li a:focus-visible,
-details.dropdown summary + ul li a[aria-current]:not([aria-current=false]) {
+details.dropdown summary + ul li a[aria-current]:not([aria-current="false"]) {
   background-color: var(--autopilot-dropdown-hover-background-color);
 }
 

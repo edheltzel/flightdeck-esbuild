@@ -5,6 +5,6 @@ mainly testing stuff */
   color: transparent;
   font-weight: bold;
   position: relative;
-  background-image: linear-gradient(90deg, var(--clip-text-color-1), var(--clip-text-color-2), var(--clip-text-color-3));
+  background-image: var(--autopilot-gradient);
   background-clip: text;
 }
