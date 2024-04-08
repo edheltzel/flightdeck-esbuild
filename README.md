@@ -259,13 +259,12 @@ Flightdeck is a very opinionated starter kit, so the file structure is very spec
    │  │     ├── alpineModules
    │  │     └── visualGuidanceSystem
    │  └── styles
-   │     ├── components
-   │     ├── content
-   │     ├── layout
-   │     ├── themes
-   │     │  └── default
-   │     ├── utilities
-   │     └── vendors
+   │     ├── _autopilot
+   │     │  └── _base
+   │     │  └── _components
+   │     │  └── _layouts
+   │     │  └── _utilities
+   │     │  └── _vendors
    └── collections
       ├── blog
       └── pages
