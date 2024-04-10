@@ -8,13 +8,13 @@
     "rules": {
       "recommended": true
     },
-    "ignore": ["./node_modules", "./.vscode", "./.jampack", "./_site", "./dist", "*.map.*"]
+    "ignore": ["./node_modules", "./.vscode",  "./.cache", "./.jampack", "./_site", "./dist", "*.map.*"]
   },
   "formatter": {
     "enabled": true,
     "indentStyle": "space",
     "lineWidth": 120,
-    "ignore": ["./node_modules", "./.vscode", "./.jampack", "./_site", "./dist", "*.map.*"]
+    "ignore": ["./node_modules", "./.vscode",  "./.cache", "./.jampack", "./_site", "./dist", "*.map.*"]
   },
   "javascript": {
     "formatter": {

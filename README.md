@@ -209,8 +209,11 @@ pnpm start
   - for our workflow, Cloudflare handles the DNS while Cloudflare Pages does the building and hosting - Cloudflare's Auto Minify minifies the HTML, CSS, and JS. You can easily add minification to the build process by adding a plugin to Eleventy.
 - `preview` command - spins up a local server to preview the production build.
 - `check` command - runs biome lint and format at the same time JS/TS, see `biome.json`.
+  - ie: `bun run check ./src/assets/js/app.js`
 - `format` command - uses biome to format JS/TS, see `biome.json`.
+  - ie: `bun run format ./src/assets/js/app.js`
 - `lint` command - uses biome to lint JS/TS, see `biome.json`.
+  - ie: `bun run lint ./src/assets/js/app.js`
 - `lint:css` command - uses stylelint to find issues in your css.
 - `clean` command - scrubs/removes the `dist/` and `.cache` directories
 - `purge` command - scrubs/removes the `dist/`, `.cache`, `node_modules`, and any lock files from npm, yarn, pnpm or bun. - 🧼 A fresh install.
