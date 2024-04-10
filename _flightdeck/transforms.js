@@ -19,7 +19,6 @@ const { transformImageDir } = require("./transforms/allimages"); // optimize all
 const minifyHtml = require("./transforms/minifyHtml");
 const { transformJs } = require("./transforms/esBuild"); // js bundling
 const lightningCss = require("./transforms/lightning"); // css bundling
-
 module.exports = (config, options) => {
   config.setLibrary("md", markdownIt);
   config.addPlugin(transformJs);
