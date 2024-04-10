@@ -99,8 +99,7 @@ All version of Flightdeck use NodeJS. So a very minimal and basic knowledge of N
 
 ### [🧯 Prerequisites ](#prerequisites)
 
-We are assuming that you already have Node with NPM and Git installed on your system – it is also ideal that you have the latest [LTS](https://nodejs.org/en/download/) release of Node.
-**As of this writing the current LTS release is `18.16.0`**
+We are assuming that you already have Node with NPM (or another package manger, like Bun/Pnpm/Yarn) and Git installed on your system – it is also ideal that you have the latest [LTS](https://nodejs.org/en/download/) release of Node. **As of this writing the current LTS release is `20.12.2`**
 
 #### [ 🤖 Dependencies ](#dependencies)
 
@@ -116,23 +115,35 @@ It's highly recommended that you enable Node's [corepack](https://nodejs.org/api
 
 > Please be aware that this certainly won't be the most recent version of PNPM/Yarn.
 
-- pnpm
+- pnpm and yarn
 
   ```sh
   corepack enable
 
   corepack prepare pnpm@latest --activate
+  corepack prepare yarn@latest --activate
   ```
 
 ### ⚙[ Installation ](#installation)
 
+Using `git` in the terminal:
 ```shell
 git clone https://github.com/edheltzel/flightdeck.git
 ```
 
 ```shell
 cd flightdeck
-pnpm install
+bun install
+```
+
+Using `gh` in the terminal:
+```shell
+gh repo clone edheltzel/flightdeck
+```
+
+```shell
+cd flightdeck
+bun install
 ```
 
 <details>
