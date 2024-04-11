@@ -52,7 +52,7 @@
 ## [🥱 TL;DR](#tldr)
 
 ```shell
-    git clone git@github.com:edheltzel/flightdeck.git flightdeck && cd flightdeck && bun install && bun start
+    gh repo clone edheltzel/flightdeck flightdeck && cd flightdeck && bun install && bun start
 ```
 
 **Build your project**
@@ -83,9 +83,10 @@ Jérôme Coupé's post [Structuring Eleventy Projects](https://www.webstoemp.com
 - [Eleventy](https://www.11ty.dev/)
 - [ESBuild](https://esbuild.github.io/)
 - [Nunjucks](https://mozilla.github.io/nunjucks/)
-- [Sass](https://sass-lang.com/)
-- ~~[Jampack](https://jampack.divriots.com/)~~
 - [Biome](https://biomejs.dev/)
+- [LightningCSS](https://lightningcss.dev/)
+- ~~[Jampack](https://jampack.divriots.com/)~~
+- ~~[Sass](https://sass-lang.com/)~~
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -149,20 +150,27 @@ bun install
 <details>
   <summary>see all dependencies</summary>
   <pre>
-    pn list
-Legend: production dependency, optional only, dev only
+    bun pm ls
+/Users/ed/Developer/personal/flightdeck/for-11ty-esbuild node_modules (583)
+├── @11ty/eleventy@2.0.1
+├── @11ty/eleventy-img@4.0.2
+├── @11ty/eleventy-navigation@0.3.5
+├── @11ty/eleventy-plugin-syntaxhighlight@5.0.0
+├── @alpinejs/persist@3.13.8
+├── @biomejs/biome@1.6.4
+├── alpinejs@3.13.8
+├── browserslist@4.23.0
+├── eleventy-plugin-embed-everything@1.18.2
+├── esbuild@0.20.2
+├── fast-glob@3.3.2
+├── html-minifier@4.0.0
+├── lightningcss@1.24.1
+├── lightningcss-cli@1.24.1
+├── markdown-it@14.1.0
+├── markdown-it-attrs@4.1.6
+├── stylelint@16.3.1
+└── stylelint-config-standard@36.0.0
 
-flightdeck-for-eleventy@0.4.5-a /Users/ed/Developer/oss/flightdeck/for-11ty-esbuild
-
-dependencies:
-@alpinejs/persist 3.13.5
-alpinejs 3.13.5
-
-devDependencies:
-@11ty/eleventy 2.0.1                         ~~@picocss/pico 2.0.3~~                          eleventy-plugin-embed-everything 1.18.2      markdown-it 14.0.0
-@11ty/eleventy-img 4.0.2                     autoprefixer 10.4.17                         eleventy-sass 2.2.4                          markdown-it-attrs 4.1.6
-@11ty/eleventy-plugin-syntaxhighlight 5.0.0  browserslist 4.23.0                          esbuild 0.20.1                               postcss 8.4.35
-@biomejs/biome 1.5.3                         cross-env 7.0.3                              fast-glob 3.3.2                              sass 1.71.1
   </pre>
 </details>
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -304,10 +312,10 @@ Inside the `./_flightdeck` directory, you will find the following directories:
 
 All the directories have a corresponding file that is used to import all the files in the directory. Each of these files are imported into `.eleventy.js` as modules.
 - `./_flightdeck/filters.js`
-- `./_flightdeck/plugins.js` - this file controls Eleventy plugins to that modify content.
+- `./_flightdeck/plugins.js` - this file controls Eleventy plugins that modify content.
 - `./_flightdeck/shortcodes.js`
 - `./_flightdeck/transforms.js`
-- `./_flightdeck/workflow.js` - this file controls the development server provided by Eleventy.
+- `./_flightdeck/workflow.js` - this file controls the Eleventy dev server.
 
 Flightdeck comes with a custom image transform plugin that watches for changes in the `./src/assets/images` directory and then optimizes any new or changed images, copies it to the output destination directory `./dist/assets/images`. Since we are using the the [Eleventy Image Plugin](https://www.11ty.dev/docs/plugins/image) under-the-hood, it is smart enough to know if an image has already been optimized, we don't need to worry about that. **Just set it and forget it.**
 
@@ -315,17 +323,25 @@ Flightdeck comes with a custom image transform plugin that watches for changes i
 
 If you would like the enable this feature just set `useImageDirTransform: true`  in `.eleventy.js` and you're good to go.
 
-
 All Eleventy configuration options are available, see the [Eleventy Docs](https://www.11ty.dev/docs/config/) for more information.
 
 If you're looking to extend or further configure your project with other NPM modules, Eleventy plugins, or ESBuild Plugins, just reference the appropriate documentation.
 
 - [Eleventy Docs](https://11ty.dev)
 - [Nunjucks Docs](https://mozilla.github.io/nunjucks/templating.html)
-- [Sass Docs](https://sass-lang.com/documentation/)
 - [ESBuild Docs](https://esbuild.github.io/plugins/)
 - [Biome Docs](https://docs.biomejs.dev/)
+- [LightningCSS Docs](https://lightningcss.dev/)
+- [Sass Docs](https://sass-lang.com/documentation/)
 - [NPM Package Docs](https://docs.npmjs.com/using-npm-packages-in-your-projects)
+
+##### Using Sass/Scss
+
+If you'd rather write scss, please install `sass` and `eleventy-plugin-sass` and update the `transform.js` file to use the module. You'll need to remove the lightingcss module and update the `styles` directory to your scss files.
+
+```shell
+bun install sass eleventy-plugin-sass
+```
 
 
 <!-- #region Autopilot -->
