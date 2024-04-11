@@ -1,10 +1,18 @@
 /**
- * This module adds Scss support to eleventy using the eleventy-sass plugin.
- * It also uses PostCSS and Autoprefixer for processing CSS.
- * @module scss
- * @see {@link https://github.com/kentaroi/eleventy-sass/blob/main/docs/sass-options.md}
+ * Process Scss
  *
- * @summary uses eleventy-sass plugin to process scss files
+ * @description If you want to use Sass/Scss in your project, you can add this module to the transforms.js
+* @example const { transformScss } = require("./transforms/_scss");
+* @requires eleventy-sass {@link https://github.com/kentaroi/eleventy-sass}
+* @requires sass {@link https://www.npmjs.com/package/sass} required by eleventy-sass
+* @requires postcss {@link https://www.npmjs.com/package/postcss} optional plugin for eleventy-sass
+* @requires autoprefixer {@link https://www.npmjs.com/package/autoprefixer} required by postcss
+* @requires css-declaration-sorter {@link https://www.npmjs.com/package/css-declaration-sorter} required by postcss
+* @see {@link https://github.com/kentaroi/eleventy-sass/blob/main/docs/sass-options.md}
+*
+ * @module scss
+ * @summary uses eleventy-sass plugin to process scss
+ * @link https://github.com/kentaroi/eleventy-sass
  *
  * @param {Object} config - eleventy config object
  * @property {Object} sass - Sass options
