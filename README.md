@@ -237,6 +237,7 @@ pnpm start
 - `clean` command - scrubs/removes the `dist/` and `.cache` directories
 - `purge` command - scrubs/removes the `dist/`, `.cache`, `node_modules`, and any lock files from npm, yarn, pnpm or bun. - 🧼 A fresh install.
   - **👀 NOTE: Both `clean` and `purge` are executed from a bash script**
+- `upgrade` command - uses `bunx npm-check-updates -ui` to upgrade dependencies to their latest versions and updates the `package.json` - this is a work around for `bun upgrade` not working as expected or how other package managers work.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
