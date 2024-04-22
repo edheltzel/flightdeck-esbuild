@@ -7,7 +7,7 @@
     "@11ty/eleventy-img": "^4.0.2",
     "@11ty/eleventy-navigation": "^0.3.5",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
-    "@biomejs/biome": "1.6.4",
+    "@biomejs/biome": "1.7.0",
     "browserslist": "^4.23.0",
     "eleventy-plugin-embed-everything": "^1.18.2",
     "esbuild": "^0.20.2",
@@ -21,8 +21,8 @@
     "stylelint-config-standard": "^36.0.0"
   },
   "dependencies": {
-    "@alpinejs/persist": "^3.13.8",
-    "alpinejs": "^3.13.8"
+    "@alpinejs/persist": "^3.13.9",
+    "alpinejs": "^3.13.9"
   },
   "trustedDependencies": [
     "@biomejs/biome",
@@ -44,6 +44,7 @@
     "lint": "biome lint",
     "lint:css": "stylelint \"src/**/*.css\" --fix",
     "clean": "./.scrub.sh site",
-    "purge": "./.scrub.sh purge"
+    "purge": "./.scrub.sh purge",
+    "upgrade": "bunx npm-check-updates -ui"
   }
 }
