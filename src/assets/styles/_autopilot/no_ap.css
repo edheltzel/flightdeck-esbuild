@@ -1,5 +1,6 @@
 /* ----------------------------------------------------------------------------
-No autopilot
+No autopilot theme
+- change this file name to app.css to remove the autopilot theme
 ---------------------------------------------------------------------------- */
 @layer base, components, utilities;
 
