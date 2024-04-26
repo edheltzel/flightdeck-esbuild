@@ -25,7 +25,9 @@
     "postbuild",
     "prismjs",
     "spacex",
-    "vgscursor"
+    "vgscursor",
+    "xxxs",
+    "xxxxl"
   ],
   "emmet.includeLanguages": {
     "*.njk": "html"
