@@ -21,15 +21,20 @@ module.exports = (config, options) => {
   config.addWatchTarget("./src/assets");
 
   /* --- Passthrough Copy --- */
-  config.addPassthroughCopy("./src/assets/fonts");
-  config.addPassthroughCopy({ "./src/_static": "./" }); // root level files ie: _redirects, robots.txt, favicon.io,etc
+  config.addPassthroughCopy();
+  config.addPassthroughCopy({
+    "./src/_static": "./", // root level files ie: _redirects, robots.txt, favicon.io,etc
+    "./src/assets/fonts": "./assets/fonts",
+  });
 
   if (!options.useImageDirTransform) {
     config.addPassthroughCopy("./src/assets/images"); // copy images if useImageDirTransform is false
   }
 
   /* --- Layout Aliases --- */
-  config.addLayoutAlias("default", "layouts/default.njk");
-  config.addLayoutAlias("page", "layouts/page.njk");
-  config.addLayoutAlias("post", "layouts/post.njk");
+  config.addLayoutAlias({
+    default: "layouts/default.njk",
+    post: "layouts/post.njk",
+    page: "layouts/page.njk",
+  });
 };
