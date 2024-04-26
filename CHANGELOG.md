@@ -4,9 +4,23 @@ All notable changes to Flightdeck for 11ty will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.5.1-a] - 2024-04-26
+
+## What's Changed
+
+* package updates
+```shell
+  + @biomejs/biome@1.7.1
+  + stylelint@16.4.0
+  + @alpinejs/persist@3.13.10
+  + alpinejs@3.13.10
+```
+
+
 ## [0.5.1] - 2024-04-22
 
 ## What's Changed
+
 * 01 11 ui cleanup by @edheltzel in https://github.com/edheltzel/Flightdeck/pull/48
 * 01 11 ui cleanup by @edheltzel in https://github.com/edheltzel/Flightdeck/pull/49
 * dev by @edheltzel in https://github.com/edheltzel/Flightdeck/pull/50
