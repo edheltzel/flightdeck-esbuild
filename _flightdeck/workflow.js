@@ -21,7 +21,6 @@ module.exports = (config, options) => {
   config.addWatchTarget("./src/assets");
 
   /* --- Passthrough Copy --- */
-  config.addPassthroughCopy();
   config.addPassthroughCopy({
     "./src/_static": "./", // root level files ie: _redirects, robots.txt, favicon.io,etc
     "./src/assets/fonts": "./assets/fonts",
@@ -32,9 +31,7 @@ module.exports = (config, options) => {
   }
 
   /* --- Layout Aliases --- */
-  config.addLayoutAlias({
-    default: "layouts/default.njk",
-    post: "layouts/post.njk",
-    page: "layouts/page.njk",
-  });
+  config.addLayoutAlias("default", "layouts/default.njk");
+  config.addLayoutAlias("page", "layouts/page.njk");
+  config.addLayoutAlias("post", "layouts/post.njk");
 };
