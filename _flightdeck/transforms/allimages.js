@@ -10,7 +10,7 @@
  * @requires fast-glob
  */
 const Image = require("@11ty/eleventy-img");
-const path = require("path");
+const path = require("node:path");
 const glob = require("fast-glob");
 
 const optimizeImages = async () => {
