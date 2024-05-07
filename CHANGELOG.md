@@ -4,6 +4,16 @@ All notable changes to Flightdeck for 11ty will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.5.1-b] - 2024-05-07
+
+## What's Changed
+* dev by @edheltzel in https://github.com/edheltzel/Flightdeck/pull/60
+* dev by @edheltzel in https://github.com/edheltzel/Flightdeck/pull/61
+
+
+**Full Changelog**: https://github.com/edheltzel/Flightdeck/compare/v0.5.1-a...v0.5.1-b
+
+
 ## [0.5.1-a] - 2024-04-26
 
 ## What's Changed
