@@ -1,11 +1,11 @@
 /**
  * @file images.js
- * @description This module provides an image optimization transform using @11ty/eleventy-img.
+ * @description This module provides an image optimization transform using `@11ty/eleventy-img`.
  * It exports a function that hooks into the Eleventy build process, specifically the 'eleventy.after' event.
  * When this event is triggered, the module optimizes ALL images in the specified base directory and then saves the optimized images in the specified output directory.
  * The image optimization process includes resizing the images to a width of 1600 pixels and applying various Sharp options.
  * This function is used in the _flightdeck/transforms.js module, is Optional and set inside of the eleventy.config.js file.
- * @requires @11ty/eleventy-img
+ * @requires `@11ty/eleventy-img`
  * @requires path
  * @requires fast-glob
  */
