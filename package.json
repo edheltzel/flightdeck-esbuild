@@ -35,7 +35,7 @@
   "license": "WTFPL",
   "scripts": {
     "start": "eleventy --serve",
-    "build": "pnpm run clean && pnpm run build:11ty",
+    "build": "bun run clean && bun run build:11ty",
     "build:11ty": "ENV=production eleventy",
     "debug": "DEBUG=Eleventy* eleventy",
     "preview": "bunx http-server dist -p 4000",

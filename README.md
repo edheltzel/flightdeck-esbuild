@@ -51,6 +51,8 @@
 
 ## [🥱 TL;DR](#tldr)
 
+An starter project for Eleventy with an opinionated workflow – Keeping Eleventy in control of the entire development and build processes.
+
 ```shell
     gh repo clone edheltzel/flightdeck flightdeck && cd flightdeck && bun install && bun start
 ```
