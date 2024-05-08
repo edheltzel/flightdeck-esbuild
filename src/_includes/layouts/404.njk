@@ -1,39 +1,39 @@
 {% extends "./default.njk" %}
 {% block main %}
-  <header>
-    {% block pageTitle %}
-      {%- set pageTitle %}
-      {% if title %}
-        {{ title }}
-      {% else %}
-        {{ site.title }}
-      {% endif %}
-      {%- endset -%}
+  <div class="flex --column --align-items-center">
+    <header class="space --bottom-l">
+      {% block pageTitle %}
+        {%- set pageTitle %}
+        {% if title %}
+          {{ title }}
+        {% else %}
+          {{ site.title }}
+        {% endif %}
+        {%- endset -%}
 
-      {%- set pageTagline %}
-      {% if tagline %}
-        {{ tagline }}
-      {% endif %}
-      {%- endset -%}
+        {%- set pageTagline %}
+        {% if tagline %}
+          {{ tagline }}
+        {% endif %}
+        {%- endset -%}
 
-      {% if tagline %}
-        <hgroup>
+        {% if tagline %}
+          <hgroup>
+            <h1>{{ pageTitle | safe }}</h1>
+            <h2>{{ pageTagline | safe }}</h2>
+          </hgroup>
+        {% else %}
           <h1>{{ pageTitle | safe }}</h1>
-          <h2>{{ pageTagline | safe }}</h2>
-        </hgroup>
-      {% else %}
-        <h1>{{ pageTitle | safe }}</h1>
-      {% endif %}
+        {% endif %}
+        <iframe src="https://giphy.com/embed/tyttpHbz8gAaBfi5auY" width="480" height="327" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+        <p>
+          <a href="https://giphy.com/gifs/giffffr-tyttpHbz8gAaBfi5auY">via GIPHY</a>
+        </p>
+      {% endblock %}
+    </header>
 
-      <iframe src="https://giphy.com/embed/tyttpHbz8gAaBfi5auY" width="480" height="327" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-      <p>
-        <a href="https://giphy.com/gifs/giffffr-tyttpHbz8gAaBfi5auY">via GIPHY</a>
-      </p>
+    {% block content %}
+      {{ content | safe }}
     {% endblock %}
-  </header>
-
-  {% block content %}
-    {{ content | safe }}
-  {% endblock %}
-
+  </div>
 {% endblock %}
