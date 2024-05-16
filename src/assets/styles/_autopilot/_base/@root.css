@@ -114,7 +114,8 @@
 
   /** animation */
   --autopilot-rods-from-god: 8s;
-  --autopilot-progress-time: 3s;
+  --autopilot-progress-time: 1.5s;
+
   --autopilot-font-family-emoji: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --autopilot-font-family-sans-serif: system-ui, "Segoe UI", roboto, oxygen, ubuntu, cantarell, helvetica, arial, "Helvetica Neue", sans-serif, var(--autopilot-font-family-emoji);
   --autopilot-font-family-monospace: ui-monospace, sfmono-regular, "SF Mono", menlo, consolas, "Liberation Mono", monospace, var(--autopilot-font-family-emoji);
