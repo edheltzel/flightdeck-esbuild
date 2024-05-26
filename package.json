@@ -10,14 +10,14 @@
     "@biomejs/biome": "1.7.3",
     "browserslist": "^4.23.0",
     "eleventy-plugin-embed-everything": "^1.18.2",
-    "esbuild": "^0.21.3",
+    "esbuild": "^0.21.4",
     "fast-glob": "^3.3.2",
     "html-minifier": "^4.0.0",
-    "lightningcss": "^1.25.0",
-    "lightningcss-cli": "^1.25.0",
+    "lightningcss": "^1.25.1",
+    "lightningcss-cli": "^1.25.1",
     "markdown-it": "^14.1.0",
     "markdown-it-attrs": "^4.1.6",
-    "stylelint": "^16.5.0",
+    "stylelint": "^16.6.0",
     "stylelint-config-standard": "^36.0.0"
   },
   "dependencies": {
