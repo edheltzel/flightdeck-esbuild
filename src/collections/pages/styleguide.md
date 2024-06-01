@@ -260,7 +260,7 @@ tagline: Semantic HTML with very minimal use of classes
       <!-- Color-->
       <label for="color">
         Color
-        <input type="color" id="color" name="color" value="#0eaaaa"/>
+        <input type="color" id="color" name="color" value="#524ed2"/>
       </label>
     </div>
     <div class="grid --autofit">
