@@ -1,6 +1,6 @@
 {
   "name": "flightdeck-for-eleventy",
-  "version": "0.5.1-e",
+  "version": "0.5.1-d",
   "author": "Ed Heltzel",
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
@@ -46,7 +46,6 @@
     "clean": "./.scrub.sh site",
     "purge": "./.scrub.sh purge",
     "upgrade": "bunx npm-check-updates -ui",
-    "release": "gh release create v%npm_package_version% --generate-notes --latest"
-  },
-  "packageManager": "pnpm@9.1.4+sha512.9df9cf27c91715646c7d675d1c9c8e41f6fce88246f1318c1aa6a1ed1aeb3c4f032fcdf4ba63cc69c4fe6d634279176b5358727d8f2cc1e65b65f43ce2f8bfb0"
+    "release": "gh release create v$npm_package_version --generate-notes --latest"
+  }
 }
