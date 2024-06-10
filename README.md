@@ -366,10 +366,10 @@ The goal of Autopilot, is to provide a simple, yet powerful, set of default styl
 - [x] Improve documentation
 - [x] Create a theme using Autopilot UI Components
 - [ ] Add Dockerfile
-- [ ] Add Yeoman generator/npm package
-- [ ] Add our Eleventy plugins
+- [ ] Create npm package to quickly install Flightdeck
 
 ### [ 📝 To Do ](#to-do)
+- [ ] add [11ty plugin bundle](https://github.com/11ty/eleventy-plugin-bundle)
 - [ ] create layout with new grid system
 - [ ] improve nunjucks layouts and partials
 - [ ] document the new grid system
