@@ -42,11 +42,12 @@ module.exports = (config) => {
 
   // 11ty configuration options
   return {
+    markdownTemplateEngine: "njk",
+    HTMLTemplateElement: "njk",
     dir: {
       input: "src",
       output: "dist",
       data: "_includes/data",
     },
-    markdownTemplateEngine: "njk",
   };
 };
