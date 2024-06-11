@@ -46,7 +46,7 @@ module.exports = (config) => {
     HTMLTemplateElement: "njk",
     dir: {
       input: "src",
-      output: "dist",
+      output: "_site", // default
       data: "_includes/data",
     },
   };

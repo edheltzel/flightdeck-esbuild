@@ -15,7 +15,7 @@ const Image = require("@11ty/eleventy-img");
 module.exports = async (src, alt, sizes) => {
   // Image paths
   const rootPath = `./src${src}`;
-  const outputDir = "./dist/assets/images/";
+  const outputDir = "./_site/assets/images/";
   const urlPath = "/assets/images/";
 
   // Generate metadata

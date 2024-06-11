@@ -13,10 +13,10 @@ OPTIONS="${YELLOW}site${NC}, or ${YELLOW}purge${NC}"
 MALFUNCTION="👨‍🚀 Huston... We have a problem! Make sure you use ${OPTIONS} - "
 PURGE="${GREEN}🧹 All Clean ✨${NC} ${FRESH}${NC} Run ${YELLOW}npm/yarn/pnpm/bun install${NC} to start fresh 🤩"
 OOPS="🚀💥🔥 OOPS! We need a valid option – Try using ${OPTIONS}"
-FRESH="${TITLE} ${WHITE}node_modules${NC}, ${WHITE}dist/${NC}, ${WHITE}all caches${NC} & ${GRAY}lock files${NC}, ✨"
-SITE="${TITLE} ${WHITE}dist/${NC} & ${WHITE}all cache${NC} directories ✨"
+FRESH="${TITLE} ${WHITE}node_modules${NC}, ${WHITE}dist/${NC} or ${WHITE}_site/${NC}, ${WHITE}all caches${NC} & ${GRAY}lock files${NC}, ✨"
+SITE="${TITLE} ${WHITE}dist/${NC} or ${WHITE}_site/${NC}, & ${WHITE}all cache${NC} directories ✨"
 
-DEVFILES="dist/ .cache/ *.log"
+DEVFILES="dist/ _site/ .cache/ *.log"
 NODEFILES="node_modules package-lock.json pnpm-lock.yaml yarn.lock .yarn/ bun.lockb"
 
 #################### DONT EDIT BELOW  👀 ####################
