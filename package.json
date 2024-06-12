@@ -34,7 +34,7 @@
   "description": "An opinionated Jamstack starter project for Eleventy.",
   "license": "WTFPL",
   "scripts": {
-    "start": "eleventy --serve",
+    "start": "eleventy --serve --incremental --quiet",
     "build": "bun run clean && bun run build:11ty",
     "build:11ty": "ENV=production eleventy",
     "debug": "DEBUG=Eleventy* eleventy",
