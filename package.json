@@ -2,6 +2,8 @@
   "name": "flightdeck-for-eleventy",
   "version": "0.5.1-e",
   "author": "Ed Heltzel",
+  "description": "An opinionated Jamstack starter project for Eleventy.",
+  "license": "WTFPL",
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
     "@11ty/eleventy-img": "^4.0.2",
@@ -31,8 +33,6 @@
     "sharp"
   ],
   "browserslist": "> 0.2% and not dead",
-  "description": "An opinionated Jamstack starter project for Eleventy.",
-  "license": "WTFPL",
   "scripts": {
     "start": "eleventy --serve --incremental --quiet",
     "build": "bun run clean && bun run build:11ty",
