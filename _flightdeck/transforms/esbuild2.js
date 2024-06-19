@@ -27,7 +27,7 @@ const transformJs = (config) => {
         splitting: true,
         format: 'esm',
         logLevel: 'info',
-        outdir: '_site/assets/js',
+        outdir: 'dist/assets/js',
         outbase: 'src/assets/js',
         metafile: true,
       });

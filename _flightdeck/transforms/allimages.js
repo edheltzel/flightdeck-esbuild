@@ -15,7 +15,7 @@ const glob = require("fast-glob");
 
 const optimizeImages = async () => {
   const baseDirectory = "./src/assets/images";
-  const outputDirectory = "./_site/assets/images";
+  const outputDirectory = "./dist/assets/images";
 
   // Get all image files
   const imageFiles = await glob(`${baseDirectory}/**/*.{png,jpg,jpeg,webp}`, {

@@ -205,7 +205,7 @@ pnpm start
     DEBUG=Eleventy* eleventy
 
   $ bun run preview
-    bunx http-server _site -p 4000
+    bunx http-server dist -p 4000
 
   $ bun run check
     biome check
@@ -236,8 +236,8 @@ pnpm start
 - `lint` command - uses biome to lint JS/TS, see `biome.json`.
   - ie: `bun run lint ./src/assets/js/app.js`
 - `lint:css` command - uses stylelint to find issues in your css.
-- `clean` command - scrubs/removes the `_site/` and `.cache` directories
-- `purge` command - scrubs/removes the `_site/`, `.cache`, `node_modules`, and any lock files from npm, yarn, pnpm or bun. - 🧼 A fresh install.
+- `clean` command - scrubs/removes the `dist/` and `.cache` directories
+- `purge` command - scrubs/removes the `dist/`, `.cache`, `node_modules`, and any lock files from npm, yarn, pnpm or bun. - 🧼 A fresh install.
   - **👀 NOTE: Both `clean` and `purge` are executed from a bash script**
 - `upgrade` command - uses `bunx npm-check-updates -ui` to upgrade dependencies to their latest versions and updates the `package.json` - this is a work around for `bun upgrade` not working as expected or how other package managers work.
 
@@ -320,7 +320,7 @@ All the directories have a corresponding file that is used to import all the fil
 - `./_flightdeck/transforms.js`
 - `./_flightdeck/workflow.js` - this file controls the Eleventy dev server.
 
-Flightdeck comes with a custom image transform plugin that watches for changes in the `./src/assets/images` directory and then optimizes any new or changed images, copies it to the output destination directory `./_site/assets/images`. Since we are using the the [Eleventy Image Plugin](https://www.11ty.dev/docs/plugins/image) under-the-hood, it is smart enough to know if an image has already been optimized, we don't need to worry about that. **Just set it and forget it.**
+Flightdeck comes with a custom image transform plugin that watches for changes in the `./src/assets/images` directory and then optimizes any new or changed images, copies it to the output destination directory `./dist/assets/images`. Since we are using the the [Eleventy Image Plugin](https://www.11ty.dev/docs/plugins/image) under-the-hood, it is smart enough to know if an image has already been optimized, we don't need to worry about that. **Just set it and forget it.**
 
 > **PLEASE NOTE:** This feature does add a little overhead to the initial build process, which is why it is disabled by default.
 

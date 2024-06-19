@@ -14,7 +14,7 @@ const transformJs = (config) => {
     await esbuild.build({
       entryPoints: { "assets/js/app": "./src/assets/js/app.js" },
       bundle: true,
-      outdir: "_site",
+      outdir: "dist",
       minify: isProd,
       sourcemap: !isProd,
       splitting: true,
