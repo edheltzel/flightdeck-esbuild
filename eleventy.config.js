@@ -2,6 +2,7 @@
  * Eleventy Configuration
  * @module .eleventy
  * @see {@link https://www.11ty.dev/docs/config/}
+ * @see {@link https://www.11ty.dev/docs/quicktips/local-plugin/}
  * @param {Object} config - Eleventy's configuration object
  * @returns {Object} - Returns Eleventy's configuration options
  * @requires ./_flightdeck/*
@@ -42,12 +43,13 @@ module.exports = (config) => {
 
   // 11ty configuration options
   return {
-    markdownTemplateEngine: "njk",
-    HTMLTemplateElement: "njk",
     dir: {
       input: "src",
       output: "dist",
       data: "_includes/data",
     },
+    HTMLTemplateElement: "njk",
+    markdownTemplateEngine: "njk",
+    templateFormats: ["md", "njk", "html"],
   };
 };
