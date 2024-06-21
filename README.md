@@ -51,7 +51,9 @@
 
 ## [🥱 TL;DR](#tldr)
 
-An starter project for Eleventy with an opinionated workflow – Keeping Eleventy in control of the entire development and build processes.
+#### A starter project or boilerplate for Eleventy with an opinionated workflow
+
+The key concept here is to keep Eleventy in control of the entire development and build processes.
 
 ```shell
     gh repo clone edheltzel/flightdeck flightdeck && cd flightdeck && bun install && bun start
@@ -130,6 +132,7 @@ It's highly recommended that you enable Node's [corepack](https://nodejs.org/api
 ### ⚙[ Installation ](#installation)
 
 Using `git` in the terminal:
+
 ```shell
 git clone https://github.com/edheltzel/flightdeck.git
 ```
@@ -140,6 +143,7 @@ bun install
 ```
 
 Using `gh` in the terminal:
+
 ```shell
 gh repo clone edheltzel/flightdeck
 ```
@@ -192,38 +196,39 @@ pnpm start
   <summary>Available Run Commands</summary>
   <pre>package.json scripts (11 found):
 
-  $ bun run start
-    eleventy --serve
+$ bun run start
+eleventy --serve
 
-  $ bun run build
-    pnpm run clean && pnpm run build:11ty
+$ bun run build
+pnpm run clean && pnpm run build:11ty
 
-  $ bun run build:11ty
-    cross-env ENV=production eleventy
+$ bun run build:11ty
+cross-env ENV=production eleventy
 
-  $ bun run debug
-    DEBUG=Eleventy* eleventy
+$ bun run debug
+DEBUG=Eleventy\* eleventy
 
-  $ bun run preview
-    bunx http-server dist -p 4000
+$ bun run preview
+bunx http-server dist -p 4000
 
-  $ bun run check
-    biome check
+$ bun run check
+biome check
 
-  $ bun run format
-    biome format
+$ bun run format
+biome format
 
-  $ bun run lint
-    biome lint
+$ bun run lint
+biome lint
 
-  $ bun run lint:css
-    stylelint \"src/**/*.css\" --fix
+$ bun run lint:css
+stylelint \"src/\*_/_.css\" --fix
 
-  $ bun run clean
-    ./.scrub.sh site
+$ bun run clean
+./.scrub.sh site
 
-  $ bun run purge
-    ./.scrub.sh purge</pre>
+$ bun run purge
+./.scrub.sh purge</pre>
+
 </details>
 
 - `build` command - executes the production build of your site with Eleventy, includes HTML minification, compressed Sass, optimized images, and bundled javascript.
@@ -246,7 +251,6 @@ pnpm start
 ### [ ‍🚀 Deployments ](#deployments)
 
 Deployments for this project are completely up to you and your needs, we are fans of [Cloudflare Pages](https://pages.cloudflare.com/), which is why you'll find a `.node-version` file, [Cloudflare Pages currently supports Node v18.17.1](https://developers.cloudflare.com/pages/configuration/language-support-and-tools/#supported-languages-and-tools). Some other really good and popular options are GitHub Pages, Vercel, Netlify, and Render. **Your call on what you use.**
-
 
 ##### Note - Environment Variables
 
@@ -314,6 +318,7 @@ Inside the `./_flightdeck` directory, you will find the following directories:
 - `./_flightdeck/transforms` - where all transforms are added to templates, javascript, styles, and images.
 
 All the directories have a corresponding file that is used to import all the files in the directory. Each of these files are imported into `.eleventy.js` as modules.
+
 - `./_flightdeck/filters.js`
 - `./_flightdeck/plugins.js` - this file controls Eleventy plugins that modify content.
 - `./_flightdeck/shortcodes.js`
@@ -324,7 +329,7 @@ Flightdeck comes with a custom image transform plugin that watches for changes i
 
 > **PLEASE NOTE:** This feature does add a little overhead to the initial build process, which is why it is disabled by default.
 
-If you would like the enable this feature just set `useImageDirTransform: true`  in `.eleventy.js` and you're good to go.
+If you would like the enable this feature just set `useImageDirTransform: true` in `.eleventy.js` and you're good to go.
 
 All Eleventy configuration options are available, see the [Eleventy Docs](https://www.11ty.dev/docs/config/) for more information.
 
@@ -346,8 +351,8 @@ If you'd rather write scss, please install `sass` and `eleventy-plugin-sass` and
 bun install sass eleventy-plugin-sass
 ```
 
-
 <!-- #region Autopilot -->
+
 #### [ 👨‍🚀 Autopilot Theme](#autopilot)
 
 **WIP** Autopilot, is a custom minimal css framework for semantic HTML.
@@ -357,7 +362,6 @@ The goal of Autopilot, is to provide a simple, yet powerful, set of default styl
 <!-- #endregion Autopilot -->
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
 
 <!-- ROADMAP -->
 
@@ -369,6 +373,7 @@ The goal of Autopilot, is to provide a simple, yet powerful, set of default styl
 - [ ] Create npm package to quickly install Flightdeck
 
 ### [ 📝 To Do ](#to-do)
+
 - [ ] add [11ty plugin bundle](https://github.com/11ty/eleventy-plugin-bundle)
 - [ ] create layout with new grid system
 - [ ] improve nunjucks layouts and partials
