@@ -1,0 +1,24 @@
+/**
+ * Autopilot theme config
+ */
+
+// Styles - core
+@use "autopilot/styles";
+
+// Colors schemes
+@use "autopilot/schemes/__schemes";
+
+// Abstracts
+@use "autopilot/abstracts/__abstracts";
+
+// Base
+@use "themes/autopilot/base/__base";
+
+// Components
+@use "themes/autopilot/components/__components";
+
+// Layout
+@use "themes/autopilot/layouts/__layouts";
+
+// Vendors
+@use "autopilot/vendors/__vendors";

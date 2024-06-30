@@ -91,6 +91,11 @@ Jérôme Coupé's post [Structuring Eleventy Projects](https://www.webstoemp.com
 - [LightningCSS](https://lightningcss.dev/)
 - ~~[Jampack](https://jampack.divriots.com/)~~
 - ~~[Sass](https://sass-lang.com/)~~
+  - If you want to still use Scss, it is still apart of the package dependencies along with PostCSS.
+    - please reference `_flightdeck/transforms.js` and `_flightdeck/transforms/_scss.js`
+    - see [eleventy-sass repo](https://github.com/kentaroi/eleventy-sass) for documentation.
+    - see [picocss docs](https://picocss.com/docs/sass#custom-theme) for theming.
+  - If you do not want the additional dependencies just run `bun remove sass eleventy-sass postcss autoprefixer @picocss/pico`
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 

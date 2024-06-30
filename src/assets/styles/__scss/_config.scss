@@ -1,0 +1,13 @@
+// Config
+// This file configures PicoCSS.
+// @see for full list of options https://v2.picocss.com/docs/sass#custom-theme
+//
+
+@use "pico" with (
+  $css-var-prefix: "--autopilot-",
+  $enable-semantic-container: true,
+  $enable-classes: true,
+  $modules: (
+    "themes/default": true,
+  )
+);

@@ -18,10 +18,13 @@ const { markdownIt } = require("./transforms/markdownIt"); // markdown-it plugin
 const { transformImageDir } = require("./transforms/allimages"); // optimize all images in src/assets/images
 const minifyHtml = require("./transforms/minifyHtml");
 const { transformJs } = require("./transforms/esBuild"); // js bundling
+const { transformScss } = require("./transforms/scss"); // scss compiling
 const lightningCss = require("./transforms/lightning"); // css bundling
+
 module.exports = (config, options) => {
   config.setLibrary("md", markdownIt);
   config.addPlugin(transformJs);
+  config.addPlugin(transformScss);
   config.addPlugin(lightningCss);
   if (options.useImageDirTransform) {
     config.addPlugin(transformImageDir);
