@@ -9,7 +9,7 @@
     "@11ty/eleventy-img": "^4.0.2",
     "@11ty/eleventy-navigation": "^0.3.5",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
-    "@biomejs/biome": "1.8.2",
+    "@biomejs/biome": "1.8.3",
     "@picocss/pico": "^2.0.6",
     "autoprefixer": "^10.4.19",
     "browserslist": "^4.23.1",
@@ -25,7 +25,7 @@
     "postcss": "^8.4.39",
     "sass": "^1.77.6",
     "stylelint": "^16.6.1",
-    "stylelint-config-standard": "^36.0.0"
+    "stylelint-config-standard": "^36.0.1"
   },
   "dependencies": {
     "@alpinejs/persist": "^3.14.1",
