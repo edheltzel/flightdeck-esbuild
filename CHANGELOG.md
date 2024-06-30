@@ -2,7 +2,7 @@
 
 All notable changes to Flightdeck for 11ty will be documented in this file.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+<small>The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).</small>
 
 ## [0.5.1-d] - 2024-05-31
 
@@ -462,4 +462,4 @@ Checkout branch `feature/parcel2`
 
 * this is an init and left empty intentionally
 
-Attempting keep a minimal configuration for 11ty while keeping the tools similar to [Flightdeck for Jekyll](https://github.com/flight-deck/Flightdeck-for-Jekyll) and [Flightdeck for Hugo](https://github.com/flight-deck/Flightdeck-for-Hugo)
+Attempting keep a minimal configuration for 11ty while keeping the tools similar to [Flightdeck for Jekyll](https://github.com/edheltzel/Flightdeck-for-Jekyll) and [Flightdeck for Hugo](https://github.com/edheltzel/Flightdeck-for-Hugo)

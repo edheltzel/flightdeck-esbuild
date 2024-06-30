@@ -3,7 +3,7 @@
     "custom-dictionary-workspace": {
       "addWords": true,
       "name": "custom-dictionary-workspace",
-      "path": "${workspaceFolder:flightdeck-for-eleventy}/.vscode/cspell-custom-dictionary-workspace.txt",
+      "path": "${workspaceFolder:flightdeck}/.vscode/cspell-custom-dictionary-workspace.txt",
       "scope": "workspace"
     }
   },
