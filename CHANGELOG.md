@@ -4,6 +4,15 @@ All notable changes to Flightdeck for 11ty will be documented in this file.
 
 <small>The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).</small>
 
+## [0.5.2] - 2024-07-05
+
+Scaffold updated:
+
+- Moves `_flightdeck` dir into `src` to keep the root directory clean
+- esbuild v0.23
+
+**Full Changelog**: <https://github.com/edheltzel/Flightdeck/compare/v0.5.1-f...v0.5.2>
+
 ## [0.5.1-f] - 2024-06-30
 
 Adds Scss back into the mix. Includes: `eleventy-sass` plugin, `sass`, `postcss` with `autoprefixer`, and `@picocss/pico` (for theming).
