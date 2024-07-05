@@ -5,21 +5,21 @@
  * @see {@link https://www.11ty.dev/docs/quicktips/local-plugin/}
  * @param {Object} config - Eleventy's configuration object
  * @returns {Object} - Returns Eleventy's configuration options
- * @requires ./_flightdeck/*
+ * @requires ./src/_flightdeck/*
  *
  * @const options - Custom options for Flightdeck
  * @type {Object}
  * @property {boolean} useImageDirTransform - this will transform all images in ./src/assets/images
  * @default false - Set to true to use image transforms
- * @requires ./_flightdeck/transforms
+ * @requires ./src/_flightdeck/transforms
  *
  */
 
-const addWorkflow = require("./_flightdeck/workflow");
-const addFilters = require("./_flightdeck/filters");
-const addTransforms = require("./_flightdeck/transforms");
-const addShortcodes = require("./_flightdeck/shortcodes");
-const addPlugins = require("./_flightdeck/plugins");
+const addWorkflow = require("./src/_flightdeck/workflow");
+const addFilters = require("./src/_flightdeck/filters");
+const addTransforms = require("./src/_flightdeck/transforms");
+const addShortcodes = require("./src/_flightdeck/shortcodes");
+const addPlugins = require("./src/_flightdeck/plugins");
 
 module.exports = (config) => {
   const options = {

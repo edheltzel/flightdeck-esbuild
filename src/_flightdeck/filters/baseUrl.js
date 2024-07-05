@@ -9,7 +9,7 @@
  * // outputs: https://example.com/about/
  */
 
-const baseUrl = require("../../src/_includes/data/site").baseUrl;
+const baseUrl = require("../../_includes/data/site").baseUrl;
 
 module.exports = (url) => {
   return `${baseUrl}${url}`;
