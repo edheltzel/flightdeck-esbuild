@@ -3,6 +3,9 @@ layout: page
 title:
 tagline: An opinionated starter project for Eleventy.
 permalink: /
+eleventyNavigation:
+  key: Bingo
+  order: 1
 ---
 
 ## Flightdeck {.h1}

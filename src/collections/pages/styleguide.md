@@ -1,6 +1,9 @@
 ---
 title: Style Guide 💅 🎨
 tagline: Semantic HTML with very minimal use of classes
+eleventyNavigation:
+  key: Style Guide
+  order: 3
 ---
 <!-- Preview -->
 <section id="preview">
