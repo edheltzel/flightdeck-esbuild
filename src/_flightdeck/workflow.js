@@ -23,7 +23,7 @@ module.exports = (config, options) => {
   /* --- Passthrough Copy --- */
   config.addPassthroughCopy({
     "./src/_static": "./", // root level files ie: _redirects, robots.txt, favicon.io,etc
-    "./src/assets/fonts": "./assets/fonts",
+    "./src/assets/fonts": "./assets/fonts"
   });
 
   if (!options.useImageDirTransform) {
