@@ -5,6 +5,6 @@
 @import url('_autopilot/_vendors/_vendors.css');
 @import url("_autopilot/_base/@media.css");
 @import url("_autopilot/_base/_base.css") layer(base);
-@import url("_autopilot/_components/_components.css") layer(components);
+@import url("_autopilot/_components/_components.css");
 @import url("_autopilot/_utilities/_utilities.css") layer(utilities);
 @import url("_autopilot/shame.css");

@@ -9,7 +9,7 @@
     width: 2px;
     top: -50%;
     left: 20vw;
-    background: linear-gradient(to bottom, rgb(0 0 0 / 0%) 0, rgb(var(--autopilot-animated-rgb) .35) 75%, rgb(0 0 0 / 0%) 0);
+    background: linear-gradient(to bottom, hsla(0, 0%, 0%, 0) 0, rgb(var(--autopilot-animated-rgb), .35) 75%, hsla(0, 0%, 0%, 0) 0);
     animation: rods-from-god var(--autopilot-rods-from-god) cubic-bezier(.4, .26, 0, .97) 0s infinite forwards;
 
     /* background: red; */

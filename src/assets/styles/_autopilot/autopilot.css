@@ -133,9 +133,7 @@
   --clip-text-color-1: rebeccapurple;
   --clip-text-color-2: hotpink;
   --clip-text-color-3: firebrick;
-  --autopilot-animated-rgb: 192,
-    96,
-    20;
+  --autopilot-animated-rgb: 192, 96, 20;
   --autopilot-background-color: #fff;
   --autopilot-color: #373c44;
   --autopilot-text-selection-color: rgb(148 134 225 / 25%);
