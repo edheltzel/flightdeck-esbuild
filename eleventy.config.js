@@ -50,6 +50,5 @@ module.exports = (config) => {
     },
     HTMLTemplateElement: "njk",
     markdownTemplateEngine: "njk",
-    templateFormats: ["md", "njk", "html"],
   };
 };
