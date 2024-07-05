@@ -4,7 +4,7 @@ title:
 tagline: An opinionated starter project for Eleventy.
 permalink: /
 eleventyNavigation:
-  key: Bingo
+  key: Home
   order: 1
 ---
 
