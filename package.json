@@ -39,7 +39,7 @@
   ],
   "browserslist": "> 0.2% and not dead",
   "scripts": {
-    "start": "eleventy --serve --incremental --quiet",
+    "start": "eleventy --serve",
     "build": "bun run clean && bun run build:11ty",
     "build:11ty": "ENV=production eleventy",
     "debug": "DEBUG=Eleventy* eleventy",
