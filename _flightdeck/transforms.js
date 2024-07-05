@@ -11,6 +11,7 @@
  * @param {boolean} useImageDirTransform - Whether or not to use image transforms (default: true).
  *
  * @todo drop scss for css + lightningCSS
+ * @todo Add Scss configuration in README for those that still want to use Scss.
  */
 
 const isProd = process.env.ENV === "production";
@@ -18,17 +19,19 @@ const { markdownIt } = require("./transforms/markdownIt"); // markdown-it plugin
 const { transformImageDir } = require("./transforms/allimages"); // optimize all images in src/assets/images
 const minifyHtml = require("./transforms/minifyHtml");
 const { transformJs } = require("./transforms/esBuild"); // js bundling
-const { transformScss } = require("./transforms/scss"); // scss compiling
 const lightningCss = require("./transforms/lightning"); // css bundling
+// const { transformScss } = require("./transforms/scss"); // scss compiling
 
 module.exports = (config, options) => {
+  // config.addPlugin(transformScss);
   config.setLibrary("md", markdownIt);
   config.addPlugin(transformJs);
-  config.addPlugin(transformScss);
   config.addPlugin(lightningCss);
+
   if (options.useImageDirTransform) {
     config.addPlugin(transformImageDir);
   }
+  // production build only
   if (isProd) {
     config.addPlugin(minifyHtml);
   }
