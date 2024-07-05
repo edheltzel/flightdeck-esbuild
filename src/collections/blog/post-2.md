@@ -1,5 +1,5 @@
 ---
-title: Post Testing
+title: Post Two
 description: "this is a post example of the second kind!"
 featured_image: /assets/images/spacex/anirudh-w_WZRYHb-D0-unsplash.jpeg
 categories: [""]
