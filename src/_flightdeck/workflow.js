@@ -31,7 +31,8 @@ module.exports = (config, options) => {
   }
 
   /* --- Layout Aliases --- */
-  config.addLayoutAlias("default", "layouts/default.njk");
+  config.addLayoutAlias("base", "layouts/base.njk");
+  config.addLayoutAlias("default", "layouts/base.njk");
   config.addLayoutAlias("page", "layouts/page.njk");
   config.addLayoutAlias("post", "layouts/post.njk");
 };
