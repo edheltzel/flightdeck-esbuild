@@ -12,7 +12,7 @@ module.exports = (penUrl, penHeight = "300", tabs = "result", themeId = "") => {
   const splitUrl = penUrl.split("/");
 
   const splitProfileUrl = splitUrl.filter((string, index) => {
-    return index < splitUrl.length - 2 ? true : false;
+    return index < splitUrl.length - 2;
   });
 
   const userProfile = splitProfileUrl.join("/");
