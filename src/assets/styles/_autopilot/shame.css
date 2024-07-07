@@ -1,6 +1,6 @@
 /* this file is for quick and dirty styles that are not meant to be permanent.
 mainly testing stuff */
-.h1 {
+.clip-text {
   font-size: clamp(1rem, -6.7586rem + 24.8276vw, 9rem);
   color: transparent;
   font-weight: bold;

@@ -45,9 +45,9 @@ eleventyNavigation:
 <!-- Typography-->
 <section id="typography">
 
-  ## Typography {.h1}
+  ## Typography {.clip-text}
 
-  Adding classes to markdown `{.h1}` is possible through the use of the `markdown-it-attrs` package.
+  Adding classes to markdown `{.clip-text}` is possible through the use of the `markdown-it-attrs` package.
 
 
   <!-- Blockquote-->

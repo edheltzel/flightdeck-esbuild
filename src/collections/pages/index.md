@@ -7,7 +7,7 @@ eleventyNavigation:
   order: 1
 ---
 
-Flightdeck {.h1}
+Flightdeck {.clip-text}
 
 <hr>
 
