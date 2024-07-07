@@ -19,7 +19,7 @@ MALFUNCTION="👨‍🚀 Huston... We have a problem! Make sure you use ${OPTION
 SITE="${WHITE}${BOLD}output${BOLDEND}${NC} & ${WHITE}${BOLD}all cache${BOLDEND}${NC} directories ✨"
 FRESH="${WHITE}${BOLD}node_modules${BOLDEND}${NC}, ${WHITE}${BOLD}lock files${BOLDEND}${NC}, ${SITE}"
 
-PURGE="🧹 ${GREEN}${BOLD}All Clean${BOLDEND}${NC} ✨ ${TITLE}${FRESH}${NC}\n\nRun ${YELLOW}${BOLD}bun install${BOLDEND}${NC} to start fresh 🤩"
+PURGE="🧹 ${GREEN}${BOLD}All Clean${BOLDEND}${NC} ✨ ${TITLE}${FRESH}${NC}\n\nRun ${YELLOW}${BOLD}pnpm install${BOLDEND}${NC} to start fresh 🤩"
 
 DEVFILES="dist/ _site/ .cache/ *.log"
 NODEFILES="node_modules package-lock.json pnpm-lock.yaml yarn.lock .yarn/ bun.lockb"

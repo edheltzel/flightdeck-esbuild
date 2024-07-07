@@ -34,6 +34,7 @@
     <li>
       <a href="#usage">Usage</a>
       <ul>
+        <li><a href="#using-sass">Use Sass/Scss</a></li>
         <li><a href="#autopilot">Autopilot</a></li>
       </ul>
     </li>
@@ -56,13 +57,13 @@
 The key concept here is to keep Eleventy in control of the entire development and build processes.
 
 ```shell
-    gh repo clone edheltzel/flightdeck flightdeck && cd flightdeck && bun install && bun start
+    gh repo clone edheltzel/flightdeck flightdeck && cd flightdeck && pnpm install && pnpm start
 ```
 
 **Build your project**
 
 ```shell
-   bun run build
+   pnpm run build
 ```
 
 <!-- #endregion Too Long Didn’t Read -->
@@ -91,11 +92,6 @@ Jérôme Coupé's post [Structuring Eleventy Projects](https://www.webstoemp.com
 - [LightningCSS](https://lightningcss.dev/)
 - ~~[Jampack](https://jampack.divriots.com/)~~
 - ~~[Sass](https://sass-lang.com/)~~
-  - If you want to still use Scss, it is still apart of the package dependencies along with PostCSS.
-    - please reference `_flightdeck/transforms.js` and `_flightdeck/transforms/_scss.js`
-    - see [eleventy-sass repo](https://github.com/kentaroi/eleventy-sass) for documentation.
-    - see [picocss docs](https://picocss.com/docs/sass#custom-theme) for theming.
-  - If you do not want the additional dependencies just run `bun remove sass eleventy-sass postcss autoprefixer @picocss/pico`
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -117,7 +113,7 @@ We are assuming that you already have Node with NPM (or another package manger, 
 
 **Package managers are like dotfiles, everyone has their own preference.**
 
-We have shifted to using [Bun](https://bun.sh/) as our primary package manager.
+We are using [Pnpm](https://pnpm.io/) as our package manager.
 
 But, you can swap `bun` in favor of your preferences 👉 [NPM](https://www.npmjs.com/) , [Yarn](https://yarnpkg.com/), and and [Pnpm](https://pnpm.io). Use whatever you want 👍 just be sure to update the `preview` script in `package.json` with what ever flavor you choose to use.
 
@@ -144,7 +140,7 @@ git clone https://github.com/edheltzel/flightdeck.git
 
 ```shell
 cd flightdeck
-bun install
+pnpm install
 ```
 
 Using `gh` in the terminal:
@@ -155,34 +151,26 @@ gh repo clone edheltzel/flightdeck
 
 ```shell
 cd flightdeck
-bun install
+pnpm install
 ```
 
 <details>
   <summary>see all dependencies</summary>
-  <pre>
-    bun pm ls
-/Users/ed/Developer/personal/flightdeck/for-11ty-esbuild node_modules (583)
-├── @11ty/eleventy@2.0.1
-├── @11ty/eleventy-img@4.0.2
-├── @11ty/eleventy-navigation@0.3.5
-├── @11ty/eleventy-plugin-syntaxhighlight@5.0.0
-├── @alpinejs/persist@3.13.8
-├── @biomejs/biome@1.6.4
-├── alpinejs@3.13.8
-├── browserslist@4.23.0
-├── eleventy-plugin-embed-everything@1.18.2
-├── esbuild@0.20.2
-├── fast-glob@3.3.2
-├── html-minifier@4.0.0
-├── lightningcss@1.24.1
-├── lightningcss-cli@1.24.1
-├── markdown-it@14.1.0
-├── markdown-it-attrs@4.1.6
-├── stylelint@16.3.1
-└── stylelint-config-standard@36.0.0
 
-  </pre>
+    pnpm list
+    flightdeck-for-eleventy@0.5.2-a ~/Developer/flightdeck
+
+    dependencies:
+    @alpinejs/persist 3.14.1
+    alpinejs 3.14.1
+
+    devDependencies:
+    @11ty/eleventy 2.0.1                         eleventy-plugin-embed-everything 1.18.2      markdown-it 14.1.0
+    @11ty/eleventy-img 4.0.2                     esbuild 0.23.0                               markdown-it-attrs 4.1.6
+    @11ty/eleventy-navigation 0.3.5              fast-glob 3.3.2                              stylelint 16.6.1
+    @11ty/eleventy-plugin-syntaxhighlight 5.0.0  html-minifier 4.0.0                          stylelint-config-standard 36.0.1
+    @biomejs/biome 1.8.3                         lightningcss 1.25.1
+    browserslist 4.23.1                          lightningcss-cli 1.25.1
 </details>
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -199,40 +187,38 @@ pnpm start
 
 <details>
   <summary>Available Run Commands</summary>
-  <pre>package.json scripts (11 found):
 
-$ bun run start
-eleventy --serve
+    Lifecycle scripts:
+    preinstall
+      npx only-allow pnpm
+    start
+      eleventy --serve
 
-$ bun run build
-pnpm run clean && pnpm run build:11ty
-
-$ bun run build:11ty
-cross-env ENV=production eleventy
-
-$ bun run debug
-DEBUG=Eleventy\* eleventy
-
-$ bun run preview
-bunx http-server dist -p 4000
-
-$ bun run check
-biome check
-
-$ bun run format
-biome format
-
-$ bun run lint
-biome lint
-
-$ bun run lint:css
-stylelint \"src/\*_/_.css\" --fix
-
-$ bun run clean
-./.scrub.sh site
-
-$ bun run purge
-./.scrub.sh purge</pre>
+    Commands available via "pnpm run":
+      build
+        pnpm run clean && pnpm run build:11ty
+      build:11ty
+        ENV=production eleventy
+      debug
+        DEBUG=Eleventy* eleventy
+      preview
+        pnpx http-server dist -p 4000
+      check
+        biome check
+      format
+        biome format
+      lint
+        biome lint
+      lint:css
+        stylelint "src/**/*.css" --fix
+      clean
+        ./.scrub.sh site
+      purge
+        ./.scrub.sh purge
+      upgrade
+        pnpx npm-check-updates -ui
+      release
+        gh release create v$npm_package_version --generate-notes --latest
 
 </details>
 
@@ -240,16 +226,16 @@ $ bun run purge
   - for our workflow, Cloudflare handles the DNS while Cloudflare Pages does the building and hosting - Cloudflare's Auto Minify minifies the HTML, CSS, and JS. You can easily add minification to the build process by adding a plugin to Eleventy.
 - `preview` command - spins up a local server to preview the production build.
 - `check` command - runs biome lint and format at the same time JS/TS, see `biome.json`.
-  - ie: `bun run check ./src/assets/js/app.js`
+  - ie: `pnpm run check ./src/assets/js/app.js`
 - `format` command - uses biome to format JS/TS, see `biome.json`.
-  - ie: `bun run format ./src/assets/js/app.js`
+  - ie: `pnpm run format ./src/assets/js/app.js`
 - `lint` command - uses biome to lint JS/TS, see `biome.json`.
-  - ie: `bun run lint ./src/assets/js/app.js`
+  - ie: `pnpm run lint ./src/assets/js/app.js`
 - `lint:css` command - uses stylelint to find issues in your css.
 - `clean` command - scrubs/removes the `dist/` and `.cache` directories
-- `purge` command - scrubs/removes the `dist/`, `.cache`, `node_modules`, and any lock files from npm, yarn, pnpm or bun. - 🧼 A fresh install.
+- `purge` command - scrubs/removes the `dist/`, `.cache`, `node_modules`, and any lock files from npm, yarn, pnpm or pnpm. - 🧼 A fresh install.
   - **👀 NOTE: Both `clean` and `purge` are executed from a bash script**
-- `upgrade` command - uses `bunx npm-check-updates -ui` to upgrade dependencies to their latest versions and updates the `package.json` - this is a work around for `bun upgrade` not working as expected or how other package managers work.
+- `upgrade` command - uses `bunx npm-check-updates -ui` to upgrade dependencies to their latest versions and updates the `package.json` - this is a work around for `pnpm upgrade` not working as expected or how other package managers work.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -271,39 +257,39 @@ Flightdeck is a very opinionated starter kit, so the file structure is very spec
 
 <details>
   <summary>File Structure</summary>
-  <pre>.
-├── _flightdeck
-│  ├── filters
-│  ├── shortcodes
-│  └── transforms
-└── src
-   ├── _includes
-   │  ├── components
-   │  ├── data
-   │  ├── layouts
-   │  ├── macros
-   │  ├── partials
-   │  └── utilities
-   ├── _static
-   ├── assets
-   │  ├── fonts
-   │  ├── images
-   │  │  └── spacex [optional]
-   │  ├── js
-   │  │  └── modules
-   │  │     ├── alpineModules
-   │  │     └── visualGuidanceSystem
-   │  └── styles
-   │     ├── _autopilot
-   │     │  └── _base
-   │     │  └── _components
-   │     │  └── _layouts
-   │     │  └── _utilities
-   │     │  └── _vendors
-   └── collections
-      ├── blog
-      └── pages
-</pre>
+
+    .
+    ├── _flightdeck
+    │  ├── filters
+    │  ├── shortcodes
+    │  └── transforms
+    └── src
+      ├── _includes
+      │  ├── components
+      │  ├── data
+      │  ├── layouts
+      │  ├── macros
+      │  ├── partials
+      │  └── utilities
+      ├── _static
+      ├── assets
+      │  ├── fonts
+      │  ├── images
+      │  │  └── spacex [optional]
+      │  ├── js
+      │  │  └── modules
+      │  │     ├── alpineModules
+      │  │     └── visualGuidanceSystem
+      │  └── styles
+      │     ├── _autopilot
+      │     │  └── _base
+      │     │  └── _components
+      │     │  └── _layouts
+      │     │  └── _utilities
+      │     │  └── _vendors
+      └── collections
+          ├── blog
+          └── pages
 </details>
 
 <!-- USAGE -->
@@ -314,21 +300,21 @@ The core concept of Flightdeck to keep 11ty in charge of all the DX so you can f
 
 Flightdeck makes a lot of assumptions and is very opinionated - but having a good idea of how Eleventy's [data cascade](https://www.11ty.dev/docs/data-cascade/) works is always nice, as well as having some understanding on [template inherence](https://mozilla.github.io/nunjucks/templating.html#template-inheritance) in Nunjucks will go a long way. **But is not needed**
 
-For making changes to the way Flightdeck pilots Eleventy, you will want to reference the `./_flightdeck` directory. This is where all the Eleventy configuration is done, but it is broken down into sections for easier navigation and maintainability.
+For making changes to the way Flightdeck pilots Eleventy, you will want to reference the `./src/_flightdeck` directory. This is where all the Eleventy configuration is done, but it is broken down into sections for easier navigation and maintainability.
 
-Inside the `./_flightdeck` directory, you will find the following directories:
+Inside the `./src/_flightdeck` directory, you will find the following directories:
 
-- `./_flightdeck/filters` - where all Universal filters are added to Eleventy templates. Currently we use Nunjucks for our templates, so all filters are added to the Nunjucks environment, but are easily adapted to other template engines, like Liquid.
-- `./_flightdeck/shortcodes` - where all shortcodes are added to extend the functionality of the content you are creating. We consider shortcodes content altering and not UI focused. The idea is to create shortcodes that make writing content easier and more enjoyable.
-- `./_flightdeck/transforms` - where all transforms are added to templates, javascript, styles, and images.
+- `./src/_flightdeck/filters` - where all Universal filters are added to Eleventy templates. Currently we use Nunjucks for our templates, so all filters are added to the Nunjucks environment, but are easily adapted to other template engines, like Liquid.
+- `./src/_flightdeck/shortcodes` - where all shortcodes are added to extend the functionality of the content you are creating. We consider shortcodes content altering and not UI focused. The idea is to create shortcodes that make writing content easier and more enjoyable.
+- `./src/_flightdeck/transforms` - where all transforms are added to templates, javascript, styles, and images.
 
 All the directories have a corresponding file that is used to import all the files in the directory. Each of these files are imported into `.eleventy.js` as modules.
 
-- `./_flightdeck/filters.js`
-- `./_flightdeck/plugins.js` - this file controls Eleventy plugins that modify content.
-- `./_flightdeck/shortcodes.js`
-- `./_flightdeck/transforms.js`
-- `./_flightdeck/workflow.js` - this file controls the Eleventy dev server.
+- `./src/_flightdeck/filters.js`
+- `./src/_flightdeck/plugins.js` - this file controls Eleventy plugins that modify content.
+- `./src/_flightdeck/shortcodes.js`
+- `./src/_flightdeck/transforms.js`
+- `./src/_flightdeck/workflow.js` - this file controls the Eleventy dev server.
 
 Flightdeck comes with a custom image transform plugin that watches for changes in the `./src/assets/images` directory and then optimizes any new or changed images, copies it to the output destination directory `./dist/assets/images`. Since we are using the the [Eleventy Image Plugin](https://www.11ty.dev/docs/plugins/image) under-the-hood, it is smart enough to know if an image has already been optimized, we don't need to worry about that. **Just set it and forget it.**
 
@@ -348,13 +334,22 @@ If you're looking to extend or further configure your project with other NPM mod
 - [Sass Docs](https://sass-lang.com/documentation/)
 - [NPM Package Docs](https://docs.npmjs.com/using-npm-packages-in-your-projects)
 
-##### Using Sass/Scss
+#### [ 💅 Using Sass/Scss ](#using-sass)
 
-If you'd rather write scss, please install `sass` and `eleventy-plugin-sass` and update the `transform.js` file to use the module. You'll need to remove the lightingcss module and update the `styles` directory to your scss files.
+If you'd rather us Scss to write you styles you'll need to do a few things to set it up:
 
-```shell
-bun install sass eleventy-plugin-sass
-```
+1. Install `sass`, `eleventy-plugin-sass`, `postcss`, and `autoprefixer`
+    - see [eleventy-sass repo](https://github.com/kentaroi/eleventy-sass) for documentation.
+2. Update the `src/_flightdeck/transform.js` file and the `src/_flightdeck/transforms/_scss.js`
+3. Make sure to remove the `lightningcss` module
+4. Update your `src/assets/styles` directory to fit your Scss workflow.
+
+
+  - If you want to still use Scss, it is still apart of the package dependencies along with PostCSS.
+    - please reference `_flightdeck/transforms.js` and `_flightdeck/transforms/_scss.js`
+    - see [eleventy-sass repo](https://github.com/kentaroi/eleventy-sass) for documentation.
+    - see [picocss docs](https://picocss.com/docs/sass#custom-theme) for theming.
+  - If you do not want the additional dependencies just run `pnpm remove sass eleventy-sass postcss autoprefixer @picocss/pico`
 
 <!-- #region Autopilot -->
 
