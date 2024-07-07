@@ -23,7 +23,7 @@ module.exports = (config, options) => {
   /* --- Passthrough Copy --- */
   config.addPassthroughCopy({
     "./src/_static": "./", // root level files ie: _redirects, robots.txt, favicon.io,etc
-    "./src/assets/fonts": "./assets/fonts",
+    "./src/assets/fonts": "./assets/fonts"
   });
 
   if (!options.useImageDirTransform) {
@@ -31,7 +31,8 @@ module.exports = (config, options) => {
   }
 
   /* --- Layout Aliases --- */
-  config.addLayoutAlias("default", "layouts/default.njk");
+  config.addLayoutAlias("base", "layouts/base.njk");
+  config.addLayoutAlias("default", "layouts/base.njk");
   config.addLayoutAlias("page", "layouts/page.njk");
   config.addLayoutAlias("post", "layouts/post.njk");
 };

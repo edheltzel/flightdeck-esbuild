@@ -4,9 +4,14 @@ All notable changes to Flightdeck for 11ty will be documented in this file.
 
 <small>The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).</small>
 
+## [0.5.2-b] - 2024-07-07
+
+- Adds `pnpm` as package manager
+  - `bun` has some issues with upgrading packages and `pnpm` seems to be more stable. `¯\_(ツ)_/¯`
+
 ## [0.5.2-a] - 2024-07-05
 
-Fixes rods-from-god css
+- Fixes rods-from-god css
 
 ## [0.5.2] - 2024-07-05
 

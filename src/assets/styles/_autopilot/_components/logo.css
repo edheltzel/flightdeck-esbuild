@@ -2,6 +2,13 @@
 the drop logo
 ---------------------------------------------------------------------------- */
 
-.logo {
-  fill: var(--color-text);
+.logo{
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  & svg{
+    width: 100%;
+    height: auto;
+    max-width: 2rem;
+  }
 }

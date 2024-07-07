@@ -1,11 +1,13 @@
 ---
-layout: page
-title:
-tagline: An opinionated starter project for Eleventy.
+title: Flightdeck
+tagline: To prepare for takeoff
 permalink: /
+eleventyNavigation:
+  key: Home
+  order: 1
 ---
 
-## Flightdeck {.h1}
+Flightdeck {.clip-text}
 
 <hr>
 

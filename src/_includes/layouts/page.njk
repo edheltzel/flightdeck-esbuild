@@ -1,4 +1,4 @@
-{% extends "./default.njk" %}
+{% extends "./base.njk" %}
 {% block main %}
   <header>
     {% block pageTitle %}
@@ -12,17 +12,20 @@
       {%- set pageTagline %}
       {% if tagline %}
         {{ tagline }}
+      {% else %}
+        {{ site.description }}
       {% endif %}
       {%- endset -%}
       {% if tagline %}
         <hgroup>
           <h1>{{ pageTitle | safe }}</h1>
-          <h2 class="text --size-xs space --top-xxs">{{ pageTagline | safe }}</h2>
+          <h2 class="text --size-xxs space --top-xxs">{{ pageTagline | safe }}</h2>
         </hgroup>
       {% else %}
         <h1>{{ pageTitle | safe }}</h1>
+        <h2 class="text --size-xxs space --top-xxs">{{ pageTagline | safe }}</h2>
       {% endif %}
-    {% endblock %}
+    {% endblock pageTitle %}
   </header>
   <hr>
   {% block content %}

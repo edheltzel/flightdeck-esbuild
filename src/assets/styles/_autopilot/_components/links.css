@@ -20,7 +20,7 @@
 
 :where(a:not([role="button"])):is([aria-current]:not([aria-current="false"]), :hover, :active, :focus),
 [role="link"]:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
-  --autopilot-color: var(--autopilot-primary-hover);
+  --autopilot-color: var(--autopilot-primary);
   --autopilot-underline: var(--autopilot-primary-hover-underline);
   --autopilot-text-decoration: underline;
 }

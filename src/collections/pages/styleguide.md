@@ -1,6 +1,9 @@
 ---
 title: Style Guide 💅 🎨
 tagline: Semantic HTML with very minimal use of classes
+eleventyNavigation:
+  key: Style Guide
+  order: 3
 ---
 <!-- Preview -->
 <section id="preview">
@@ -42,9 +45,9 @@ tagline: Semantic HTML with very minimal use of classes
 <!-- Typography-->
 <section id="typography">
 
-  ## Typography {.h1}
+  ## Typography {.clip-text}
 
-  Adding classes to markdown `{.h1}` is possible through the use of the `markdown-it-attrs` package.
+  Adding classes to markdown `{.clip-text}` is possible through the use of the `markdown-it-attrs` package.
 
 
   <!-- Blockquote-->
