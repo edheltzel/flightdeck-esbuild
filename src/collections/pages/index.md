@@ -16,11 +16,13 @@ Flightdeck {.clip-text}
 </article>
 
 
+
+
 ``` html
 <!-- AlpineJS -->
-<div x-data="{ search: '' }">
-  <input type="text" x-model="search" />
-
+<div x-data="{ search: '', placeholder: 'Start typing...' }">
   Searching for: <span x-text="search"></span>
+  <input type="text" x-model="search" :placeholder="placeholder" />
+
 </div>
 ```
