@@ -1,20 +1,14 @@
 {
-	"$schema": "https://biomejs.dev/schemas/1.7.0/schema.json",
-	"organizeImports": {
-		"enabled": true
-	},
   "linter": {
     "enabled": true,
     "rules": {
       "recommended": true
-    },
-    "ignore": ["./node_modules", "./.vscode",  "./.cache/**/*", "./.jampack/**/*", "./_site/**/*", "./dist/**/*", "*.map.*"]
+    }
   },
   "formatter": {
     "enabled": true,
     "indentStyle": "space",
-    "lineWidth": 120,
-    "ignore": ["./node_modules", "./.vscode",  "./.cache/**/*", "./.jampack/**/*", "./_site/**/*", "./dist/**/*", "*.map.*"]
+    "lineWidth": 120
   },
   "javascript": {
     "formatter": {
@@ -22,5 +16,18 @@
       "semicolons": "always"
     },
     "globals": ["$", "_", "externalVariable"]
+  },
+  "files": {
+    "ignore": [
+      "./node_modules",
+      "./.vscode",
+      "./.cache/**/*",
+      "./.jampack/**/*",
+      "./_site/**/*",
+      "./dist/**/*",
+      "*.map.*",
+      "./package.json",
+      "./*rc*.json"
+    ]
   }
 }
