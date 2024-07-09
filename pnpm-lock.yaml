@@ -799,8 +799,8 @@ packages:
     engines: {node: '>=0.10.0'}
     hasBin: true
 
-  electron-to-chromium@1.4.818:
-    resolution: {integrity: sha512-eGvIk2V0dGImV9gWLq8fDfTTsCAeMDwZqEPMr+jMInxZdnp9Us8UpovYpRCf9NQ7VOFgrN2doNSgvISbsbNpxA==}
+  electron-to-chromium@1.4.820:
+    resolution: {integrity: sha512-kK/4O/YunacfboFEk/BDf7VO1HoPmDudLTJAU9NmXIOSjsV7qVIX3OrI4REZo0VmdqhcpUcncQc6N8Q3aEXlHg==}
 
   eleventy-plugin-embed-everything@1.18.2:
     resolution: {integrity: sha512-J/zxLnYN7bhVlbEnqxSswxKis6VjDndUFnE3I9ZdCzGFzlWVrXj933w5DOCobx/OZesuYN9VmapNgAHsGvFoAg==}
@@ -2379,7 +2379,7 @@ snapshots:
   browserslist@4.23.1:
     dependencies:
       caniuse-lite: 1.0.30001640
-      electron-to-chromium: 1.4.818
+      electron-to-chromium: 1.4.820
       node-releases: 2.0.14
       update-browserslist-db: 1.1.0(browserslist@4.23.1)
 
@@ -2546,7 +2546,7 @@ snapshots:
     dependencies:
       jake: 10.9.1
 
-  electron-to-chromium@1.4.818: {}
+  electron-to-chromium@1.4.820: {}
 
   eleventy-plugin-embed-everything@1.18.2:
     dependencies:
