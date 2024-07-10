@@ -46,8 +46,8 @@
   --text-xxl: calc(var(--text-xl) * var(--text-scale-l));
   --text-xxxl: calc(var(--text-xxl) * var(--text-scale-l));
   --text-xxxxl: calc(var(--text-xxxl) * var(--text-scale-l));
-  --text-poster: clamp(4.5rem, 8vw, 10rem);
-  --text-poster-l: clamp(5.5rem, 9vw, 12rem);
+  --text-poster: clamp(2.5rem, 8vw, 10rem);
+  --text-poster-l: clamp(3.5rem, 9vw, 12rem);
 
   /* weight */
   --text-weight: 250;

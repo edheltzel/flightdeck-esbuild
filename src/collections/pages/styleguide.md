@@ -45,7 +45,7 @@ eleventyNavigation:
 <!-- Typography-->
 <section id="typography">
 
-  ## Typography {.clip-text}
+  ## Typography {.clip-text .--poster}
 
   Adding classes to markdown `{.clip-text}` is possible through the use of the `markdown-it-attrs` package.
 

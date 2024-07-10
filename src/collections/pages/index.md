@@ -7,7 +7,7 @@ eleventyNavigation:
   order: 1
 ---
 
-Flightdeck {.clip-text}
+Flightdeck {.clip-text .--poster-l}
 
 <hr>
 
