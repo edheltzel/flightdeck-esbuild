@@ -6,17 +6,18 @@
  * @async 11ty will compile all JS files unless the directory begins with an underscore
  * @link https://esbuild.github.io/api/#build-api
  */
+
 const isProd = process.env.ENV === "production";
 const esbuild = require("esbuild");
-const path = require('node:path');
+const path = require("node:path");
 
 const transformJs = (config) => {
-  config.addTemplateFormats('js');
-  config.addExtension('js', {
-    outputFileExtension: 'js',
+  config.addTemplateFormats("js");
+  config.addExtension("js", {
+    outputFileExtension: "js",
     async compile(inputContent, inputPath) {
       const baseDir = path.basename(path.dirname(inputPath));
-      if (baseDir.startsWith('_')) {
+      if (baseDir.startsWith("_")) {
         return undefined;
       }
       const result = await esbuild.build({
@@ -25,10 +26,10 @@ const transformJs = (config) => {
         minify: isProd,
         sourcemap: !isProd,
         splitting: true,
-        format: 'esm',
-        logLevel: 'info',
-        outdir: 'dist/assets/js',
-        outbase: 'src/assets/js',
+        format: "esm",
+        logLevel: "info",
+        outdir: "dist/assets/js",
+        outbase: "src/assets/js",
         metafile: true,
       });
 

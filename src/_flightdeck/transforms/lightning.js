@@ -38,7 +38,7 @@ module.exports = (config) => {
         filename: inputPath,
         minify: true,
         sourceMap: true,
-        projectRoot: '../../assets/styles',
+        projectRoot: "../../assets/styles",
         drafts: {
           customMedia: true,
           nesting: true,
