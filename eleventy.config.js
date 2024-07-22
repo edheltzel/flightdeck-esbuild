@@ -1,3 +1,5 @@
+// @ts-check
+
 /**
  * Eleventy Configuration
  * @module .eleventy
@@ -12,7 +14,6 @@
  * @property {boolean} useImageDirTransform - this will transform all images in ./src/assets/images
  * @default false - Set to true to use image transforms
  * @requires ./src/_flightdeck/transforms
- *
  */
 
 const addWorkflow = require("./src/_flightdeck/workflow");
@@ -48,7 +49,7 @@ module.exports = (config) => {
       output: "dist",
       data: "_includes/data",
     },
-    HTMLTemplateElement: "njk",
+    htmlTemplateEngine: "njk",
     markdownTemplateEngine: "njk",
   };
 };
