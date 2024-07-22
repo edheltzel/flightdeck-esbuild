@@ -7,8 +7,6 @@
  * @param {import("@11ty/eleventy").UserConfig} config - The Eleventy config object to which the transformations will be added.
  * @param {{useImageDirTransform: boolean}} options - Custom options for configuring transforms.
  *
- * @todo drop scss for css + lightningCSS
- * @todo Add Scss configuration in README for those that still want to use Scss.
  */
 
 const isProd = process.env.ENV === "production";
