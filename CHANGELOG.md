@@ -4,6 +4,13 @@ All notable changes to Flightdeck for 11ty will be documented in this file.
 
 <small>The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).</small>
 
+## [0.5.3] - 2024-07-22
+
+- reverts back to `bun` as package manager - sorry
+- adds `markdown-it-bracketed-spans` to the project
+- refactors JSDoc annotations for better type checking and adds `// @ts-check` to the top of all JS files for Flightdeck and project
+- misc cleanup
+
 ## [0.5.2-b] - 2024-07-07
 
 - Adds `pnpm` as package manager
