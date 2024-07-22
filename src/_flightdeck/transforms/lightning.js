@@ -2,7 +2,7 @@
  * Configures LightningCSS for FlightDeck:
  * - Registers "css" as a template format.
  * - Adds a "css" extension with custom compilation:
- *   - Excludes files starting with "_".
+ *   - Excludes files in directories starting with "_".
  *   - Bundles CSS using LightningCSS with minification, sourcemaps, and drafts enabled.
  *   - Resolves and tracks CSS @import dependencies.
  *   - Returns compiled CSS code.
@@ -22,13 +22,12 @@ module.exports = (config) => {
     outputFileExtension: "css",
     async compile(inputContent, inputPath) {
       // Exclude files in directories starting with "_"
-      const baseDir = path.basename(path.dirname(inputPath));
-      if (baseDir.startsWith("_")) {
+      if (inputPath.split(path.sep).some(component => component.startsWith('_'))) {
         return undefined;
       }
 
       // Store imported file paths
-      const files = [];
+      const files = new Set();
 
       // Enable draft syntaxes for LightningCSS
       const targets = { future: 1 };
@@ -46,7 +45,7 @@ module.exports = (config) => {
         resolver: {
           resolve(specifier, from) {
             const importPath = path.resolve(path.dirname(from), specifier);
-            files.push(importPath);
+            files.add(importPath);
             return importPath;
           },
         },
@@ -54,7 +53,7 @@ module.exports = (config) => {
       });
 
       // Add imported files as dependencies
-      this.addDependencies(inputPath, files);
+      this.addDependencies(inputPath, Array.from(files));
 
       // Return the compiled CSS code
       return () => result.code.toString();
