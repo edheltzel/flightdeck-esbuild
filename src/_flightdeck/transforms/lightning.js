@@ -18,8 +18,8 @@
  * @requires lightningcss
  * @requires node:path
  * @see {@link https://github.com/11ty/eleventy-plugin-bundle|eleventy-plugin-bundle} - FlightDeck's bundling plugin
- * @see {@link https://lightningcss.dev/|LightningCSS documentation}
- * @see {@link https://11ty.rocks/posts/process-css-with-lightningcss/|Tutorial on using LightningCSS with Eleventy}
+ * @see {@link https://lightningcss.dev/ | LightningCSS documentation}
+ * @see {@link https://11ty.rocks/posts/process-css-with-lightningcss/ | Tutorial on using LightningCSS with Eleventy}
  *
  * @param {Object} config - The Eleventy configuration object
  */
