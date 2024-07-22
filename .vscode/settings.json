@@ -48,5 +48,8 @@
     "dist/**": true,
     "node_modules/": true,
     "package-lock.json": true
+  },
+  "workbench.colorCustomizations": {
+    "titleBar.activeForeground": "#BE9E0B"
   }
 }
