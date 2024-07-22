@@ -1,14 +1,13 @@
+// @ts-check
+
 /**
  * Workflow Configuration
  * @summary keeps the main eleventy config file clean and is used to configure the local dev server.
  *
- * @param {Object} config - The Eleventy config object to be configured.
- * @property {Object} setServerOptions - Configure the local dev server.
- * @link https://github.com/11ty/eleventy/issues/1305
+ * @param {import("@11ty/eleventy").UserConfig} config - The Eleventy config object to be configured.
+ * @param {{useImageDirTransform: boolean}} options - Custom options for configuring workflow.
  * @see https://www.11ty.dev/docs/dev-server/
- * @description local dev server runs on port 8080 by default-> http://localhost:8080
  */
-
 module.exports = (config, options) => {
   config.setQuietMode(true); // reduce console
   config.setServerOptions({
