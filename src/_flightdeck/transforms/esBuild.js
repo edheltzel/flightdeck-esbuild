@@ -1,16 +1,24 @@
+// @ts-check
+
 /**
  * ESBuild Transform function
- * @summary This includes JS files as a template format for 11ty.
- * @callback transformJs
- * @param {Object} config - eleventy config object
- * @async 11ty will compile all JS files unless the directory begins with an underscore
- * @link https://esbuild.github.io/api/#build-api
+ * @module esbuild
+ * @requires esbuild
+ * @requires path
  */
 
 const isProd = process.env.ENV === "production";
 const esbuild = require("esbuild");
 const path = require("node:path");
 
+/**
+ * @typedef {import('@11ty/eleventy').UserConfig} EleventyConfig
+ */
+
+/**
+ * Adds the ESBuild transform to the Eleventy config.
+ * @param {EleventyConfig} config - The Eleventy configuration object.
+ */
 const transformJs = (config) => {
   config.addTemplateFormats("js");
   config.addExtension("js", {

@@ -1,14 +1,22 @@
+// @ts-check
+
 /**
  * ESBuild Transform function
- * @callback transformJs
- * @param {Object} config - eleventy config object
- * @async eleventy.after hook to run esbuild
- * @summary This executes the esbuild on the output after the eleventy build.
- * @link https://esbuild.github.io/api/#build-api
+ * @module _legacyEsBuild
+ * @requires esbuild
  */
+
 const isProd = process.env.ENV === "production";
 const esbuild = require("esbuild");
 
+/**
+ * @typedef {import('@11ty/eleventy').UserConfig} EleventyConfig
+ */
+
+/**
+ * Adds the ESBuild transform to the Eleventy config.
+ * @param {EleventyConfig} config - The Eleventy configuration object.
+ */
 const transformJs = (config) => {
   config.on("eleventy.after", async () => {
     await esbuild.build({
