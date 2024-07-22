@@ -1,14 +1,31 @@
-/* ----------------------------------------------------------------------------
-details element that defaults to closed @small and open @medium+
----------------------------------------------------------------------------- */
+// @ts-check
 
+/**
+ * Details element that defaults to closed @small and open @medium+
+ */
 export default class SmallDetails extends HTMLElement {
+  /** @type {HTMLDetailsElement} */
+  details;
+
+  /** @type {HTMLElement} */
+  summary;
+
+  /** @type {MediaQueryList} */
+  mediaQuery;
+
+  /**
+   * Listen for media query changes
+   */
   listen() {
     this.mediaQuery.addEventListener('change', (e) => {
       this.update(e.matches);
     });
   }
 
+  /**
+   * Update details element based on media query
+   * @param {boolean} matches
+   */
   update(matches) {
     if (matches) {
       this.details.open = false;
@@ -20,8 +37,8 @@ export default class SmallDetails extends HTMLElement {
   }
 
   connectedCallback() {
-    this.details = this.querySelector('details');
-    this.summary = this.querySelector('summary');
+    this.details = /** @type {HTMLDetailsElement} */ (this.querySelector('details'));
+    this.summary = /** @type {HTMLElement} */ (this.querySelector('summary'));
     this.mediaQuery = window.matchMedia('(max-width: 44.999em)');
     this.update(this.mediaQuery.matches);
     this.listen();

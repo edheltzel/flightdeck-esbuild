@@ -1,14 +1,18 @@
+// @ts-check
+
 /**
-* app.js
-* @file app.js
-* @description Main JavaScript file Flightdeck using Alpine.js
-* @reference https://alpinejs.dev/
-*
+ * app.js
+ * @file app.js
+ * @description Main JavaScript file Flightdeck using Alpine.js
+ * @reference https://alpinejs.dev/
  */
 
 import Alpine from "alpinejs";
+/** @type {import('./components/toggle-theme').default} */
 import toggleTheme from "./components/toggle-theme";
 
+/** @type {import('alpinejs').Alpine} */
+// @ts-ignore
 window.Alpine = Alpine;
 Alpine.data("theme", toggleTheme);
 Alpine.start();
