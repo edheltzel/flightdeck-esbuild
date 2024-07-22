@@ -35,7 +35,8 @@
   "browserslist": "> 0.2% and not dead",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "start": "eleventy --serve",
+    "start": "eleventy --serve --incremental",
+    "restart": "pnpm run clean && pnpm run start",
     "build": "pnpm run clean && pnpm run build:11ty",
     "build:11ty": "ENV=production eleventy",
     "debug": "DEBUG=Eleventy* eleventy",
