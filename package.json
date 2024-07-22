@@ -10,7 +10,7 @@
     "@11ty/eleventy-navigation": "^0.3.5",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
     "@biomejs/biome": "1.8.3",
-    "browserslist": "^4.23.1",
+    "browserslist": "^4.23.2",
     "eleventy-plugin-embed-everything": "^1.18.2",
     "esbuild": "^0.23.0",
     "fast-glob": "^3.3.2",
@@ -19,7 +19,7 @@
     "lightningcss-cli": "^1.25.1",
     "markdown-it": "^14.1.0",
     "markdown-it-attrs": "^4.1.6",
-    "stylelint": "^16.6.1",
+    "stylelint": "^16.7.0",
     "stylelint-config-standard": "^36.0.1"
   },
   "dependencies": {
@@ -34,21 +34,20 @@
   ],
   "browserslist": "> 0.2% and not dead",
   "scripts": {
-    "preinstall": "npx only-allow pnpm",
+
     "start": "eleventy --serve --incremental",
-    "restart": "pnpm run clean && pnpm run start",
-    "build": "pnpm run clean && pnpm run build:11ty",
+    "restart": "bun run clean && bun run start",
+    "build": "bun run clean && bun run build:11ty",
     "build:11ty": "ENV=production eleventy",
     "debug": "DEBUG=Eleventy* eleventy",
-    "preview": "pnpx http-server dist -p 4000",
+    "preview": "bunx http-server dist -p 4000",
     "check": "biome check",
     "format": "biome format --",
     "lint": "biome lint --",
     "lint:css": "stylelint \"src/**/*.css\" --fix",
     "clean": "./.scrub.sh site",
     "purge": "./.scrub.sh purge",
-    "upgrade": "pnpx npm-check-updates -ui",
+    "upgrade": "bunx npm-check-updates -ui",
     "release": "gh release create v$npm_package_version --generate-notes --latest"
-  },
-  "packageManager": "pnpm@9.4.0+sha512.f549b8a52c9d2b8536762f99c0722205efc5af913e77835dbccc3b0b0b2ca9e7dc8022b78062c17291c48e88749c70ce88eb5a74f1fa8c4bf5e18bb46c8bd83a"
+  }
 }
