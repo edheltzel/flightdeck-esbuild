@@ -1,16 +1,2 @@
 /* this file is for quick and dirty styles that are not meant to be permanent.
 mainly testing stuff */
-.clip-text {
-  color: transparent;
-  font-weight: bold;
-  position: relative;
-  background-image: var(--autopilot-gradient);
-  background-clip: text;
-
-  &.--poster{
-    font-size: var(--text-poster);
-  }
-  &.--poster-l{
-    font-size: var(--text-poster-l);
-  }
-}
