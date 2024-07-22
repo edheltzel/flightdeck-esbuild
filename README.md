@@ -57,13 +57,13 @@
 The key concept here is to keep Eleventy in control of the entire development and build processes.
 
 ```shell
-    gh repo clone edheltzel/flightdeck flightdeck && cd flightdeck && pnpm install && pnpm start
+    gh repo clone edheltzel/flightdeck flightdeck && cd flightdeck && bun run install && bun run start
 ```
 
 **Build your project**
 
 ```shell
-   pnpm run build
+   bun run build
 ```
 
 <!-- #endregion Too Long Didn’t Read -->
@@ -113,7 +113,7 @@ We are assuming that you already have Node with NPM (or another package manger, 
 
 **Package managers are like dotfiles, everyone has their own preference.**
 
-We are using [Pnpm](https://pnpm.io/) as our package manager.
+We are using [Bun](https://bun.sh/) as our package manager.
 
 But, you can swap `bun` in favor of your preferences 👉 [NPM](https://www.npmjs.com/) , [Yarn](https://yarnpkg.com/), and and [Pnpm](https://pnpm.io). Use whatever you want 👍 just be sure to update the `preview` script in `package.json` with what ever flavor you choose to use.
 
@@ -140,7 +140,7 @@ git clone https://github.com/edheltzel/flightdeck.git
 
 ```shell
 cd flightdeck
-pnpm install
+bun run install
 ```
 
 Using `gh` in the terminal:
@@ -151,26 +151,33 @@ gh repo clone edheltzel/flightdeck
 
 ```shell
 cd flightdeck
-pnpm install
+bun run  install
 ```
 
 <details>
   <summary>see all dependencies</summary>
 
-    pnpm list
-    flightdeck-for-eleventy@0.5.2-a ~/Developer/flightdeck
+    bun pm ls
+    ~/Developer/flightdeck node_modules (581)
+    ├── @11ty/eleventy@2.0.1
+    ├── @11ty/eleventy-img@4.0.2
+    ├── @11ty/eleventy-navigation@0.3.5
+    ├── @11ty/eleventy-plugin-syntaxhighlight@5.0.0
+    ├── @alpinejs/persist@3.14.1
+    ├── @biomejs/biome@1.8.3
+    ├── alpinejs@3.14.1
+    ├── browserslist@4.23.2
+    ├── eleventy-plugin-embed-everything@1.18.2
+    ├── esbuild@0.23.0
+    ├── fast-glob@3.3.2
+    ├── html-minifier@4.0.0
+    ├── lightningcss@1.25.1
+    ├── lightningcss-cli@1.25.1
+    ├── markdown-it@14.1.0
+    ├── markdown-it-attrs@4.1.6
+    ├── stylelint@16.7.0
+    └── stylelint-config-standard@36.0.1
 
-    dependencies:
-    @alpinejs/persist 3.14.1
-    alpinejs 3.14.1
-
-    devDependencies:
-    @11ty/eleventy 2.0.1                         eleventy-plugin-embed-everything 1.18.2      markdown-it 14.1.0
-    @11ty/eleventy-img 4.0.2                     esbuild 0.23.0                               markdown-it-attrs 4.1.6
-    @11ty/eleventy-navigation 0.3.5              fast-glob 3.3.2                              stylelint 16.6.1
-    @11ty/eleventy-plugin-syntaxhighlight 5.0.0  html-minifier 4.0.0                          stylelint-config-standard 36.0.1
-    @biomejs/biome 1.8.3                         lightningcss 1.25.1
-    browserslist 4.23.1                          lightningcss-cli 1.25.1
 </details>
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -182,42 +189,53 @@ available, but the `start` command is where all the magic 🪄 happens – it w
 Again, the focus here is to keep Eleventy in control of the entire development and build processes, to keep things simple.
 
 ```shell
-pnpm start
+bun run start
 ```
 
 <details>
   <summary>Available Run Commands</summary>
 
-    Lifecycle scripts:
-    preinstall
-      npx only-allow pnpm
-    start
-      eleventy --serve
+    package.json scripts (14 found):
+      $ bun run start
+        eleventy --serve --incremental
 
-    Commands available via "pnpm run":
-      build
-        pnpm run clean && pnpm run build:11ty
-      build:11ty
+      $ bun run restart
+        bun run clean && bun run start
+
+      $ bun run build
+        bun run clean && bun run build:11ty
+
+      $ bun run build:11ty
         ENV=production eleventy
-      debug
+
+      $ bun run debug
         DEBUG=Eleventy* eleventy
-      preview
-        pnpx http-server dist -p 4000
-      check
+
+      $ bun run preview
+        bunx http-server dist -p 4000
+
+      $ bun run check
         biome check
-      format
-        biome format
-      lint
-        biome lint
-      lint:css
-        stylelint "src/**/*.css" --fix
-      clean
+
+      $ bun run format
+        biome format --
+
+      $ bun run lint
+        biome lint --
+
+      $ bun run lint:css
+        stylelint \"src/**/*.css\" --fix
+
+      $ bun run clean
         ./.scrub.sh site
-      purge
+
+      $ bun run purge
         ./.scrub.sh purge
-      upgrade
-        pnpx npm-check-updates -ui
-      release
+
+      $ bun run upgrade
+        bunx npm-check-updates -ui
+
+      $ bun run release
         gh release create v$npm_package_version --generate-notes --latest
 
 </details>
@@ -226,16 +244,16 @@ pnpm start
   - for our workflow, Cloudflare handles the DNS while Cloudflare Pages does the building and hosting - Cloudflare's Auto Minify minifies the HTML, CSS, and JS. You can easily add minification to the build process by adding a plugin to Eleventy.
 - `preview` command - spins up a local server to preview the production build.
 - `check` command - runs biome lint and format at the same time JS/TS, see `biome.json`.
-  - ie: `pnpm run check ./src/assets/js/app.js`
+  - ie: `bun run check ./src/assets/js/app.js`
 - `format` command - uses biome to format JS/TS, see `biome.json`.
-  - ie: `pnpm run format ./src/assets/js/app.js`
+  - ie: `bun run format ./src/assets/js/app.js`
 - `lint` command - uses biome to lint JS/TS, see `biome.json`.
-  - ie: `pnpm run lint ./src/assets/js/app.js`
+  - ie: `bun run lint ./src/assets/js/app.js`
 - `lint:css` command - uses stylelint to find issues in your css.
 - `clean` command - scrubs/removes the `dist/` and `.cache` directories
-- `purge` command - scrubs/removes the `dist/`, `.cache`, `node_modules`, and any lock files from npm, yarn, pnpm or pnpm. - 🧼 A fresh install.
+- `purge` command - scrubs/removes the `dist/`, `.cache`, `node_modules`, and any lock files from npm, yarn, pnpm or bun. - 🧼 A fresh install.
   - **👀 NOTE: Both `clean` and `purge` are executed from a bash script**
-- `upgrade` command - uses `bunx npm-check-updates -ui` to upgrade dependencies to their latest versions and updates the `package.json` - this is a work around for `pnpm upgrade` not working as expected or how other package managers work.
+- `upgrade` command - uses `bunx npm-check-updates -ui` to upgrade dependencies to their latest versions and updates the `package.json` - this is a work around for `bun run upgrade` not working as expected or how other package managers work.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -349,7 +367,7 @@ If you'd rather us Scss to write you styles you'll need to do a few things to se
     - please reference `_flightdeck/transforms.js` and `_flightdeck/transforms/_scss.js`
     - see [eleventy-sass repo](https://github.com/kentaroi/eleventy-sass) for documentation.
     - see [picocss docs](https://picocss.com/docs/sass#custom-theme) for theming.
-  - If you do not want the additional dependencies just run `pnpm remove sass eleventy-sass postcss autoprefixer @picocss/pico`
+  - If you do not want the additional dependencies just run `bun remove sass eleventy-sass postcss autoprefixer @picocss/pico`
 
 <!-- #region Autopilot -->
 

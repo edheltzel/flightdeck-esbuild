@@ -1,8 +1,14 @@
-/* ----------------------------------------------------------------------------
-trigger CSS animations on targeted elements when they enter the viewport
----------------------------------------------------------------------------- */
-export default class animateOnScroll extends HTMLElement {
+// @ts-check
+
+/**
+ * Trigger CSS animations on targeted elements when they enter the viewport
+ */
+export default class AnimateOnScroll extends HTMLElement {
+  /**
+   * Animate elements when they enter the viewport
+   */
   animateElements() {
+    /** @type {NodeListOf<HTMLElement>} */
     const observedElements = this.querySelectorAll("[data-aos]");
     const observer = new IntersectionObserver((entries) => {
       let extraDelay = 0;
@@ -14,6 +20,7 @@ export default class animateOnScroll extends HTMLElement {
 
       for (const entry of entries) {
         if (entry.intersectionRatio > 0) {
+          /** @type {HTMLElement} */
           const element = entry.target;
           const animation = element.getAttribute("data-aos");
           const styles = getComputedStyle(element);
@@ -23,7 +30,7 @@ export default class animateOnScroll extends HTMLElement {
             element.style.animationDelay = `${extraDelay + existingDelay}s`;
           }
           element.classList.add("animate");
-          element.classList.add(animation);
+          if (animation) element.classList.add(animation);
           extraDelay += 0.15;
           observer.unobserve(entry.target);
         }
@@ -35,18 +42,22 @@ export default class animateOnScroll extends HTMLElement {
     }
   }
 
-  // transpose parent animation settings to direct children
+  /**
+   * Transpose parent animation settings to direct children
+   */
   prepChildElements() {
+    /** @type {NodeListOf<HTMLElement>} */
     const containerElements = this.querySelectorAll("[data-aos-children]");
     for (const element of containerElements) {
       const animationClass = element.getAttribute("data-aos-children");
       const styles = getComputedStyle(element);
       const delay = Number.parseFloat(styles.animationDelay.slice(0, -1));
       const duration = Number.parseFloat(styles.animationDuration.slice(0, -1));
+      /** @type {NodeListOf<HTMLElement>} */
       const childElements = element.querySelectorAll(":scope > *");
       for (const child of childElements) {
         const childElement = child;
-        childElement.setAttribute("data-aos", animationClass);
+        childElement.setAttribute("data-aos", animationClass || "");
         if (duration > 0) {
           childElement.style.animationDuration = `${duration}s`;
         }
@@ -63,4 +74,4 @@ export default class animateOnScroll extends HTMLElement {
   }
 }
 
-window.customElements.define("animate-on-scroll", animateOnScroll);
+window.customElements.define("animate-on-scroll", AnimateOnScroll);

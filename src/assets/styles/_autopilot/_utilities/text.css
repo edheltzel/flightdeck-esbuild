@@ -55,3 +55,19 @@ font: transform text display properties
   &.--unlisted { list-style-type: none; }
   &.--undecorated { text-decoration: none; }
 }
+
+.clip-text {
+  color: transparent;
+  font-weight: bold;
+  position: relative;
+  background-image: var(--autopilot-gradient);
+  background-clip: text;
+
+  &.--poster{
+    font-size: var(--text-poster);
+  }
+
+  &.--poster-l{
+    font-size: var(--text-poster-l);
+  }
+}

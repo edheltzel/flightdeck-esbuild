@@ -1,18 +1,12 @@
+// @ts-check
+
 /**
  * Eleventy Configuration
  * @module .eleventy
  * @see {@link https://www.11ty.dev/docs/config/}
  * @see {@link https://www.11ty.dev/docs/quicktips/local-plugin/}
- * @param {Object} config - Eleventy's configuration object
- * @returns {Object} - Returns Eleventy's configuration options
- * @requires ./src/_flightdeck/*
- *
- * @const options - Custom options for Flightdeck
- * @type {Object}
- * @property {boolean} useImageDirTransform - this will transform all images in ./src/assets/images
- * @default false - Set to true to use image transforms
- * @requires ./src/_flightdeck/transforms
- *
+ * @param {import("@11ty/eleventy").UserConfig} config - Eleventy's configuration object
+ * @returns {import("@11ty/eleventy").EleventyConfig} - Returns Eleventy's configuration options
  */
 
 const addWorkflow = require("./src/_flightdeck/workflow");
@@ -22,6 +16,7 @@ const addShortcodes = require("./src/_flightdeck/shortcodes");
 const addPlugins = require("./src/_flightdeck/plugins");
 
 module.exports = (config) => {
+  /** @type {{useImageDirTransform: boolean}} */
   const options = {
     useImageDirTransform: false,
   };
@@ -48,7 +43,7 @@ module.exports = (config) => {
       output: "dist",
       data: "_includes/data",
     },
-    HTMLTemplateElement: "njk",
+    htmlTemplateEngine: "njk",
     markdownTemplateEngine: "njk",
   };
 };

@@ -1,18 +1,21 @@
+// @ts-check
+
 /**
- * @file images.js
+ * @file allimages.js
  * @description This module provides an image optimization transform using `@11ty/eleventy-img`.
- * It exports a function that hooks into the Eleventy build process, specifically the 'eleventy.after' event.
- * When this event is triggered, the module optimizes ALL images in the specified base directory and then saves the optimized images in the specified output directory.
- * The image optimization process includes resizing the images to a width of 1600 pixels and applying various Sharp options.
- * This function is used in the _flightdeck/transforms.js module, is Optional and set inside of the eleventy.config.js file.
- * @requires `@11ty/eleventy-img`
+ * @requires @11ty/eleventy-img
  * @requires path
  * @requires fast-glob
  */
+
 const Image = require("@11ty/eleventy-img");
 const path = require("node:path");
 const glob = require("fast-glob");
 
+/**
+ * Optimizes all images in the specified base directory.
+ * @returns {Promise<void>}
+ */
 const optimizeImages = async () => {
   const baseDirectory = "./src/assets/images";
   const outputDirectory = "./dist/assets/images";
@@ -46,14 +49,22 @@ const optimizeImages = async () => {
           withMetadata: false,
         },
       });
-    }),
+    })
   );
 };
 
-module.exports = {
-  transformImages: (config) => {
-    config.on("eleventy.after", async () => {
-      await optimizeImages();
-    });
-  },
+/**
+ * @typedef {import('@11ty/eleventy').UserConfig} EleventyConfig
+ */
+
+/**
+ * Adds the image optimization transform to the Eleventy config.
+ * @param {EleventyConfig} config - The Eleventy configuration object.
+ */
+const transformImages = (config) => {
+  config.on("eleventy.after", async () => {
+    await optimizeImages();
+  });
 };
+
+module.exports = { transformImages };
