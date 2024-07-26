@@ -37,11 +37,9 @@
   "scripts": {
     "preinstall": "npx only-allow bun",
     "start": "eleventy --serve --incremental",
-    "restart": "bun run clean && bun run start",
-    "build": "bun run clean && bun run build:11ty",
-    "build:11ty": "ENV=production eleventy",
+    "build": "ENV=production eleventy",
     "debug": "DEBUG=Eleventy* eleventy",
-    "preview": "bunx http-server dist -p 4000",
+    "preview": "bun run clean && bun run build && bunx http-server dist -p 4000",
     "check": "biome check",
     "format": "biome format --",
     "lint": "biome lint --",
