@@ -1,6 +1,6 @@
 {
   "name": "flightdeck-for-eleventy",
-  "version": "0.5.3",
+  "version": "0.5.3-a",
   "author": "Ed Heltzel",
   "description": "An opinionated Jamstack starter project for Eleventy.",
   "license": "WTFPL",
@@ -35,6 +35,7 @@
   ],
   "browserslist": "> 0.2% and not dead",
   "scripts": {
+    "preinstall": "npx only-allow bun",
     "start": "eleventy --serve --incremental",
     "restart": "bun run clean && bun run start",
     "build": "bun run clean && bun run build:11ty",
@@ -49,5 +50,6 @@
     "purge": "./.scrub.sh purge",
     "upgrade": "bunx npm-check-updates -ui",
     "release": "gh release create v$npm_package_version --generate-notes --latest"
-  }
+  },
+  "packageManager": "bun@1.1.20"
 }
