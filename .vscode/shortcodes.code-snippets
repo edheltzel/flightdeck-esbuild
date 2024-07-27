@@ -39,14 +39,24 @@
     "description": "adds a blockquote with citation using the {% blockquote %} shortcode",
     "scope": "markdown,html,liquid,nunjucks,webc"
   },
-  "Component: Button for links": {
+  "Shortcode: for Buttons": {
     "prefix": [
       "button"
     ],
     "body": [
-      "{% button \"${1:url}\", \"${2:label}\" %}"
+      "{% button type=\"${1:submit}\", text\"${2:Click Me}\", classes=\"${3:your-classes}\" %}"
     ],
     "description": "adds a button that links to internal/external urls using the {% button %} shortcode",
+    "scope": "markdown,html,liquid,nunjucks,webc",
+  },
+  "Shortcode: Button for links": {
+    "prefix": [
+      "button"
+    ],
+    "body": [
+      "{% link url=\"${1:url}\", text=\"${2:text}\", target=\"${3:target}\", role=\"${4:role}\", classes=\"${5:classes}\" %}"
+    ],
+    "description": "adds a link that is styled like a button using the {% link %} shortcode",
     "scope": "markdown,html,liquid,nunjucks,webc",
   },
   "Component: Image with alt text": {

@@ -9,14 +9,11 @@ eleventyNavigation:
 
 Flightdeck {.clip-text .--poster-l}
 
-<hr>
+---
 
 <article>
 {% blockquote "That's one small step for man, one giant leap for mankind", "Neil Armstrong" %}
 </article>
-
-
-
 
 ``` html
 <!-- AlpineJS -->
