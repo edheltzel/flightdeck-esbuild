@@ -64,6 +64,7 @@ theme="dark"
 {% raw %}
 ```jinja2
 {# Codepen Embedding - height, tabs, theme are optional  see codepen.js for defaults #}
+
 {% codepen
 penUrl="https://codepen.io/jacobberglund/pen/bwrGvx",
 height=900,
