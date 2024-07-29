@@ -38,8 +38,14 @@
         <li><a href="#autopilot">Autopilot</a></li>
       </ul>
     </li>
+    <li>
+      <a href="#known-issues">Known Issues</a>
+      <ul>
+        <li><a href="#markdown-workarounds">Markdown workarounds</a></li>
+      </ul>
+    </li>
     <li><a href="#roadmap">Roadmap</a></li>
-    li><a href="#to-do">To Do</a></li>
+    <a href="#to-do">To Do</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -381,8 +387,14 @@ The goal of Autopilot, is to provide a simple, yet powerful, set of default styl
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-<!-- ROADMAP -->
+<!-- know issues-->
+## [ 🐛 Known Issues ](#known-issues)
 
+### [Markdown workarounds](#markdown-workarounds)
+
+When using the markdown-it-attrs plugin, you'll encounter a build issue when applying IDs to elements, using the `{#id}` syntax. This is a result of setting the Eleventy config to use Nunjucks as the template engine for markdown files -> `markdownTemplateEngine: "njk"`. Which in turn treats the `{#` as the start of a Nunjucks comment. **To work around this, use the attribute syntax `{id=id}` instead of `{#id}`.**
+
+<!-- ROADMAP -->
 ## [ 🧭 Roadmap ](#roadmap)
 
 - [x] Improve documentation
