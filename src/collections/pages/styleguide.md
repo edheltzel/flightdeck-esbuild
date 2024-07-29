@@ -149,7 +149,7 @@ eleventyNavigation:
   <!-- Headings-->
   ### Heading 3
 
-  This is a special sentence that has a [custom class on it to showcase the use]{.text .--size-xxs .clip-text} of `markdown-it-bracketed-spans`. Fusce iaculis turpis ipsum, at efficitur
+  This is a special sentence that has [custom classes in the middle of markdown sentence to showcase the use]{.text .--size-xxs .clip-text} thanks to `markdown-it-bracketed-spans`. Fusce iaculis turpis ipsum, at efficitur
     sem scelerisque vel. Aliquam auctor diam ut purus cursus fringilla. Class aptent taciti
     sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
 
