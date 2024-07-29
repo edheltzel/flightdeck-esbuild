@@ -4,14 +4,11 @@ eleventyNavigation:
   key: Shortcodes
   order: 4
 ---
-This page is a showcase of the shortcodes that are available in Flightdeck. You can find the full list of shortcodes in the [Flightdeck Shortcodes](https://github.com/edheltzel/flightdeck/blob/main/src/_flightdeck/shortcodes.js) file.
+This page is a showcase of the shortcodes that are available in Flightdeck. You can find the full list of shortcodes in the [Flightdeck Shortcodes](https://github.com/edheltzel/flightdeck/blob/main/src/_flightdeck/shortcodes.js) file – {% link url="https://github.com/edheltzel/flightdeck/blog/main/src/_flightdeck/shortcodes.js", text="View on GitHub", target="_blank", role="link", classes="outline contrast" %}
 
 ---
 
-{% link url="https://github.com/edheltzel/flightdeck/blog/main/src/_flightdeck/shortcodes.js", text="View on GitHub", target="_blank", role="button", classes="outline contrast" %}
-
 ## Buttons & Links{id=buttons}
-
 
 {% raw %}
 ```jinja2
@@ -35,5 +32,25 @@ This page is a showcase of the shortcodes that are available in Flightdeck. You 
 
 ## Blockquotes{id=blockquotes}
 
-{% blockquote text="This is a blockquote using a <strong>shortcode</strong>.<br> It supports custom HTML also", source='A tweet from <a href="https://twitter.com/jeromecoupe/status/1419726998881062915">jeromecoupe</a>'
+{% blockquote
+text="This is a blockquote using a <strong>shortcode</strong>.<br> It supports custom HTML also",
+source='A tweet from <a href="https://tinyurl.com/24372n3q">jeromecoupe</a>',
+classes="contrast"
 %}
+
+{% raw %}
+```jinja2
+{# Blockquote with citation and custom html #}
+{% blockquote
+classes="contrast",
+text="This is a blockquote using a <strong>shortcode</strong>.<br> It supports custom HTML also",
+source='A tweet from <a href="https://tinyurl.com/24372n3q">jeromecoupe</a>'
+%}
+```
+{% endraw %}
+
+---
+
+## Codepen Embedding{id=codepen}
+
+{% codepen "https://codepen.io/jacobberglund/pen/bwrGvx", 900, "css,result", "default" %}

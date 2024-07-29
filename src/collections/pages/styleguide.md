@@ -53,9 +53,7 @@ eleventyNavigation:
   <!-- Blockquote-->
   Support for both HTML and Markdown blockquotes is available. Along with a custom shortcode to create a blockquote with a citation.
 
-  > This is a blockquote in **markdown**.
-
-  {% blockquote "This is a blockquote using a <strong>shortcode</strong>.<br> It supports custom HTML also", 'A tweet from <a href="https://twitter.com/jeromecoupe/status/1419726998881062915">jeromecoupe</a>' %}
+  > This is a blockquote in **markdown**. There is also a custom shortcode to create a blockquote with a citation. see [blockquote shortcode](/shortcodes/#blockquote)
 
 
   <!-- Lists-->
