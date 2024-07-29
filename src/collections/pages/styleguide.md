@@ -172,13 +172,13 @@ eleventyNavigation:
 
   <!-- Medias-->
   <figure>
-    {% image "/assets/images/flightdeck.jpeg",
-    "A picture of the a flightdeck" %}
-    <figcaption>
+    {% image src="/assets/images/flightdeck.jpeg",
+    alt="A picture of the a flightdeck" %}
+  <figcaption>
 
-    Image from [unsplash.com](https://unsplash.com/photos/black-and-gray-audio-mixer-lq1KA7HAdH0)
+  Image from [unsplash.com](https://unsplash.com/photos/black-and-gray-audio-mixer-lq1KA7HAdH0)
 
-    </figcaption>
+  </figcaption>
   </figure>
 </section>
 <!-- ./ Typography-->

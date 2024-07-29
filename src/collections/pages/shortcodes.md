@@ -73,3 +73,16 @@ theme="default"
 %}
 ```
 {% endraw %}
+
+---
+
+## Image{id=image}
+
+{% image src="/assets/images/flightdeck.jpeg", alt="A picture of the a flightdeck" %}
+
+{% raw %}
+```jinja2
+{# Image shortcode #}
+{% image src="/assets/images/flightdeck.jpeg", alt="A picture of the a flightdeck" %}
+```
+{% endraw %}

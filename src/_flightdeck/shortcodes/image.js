@@ -1,18 +1,32 @@
 /**
  * Generates an HTML picture tag with responsive attributes using the @11ty/eleventy-img library.
- * @param {string} src - The path to the image file.
- * @param {string} alt - The alternative text for the image.
- * @param {string} sizes - The responsive sizes attribute for the image.
+ * @param {Object} params - The parameters for the image
+ * @param {string} params.src - The path to the image file.
+ * @param {string} params.alt - The alternative text for the image.
+ * @param {string} params.sizes - The responsive sizes attribute for the image.
  * @returns {Promise<string>} - The generated HTML for the image element.
- * @usage {% image "image path", "atl-text" %}
- * @example {% image "/assets/images/moon.jpg", "A picture of the moon" %}
+ * @example {% image src="/assets/images/moon.jpg", alt="A picture of the moon", sizes="(max-width: 600px) 100vw, 50vw" %}
  */
 
 // Import Image library
 const Image = require("@11ty/eleventy-img");
 
 // Shortcode function
-module.exports = async (src, alt, sizes) => {
+module.exports = async (params) => {
+  const {
+    src,
+    alt,
+    sizes = "100vw"
+  } = params;
+
+  if (!src) {
+    throw new Error("src is required for the image");
+  }
+
+  if (!alt) {
+    throw new Error("alt is required for the image");
+  }
+
   // Image paths
   const rootPath = `./src${src}`;
   const outputDir = "./dist/assets/images/";
@@ -30,7 +44,7 @@ module.exports = async (src, alt, sizes) => {
   // Generate HTML
   return Image.generateHTML(metadata, {
     alt,
-    sizes: sizes || "100vw",
+    sizes,
     loading: "lazy",
     decoding: "async",
   });
