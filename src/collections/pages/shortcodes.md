@@ -9,14 +9,17 @@ This page is a showcase of the shortcodes that are available in Flightdeck. You 
 ---
 
 {% link url="https://github.com/edheltzel/flightdeck/blog/main/src/_flightdeck/shortcodes.js", text="View on GitHub", target="_blank", role="button", classes="outline contrast" %}
-## Buttons and Links
+
+## Buttons & Links{id=buttons}
+
 
 {% raw %}
 ```jinja2
 {# Link shortcode - uses role="button" de defaults to button#}
 {% link url="https://github.com/edheltzel/flightdeck", text="View on GitHub", target="_blank", role="button", classes="secondary" %}
 ```
-{% endraw %}
+{% endraw%}
+
 {% link url="https://github.com/edheltzel/flightdeck/blog/main/src/_flightdeck/shortcodes.js", text="View on GitHub", target="_blank", role="button", classes="secondary" %}
 
 {% raw %}
@@ -27,3 +30,10 @@ This page is a showcase of the shortcodes that are available in Flightdeck. You 
 {% endraw %}
 
 {% button type="submit", text="Submit to nowhere", classes="outline primary" %}
+
+---
+
+## Blockquotes{id=blockquotes}
+
+{% blockquote text="This is a blockquote using a <strong>shortcode</strong>.<br> It supports custom HTML also", source='A tweet from <a href="https://twitter.com/jeromecoupe/status/1419726998881062915">jeromecoupe</a>'
+%}

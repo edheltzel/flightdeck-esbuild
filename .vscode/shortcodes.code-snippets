@@ -34,7 +34,7 @@
       "blockquote"
     ],
     "body": [
-      "{% blockquote \"${1:Quote}\", \"${2:source}\" %}"
+      "{% blockquote text=\"${1:Quote}\", source=\"${2:source}\", classes=\"${3:classes}\" %}"
     ],
     "description": "adds a blockquote with citation using the {% blockquote %} shortcode",
     "scope": "markdown,html,liquid,nunjucks,webc"
