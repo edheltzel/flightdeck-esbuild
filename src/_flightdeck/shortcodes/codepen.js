@@ -1,28 +1,35 @@
 /**
  * Codepen Embeds - ref: https://blog.codepen.io/documentation/embedded-pens/
- * @param {string} penUrl - codepen full url
- * @param {number} height - optional: value in pixels
- * @param {string} tabs - optional: values -> html/html,result/css/css,result/js/js,result
- * @param {string} themeId - optional: values -> light, dark, default -> custom themes are a pro feature
- * @usage {% codepen "penUrl", "height", "tabs", "themeId" %}
- * @example {% codepen "https://codepen.io/jacobberglund/pen/bwrGvx", 900, "css,result", "178" %}
+ * @param {Object} params - The parameters for the Codepen embed
+ * @param {string} params.penUrl - Codepen full URL
+ * @param {number} [params.height=300] - Height of the embed in pixels
+ * @param {string} [params.tabs='result'] - Tabs to show (e.g., 'html', 'html,result', 'css', 'css,result', 'js', 'js,result')
+ * @param {string} [params.theme=''] - Theme ID ('light', 'dark', or custom theme ID for pro users)
+ * @example {% codepen penUrl="https://codepen.io/jacobberglund/pen/bwrGvx", height=900, tabs="css,result", theme="178" %}
  */
 
-module.exports = (penUrl, penHeight = "300", tabs = "result", themeId = "") => {
+module.exports = (params) => {
+  const {
+    penUrl,
+    height = 300,
+    tabs = "result",
+    theme = ""
+  } = params;
+
+  if (!penUrl) {
+    throw new Error("penUrl is required for the Codepen embed");
+  }
+
   const splitUrl = penUrl.split("/");
-
-  const splitProfileUrl = splitUrl.filter((string, index) => {
-    return index < splitUrl.length - 2;
-  });
-
+  const splitProfileUrl = splitUrl.slice(0, -2);
   const userProfile = splitProfileUrl.join("/");
   const slugHash = splitUrl[splitUrl.length - 1];
   const userName = splitProfileUrl[splitProfileUrl.length - 1];
 
   return `
     <p class="codepen"
-      data-height="${penHeight}"
-      data-theme-id="${themeId}"
+      data-height="${height}"
+      data-theme-id="${theme}"
       data-default-tab="${tabs}"
       data-slug-hash="${slugHash}"
       data-user="${userName}"

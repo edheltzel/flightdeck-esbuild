@@ -53,11 +53,22 @@ source='A tweet from <a href="https://tinyurl.com/24372n3q">jeromecoupe</a>'
 
 ## Codepen Embedding{id=codepen}
 
-{% codepen "https://codepen.io/jacobberglund/pen/bwrGvx", 455, "html,result", "default" %}
+{% codepen
+penUrl="https://codepen.io/jacobberglund/pen/bwrGvx",
+height=450,
+tabs="html,result",
+theme="dark"
+%}
+
 
 {% raw %}
 ```jinja2
-{# Codepen Embedding #}
-{% codepen penUrl="https://codepen.io/jacobberglund/pen/bwrGvx", height=900, tabs="css,result", theme="178" %}
+{# Codepen Embedding - height, tabs, theme are optional  see codepen.js for defaults #}
+{% codepen
+penUrl="https://codepen.io/jacobberglund/pen/bwrGvx",
+height=900,
+tabs="css,result",
+theme="default"
+%}
 ```
 {% endraw %}
