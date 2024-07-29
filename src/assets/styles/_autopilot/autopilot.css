@@ -104,6 +104,8 @@
   color-scheme: dark;
 
   .theme-toggle {
+    cursor: pointer;
+
     .solar-eclipse {
       display: none;
     }
@@ -229,6 +231,8 @@
   color-scheme: light;
 
   .theme-toggle {
+    cursor: pointer;
+
     .solar-eclipse {
       display: block;
     }
@@ -379,6 +383,8 @@
   }
 
   .theme-toggle {
+    cursor: pointer;
+
     .solar-eclipse {
       display: none;
     }
