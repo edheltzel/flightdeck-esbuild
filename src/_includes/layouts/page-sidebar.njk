@@ -1,0 +1,39 @@
+{% extends "./base.njk" %}
+{# TODO: add a sidebar component #}
+{# TODO: include 20-column grid layout for sidebar #}
+{% block main %}
+  <header>
+    {% block pageTitle %}
+      {%- set pageTitle %}
+      {% if title %}
+        {{ title }}
+      {% else %}
+        {{ site.title }}
+      {% endif %}
+      {%- endset -%}
+      {%- set pageTagline %}
+      {% if tagline %}
+        {{ tagline }}
+      {% else %}
+        {{ site.description }}
+      {% endif %}
+      {%- endset -%}
+      {% if tagline %}
+        <hgroup>
+          <h1>{{ pageTitle | safe }}</h1>
+          <h2 class="text --size-xxs space --top-xxs">{{ pageTagline | safe }}</h2>
+        </hgroup>
+      {% else %}
+        <h1>{{ pageTitle | safe }}</h1>
+        <h2 class="text --size-xxs space --top-xxs">{{ pageTagline | safe }}</h2>
+      {% endif %}
+    {% endblock pageTitle %}
+  </header>
+  <hr>
+  {% block content %}
+    <section>
+      {{ content | safe }}
+    </section>
+  {% endblock %}
+
+{% endblock %}

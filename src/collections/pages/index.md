@@ -12,7 +12,7 @@ Flightdeck {.clip-text .--poster-l}
 ---
 
 <article>
-{% blockquote "That's one small step for man, one giant leap for mankind", "Neil Armstrong" %}
+{% blockquote text="That's one small step for man, one giant leap for mankind", source="Neil Armstrong" %}
 </article>
 
 ``` html

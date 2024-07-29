@@ -6,7 +6,8 @@ categories: [""]
 
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, facere ullam reiciendis dolor ipsa alias aperiam natus aliquam blanditiis temporibus molestias tempore voluptates suscipit earum neque accusamus mollitia sed quas. Nam consectetur voluptates sit atque ducimus ipsum quia doloribus veritatis.o
 
-{% codepen "https://codepen.io/stivaliserna/pen/rNMwpaG", 600, "html,result" %}
+{% codepen penUrl="https://codepen.io/stivaliserna/pen/rNMwpaG", height=600, tabs="html,result", theme="178" %}
+
 
 {% raw %}
 ```jinja2

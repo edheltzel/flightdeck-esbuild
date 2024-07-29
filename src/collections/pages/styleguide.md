@@ -53,9 +53,7 @@ eleventyNavigation:
   <!-- Blockquote-->
   Support for both HTML and Markdown blockquotes is available. Along with a custom shortcode to create a blockquote with a citation.
 
-  > This is a blockquote in **markdown**.
-
-  {% blockquote "This is a blockquote using a <strong>shortcode</strong>.<br> It supports custom HTML also", 'A tweet from <a href="https://twitter.com/jeromecoupe/status/1419726998881062915">jeromecoupe</a>' %}
+  > This is a blockquote in **markdown**. There is also a custom shortcode to create a blockquote with a citation. see [blockquote shortcode](/shortcodes/#blockquote)
 
 
   <!-- Lists-->
@@ -149,7 +147,7 @@ eleventyNavigation:
   <!-- Headings-->
   ### Heading 3
 
-  This is a special sentence that has a [custom class on it to showcase the use]{.text .--size-xxs .clip-text} of `markdown-it-bracketed-spans`. Fusce iaculis turpis ipsum, at efficitur
+  This is a special sentence that has [custom classes in the middle of markdown sentence to showcase the use]{.text .--size-xxs .clip-text} thanks to `markdown-it-bracketed-spans`. Fusce iaculis turpis ipsum, at efficitur
     sem scelerisque vel. Aliquam auctor diam ut purus cursus fringilla. Class aptent taciti
     sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
 
@@ -174,13 +172,13 @@ eleventyNavigation:
 
   <!-- Medias-->
   <figure>
-    {% image "/assets/images/flightdeck.jpeg",
-    "A picture of the a flightdeck" %}
-    <figcaption>
+    {% image src="/assets/images/flightdeck.jpeg",
+    alt="A picture of the a flightdeck" %}
+  <figcaption>
 
-    Image from [unsplash.com](https://unsplash.com/photos/black-and-gray-audio-mixer-lq1KA7HAdH0)
+  Image from [unsplash.com](https://unsplash.com/photos/black-and-gray-audio-mixer-lq1KA7HAdH0)
 
-    </figcaption>
+  </figcaption>
   </figure>
 </section>
 <!-- ./ Typography-->

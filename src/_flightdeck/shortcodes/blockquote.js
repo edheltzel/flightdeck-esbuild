@@ -1,17 +1,18 @@
 /**
  * Blockquote Component – FlightDeck Autopilot
- * @param {string} text - The text to display in the blockquote
- * @param {string} source - The source of the blockquote or Author of the quote
- * @example {% blockquote "First, solve the problem. Then, write the code.", "John Johnson" %}
+ * @param {Object} [params] - The parameters for the blockquote (all optional)
+ * @param {string} [params.text] - The text to display in the blockquote
+ * @param {string} [params.source] - The source of the blockquote or Author of the quote
+ * @param {string} [params.classes] - Additional CSS classes to apply to the blockquote
+ * @example {% blockquote text="First, solve the problem. Then, write the code.", source="John Johnson", classes="text-lg italic" %}
  */
 
-module.exports = (text, source) => {
+module.exports = (params = {}) => {
+  const { text = '', source = '', classes = '' } = params;
   return `<!-- Blockquote-->
-  <blockquote>
+  <blockquote ${classes ? `class="${classes}"` : ''}>
     ${text}
-    <footer>
-      <cite>- ${source}</cite>
-    </footer>
+    ${source ? `<footer><cite>- ${source}</cite></footer>` : ''}
   </blockquote>
 `;
 };
