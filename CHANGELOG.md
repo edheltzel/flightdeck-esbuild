@@ -4,6 +4,11 @@ All notable changes to Flightdeck for 11ty will be documented in this file.
 
 <small>The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).</small>
 
+## [0.5.4] - 2024-07-29
+
+- refactors all shortcodes to include labels where possible for a better DX
+- adds a shortcode page for shortcode usage
+
 ## [0.5.3-a] - 2024-07-26
 
 - package.json update - adds preinstall script to only allow bun as package manager
