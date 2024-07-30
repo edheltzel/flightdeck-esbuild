@@ -59,14 +59,14 @@
     "description": "adds a link that is styled like a button using the {% link %} shortcode",
     "scope": "markdown,html,liquid,nunjucks,webc",
   },
-  "Component: Image with alt text": {
+  "Shortcode: Image": {
     "prefix": [
-      "Image"
+      "image"
     ],
     "body": [
-      "{% Image \"${1:Image URL}\", \"${2:Alt Text}\" %}"
+      "{% image src=\"${1:Image URL}\", alt=\"${2:Alt Text}\", sizes=\"${3:sizes}\" %}"
     ],
-    "description": "adds an with alt text using the {% Image %} shortcode",
+    "description": "adds an with alt text using the {% Image %} shortcode see [Image shortcode](/shortcodes/#image)",
     "scope": "markdown,html,liquid,nunjucks,webc"
   },
 }
