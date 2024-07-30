@@ -1,5 +1,6 @@
 {% extends "./base.njk" %}
 {% block main %}
+  {% block header %}
   <header>
     {% block pageTitle %}
       {%- set pageTitle %}
@@ -28,6 +29,8 @@
     {% endblock pageTitle %}
   </header>
   <hr>
+  {% endblock header %}
+
   {% block content %}
 
     {{ content | safe }}

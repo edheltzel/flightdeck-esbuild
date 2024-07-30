@@ -1,39 +1,13 @@
-{% extends "./base.njk" %}
+{% extends "./page.njk" %}
 {% block main %}
   <div class="flex --column --align-items-center">
-    <header class="space --bottom-l">
-      {% block pageTitle %}
-        {%- set pageTitle %}
-        {% if title %}
-          {{ title }}
-        {% else %}
-          {{ site.title }}
-        {% endif %}
-        {%- endset -%}
-
-        {%- set pageTagline %}
-        {% if tagline %}
-          {{ tagline }}
-        {% endif %}
-        {%- endset -%}
-
-        {% if tagline %}
-          <hgroup>
-            <h1>{{ pageTitle | safe }}</h1>
-            <h2>{{ pageTagline | safe }}</h2>
-          </hgroup>
-        {% else %}
-          <h1>{{ pageTitle | safe }}</h1>
-        {% endif %}
-        <iframe src="https://giphy.com/embed/tyttpHbz8gAaBfi5auY" width="480" height="327" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-        <p>
-          <a href="https://giphy.com/gifs/giffffr-tyttpHbz8gAaBfi5auY">via GIPHY</a>
-        </p>
-      {% endblock %}
-    </header>
+    {% block header %}
+      <h1 class="text --size-poster space --bottom-none">{{ title | safe }}</h1>
+      <h2 class="text --size-xl">{{ tagline | safe }}</h2>
+    {% endblock header %}
 
     {% block content %}
       {{ content | safe }}
-    {% endblock %}
+    {% endblock content %}
   </div>
-{% endblock %}
+{% endblock main %}
