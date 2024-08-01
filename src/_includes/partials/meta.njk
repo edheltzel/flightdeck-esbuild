@@ -19,3 +19,6 @@
 <meta rel="canonical" href="{{ page.url | baseUrl }}"/>
 <link rel="stylesheet" href="/assets/styles/app.css"/>
 <script type="module" src="/assets/js/app.js" defer></script>
+{% if site.env === "production" %}
+ {% include "utilities/analytics.njk" %}
+{% endif %}
