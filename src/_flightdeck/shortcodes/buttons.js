@@ -1,5 +1,6 @@
 /**
  * Button Component – FlightDeck Autopilot
+ * @description Makes a button component
  * @param {Object} [params] - The parameters for the button (all optional)
  * @param {string} [params.type='button'] - The type of button (submit/reset/button)
  * @param {string} [params.text='Button'] - The text to display in the button
@@ -13,6 +14,7 @@ const button = (params = {}) => {
 
 /**
  * Button Component for Links – FlightDeck Autopilot
+ * @description Makes a link look like a button
  * @param {Object} [params] - The parameters for the link button (all optional)
  * @param {string} [params.url='/'] - The link to a page or external URL
  * @param {string} [params.text='Button'] - The text to display in the link
