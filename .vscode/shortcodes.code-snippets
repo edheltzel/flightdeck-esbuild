@@ -59,6 +59,16 @@
     "description": "adds a link that is styled like a button using the {% link %} shortcode",
     "scope": "markdown,html,liquid,nunjucks,webc",
   },
+  "Shortcode: Email Obfuscation": {
+    "prefix": [
+      "email"
+    ],
+    "body": [
+      "{% email address=\"${1:email address}\", honeypot=\"${2:text}\" %}"
+    ],
+    "description": "adds an email obfuscation using the {% email %} shortcode",
+    "scope": "markdown,html,liquid,nunjucks,webc",
+  },
   "Shortcode: Image": {
     "prefix": [
       "image"
