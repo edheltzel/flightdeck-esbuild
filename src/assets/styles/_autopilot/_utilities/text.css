@@ -71,3 +71,7 @@ font: transform text display properties
     font-size: var(--text-poster-l);
   }
 }
+
+.email b{
+  display: none;
+}

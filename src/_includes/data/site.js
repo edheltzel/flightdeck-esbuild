@@ -20,6 +20,8 @@ const site = {
       profile: "edheltzel",
     },
   ],
+  gtag: '0000000000',
+  env: process.env.ENV,
 };
 
 module.exports = site;

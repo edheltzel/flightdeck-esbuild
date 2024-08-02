@@ -13,6 +13,7 @@ const codepen = require("./shortcodes/codepen");
 const copyright = require("./shortcodes/copyright");
 const image = require("./shortcodes/image");
 const version = require("./shortcodes/flightdeck-version");
+const email = require("./shortcodes/email");
 
 module.exports = (config) => {
   config.addShortcode("blockquote", blockquote);
@@ -22,4 +23,5 @@ module.exports = (config) => {
   config.addShortcode("copyright", copyright);
   config.addShortcode("image", image);
   config.addShortcode("version", version);
+  config.addShortcode("email", email);
 };
