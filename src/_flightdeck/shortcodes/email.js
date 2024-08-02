@@ -13,6 +13,7 @@
  * @property {string} [address] - The email address to obfuscate
  * @property {string} [honeypot] - The honeypot text to insert
  * @type {(params?: EmailParams) => string}
+ * @see src/assets/styles/_autopilot/_utilities/text.css
  */
 module.exports = (params = {}) => {
   const { address, honeypot = 'honeypot' } = params;
