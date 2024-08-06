@@ -11,7 +11,7 @@
 module.exports = (config, options) => {
   config.setQuietMode(true); // reduce console
   config.setServerOptions({
-    port: 4321, // like Astro
+    port: 54321, // like Astro
     showVersion: true, // show the server version number on the command line
     showAllHosts: false, // show local network IP address for device testing
   });
