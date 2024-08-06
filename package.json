@@ -10,7 +10,7 @@
     "@11ty/eleventy-navigation": "^0.3.5",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
     "@biomejs/biome": "1.8.3",
-    "browserslist": "^4.23.2",
+    "browserslist": "^4.23.3",
     "eleventy-plugin-embed-everything": "^1.18.2",
     "esbuild": "^0.23.0",
     "fast-glob": "^3.3.2",
@@ -19,9 +19,7 @@
     "lightningcss-cli": "^1.25.1",
     "markdown-it": "^14.1.0",
     "markdown-it-attrs": "^4.1.6",
-    "markdown-it-bracketed-spans": "^1.0.1",
-    "stylelint": "^16.7.0",
-    "stylelint-config-standard": "^36.0.1"
+    "markdown-it-bracketed-spans": "^1.0.1"
   },
   "dependencies": {
     "@alpinejs/persist": "^3.14.1",
@@ -37,17 +35,17 @@
   "scripts": {
     "preinstall": "npx only-allow bun",
     "start": "eleventy --serve",
-    "build": "ENV=production eleventy",
+    "build": "ENV=prod eleventy",
     "debug": "DEBUG=Eleventy* eleventy",
-    "preview": "bun run clean && bun run build && bunx http-server dist -p 4000",
+    "deploy": "wrangler pages deploy dist --project-name my-flightdeck --commit-message \"local build & deploy\"",
+    "preview": "bun run clean && bun run build && bunx http-server dist -p 54321",
     "check": "biome check",
     "format": "biome format --",
     "lint": "biome lint --",
-    "lint:css": "stylelint \"src/**/*.css\" --fix",
     "clean": "./.scrub.sh site",
     "purge": "./.scrub.sh purge",
     "upgrade": "bunx npm-check-updates -ui",
     "release": "gh release create v$npm_package_version --generate-notes --latest"
   },
-  "packageManager": "bun@1.1.20"
+  "packageManager": "bun@1.1.21"
 }

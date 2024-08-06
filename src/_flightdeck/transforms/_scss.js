@@ -42,7 +42,7 @@ const transformScss = (config) => {
         loadPaths: ["node_modules/@picocss/pico/scss", "node_modules/@picocss/pico/scss/themes/default"],
       },
       postcss: postcss([autoprefixer, cssDeclarationSorter({ order: "concentric-css" })]),
-      when: [{ ENV: "production" }],
+      when: [{ ENV: "prod" }],
     },
   ]);
 };

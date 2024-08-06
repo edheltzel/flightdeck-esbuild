@@ -6,15 +6,24 @@
  */
 export default function toggleTheme() {
   return {
-    /** @type {boolean} */
-    darkMode: localStorage.getItem("darkMode") === "true",
+    darkMode: localStorage.getItem("themeMode") || "auto",
 
-    /**
-     * Toggle dark mode
-     */
-    toggleDarkMode() {
-      this.darkMode = !this.darkMode;
-      localStorage.setItem("darkMode", String(this.darkMode));
+    get isDarkMode() {
+      if (this.darkMode === "auto") {
+        return window.matchMedia("(prefers-color-scheme: dark)").matches;
+      }
+      return this.darkMode === "dark";
     },
+
+    toggleDarkMode() {
+      // If it's auto, set it based on current system preference
+      if (this.darkMode === "auto") {
+        this.darkMode = this.isDarkMode ? "light" : "dark";
+      } else {
+        // Simply toggle between dark and light
+        this.darkMode = this.darkMode === "dark" ? "light" : "dark";
+      }
+      localStorage.setItem("themeMode", this.darkMode);
+    }
   };
 }

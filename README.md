@@ -121,7 +121,11 @@ We are assuming that you already have Node with NPM (or another package manger, 
 
 We are using [Bun](https://bun.sh/) as our package manager.
 
-But, you can swap `bun` in favor of your preferences 👉 [NPM](https://www.npmjs.com/) , [Yarn](https://yarnpkg.com/), and and [Pnpm](https://pnpm.io). Use whatever you want 👍 just be sure to update the `preview` script in `package.json` with what ever flavor you choose to use.
+But, you can swap `bun` in favor of your preferences 👉 [NPM](https://www.npmjs.com/) , [Yarn](https://yarnpkg.com/), and and [Pnpm](https://pnpm.io). Use whatever you want 👍 just be sure to update the `package.json` with what ever flavor you choose to use:
+ - change `preview` with your preference
+ - change `upgrade` with your preference
+ - remove `preinstall` script
+ - remove `packageManager` from `package.json`
 
 It's highly recommended that you enable Node's [corepack](https://nodejs.org/api/corepack.html), this way Yarn and PNPM are included in your toolbox without the need to install them separately.
 
@@ -164,25 +168,24 @@ bun run  install
   <summary>see all dependencies</summary>
 
     bun pm ls
-    ~/Developer/flightdeck node_modules (581)
-    ├── @11ty/eleventy@2.0.1
-    ├── @11ty/eleventy-img@4.0.2
-    ├── @11ty/eleventy-navigation@0.3.5
-    ├── @11ty/eleventy-plugin-syntaxhighlight@5.0.0
-    ├── @alpinejs/persist@3.14.1
-    ├── @biomejs/biome@1.8.3
-    ├── alpinejs@3.14.1
-    ├── browserslist@4.23.2
-    ├── eleventy-plugin-embed-everything@1.18.2
-    ├── esbuild@0.23.0
-    ├── fast-glob@3.3.2
-    ├── html-minifier@4.0.0
-    ├── lightningcss@1.25.1
-    ├── lightningcss-cli@1.25.1
-    ├── markdown-it@14.1.0
-    ├── markdown-it-attrs@4.1.6
-    ├── stylelint@16.7.0
-    └── stylelint-config-standard@36.0.1
+		~/Developer/flightdeck node_modules (465)
+		├── @11ty/eleventy@2.0.1
+		├── @11ty/eleventy-img@4.0.2
+		├── @11ty/eleventy-navigation@0.3.5
+		├── @11ty/eleventy-plugin-syntaxhighlight@5.0.0
+		├── @alpinejs/persist@3.14.1
+		├── @biomejs/biome@1.8.3
+		├── alpinejs@3.14.1
+		├── browserslist@4.23.3
+		├── eleventy-plugin-embed-everything@1.18.2
+		├── esbuild@0.23.0
+		├── fast-glob@3.3.2
+		├── html-minifier@4.0.0
+		├── lightningcss@1.25.1
+		├── lightningcss-cli@1.25.1
+		├── markdown-it@14.1.0
+		├── markdown-it-attrs@4.1.6
+		└── markdown-it-bracketed-spans@1.0.1
 
 </details>
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -201,65 +204,66 @@ bun run start
 <details>
   <summary>Available Run Commands</summary>
 
-    package.json scripts (14 found):
-      $ bun run start
-        eleventy --serve --incremental
+    package.json scripts (13 found):
+		$ bun run preinstall
+			npx only-allow bun
 
-      $ bun run restart
-        bun run clean && bun run start
+		$ bun run start
+			eleventy --serve
 
-      $ bun run build
-        bun run clean && bun run build:11ty
+		$ bun run build
+			ENV=prod eleventy
 
-      $ bun run build:11ty
-        ENV=production eleventy
+		$ bun run debug
+			DEBUG=Eleventy* eleventy
 
-      $ bun run debug
-        DEBUG=Eleventy* eleventy
+		$ bun run deploy
+			wrangler pages deploy dist --project-name my-flightdeck --commit-message \"local build & deploy\"
 
-      $ bun run preview
-        bunx http-server dist -p 4000
+		$ bun run preview
+			bun run clean && bun run build && bunx http-server dist -p 54321
 
-      $ bun run check
-        biome check
+		$ bun run check
+			biome check
 
-      $ bun run format
-        biome format --
+		$ bun run format
+			biome format --
 
-      $ bun run lint
-        biome lint --
+		$ bun run lint
+			biome lint --
 
-      $ bun run lint:css
-        stylelint \"src/**/*.css\" --fix
+		$ bun run clean
+			./.scrub.sh site
 
-      $ bun run clean
-        ./.scrub.sh site
+		$ bun run purge
+			./.scrub.sh purge
 
-      $ bun run purge
-        ./.scrub.sh purge
+		$ bun run upgrade
+			bunx npm-check-updates -ui
 
-      $ bun run upgrade
-        bunx npm-check-updates -ui
-
-      $ bun run release
-        gh release create v$npm_package_version --generate-notes --latest
+		$ bun run release
+			gh release create v$npm_package_version --generate-notes --latest
 
 </details>
 
+- `preinstall` command - runs `npx only-allow bun` to ensure that only Bun is installed.
+- `start` command - starts the development server with Eleventy.
 - `build` command - executes the production build of your site with Eleventy, includes HTML minification, compressed Sass, optimized images, and bundled javascript.
   - for our workflow, Cloudflare handles the DNS while Cloudflare Pages does the building and hosting - Cloudflare's Auto Minify minifies the HTML, CSS, and JS. You can easily add minification to the build process by adding a plugin to Eleventy.
+- `debug` command - runs the development server with Eleventy with debug logging enabled.
+- `deploy` command - deploys the "manual" production build to Cloudflare Pages.
 - `preview` command - spins up a local server to preview the production build.
-- `check` command - runs biome lint and format at the same time JS/TS, see `biome.json`.
+- `check` command - runs biome lint and format at the same time JS/TS/CSS, see `biome.json`.
   - ie: `bun run check ./src/assets/js/app.js`
-- `format` command - uses biome to format JS/TS, see `biome.json`.
+- `format` command - uses biome to format JS/TS/CSS, see `biome.json`.
   - ie: `bun run format ./src/assets/js/app.js`
-- `lint` command - uses biome to lint JS/TS, see `biome.json`.
+- `lint` command - uses biome to lint JS/TS/CSS, see `biome.json`.
   - ie: `bun run lint ./src/assets/js/app.js`
-- `lint:css` command - uses stylelint to find issues in your css.
 - `clean` command - scrubs/removes the `dist/` and `.cache` directories
 - `purge` command - scrubs/removes the `dist/`, `.cache`, `node_modules`, and any lock files from npm, yarn, pnpm or bun. - 🧼 A fresh install.
   - **👀 NOTE: Both `clean` and `purge` are executed from a bash script**
 - `upgrade` command - uses `bunx npm-check-updates -ui` to upgrade dependencies to their latest versions and updates the `package.json` - this is a work around for `bun run upgrade` not working as expected or how other package managers work.
+- `release` command - creates a new release on GitHub.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
