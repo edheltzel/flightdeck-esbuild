@@ -216,7 +216,7 @@ bun run start
         bun run clean && bun run build:11ty
 
       $ bun run build:11ty
-        ENV=production eleventy
+        ENV=prod eleventy
 
       $ bun run debug
         DEBUG=Eleventy* eleventy

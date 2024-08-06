@@ -37,7 +37,7 @@
   "scripts": {
     "preinstall": "npx only-allow bun",
     "start": "eleventy --serve",
-    "build": "ENV=production eleventy",
+    "build": "ENV=prod eleventy",
     "debug": "DEBUG=Eleventy* eleventy",
     "preview": "bun run clean && bun run build && bunx http-server dist -p 4000",
     "check": "biome check",

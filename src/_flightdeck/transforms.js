@@ -9,7 +9,7 @@
  *
  */
 
-const isProd = process.env.ENV === "production";
+const isProd = process.env.ENV === "prod";
 const { markdownIt } = require("./transforms/markdownIt"); // markdown-it plugins
 const { transformImages } = require("./transforms/allimages"); // optimize all images in src/assets/images
 const minifyHtml = require("./transforms/minifyHtml");

@@ -7,7 +7,7 @@
  * @requires path
  */
 
-const isProd = process.env.ENV === "production";
+const isProd = process.env.ENV === "prod";
 const esbuild = require("esbuild");
 const path = require("node:path");
 
