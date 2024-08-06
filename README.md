@@ -121,7 +121,11 @@ We are assuming that you already have Node with NPM (or another package manger, 
 
 We are using [Bun](https://bun.sh/) as our package manager.
 
-But, you can swap `bun` in favor of your preferences 👉 [NPM](https://www.npmjs.com/) , [Yarn](https://yarnpkg.com/), and and [Pnpm](https://pnpm.io). Use whatever you want 👍 just be sure to update the `preview` script in `package.json` with what ever flavor you choose to use.
+But, you can swap `bun` in favor of your preferences 👉 [NPM](https://www.npmjs.com/) , [Yarn](https://yarnpkg.com/), and and [Pnpm](https://pnpm.io). Use whatever you want 👍 just be sure to update the `package.json` with what ever flavor you choose to use:
+ - change `preview` with your preference
+ - change `upgrade` with your preference
+ - remove `preinstall` script
+ - remove `packageManager` from `package.json`
 
 It's highly recommended that you enable Node's [corepack](https://nodejs.org/api/corepack.html), this way Yarn and PNPM are included in your toolbox without the need to install them separately.
 
