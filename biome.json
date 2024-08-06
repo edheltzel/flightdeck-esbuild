@@ -7,7 +7,7 @@
   },
   "formatter": {
     "enabled": true,
-    "indentStyle": "space",
+    "indentStyle": "tab",
     "lineWidth": 120
   },
   "javascript": {
@@ -17,6 +17,15 @@
     },
     "globals": ["$", "_", "externalVariable"]
   },
+	"css":{
+		"formatter":{
+			"enabled": true,
+			"lineWidth": 120
+		},
+		"linter":{
+			"enabled": true
+		}
+	},
   "files": {
     "ignore": [
       "./node_modules",
