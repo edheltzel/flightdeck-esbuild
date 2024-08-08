@@ -1,55 +1,55 @@
 {
-  "cSpell.customDictionaries": {
-    "custom-dictionary-workspace": {
-      "addWords": true,
-      "name": "custom-dictionary-workspace",
-      "path": "${workspaceFolder:flightdeck}/.vscode/cspell-custom-dictionary-workspace.txt",
-      "scope": "workspace"
-    }
-  },
-  "cSpell.words": [
-    "allimages",
-    "alpinejs",
-    "cleancache",
-    "Coupé",
-    "divriots",
-    "endraw",
-    "flightdeck",
-    "Heltzel",
-    "kleur",
-    "Laserwave",
-    "outbase",
-    "Pico",
-    "picocolors",
-    "picocss",
-    "postbuild",
-    "prismjs",
-    "spacex",
-    "vgscursor",
-    "xxxs",
-    "xxxxl"
-  ],
-  "emmet.includeLanguages": {
-    "*.njk": "html"
-  },
-  "files.exclude": {
-    "**/.sass-cache/": true,
-    "**/_site/": false,
-    "**/dist/": false,
-    "node_modules/": false
-  },
-  "search.exclude": {
-    "**/.publish/": true,
-    "**/.sass-cache/": true,
-    "**/css/*": true,
-    "*.lock": true,
-    ".vscode/**": false,
-    "_site/**": true,
-    "dist/**": true,
-    "node_modules/": true,
-    "package-lock.json": true
-  },
-  "workbench.colorCustomizations": {
-    "titleBar.activeForeground": "#BE9E0B"
-  }
+	"cSpell.customDictionaries": {
+		"custom-dictionary-workspace": {
+			"addWords": true,
+			"name": "custom-dictionary-workspace",
+			"path": "${workspaceFolder:flightdeck}/.vscode/cspell-custom-dictionary-workspace.txt",
+			"scope": "workspace"
+		}
+	},
+	"cSpell.words": [
+		"allimages",
+		"alpinejs",
+		"cleancache",
+		"Coupé",
+		"divriots",
+		"endraw",
+		"flightdeck",
+		"Heltzel",
+		"kleur",
+		"Laserwave",
+		"outbase",
+		"Pico",
+		"picocolors",
+		"picocss",
+		"postbuild",
+		"prismjs",
+		"spacex",
+		"vgscursor",
+		"xxxs",
+		"xxxxl"
+	],
+	"emmet.includeLanguages": {
+		"*.njk": "html"
+	},
+	"files.exclude": {
+		"**/.sass-cache/": true,
+		"**/_site/": false,
+		"**/dist/": false,
+		"node_modules/": false
+	},
+	"search.exclude": {
+		"**/.publish/": true,
+		"**/.sass-cache/": true,
+		"**/css/*": true,
+		"*.lock": true,
+		".vscode/**": false,
+		"_site/**": true,
+		"dist/**": true,
+		"node_modules/": true,
+		"package-lock.json": true
+	},
+	// "workbench.colorCustomizations": {
+	//   "titleBar.activeForeground": "#BE9E0B"
+	// }
 }
