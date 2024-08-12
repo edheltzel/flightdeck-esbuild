@@ -47,5 +47,5 @@
 		"upgrade": "bunx npm-check-updates -ui",
 		"release": "gh release create v$npm_package_version --generate-notes --latest"
 	},
-	"packageManager": "bun@1.1.22"
+	"packageManager": "bun@1.1.24"
 }
