@@ -15,10 +15,10 @@
     "esbuild": "^0.23.0",
     "fast-glob": "^3.3.2",
     "html-minifier": "^4.0.0",
-    "lightningcss": "^1.25.1",
-    "lightningcss-cli": "^1.25.1",
+    "lightningcss": "^1.26.0",
+    "lightningcss-cli": "^1.26.0",
     "markdown-it": "^14.1.0",
-    "markdown-it-attrs": "^4.1.6",
+    "markdown-it-attrs": "^4.2.0",
     "markdown-it-bracketed-spans": "^1.0.1"
   },
   "dependencies": {
@@ -47,5 +47,5 @@
     "upgrade": "bunx npm-check-updates -ui",
     "release": "gh release create v$npm_package_version --generate-notes --latest"
   },
-  "packageManager": "bun@1.1.21"
+  "packageManager": "bun@1.1.24"
 }
