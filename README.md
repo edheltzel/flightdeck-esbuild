@@ -127,7 +127,13 @@ But, you can swap `bun` in favor of your preferences 👉 [NPM](https://www.npmj
  - remove `preinstall` script
  - remove `packageManager` from `package.json`
 
-It's highly recommended that you enable Node's [corepack](https://nodejs.org/api/corepack.html), this way Yarn and PNPM are included in your toolbox without the need to install them separately.
+
+<details>
+	<summary><strong>Corepack Deprecated 🚪</strong></summary>
+
+> [Node.js Takes Steps Towards Removing Corepack by Sarah Gooding](https://socket.dev/blog/node-js-takes-steps-towards-removing-corepack)
+
+If you're using an older version of Node, it's highly recommended that you enable Node's [corepack](https://nodejs.org/api/corepack.html), this way Yarn and PNPM are included in your toolbox without the need to install them separately.
 
 > Please be aware that this certainly won't be the most recent version of PNPM/Yarn.
 
@@ -139,6 +145,8 @@ It's highly recommended that you enable Node's [corepack](https://nodejs.org/api
   corepack prepare pnpm@latest --activate
   corepack prepare yarn@latest --activate
   ```
+
+</details>
 
 ### ⚙[ Installation ](#installation)
 
