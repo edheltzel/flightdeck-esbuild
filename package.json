@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
 	"name": "flightdeck-for-eleventy",
 	"version": "0.6.0",
 	"author": "Ed Heltzel",
@@ -48,4 +49,105 @@
 		"release": "gh release create v$npm_package_version --generate-notes --latest"
 	},
 	"packageManager": "bun@1.1.24"
+||||||| f93d3d1
+  "name": "flightdeck-for-eleventy",
+  "version": "0.6.0",
+  "author": "Ed Heltzel",
+  "description": "An opinionated Jamstack starter project for Eleventy.",
+  "license": "WTFPL",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-img": "^4.0.2",
+    "@11ty/eleventy-navigation": "^0.3.5",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
+    "@biomejs/biome": "1.8.3",
+    "browserslist": "^4.23.3",
+    "eleventy-plugin-embed-everything": "^1.18.2",
+    "esbuild": "^0.23.0",
+    "fast-glob": "^3.3.2",
+    "html-minifier": "^4.0.0",
+    "lightningcss": "^1.25.1",
+    "lightningcss-cli": "^1.25.1",
+    "markdown-it": "^14.1.0",
+    "markdown-it-attrs": "^4.1.6",
+    "markdown-it-bracketed-spans": "^1.0.1"
+  },
+  "dependencies": {
+    "@alpinejs/persist": "^3.14.1",
+    "alpinejs": "^3.14.1"
+  },
+  "trustedDependencies": [
+    "@biomejs/biome",
+    "esbuild",
+    "lightningcss-cli",
+    "sharp"
+  ],
+  "browserslist": "> 0.2% and not dead",
+  "scripts": {
+    "preinstall": "npx only-allow bun",
+    "start": "eleventy --serve",
+    "build": "ENV=prod eleventy",
+    "debug": "DEBUG=Eleventy* eleventy",
+    "deploy": "wrangler pages deploy dist --project-name my-flightdeck --commit-message \"local build & deploy\"",
+    "preview": "bun run clean && bun run build && bunx http-server dist -p 54321",
+    "check": "biome check",
+    "format": "biome format --",
+    "lint": "biome lint --",
+    "clean": "./.scrub.sh site",
+    "purge": "./.scrub.sh purge",
+    "upgrade": "bunx npm-check-updates -ui",
+    "release": "gh release create v$npm_package_version --generate-notes --latest"
+  },
+  "packageManager": "bun@1.1.21"
+=======
+  "name": "flightdeck-for-eleventy",
+  "version": "0.6.0",
+  "author": "Ed Heltzel",
+  "description": "An opinionated Jamstack starter project for Eleventy.",
+  "license": "WTFPL",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-img": "^4.0.2",
+    "@11ty/eleventy-navigation": "^0.3.5",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
+    "@biomejs/biome": "1.8.3",
+    "browserslist": "^4.23.3",
+    "eleventy-plugin-embed-everything": "^1.18.2",
+    "esbuild": "^0.23.0",
+    "fast-glob": "^3.3.2",
+    "html-minifier": "^4.0.0",
+    "lightningcss": "^1.26.0",
+    "lightningcss-cli": "^1.26.0",
+    "markdown-it": "^14.1.0",
+    "markdown-it-attrs": "^4.2.0",
+    "markdown-it-bracketed-spans": "^1.0.1"
+  },
+  "dependencies": {
+    "@alpinejs/persist": "^3.14.1",
+    "alpinejs": "^3.14.1"
+  },
+  "trustedDependencies": [
+    "@biomejs/biome",
+    "esbuild",
+    "lightningcss-cli",
+    "sharp"
+  ],
+  "browserslist": "> 0.2% and not dead",
+  "scripts": {
+    "preinstall": "npx only-allow bun",
+    "start": "eleventy --serve",
+    "build": "ENV=prod eleventy",
+    "debug": "DEBUG=Eleventy* eleventy",
+    "deploy": "wrangler pages deploy dist --project-name my-flightdeck --commit-message \"local build & deploy\"",
+    "preview": "bun run clean && bun run build && bunx http-server dist -p 54321",
+    "check": "biome check",
+    "format": "biome format --",
+    "lint": "biome lint --",
+    "clean": "./.scrub.sh site",
+    "purge": "./.scrub.sh purge",
+    "upgrade": "bunx npm-check-updates -ui",
+    "release": "gh release create v$npm_package_version --generate-notes --latest"
+  },
+  "packageManager": "bun@1.1.24"
+>>>>>>> master
 }
