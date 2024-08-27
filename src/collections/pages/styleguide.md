@@ -49,6 +49,25 @@ eleventyNavigation:
 
   Adding classes to markdown `{.clip-text}` is possible through the use of the `markdown-it-attrs` package.
 
+  This is a special sentence that has [custom classes in the middle of markdown sentence to showcase the use]{.text .--size-xxs .clip-text} thanks to `markdown-it-bracketed-spans`.
+
+
+ <!-- Headings-->
+  # Heading 1
+
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+  ## Heading 2
+
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+  ### Heading 3
+
+  #### Heading 4
+
+  ##### Heading 5
+
+  ###### Heading 6
 
   <!-- Blockquote-->
   Support for both HTML and Markdown blockquotes is available. Along with a custom shortcode to create a blockquote with a citation.
@@ -143,32 +162,6 @@ eleventyNavigation:
 
 <p><mark>Highlighted</mark></p>
 </div>
-
-  <!-- Headings-->
-  ### Heading 3
-
-  This is a special sentence that has [custom classes in the middle of markdown sentence to showcase the use]{.text .--size-xxs .clip-text} thanks to `markdown-it-bracketed-spans`. Fusce iaculis turpis ipsum, at efficitur
-    sem scelerisque vel. Aliquam auctor diam ut purus cursus fringilla. Class aptent taciti
-    sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-
-  #### Heading 4
-
-  Cras fermentum velit vitae auctor aliquet. Nunc non congue urna, at blandit nibh. Donec ac
-    fermentum felis. Vivamus tincidunt arcu ut lacus hendrerit, eget mattis dui finibus.
-
-  ##### Heading 5
-
-  Donec nec egestas nulla. Sed varius placerat felis eu suscipit. Mauris maximus ante in
-    consequat luctus. Morbi euismod sagittis efficitur. Aenean non eros orci. Vivamus ut diam
-    sem.
-
-  ###### Heading 6
-
-  Ut sed quam non mauris placerat consequat vitae id risus. Vestibulum tincidunt nulla ut
-    tortor posuere, vitae malesuada tortor molestie. Sed nec interdum dolor. Vestibulum id
-    auctor nisi, a efficitur sem. Aliquam sollicitudin efficitur turpis, sollicitudin
-    hendrerit ligula semper id. Nunc risus felis, egestas eu tristique eget, convallis in
-    velit.
 
   <!-- Medias-->
   <figure>

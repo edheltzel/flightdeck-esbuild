@@ -29,6 +29,9 @@
 		"xxxs",
 		"xxxxl"
 	],
+	"files.associations": {
+		"*.css": "tailwindcss"
+	},
 	"emmet.includeLanguages": {
 		"*.njk": "html"
 	},

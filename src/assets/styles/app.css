@@ -1,5 +1,26 @@
+/* autopilot with tailwindcss */
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=fallback');
+
+/* @import 'autopilot/custom-fonts'; */
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+
+/* autopilot related styles */
+@import './autopilot/global.css';
+@import './autopilot/base.css';
+@import './autopilot/theme.css';
+
+@import 'tailwindcss/utilities';
+
+/* See Alpine.js: https://github.com/alpinejs/alpine#x-cloak */
+[x-cloak=""] {
+    display: none;
+}
+
+
 /* autopilot design system */
-@layer base, components, utilities;
+/* @layer base, components, utilities;
 
 @import url("_autopilot/autopilot.css");
 @import url('_autopilot/_vendors/_vendors.css');
@@ -7,4 +28,4 @@
 @import url("_autopilot/_base/_base.css") layer(base);
 @import url("_autopilot/_components/_components.css");
 @import url("_autopilot/_utilities/_utilities.css") layer(utilities);
-@import url("_autopilot/shame.css");
+@import url("_autopilot/shame.css"); */

@@ -1,0 +1,6 @@
+.logo{
+	@apply flex items-center gap-2 text-xl;
+	& svg{
+		@apply w-10;
+	}
+}

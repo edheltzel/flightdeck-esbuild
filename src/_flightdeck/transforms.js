@@ -19,7 +19,7 @@ const lightningCss = require("./transforms/lightning"); // css bundling
 module.exports = (config, options) => {
   config.setLibrary("md", markdownIt);
   config.addPlugin(transformJs);
-  config.addPlugin(lightningCss);
+  // config.addPlugin(lightningCss);
 
   if (options.useImageDirTransform) {
     config.addPlugin(transformImages);
