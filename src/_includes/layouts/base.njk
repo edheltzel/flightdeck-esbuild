@@ -1,24 +1,22 @@
 <!DOCTYPE html>
-<html lang="en"
-x-data="theme"
-:data-theme="[isDarkMode ? 'dark' : 'light']"
->
-  <head>
-    {%- include "partials/meta.njk" -%}
-  </head>
+<html lang="en" x-data="theme" :data-theme="[isDarkMode ? 'dark' : 'light']">
 
-  <body class="rods-from-god">
-    <header>
-      {% include "partials/navigation.njk" %}
-    </header>
-    <!-- Main-->
-    <main class="container rods-from-god rods-from-god--right" aria-label="Content">
+	<head>
+		{%- include "partials/meta.njk" -%}
+	</head>
 
-      {%- block main %}{% endblock -%}
+	<body class="rfg">
+		<header>
+			{% include "partials/navigation.njk" %}
+		</header>
+		<!-- Main-->
+		<main class="container rfg" aria-label="Content">
 
-      {% include "partials/footer.njk" %}
-    </main>
-    <!-- End Main -->
-  </body>
+			{%- block main %}{% endblock -%}
+
+			{% include "partials/footer.njk" %}
+		</main>
+		<!-- End Main -->
+	</body>
 
 </html>
