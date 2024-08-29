@@ -7,7 +7,7 @@ h1, h2, h3, h4, h5, h6{
 }
 
 h1{
-	@apply text-6xl text-primary;
+	@apply text-6xl;
 }
 h2{
 	@apply text-4xl;
@@ -25,5 +25,15 @@ h6{
 	@apply text-lg;
 }
 p{
-	@apply my-1
+	@apply my-1;
+}
+
+nav{
+	@apply flex justify-between my-4;
+	ul{
+		@apply flex gap-4;
+		li{
+			@apply leading-10
+		}
+	}
 }
