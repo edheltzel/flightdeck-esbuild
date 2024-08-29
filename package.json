@@ -35,9 +35,9 @@
 	"browserslist": "> 0.2% and not dead",
 	"scripts": {
 		"preinstall": "npx only-allow bun",
-		"start": "eleventy --serve & bun run tw --watch",
-		"build": "bun run clean && ENV=prod eleventy & bun run tw --minify",
-		"tw": "bunx tailwindcss -i ./src/assets/styles/app.css -o ./dist/assets/styles/app.css --",
+		"dev": "bun run clean && bun run start",
+		"start": "eleventy --serve",
+		"build": "ENV=prod eleventy",
 		"debug": "DEBUG=Eleventy* eleventy",
 		"deploy": "wrangler pages deploy dist --project-name my-flightdeck --commit-message \"local build & deploy\"",
 		"preview": "bun run clean && bun run build && bunx http-server dist -p 54321",
