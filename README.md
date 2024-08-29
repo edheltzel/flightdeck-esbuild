@@ -216,6 +216,9 @@ bun run start
 		$ bun run preinstall
 			npx only-allow bun
 
+		$ bun run dev
+			bun run clean && bun run start
+
 		$ bun run start
 			eleventy --serve
 
@@ -255,6 +258,7 @@ bun run start
 </details>
 
 - `preinstall` command - runs `npx only-allow bun` to ensure that only Bun is installed.
+- `dev` command - removes the existing `dist` and starts the development server with Eleventy.
 - `start` command - starts the development server with Eleventy.
 - `build` command - executes the production build of your site with Eleventy, includes HTML minification, compressed Sass, optimized images, and bundled javascript.
   - for our workflow, Cloudflare handles the DNS while Cloudflare Pages does the building and hosting - Cloudflare's Auto Minify minifies the HTML, CSS, and JS. You can easily add minification to the build process by adding a plugin to Eleventy.

@@ -34,6 +34,7 @@
 	"browserslist": "> 0.2% and not dead",
 	"scripts": {
 		"preinstall": "npx only-allow bun",
+		"dev": "bun run clean && bun run start",
 		"start": "eleventy --serve",
 		"build": "ENV=prod eleventy",
 		"debug": "DEBUG=Eleventy* eleventy",
