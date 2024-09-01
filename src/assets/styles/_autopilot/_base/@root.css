@@ -119,9 +119,12 @@
 	--autopilot-progress-time: 1.5s;
 
 	--autopilot-font-family-emoji: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-	--autopilot-font-family-sans-serif: system-ui, "Segoe UI", roboto, oxygen, ubuntu, cantarell, helvetica, arial, "Helvetica Neue", sans-serif, var(--autopilot-font-family-emoji);
-	--autopilot-font-family-monospace: ui-monospace, sfmono-regular, "SF Mono", menlo, consolas, "Liberation Mono", monospace, var(--autopilot-font-family-emoji);
-	--autopilot-font-family: var(--autopilot-font-family-sans-serif);
+
+	--autopilot-font-family-titles: "Trispace", system-ui, sans-serif;
+	--autopilot-font-family: "Trispace", system-ui, sans-serif;
+	--autopilot-font-family-monospace: ui-monospace, monospace, var(--autopilot-font-family-emoji);
+	--autopilot-font-family: var(--autopilot-font-family-titles);
+
 	--autopilot-line-height: 1.5;
 	--autopilot-font-weight: 400;
 	--autopilot-font-size: 100%;

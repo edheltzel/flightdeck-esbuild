@@ -1,7 +1,7 @@
 <div id="top" align="center">
 <!-- PROJECT LOGO -->
-  <a href="https://github.com/edheltzel"><img src="https://rdm.sfo2.digitaloceanspaces.com/flightdeck/v3-flightdeck__logo--purple-haze-600x528.png" alt="Flightdeck Logo" width="400"></a>
-  <h1>Flightdeck</h1>
+  <a href="https://github.com/edheltzel"><img src="https://rdm.sfo2.digitaloceanspaces.com/flightdeck/v3-flightdeck__logo--purple-haze-600x528.png" alt="flightdeck Logo" width="400"></a>
+  <h1>flightdeck</h1>
   <h4 style="padding-bottom: .5em">An opinionated starter project for <a href="https://www.11ty.dev/">Eleventy 🎈</a>.</h4>
 <!-- PROJECT SHIELDS -->
 
@@ -77,13 +77,13 @@ The key concept here is to keep Eleventy in control of the entire development an
 
 ## [ 🌟 About The Project ](#about-the-project)
 
-The Flightdeck objective is to provide a unified starting point for all your Jamstack websites, by leveraging popular static-site-generators _(SSG)_.
+The flightdeck objective is to provide a unified starting point for all your Jamstack websites, by leveraging popular static-site-generators _(SSG)_.
 
-This flavor of Flightdeck uses [Eleventy](https://www.11ty.dev/) with an opinionated workflow without the support additional tools like Webpack, Parcel, or Gulp. This is to keep things simple and to **keep Eleventy in control of the entire development and build processes**.
+This flavor of flightdeck uses [Eleventy](https://www.11ty.dev/) with an opinionated workflow without the support additional tools like Webpack, Parcel, or Gulp. This is to keep things simple and to **keep Eleventy in control of the entire development and build processes**.
 
 ### [ 💡 Inspiration ](#inspiration)
 
-Like other versions of Flightdeck, this is just an adaptation of the original [Flightdeck](https://github.com/edheltzel/flightdeck-for-jekyll) project that uses [Jekyll](https://jekyllrb.com/) for its static site generation and [Gulp](https://gulpjs.com/) for all assets bundling. ►►► 🫠 For other versions of Flightdeck, [👉 look here](https://github.com/edheltzel?tab=repositories&q=flightdeck)
+Like other versions of flightdeck, this is just an adaptation of the original [flightdeck](https://github.com/edheltzel/flightdeck-for-jekyll) project that uses [Jekyll](https://jekyllrb.com/) for its static site generation and [Gulp](https://gulpjs.com/) for all assets bundling. ►►► 🫠 For other versions of flightdeck, [👉 look here](https://github.com/edheltzel?tab=repositories&q=flightdeck)
 
 Jérôme Coupé's post [Structuring Eleventy Projects](https://www.webstoemp.com/blog/eleventy-projects-structure/) served as inspiration for how this project is structured and over-time, things will shift as ideas change, but in 2022, we are shamelessly adopting the concept Jérôme Coupé outlines.
 
@@ -105,9 +105,9 @@ Jérôme Coupé's post [Structuring Eleventy Projects](https://www.webstoemp.com
 
 ## [ 🧰 Getting Started ](#getting-started)
 
-All version of Flightdeck use NodeJS. So a very minimal and basic knowledge of Node and Git should be had when using Flightdeck as your launchpad.
+All version of flightdeck use NodeJS. So a very minimal and basic knowledge of Node and Git should be had when using flightdeck as your launchpad.
 
-> In the future, we plan to include Docker and make all Flightdeck starters available as a Yeoman and/or NPM package.
+> In the future, we plan to include Docker and make all flightdeck starters available as a Yeoman and/or NPM package.
 
 ### [🧯 Prerequisites ](#prerequisites)
 
@@ -293,7 +293,7 @@ Don't forget to create your own `.env` with whatever environment variables you n
 
 ### [📁 File Structure ](#file-structure)
 
-Flightdeck is a very opinionated starter kit, so the file structure is very specific to our needs. All the Eleventy configuration is done in the `.eleventy.js` file, but it is broken down into sections for easier navigation and maintain. All Eleventy configuration options are available, see the [Eleventy Docs](https://www.11ty.dev/docs/config/) for more information.
+flightdeck is a very opinionated starter kit, so the file structure is very specific to our needs. All the Eleventy configuration is done in the `.eleventy.js` file, but it is broken down into sections for easier navigation and maintain. All Eleventy configuration options are available, see the [Eleventy Docs](https://www.11ty.dev/docs/config/) for more information.
 
 <details>
   <summary>File Structure</summary>
@@ -336,11 +336,11 @@ Flightdeck is a very opinionated starter kit, so the file structure is very spec
 
 ### [ 👀 Usage ](#usage)
 
-The core concept of Flightdeck to keep 11ty in charge of all the DX so you can focus on creating content.
+The core concept of flightdeck to keep 11ty in charge of all the DX so you can focus on creating content.
 
-Flightdeck makes a lot of assumptions and is very opinionated - but having a good idea of how Eleventy's [data cascade](https://www.11ty.dev/docs/data-cascade/) works is always nice, as well as having some understanding on [template inherence](https://mozilla.github.io/nunjucks/templating.html#template-inheritance) in Nunjucks will go a long way. **But is not needed**
+flightdeck makes a lot of assumptions and is very opinionated - but having a good idea of how Eleventy's [data cascade](https://www.11ty.dev/docs/data-cascade/) works is always nice, as well as having some understanding on [template inherence](https://mozilla.github.io/nunjucks/templating.html#template-inheritance) in Nunjucks will go a long way. **But is not needed**
 
-For making changes to the way Flightdeck pilots Eleventy, you will want to reference the `./src/_flightdeck` directory. This is where all the Eleventy configuration is done, but it is broken down into sections for easier navigation and maintainability.
+For making changes to the way flightdeck pilots Eleventy, you will want to reference the `./src/_flightdeck` directory. This is where all the Eleventy configuration is done, but it is broken down into sections for easier navigation and maintainability.
 
 Inside the `./src/_flightdeck` directory, you will find the following directories:
 
@@ -356,7 +356,7 @@ All the directories have a corresponding file that is used to import all the fil
 - `./src/_flightdeck/transforms.js`
 - `./src/_flightdeck/workflow.js` - this file controls the Eleventy dev server.
 
-Flightdeck comes with a custom image transform plugin that watches for changes in the `./src/assets/images` directory and then optimizes any new or changed images, copies it to the output destination directory `./dist/assets/images`. Since we are using the the [Eleventy Image Plugin](https://www.11ty.dev/docs/plugins/image) under-the-hood, it is smart enough to know if an image has already been optimized, we don't need to worry about that. **Just set it and forget it.**
+flightdeck comes with a custom image transform plugin that watches for changes in the `./src/assets/images` directory and then optimizes any new or changed images, copies it to the output destination directory `./dist/assets/images`. Since we are using the the [Eleventy Image Plugin](https://www.11ty.dev/docs/plugins/image) under-the-hood, it is smart enough to know if an image has already been optimized, we don't need to worry about that. **Just set it and forget it.**
 
 > **PLEASE NOTE:** This feature does add a little overhead to the initial build process, which is why it is disabled by default.
 
@@ -416,7 +416,7 @@ When using the markdown-it-attrs plugin, you'll encounter a build issue when app
 - [x] Improve documentation
 - [x] Create a theme using Autopilot UI Components
 - [ ] Add Dockerfile
-- [ ] Create npm package to quickly install Flightdeck
+- [ ] Create npm package to quickly install flightdeck
 
 ### [ 📝 To Do ](#to-do)
 

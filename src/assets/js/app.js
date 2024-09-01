@@ -3,7 +3,7 @@
 /**
  * app.js
  * @file app.js
- * @description Main JavaScript file Flightdeck using Alpine.js
+ * @description Main JavaScript file flightdeck using Alpine.js
  * @reference https://alpinejs.dev/
  */
 
