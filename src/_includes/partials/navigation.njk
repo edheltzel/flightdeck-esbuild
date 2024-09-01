@@ -1,21 +1,21 @@
 <nav class="container">
-  <ul>
-    <li>
-      <a href="/" class="contrast logo">
-        {% include "partials/logo-svg.njk" %}
-        <strong>{{ site.title }}</strong>
-      </a>
-    </li>
-  </ul>
-  <ul>
-    {%- for entry in collections.all | eleventyNavigation %}
-      <li><a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page" {% else %} class="contrast"{% endif %}>{{ entry.key}}</a></li>
-    {%- endfor %}
-    <li>
-      <a class="contrast" href="/404/">404</a>
-    </li>
-    <li>
-      {% include "components/themeToggle.njk" %}
-    </li>
-  </ul>
+	<ul>
+		<li>
+			<a href="/" class="contrast logo">
+				{% include "partials/logo-svg.njk" %}
+			</a>
+		</li>
+	</ul>
+	<ul>
+		{%- for entry in collections.all | eleventyNavigation %}
+		<li><a href="{{ entry.url }}" {% if entry.url == page.url %} aria-current="page" {% else %} class="contrast"
+				{% endif %}>{{ entry.key}}</a></li>
+		{%- endfor %}
+		<li>
+			<a class="contrast" href="/404/">404</a>
+		</li>
+		<li>
+			{% include "components/themeToggle.njk" %}
+		</li>
+	</ul>
 </nav>
