@@ -36,8 +36,10 @@
 	"scripts": {
 		"preinstall": "npx only-allow bun",
 		"dev": "bun run clean && bun run start",
-		"start": "eleventy --serve",
-		"build": "ENV=prod eleventy",
+		"start": "eleventy --serve & bun run tw:dev",
+		"build": "bun run clean && ENV=prod eleventy & bun run tw:build",
+		"tw:build": "tailwindcss -i ./src/assets/styles/app.css -o ./dist/assets/styles/app.css --minify",
+		"tw:dev": "tailwindcss -i ./src/assets/styles/app.css -o ./dist/assets/styles/app.css --watch",
 		"debug": "DEBUG=Eleventy* eleventy",
 		"deploy": "wrangler pages deploy dist --project-name my-flightdeck --commit-message \"local build & deploy\"",
 		"preview": "bun run clean && bun run build && bunx http-server dist -p 54321",

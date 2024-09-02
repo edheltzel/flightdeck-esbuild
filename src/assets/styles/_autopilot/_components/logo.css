@@ -1,10 +1,12 @@
 /* ----------------------------------------------------------------------------
 the drop logo
 ---------------------------------------------------------------------------- */
-
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 .logo {
 	p {
-		color: var(--autopilot-muted-color);
+	 @apply text-slate-400 text-sm;
 	}
 
 	& svg {
