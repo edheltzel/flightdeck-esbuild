@@ -1,14 +1,9 @@
 ---
-title: Flightdeck
-tagline: To prepare for takeoff
+title: flightdeck
 permalink: /
 eleventyNavigation:
   key: Home
   order: 1
----
-
-Flightdeck {.clip-text .--poster-l}
-
 ---
 
 <article>
