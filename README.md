@@ -58,7 +58,7 @@
 
 ## [🥱 TL;DR](#tldr)
 
-#### A starter project or boilerplate for Eleventy with an opinionated workflow
+#### A starter project for Eleventy with an opinionated workflow
 
 The key concept here is to keep Eleventy in control of the entire development and build processes.
 

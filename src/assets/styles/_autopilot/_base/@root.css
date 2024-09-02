@@ -6,7 +6,7 @@
 	/* hex #E60A69 */
 	--color-primary: hsl(334, 92%, 47%);
 	--color-alpha: 100%;
-	--color-peach: 10deg 100% 85%;
+	--color-peach: hsl(10deg 100% 85%);
 	--color-charcoal: 40deg 2% 15%;
 
 	/* semantic color themes */

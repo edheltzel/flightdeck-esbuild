@@ -5,6 +5,7 @@ const site = {
 	baseUrl,
 	title: "flightdeck",
 	description: "An opinionated starter project for Eleventy.",
+	tagline: "you're in the captain's chair",
 	authorName: "Ed Heltzel",
 	social: [
 		{

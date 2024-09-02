@@ -3,9 +3,9 @@ the drop logo
 ---------------------------------------------------------------------------- */
 
 .logo {
-	display: flex;
-	align-items: center;
-	gap: 0.5rem;
+	p {
+		color: var(--autopilot-muted-color);
+	}
 
 	& svg {
 		width: 100%;
