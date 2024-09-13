@@ -14,7 +14,7 @@
       "copyright"
     ],
     "body": [
-      "{% year %}"
+      "{% copyright %}"
     ],
     "scope": "markdown,html,liquid,nunjucks,webc",
     "description": "adds ©️ with current calendar year"
