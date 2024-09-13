@@ -1,40 +1,40 @@
 {% extends "./base.njk" %}
 {% block main %}
-{% block header %}
-<header>
-	{% block pageTitle %}
-	{%- set pageTitle %}
-	{% if title %}
-	{{ title }}
-	{% else %}
-	{{ site.title }}
-	{% endif %}
-	{%- endset -%}
-	{%- set pageTagline %}
-	{% if subtitle %}
-	{{ subtitle }}
-	{% else %}
-	{{ site.description }}
-	{% endif %}
-	{%- endset -%}
-	{% if subtitle %}
-	<hgroup>
-		<h1>{{ pageTitle | safe }}</h1>
-		<h2 class="text --size-xxs space --top-none">{{ pageTagline | safe }}</h2>
-	</hgroup>
-	{% else %}
-	<h1>{{ pageTitle | safe }}</h1>
-	<h2 class="text --size-xxs space --top-none">{{ pageTagline | safe }}</h2>
-	{% endif %}
-	{% endblock pageTitle %}
-</header>
-<hr>
-{% endblock header %}
+	{% block header %}
+		<header>
+			{% block pageTitle %}
+			{%- set pageTitle %}
+			{% if title %}
+			{{ title }}
+			{% else %}
+			{{ site.title }}
+			{% endif %}
+			{%- endset -%}
+			{%- set pageTagline %}
+			{% if subtitle %}
+			{{ subtitle }}
+			{% else %}
+			{{ site.description }}
+			{% endif %}
+			{%- endset -%}
+			{% if subtitle %}
+			<hgroup>
+				<h1>{{ pageTitle | safe }}</h1>
+				<h2 class="text --size-xxs space --top-none">{{ pageTagline | safe }}</h2>
+			</hgroup>
+			{% else %}
+			<h1>{{ pageTitle | safe }}</h1>
+			<h2 class="text --size-xxs space --top-none">{{ pageTagline | safe }}</h2>
+			{% endif %}
+			{% endblock pageTitle %}
+		</header>
+	<hr>
+	{% endblock header %}
 
-{% block content %}
+	{% block content %}
 
-{{ content | safe }}
+		{{ content | safe }}
 
-{% endblock %}
+	{% endblock content %}
 
-{% endblock %}
+{% endblock main %}

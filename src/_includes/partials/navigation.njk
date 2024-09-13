@@ -1,19 +1,21 @@
-<nav class="container">
+<nav class="font-bold text-center text-white bg-green-400">
 	<ul>
 		<li>
 			<a href="/" class="logo">
 				{% include "partials/logo-svg.njk" %}
-				<p>{{ site.tagline }}</p>
+				<p class="text-xs">{{ site.tagline }}</p>
 			</a>
 		</li>
 	</ul>
 	<ul>
 		{%- for entry in collections.all | eleventyNavigation %}
-		<li><a href="{{ entry.url }}" {% if entry.url == page.url %} aria-current="page" {% else %} class="contrast"
-				{% endif %}>{{ entry.key}}</a></li>
+			<li>
+				<a href="{{ entry.url }}" {% if entry.url == page.url %} aria-current="page" {% else %}{% endif %}>
+					{{ entry.key}}</a>
+			</li>
 		{%- endfor %}
 		<li>
-			<a class="contrast" href="/404/">404</a>
+			<a href="/404/">404</a>
 		</li>
 		<li>
 			{% include "components/themeToggle.njk" %}
