@@ -1,6 +1,5 @@
 .logo{
-	@apply flex items-center gap-2 text-xl;
 	& svg{
-		@apply w-10;
+		@apply w-auto text-fuchsia-500;
 	}
 }

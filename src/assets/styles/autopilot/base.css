@@ -1,42 +1,105 @@
+/* Import Tailwind's base styles */
 @tailwind base;
-@tailwind components;
-@tailwind utilities;
-body{
-	@apply container;
+
+/* CSS Reset / Normalize */
+html {
+    scroll-behavior: smooth;
 }
 
-h1, h2, h3, h4, h5, h6{
-	@apply font-bold mt-0 mb-1;
+body {
+    @apply bg-white text-gray-800 antialiased;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
 }
 
-h1{
-	@apply text-6xl;
-}
-h2{
-	@apply text-4xl;
-}
-h3{
-	@apply text-3xl;
-}
-h4{
-	@apply text-2xl;
-}
-h5{
-	@apply text-xl;
-}
-h6{
-	@apply text-lg;
-}
-p{
-	@apply my-1;
+img,
+svg {
+    max-width: 100%;
+    display: block;
 }
 
-nav{
-	@apply flex justify-between my-4;
-	ul{
-		@apply flex gap-4;
-		li{
-			@apply leading-10
-		}
-	}
+/* Remove default margins and paddings */
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+dl, dd, ol, ul,
+figure {
+    margin: 0;
+    padding: 0;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+/* Global Link Styles */
+a {
+    @apply text-blue-500 no-underline;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    @apply text-blue-700;
+}
+
+/* Global Heading Styles */
+h1, h2, h3, h4, h5, h6 {
+    @apply font-bold leading-tight;
+}
+
+h1 {
+    @apply text-4xl;
+}
+
+h2 {
+    @apply text-3xl;
+}
+
+h3 {
+    @apply text-2xl;
+}
+
+/* Body Typography */
+p {
+    @apply text-base text-gray-700 leading-relaxed;
+}
+
+strong {
+    @apply font-semibold text-gray-900;
+}
+
+/* Code blocks */
+code {
+    @apply font-mono text-sm rounded px-1;
+}
+
+pre {
+    @apply bg-gray-900 text-white p-4 rounded-lg overflow-x-auto;
+}
+
+/* Blockquote styles */
+blockquote {
+    @apply border-l-4 border-gray-300 pl-4 italic text-gray-600;
+}
+
+/* Forms (Optional) */
+input, textarea, select, button {
+    @apply bg-gray-50 border border-gray-300 rounded p-2;
+}
+
+input:focus, textarea:focus, select:focus, button:focus {
+    @apply outline-none ring-2 ring-blue-500;
+}
+
+/* Table Styles */
+table {
+    @apply w-full border-collapse;
+}
+
+th, td {
+    @apply border border-gray-200 px-4 py-2 text-left;
+}
+
+th {
+    @apply bg-gray-100 font-semibold;
 }

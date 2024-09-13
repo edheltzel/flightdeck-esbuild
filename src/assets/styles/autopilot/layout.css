@@ -1,0 +1,4 @@
+@tailwind utilities;
+body{
+	@apply container mx-auto;
+}

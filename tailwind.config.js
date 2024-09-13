@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-	content: ["./src/**/*.{html,js,njk,md,liquid,webc,svg}"],
+	content: ["./src/**/*.{html,js,njk,md,liquid,webc,svg,path}"],
 	darkMode: "class",
 	theme: {
 		container: {
@@ -8,8 +8,7 @@ module.exports = {
 		},
 		extend: {
 			fontFamily: {
-				inter: ["Inter", "sans-serif"],
-				"inter-tight": ["Inter Tight", "sans-serif"],
+				museo: ["MuseoModerno", "sans-serif"],
 			},
 			colors: {
 				primary: "var(--color-primary)",

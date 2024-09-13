@@ -1,12 +1,17 @@
 /* autopilot with tailwindcss */
-@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=fallback');
 
 /* @import 'autopilot/custom-fonts'; */
 
 /* autopilot related styles */
-/* @import './autopilot/global.css'; */
+/* @import './autopilot/@root.css'; */
 @import './autopilot/base.css';
-@import './autopilot/theme.css';
+@import './autopilot/typography.css';
+@import './autopilot/spacing.css';
+@import './autopilot/layout.css';
+@import './autopilot/components/_components.css';
+@import './autopilot/vendors/_vendors.css';
+
+@tailwind utilities;
 
 /* See Alpine.js: https://github.com/alpinejs/alpine#x-cloak */
 [x-cloak=""] {
