@@ -14,7 +14,6 @@
 	"search.exclude": {
 		"**/.publish/": true,
 		"**/.sass-cache/": true,
-		"**/css/*": true,
 		"*.lock": true,
 		".vscode/**": false,
 		"_site/**": true,
