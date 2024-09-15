@@ -1,4 +1,7 @@
 {
+	"extensions.recommendations": [
+		"bradlc.vscode-tailwindcss"
+	],
 	"files.associations": {
 		"*.css": "tailwindcss"
 	},
@@ -32,26 +35,4 @@
 			"scope": "workspace"
 		}
 	},
-	"cSpell.words": [
-		"allimages",
-		"alpinejs",
-		"cleancache",
-		"Coupé",
-		"divriots",
-		"endraw",
-		"flightdeck",
-		"Heltzel",
-		"kleur",
-		"Laserwave",
-		"outbase",
-		"Pico",
-		"picocolors",
-		"picocss",
-		"postbuild",
-		"prismjs",
-		"spacex",
-		"vgscursor",
-		"xxxs",
-		"xxxxl"
-	]
 }
