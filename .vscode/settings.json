@@ -1,8 +1,4 @@
 {
-	"extensions.recommendations": [
-		"ginfuru.better-nunjucks",
-		"bradlc.vscode-tailwindcss"
-	],
 	"files.associations": {
 		"*.css": "tailwindcss"
 	},
