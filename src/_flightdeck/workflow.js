@@ -13,7 +13,7 @@ module.exports = (config, options) => {
   config.setServerOptions({
     port: 54321, // like Astro
     showVersion: true, // show the server version number on the command line
-    showAllHosts: false, // show local network IP address for device testing
+    showAllHosts: true, // show local network IP address for device testing
   });
 
   /* --- Watch Targets --- */
