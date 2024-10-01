@@ -9,12 +9,12 @@
  * @see https://www.11ty.dev/docs/dev-server/
  */
 module.exports = (config, options) => {
-	config.setQuietMode(true); // reduce console
-	config.setServerOptions({
-		port: 54321, // like Astro
-		showVersion: true, // show the server version number on the command line
-		showAllHosts: false, // show local network IP address for device testing
-	});
+  config.setQuietMode(true); // reduce console
+  config.setServerOptions({
+    port: 54321, // like Astro
+    showVersion: true, // show the server version number on the command line
+    showAllHosts: true, // show local network IP address for device testing
+  });
 
 	/* --- Watch Targets --- */
 	config.addWatchTarget("./src/assets");

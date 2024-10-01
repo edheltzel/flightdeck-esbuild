@@ -22,7 +22,7 @@ FRESH="${WHITE}${BOLD}node_modules${BOLDEND}${NC}, ${WHITE}${BOLD}lock files${BO
 PURGE="🧹 ${GREEN}${BOLD}All Clean${BOLDEND}${NC} ✨ ${TITLE}${FRESH}${NC}\n\nRun ${YELLOW}${BOLD}bun/pnpm install${BOLDEND}${NC} to start fresh 🤩"
 
 DEVFILES="dist/ _site/ .cache/ *.log"
-NODEFILES="node_modules package-lock.json pnpm-lock.yaml yarn.lock .yarn/ bun.lockb"
+NODEFILES="node_modules package-lock.json pnpm-lock.yaml yarn.lock .yarn/ bun.lockb deno.lock"
 
 #################### DONT EDIT BELOW  👀 ####################
 if [ $# -eq 0 ]
