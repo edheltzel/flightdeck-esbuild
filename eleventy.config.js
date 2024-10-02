@@ -9,6 +9,7 @@
  * @returns {import("@11ty/eleventy").EleventyConfig} - Returns Eleventy's configuration options
  */
 
+const UpgradeHelp = require("@11ty/eleventy-upgrade-help");
 const addWorkflow = require("./src/_flightdeck/workflow");
 const addFilters = require("./src/_flightdeck/filters");
 const addTransforms = require("./src/_flightdeck/transforms");
@@ -16,6 +17,8 @@ const addShortcodes = require("./src/_flightdeck/shortcodes");
 const addPlugins = require("./src/_flightdeck/plugins");
 
 module.exports = (config) => {
+	 config.addPlugin(UpgradeHelp);
+
   /** @type {{useImageDirTransform: boolean}} */
   const options = {
     useImageDirTransform: false,
