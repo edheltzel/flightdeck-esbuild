@@ -35,7 +35,6 @@
 	],
 	"browserslist": "> 0.2% and not dead",
 	"scripts": {
-		"preinstall": "npx only-allow bun",
 		"dev": "bun run clean && bun run start",
 		"start": "eleventy --serve & bun run tw:dev",
 		"build": "bun run clean && ENV=prod eleventy & bun run tw:build",
@@ -50,5 +49,5 @@
 		"purge": "./.scrub.sh purge",
 		"upgrade": "bunx npm-check-updates -ui",
 		"release": "gh release create v$npm_package_version --generate-notes --latest"
-	}
+	},
 }
