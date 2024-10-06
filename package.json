@@ -42,7 +42,7 @@
 		"tw:dev": "tailwindcss -i ./src/assets/styles/app.css -o ./dist/assets/styles/app.css --watch",
 		"debug": "DEBUG=Eleventy* eleventy",
 		"deploy": "wrangler pages deploy dist --project-name my-flightdeck --commit-message \"local build & deploy\"",
-		"preview": "pnpm run clean && pnpm run build && pnpmx http-server dist -p 54321",
+		"preview": "pnpm run clean && pnpm run build && pnpx http-server dist -p 54321",
 		"check": "biome check --",
 		"format": "biome format --write --",
 		"clean": "./.scrub.sh site",
