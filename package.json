@@ -35,19 +35,20 @@
 	],
 	"browserslist": "> 0.2% and not dead",
 	"scripts": {
-		"dev": "bun run clean && bun run start",
-		"start": "eleventy --serve & bun run tw:dev",
-		"build": "bun run clean && ENV=prod eleventy & bun run tw:build",
+		"dev": "pnpm run clean && pnpm run start",
+		"start": "eleventy --serve & pnpm run tw:dev",
+		"build": "pnpm run clean && ENV=prod eleventy & pnpm run tw:build",
 		"tw:build": "tailwindcss -i ./src/assets/styles/app.css -o ./dist/assets/styles/app.css --minify",
 		"tw:dev": "tailwindcss -i ./src/assets/styles/app.css -o ./dist/assets/styles/app.css --watch",
 		"debug": "DEBUG=Eleventy* eleventy",
 		"deploy": "wrangler pages deploy dist --project-name my-flightdeck --commit-message \"local build & deploy\"",
-		"preview": "bun run clean && bun run build && bunx http-server dist -p 54321",
+		"preview": "pnpm run clean && pnpm run build && pnpmx http-server dist -p 54321",
 		"check": "biome check --",
 		"format": "biome format --write --",
 		"clean": "./.scrub.sh site",
 		"purge": "./.scrub.sh purge",
-		"upgrade": "bunx npm-check-updates -ui",
+		"upgrade": "pnpx npm-check-updates -ui",
 		"release": "gh release create v$npm_package_version --generate-notes --latest"
 	},
+	"packageManager": "pnpm@9.12.0+sha512.4abf725084d7bcbafbd728bfc7bee61f2f791f977fd87542b3579dcb23504d170d46337945e4c66485cd12d588a0c0e570ed9c477e7ccdd8507cf05f3f92eaca"
 }
