@@ -63,13 +63,13 @@
 The key concept here is to keep Eleventy in control of the entire development and build processes.
 
 ```shell
-    gh repo clone edheltzel/flightdeck flightdeck && cd flightdeck && bun run install && bun run start
+    gh repo clone edheltzel/flightdeck flightdeck && cd flightdeck && pnpm run install && pnpm run start
 ```
 
 **Build your project**
 
 ```shell
-   bun run build
+   pnpm run build
 ```
 
 <!-- #endregion Too Long Didn’t Read -->
@@ -119,12 +119,11 @@ We are assuming that you already have Node with NPM (or another package manger, 
 
 **Package managers are like dotfiles, everyone has their own preference.**
 
-We are using [Bun](https://bun.sh/) as our package manager.
+We are using [pnpm](https://pnpm.io/) as our package manager.
 
-But, you can swap `bun` in favor of your preferences 👉 [NPM](https://www.npmjs.com/) , [Yarn](https://yarnpkg.com/), and and [Pnpm](https://pnpm.io). Use whatever you want 👍 just be sure to update the `package.json` with what ever flavor you choose to use:
+But, you can swap `pnpm` in favor of your preferences 👉 [NPM](https://www.npmjs.com/) , [Yarn](https://yarnpkg.com/), and and [Bun](https://bun.sh). Use whatever you want 👍 just be sure to update the `package.json` with what ever flavor you choose to use:
  - change `preview` with your preference
  - change `upgrade` with your preference
- - remove `preinstall` script
  - remove `packageManager` from `package.json`
 
 
@@ -158,7 +157,7 @@ git clone https://github.com/edheltzel/flightdeck.git
 
 ```shell
 cd flightdeck
-bun run install
+pnpm run install
 ```
 
 Using `gh` in the terminal:
@@ -169,31 +168,38 @@ gh repo clone edheltzel/flightdeck
 
 ```shell
 cd flightdeck
-bun run  install
+pnpm run  install
 ```
 
 <details>
   <summary>see all dependencies</summary>
 
-    bun pm ls
-		~/Developer/flightdeck node_modules (465)
-		├── @11ty/eleventy@2.0.1
-		├── @11ty/eleventy-img@4.0.2
-		├── @11ty/eleventy-navigation@0.3.5
-		├── @11ty/eleventy-plugin-syntaxhighlight@5.0.0
-		├── @alpinejs/persist@3.14.1
-		├── @biomejs/biome@1.8.3
-		├── alpinejs@3.14.1
-		├── browserslist@4.23.3
-		├── eleventy-plugin-embed-everything@1.18.2
-		├── esbuild@0.23.0
-		├── fast-glob@3.3.2
-		├── html-minifier@4.0.0
-		├── lightningcss@1.25.1
-		├── lightningcss-cli@1.25.1
-		├── markdown-it@14.1.0
-		├── markdown-it-attrs@4.1.6
-		└── markdown-it-bracketed-spans@1.0.1
+		Legend: production dependency, optional only, dev only
+
+		flightdeck-for-eleventy@0.6.0 ~/Developer/flightdeck-esbuild
+
+		dependencies:
+		@alpinejs/persist 3.14.1
+		alpinejs 3.14.1
+		upgrade 1.1.0
+
+		devDependencies:
+		@11ty/eleventy 3.0.0
+		@11ty/eleventy-img 5.0.0
+		@11ty/eleventy-navigation 0.3.5
+		@11ty/eleventy-plugin-syntaxhighlight 5.0.0
+		@biomejs/biome 1.9.3
+		browserslist 4.24.0
+		eleventy-plugin-embed-everything 1.19.0
+		esbuild 0.24.0
+		fast-glob 3.3.2
+		html-minifier 4.0.0
+		lightningcss 1.27.0
+		lightningcss-cli 1.27.0
+		markdown-it 14.1.0
+		markdown-it-attrs 4.2.0
+		markdown-it-bracketed-spans 1.0.1
+
 
 </details>
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -206,58 +212,46 @@ available, but the `start` command is where all the magic 🪄 happens – it w
 Again, the focus here is to keep Eleventy in control of the entire development and build processes, to keep things simple.
 
 ```shell
-bun run start
+pnpm run start
 ```
 
 <details>
   <summary>Available Run Commands</summary>
 
-    package.json scripts (13 found):
-		$ bun run preinstall
-			npx only-allow bun
+	Lifecycle scripts:
+	start
+    eleventy --serve
 
-		$ bun run dev
-			bun run clean && bun run start
-
-		$ bun run start
-			eleventy --serve
-
-		$ bun run build
+	Commands available via "pnpm run":
+		dev
+			pnpm run clean && pnpm run start
+		build
 			ENV=prod eleventy
-
-		$ bun run debug
+		debug
 			DEBUG=Eleventy* eleventy
-
-		$ bun run deploy
-			wrangler pages deploy dist --project-name my-flightdeck --commit-message \"local build & deploy\"
-
-		$ bun run preview
-			bun run clean && bun run build && bunx http-server dist -p 54321
-
-		$ bun run check
+		deploy
+			wrangler pages deploy dist --project-name my-flightdeck --commit-message "local build & deploy"
+		preview
+			pnpm run clean && pnpm run build && pnpx http-server dist -p 54321
+		check
 			biome check
-
-		$ bun run format
+		format
 			biome format --
-
-		$ bun run lint
+		lint
 			biome lint --
-
-		$ bun run clean
+		clean
 			./.scrub.sh site
-
-		$ bun run purge
+		purge
 			./.scrub.sh purge
-
-		$ bun run upgrade
-			bunx npm-check-updates -ui
-
-		$ bun run release
+		upgrade
+			pnpx npm-check-updates -ui
+		release
 			gh release create v$npm_package_version --generate-notes --latest
+
 
 </details>
 
-- `preinstall` command - runs `npx only-allow bun` to ensure that only Bun is installed.
+- `preinstall` command - runs `npx only-allow pnpm` to ensure that only pnpm is installed.
 - `dev` command - removes the existing `dist` and starts the development server with Eleventy.
 - `start` command - starts the development server with Eleventy.
 - `build` command - executes the production build of your site with Eleventy, includes HTML minification, compressed Sass, optimized images, and bundled javascript.
@@ -266,15 +260,15 @@ bun run start
 - `deploy` command - deploys the "manual" production build to Cloudflare Pages.
 - `preview` command - spins up a local server to preview the production build.
 - `check` command - runs biome lint and format at the same time JS/TS/CSS, see `biome.json`.
-  - ie: `bun run check ./src/assets/js/app.js`
+  - ie: `pnpm run check ./src/assets/js/app.js`
 - `format` command - uses biome to format JS/TS/CSS, see `biome.json`.
-  - ie: `bun run format ./src/assets/js/app.js`
+  - ie: `pnpm run format ./src/assets/js/app.js`
 - `lint` command - uses biome to lint JS/TS/CSS, see `biome.json`.
-  - ie: `bun run lint ./src/assets/js/app.js`
+  - ie: `pnpm run lint ./src/assets/js/app.js`
 - `clean` command - scrubs/removes the `dist/` and `.cache` directories
-- `purge` command - scrubs/removes the `dist/`, `.cache`, `node_modules`, and any lock files from npm, yarn, pnpm or bun. - 🧼 A fresh install.
+- `purge` command - scrubs/removes the `dist/`, `.cache`, `node_modules`, and any lock files from npm, yarn, pnpm or pnpm. - 🧼 A fresh install.
   - **👀 NOTE: Both `clean` and `purge` are executed from a bash script**
-- `upgrade` command - uses `bunx npm-check-updates -ui` to upgrade dependencies to their latest versions and updates the `package.json` - this is a work around for `bun run upgrade` not working as expected or how other package managers work.
+- `upgrade` command - uses `bunx npm-check-updates -ui` to upgrade dependencies to their latest versions and updates the `package.json` - this is a work around for `pnpm run upgrade` not working as expected or how other package managers work.
 - `release` command - creates a new release on GitHub.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -389,7 +383,7 @@ If you'd rather us Scss to write you styles you'll need to do a few things to se
     - please reference `_flightdeck/transforms.js` and `_flightdeck/transforms/_scss.js`
     - see [eleventy-sass repo](https://github.com/kentaroi/eleventy-sass) for documentation.
     - see [picocss docs](https://picocss.com/docs/sass#custom-theme) for theming.
-  - If you do not want the additional dependencies just run `bun remove sass eleventy-sass postcss autoprefixer @picocss/pico`
+  - If you do not want the additional dependencies just run `pnpm remove sass eleventy-sass postcss autoprefixer @picocss/pico`
 
 <!-- #region Autopilot -->
 
