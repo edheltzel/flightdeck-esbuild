@@ -9,7 +9,6 @@
  * @returns {import("@11ty/eleventy").EleventyConfig} - Returns Eleventy's configuration options
  */
 
-const UpgradeHelp = require("@11ty/eleventy-upgrade-help");
 const addWorkflow = require("./src/_flightdeck/workflow");
 const addFilters = require("./src/_flightdeck/filters");
 const addTransforms = require("./src/_flightdeck/transforms");
@@ -17,36 +16,35 @@ const addShortcodes = require("./src/_flightdeck/shortcodes");
 const addPlugins = require("./src/_flightdeck/plugins");
 
 module.exports = (config) => {
-	 config.addPlugin(UpgradeHelp);
 
-  /** @type {{useImageDirTransform: boolean}} */
-  const options = {
-    useImageDirTransform: false,
-  };
+	/** @type {{useImageDirTransform: boolean}} */
+	const options = {
+							useImageDirTransform: false,
+	};
 
-  // Configure 11ty development server, layout aliases, watch, passthrough copy
-  addWorkflow(config, options);
+	// Configure 11ty development server, layout aliases, watch, passthrough copy
+	addWorkflow(config, options);
 
-  // Custom plugins that integrate esbuild, scss, image optimization
-  addTransforms(config, options);
+	// Custom plugins that integrate esbuild, scss, image optimization
+	addTransforms(config, options);
 
-  // Add eleventy plugins and configurations
-  addPlugins(config);
+	// Add eleventy plugins and configurations
+	addPlugins(config);
 
-  // Custom shortcodes for Nunjucks/Liquid template - ui components go here
-  addShortcodes(config);
+	// Custom shortcodes for Nunjucks/Liquid template - ui components go here
+	addShortcodes(config);
 
-  // Custom universal filters for Nunjucks/Liquid templates
-  addFilters(config);
+	// Custom universal filters for Nunjucks/Liquid templates
+	addFilters(config);
 
-  // 11ty configuration options
-  return {
-    dir: {
-      input: "src",
-      output: "dist",
-      data: "_includes/data",
-    },
-    htmlTemplateEngine: "njk",
-    markdownTemplateEngine: "njk",
-  };
+	// 11ty configuration options
+	return {
+		dir: {
+			input: "src",
+			output: "dist",
+			data: "_includes/data",
+		},
+		htmlTemplateEngine: "njk",
+		markdownTemplateEngine: "njk",
+	};
 };
