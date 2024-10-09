@@ -4,7 +4,7 @@ eleventyNavigation:
   key: Shortcodes
   order: 4
 ---
-This page is a showcase of the shortcodes that are available in flightdeck. You can find the full list of shortcodes in the [flightdeck Shortcodes](https://github.com/edheltzel/flightdeck/blob/main/src/_flightdeck/shortcodes.js) file – {% link url="https://github.com/edheltzel/flightdeck/blog/main/src/_flightdeck/shortcodes.js", text="View on GitHub", target="_blank", role="link", classes="outline contrast" %}
+This page is a showcase of the shortcodes that are available in flightdeck. You can find the full list of shortcodes in the [flightdeck Shortcodes](https://github.com/edheltzel/flightdeck-esbuild/blob/main/src/_flightdeck/shortcodes.js) file – {% link url="https://github.com/edheltzel/flightdeck-esbuild/blog/main/src/_flightdeck/shortcodes.js", text="View on GitHub", target="_blank", role="link", classes="outline contrast" %}
 
 ---
 
@@ -17,7 +17,7 @@ This page is a showcase of the shortcodes that are available in flightdeck. You 
 ```
 {% endraw%}
 
-{% link url="https://github.com/edheltzel/flightdeck/blog/main/src/_flightdeck/shortcodes.js", text="View on GitHub", target="_blank", role="button", classes="secondary" %}
+{% link url="https://github.com/edheltzel/flightdeck-esbuild/blog/main/src/_flightdeck/shortcodes.js", text="View on GitHub", target="_blank", role="button", classes="secondary" %}
 
 {% raw %}
 ```jinja2
