@@ -5,7 +5,6 @@
  * @module .eleventy
  * @see {@link https://www.11ty.dev/docs/config/}
  * @see {@link https://www.11ty.dev/docs/quicktips/local-plugin/}
- * @param {import("@11ty/eleventy").UserConfig} config - Eleventy's configuration object
  * @returns {import("@11ty/eleventy").EleventyConfig} - Returns Eleventy's configuration options
  */
 
@@ -15,7 +14,6 @@ const addShortcodes = require("./src/_flightdeck/shortcodes");
 const addPlugins = require("./src/_flightdeck/plugins");
 
 module.exports = async (config) => {
-
 	/** @type {{useImageDirTransform: boolean}} */
 	const options = {
 		useImageDirTransform: false,
