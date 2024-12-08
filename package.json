@@ -34,19 +34,18 @@
 	],
 	"browserslist": "> 0.2% and not dead",
 	"scripts": {
-		"dev": "pnpm run clean && pnpm run start",
+		"dev": "bun run clean && bun run start",
 		"start": "eleventy --serve",
 		"build": "ENV=prod eleventy",
 		"debug": "DEBUG=Eleventy* eleventy",
 		"deploy": "wrangler pages deploy dist --project-name my-flightdeck --commit-message \"local build & deploy\"",
-		"preview": "pnpm run clean && pnpm run build && pnpx http-server dist -p 54321",
+		"preview": "bun run clean && bun run build && bunx http-server dist -p 54321",
 		"check": "biome check",
 		"format": "biome format --",
 		"lint": "biome lint --",
 		"clean": "./.scrub.sh site",
 		"purge": "./.scrub.sh purge",
-		"upgrade": "pnpx npm-check-updates -ui",
+		"upgrade": "bunx npm-check-updates -ui",
 		"release": "gh release create v$npm_package_version --generate-notes --latest"
-	},
-	"packageManager": "pnpm@9.12.1+sha512.e5a7e52a4183a02d5931057f7a0dbff9d5e9ce3161e33fa68ae392125b79282a8a8a470a51dfc8a0ed86221442eb2fb57019b0990ed24fab519bf0e1bc5ccfc4"
+	}
 }

@@ -1,5 +1,4 @@
 // @ts-check
-
 /**
  * Workflow Configuration
  * @summary keeps the main eleventy config file clean and is used to configure the local dev server.
@@ -8,6 +7,7 @@
  * @param {{useImageDirTransform: boolean}} options - Custom options for configuring workflow.
  * @see https://www.11ty.dev/docs/dev-server/
  */
+
 module.exports = (config, options) => {
   config.setQuietMode(true); // reduce console
   config.setServerOptions({
