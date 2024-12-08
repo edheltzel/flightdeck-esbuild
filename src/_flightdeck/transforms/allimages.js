@@ -8,9 +8,9 @@
  * @requires fast-glob
  */
 
-const Image = require("@11ty/eleventy-img");
-const path = require("node:path");
-const glob = require("fast-glob");
+import Image from "@11ty/eleventy-img";
+import path from "node:path";
+import glob from "fast-glob";
 
 /**
  * Optimizes all images in the specified base directory.
@@ -19,38 +19,36 @@ const glob = require("fast-glob");
 const optimizeImages = async () => {
   const baseDirectory = "./src/assets/images";
   const outputDirectory = "./dist/assets/images";
+  const imageFormats = ["jpg", "jpeg", "png", "gif", "webp", "avif"];
 
-  // Get all image files
-  const imageFiles = await glob(`${baseDirectory}/**/*.{png,jpg,jpeg,webp}`, {
-    onlyFiles: true, // only get files not directories
-  });
+  try {
+    // Find all image files
+    const imageFiles = await glob(`${baseDirectory}/**/*.{${imageFormats.join(',')}}`);
 
-  // Optimize all images in parallel
-  await Promise.all(
-    imageFiles.map(async (imageFile) => {
-      const relativePath = path.relative(baseDirectory, imageFile);
-      const outputPath = path.join(outputDirectory, path.dirname(relativePath));
-      const outputUrlPath = path.join("/assets/images", path.dirname(relativePath));
+    // Process each image
+    for (const imagePath of imageFiles) {
+      const outputPath = path.join(
+        outputDirectory,
+        path.relative(baseDirectory, imagePath)
+      );
 
-      await Image(imageFile, {
-        formats: ["auto"],
-        urlPath: outputUrlPath,
-        widths: [1600],
-        outputDir: outputPath,
-        filenameFormat: (id, src, width, format, options) => {
-          const name = path.basename(src, path.extname(src));
-          return `${name}.${format}`;
+      await Image(imagePath, {
+        formats: ["avif", "webp", "jpeg"],
+        outputDir: path.dirname(outputPath),
+        filenameFormat: (id, src, width, format) => {
+          const ext = path.extname(src);
+          const name = path.basename(src, ext);
+          return `${name}-${width}w.${format}`;
         },
+        widths: [400, 800, 1200],
         sharpOptions: {
-          quality: 80,
-          compressionLevel: 9,
-          progressive: true,
-          optimizeScans: true,
-          withMetadata: false,
-        },
+          animated: true
+        }
       });
-    })
-  );
+    }
+  } catch (error) {
+    console.error("Image optimization error:", error);
+  }
 };
 
 /**
@@ -61,10 +59,7 @@ const optimizeImages = async () => {
  * Adds the image optimization transform to the Eleventy config.
  * @param {EleventyConfig} config - The Eleventy configuration object.
  */
-const transformImages = (config) => {
-  config.on("eleventy.after", async () => {
-    await optimizeImages();
-  });
+export default (config) => {
+  // Run image optimization during build
+  config.on("eleventy.after", optimizeImages);
 };
-
-module.exports = { transformImages };

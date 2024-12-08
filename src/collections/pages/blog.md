@@ -1,5 +1,5 @@
 ---
-layout: "layouts/blog"
+layout: "blog.njk"
 title: The Weblog
 tagline: "New Posts and Updates"
 permalink: "/blog/"

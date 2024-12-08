@@ -15,4 +15,4 @@ Special thanks for using flightdeck.
 /* SUPPORT */
 
 If you have any questions, feedback, or bug reports, please one a issue on Github.
-Issues: https://github.com/edheltzel/flightdeck/issues
+Issues: https://github.com/edheltzel/flightdeck-esbuild/issues

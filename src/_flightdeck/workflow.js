@@ -1,5 +1,4 @@
 // @ts-check
-
 /**
  * Workflow Configuration
  * @summary keeps the main eleventy config file clean and is used to configure the local dev server.
@@ -8,12 +7,13 @@
  * @param {{useImageDirTransform: boolean}} options - Custom options for configuring workflow.
  * @see https://www.11ty.dev/docs/dev-server/
  */
-module.exports = (config, options) => {
+
+export default (config, options) => {
   config.setQuietMode(true); // reduce console
   config.setServerOptions({
     port: 54321, // like Astro
     showVersion: true, // show the server version number on the command line
-    showAllHosts: false, // show local network IP address for device testing
+    showAllHosts: true, // show local network IP address for device testing
   });
 
   /* --- Watch Targets --- */

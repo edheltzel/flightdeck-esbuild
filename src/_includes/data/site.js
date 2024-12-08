@@ -1,6 +1,7 @@
 const isDev = process.env.ENV === "development";
 
-const baseUrl = isDev ? "localhost:8080" : "https://github.com"; // your website url goes here
+export const baseUrl = isDev ? "localhost:8080" : "https://github.com"; // your website url goes here
+
 const site = {
 	baseUrl,
 	title: "flightdeck",
@@ -25,4 +26,4 @@ const site = {
 	env: process.env.ENV,
 };
 
-module.exports = site;
+export default site;

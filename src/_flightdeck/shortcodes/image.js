@@ -8,11 +8,13 @@
  * @example {% image src="/assets/images/moon.jpg", alt="A picture of the moon", sizes="(max-width: 600px) 100vw, 50vw" %}
  */
 
-// Import Image library
-const Image = require("@11ty/eleventy-img");
+import Image from "@11ty/eleventy-img";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 
-// Shortcode function
-module.exports = async (params) => {
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+export default async function imageShortcode(params) {
   const {
     src,
     alt,
@@ -20,32 +22,41 @@ module.exports = async (params) => {
   } = params;
 
   if (!src) {
-    throw new Error("src is required for the image");
+    throw new Error("src is required for the image shortcode");
   }
 
   if (!alt) {
-    throw new Error("alt is required for the image");
+    throw new Error("alt is required for the image shortcode");
   }
 
-  // Image paths
-  const rootPath = `./src${src}`;
-  const outputDir = "./dist/assets/images/";
-  const urlPath = "/assets/images/";
+  // Determine if src is absolute or relative
+  const inputPath = src.startsWith("/") 
+    ? path.join(process.cwd(), "src", src)
+    : path.join(process.cwd(), src);
 
-  // Generate metadata
-  const metadata = await Image(rootPath, {
-    widths: [400, 800, 1600],
-    formats: ["webp", "jpeg", "png"],
-    outputDir: outputDir,
-    urlPath: urlPath,
-    svgShortCircuit: "size",
-  });
+  const options = {
+    widths: [300, 600, 900, 1200],
+    formats: ["avif", "webp", "jpeg"],
+    outputDir: path.join(process.cwd(), "dist", "assets", "images"),
+    urlPath: "/assets/images",
+    sharpOptions: {
+      animated: true,
+      quality: 80,
+      progressive: true
+    }
+  };
 
-  // Generate HTML
-  return Image.generateHTML(metadata, {
-    alt,
-    sizes,
-    loading: "lazy",
-    decoding: "async",
-  });
-};
+  try {
+    const metadata = await Image(inputPath, options);
+
+    return Image.generateHTML(metadata, {
+      alt,
+      sizes,
+      loading: "lazy",
+      decoding: "async",
+    });
+  } catch (error) {
+    console.error("Image processing error:", error);
+    return `<img src="${src}" alt="${alt}" loading="lazy" decoding="async">`;
+  }
+}

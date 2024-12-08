@@ -9,41 +9,43 @@
  * @returns {import("@11ty/eleventy").EleventyConfig} - Returns Eleventy's configuration options
  */
 
-const addWorkflow = require("./src/_flightdeck/workflow");
-const addFilters = require("./src/_flightdeck/filters");
-const addTransforms = require("./src/_flightdeck/transforms");
-const addShortcodes = require("./src/_flightdeck/shortcodes");
-const addPlugins = require("./src/_flightdeck/plugins");
+import addWorkflow from "./src/_flightdeck/workflow.js";
+import addFilters from "./src/_flightdeck/filters.js";
+import addTransforms from "./src/_flightdeck/transforms.js";
+import addShortcodes from "./src/_flightdeck/shortcodes.js";
+import addPlugins from "./src/_flightdeck/plugins.js";
 
-module.exports = (config) => {
-  /** @type {{useImageDirTransform: boolean}} */
-  const options = {
-    useImageDirTransform: false,
-  };
+export default function(config) {
+    /** @type {{useImageDirTransform: boolean}} */
+    const options = {
+        useImageDirTransform: false
+    };
 
-  // Configure 11ty development server, layout aliases, watch, passthrough copy
-  addWorkflow(config, options);
+    // Configure development workflow (server, watch, passthrough)
+    addWorkflow(config, options);
 
-  // Custom plugins that integrate esbuild, scss, image optimization
-  addTransforms(config, options);
+    // Add transforms (esbuild, lightningcss, image optimization)
+    addTransforms(config, options);
 
-  // Add eleventy plugins and configurations
-  addPlugins(config);
+    // Add eleventy plugins
+    addPlugins(config);
 
-  // Custom shortcodes for Nunjucks/Liquid template - ui components go here
-  addShortcodes(config);
+    // Add shortcodes for templates
+    addShortcodes(config);
 
-  // Custom universal filters for Nunjucks/Liquid templates
-  addFilters(config);
+    // Add universal filters
+    addFilters(config);
 
-  // 11ty configuration options
-  return {
-    dir: {
-      input: "src",
-      output: "dist",
-      data: "_includes/data",
-    },
-    htmlTemplateEngine: "njk",
-    markdownTemplateEngine: "njk",
-  };
-};
+    return {
+        dir: {
+            input: "src",
+            output: "dist",
+            data: "_includes/data",
+            includes: "_includes",
+            layouts: "_includes/layouts"
+        },
+        htmlTemplateEngine: "njk",
+        markdownTemplateEngine: "njk",
+        templateFormats: ["md", "njk", "html"],
+    };
+}

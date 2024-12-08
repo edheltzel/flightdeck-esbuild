@@ -8,16 +8,16 @@
  * @param {import("@11ty/eleventy").UserConfig} config - The Eleventy config object to which the filters will be added.
  */
 
-const baseUrl = require("./filters/baseUrl");
-const limit = require("./filters/postLimit");
-const strip = require("./filters/stripFileExtension");
-const date = require("./filters/dates");
-const excerpt = require("./filters/excerpt");
+import baseUrl from "./filters/baseUrl.js";
+import { postLimit } from "./filters/postLimit.js";
+import { stripFileExtension } from "./filters/stripFileExtension.js";
+import * as date from "./filters/dates.js";
+import excerpt from "./filters/excerpt.js";
 
-module.exports = (config) => {
+export default (config) => {
   config.addFilter("excerpt", excerpt);
-  config.addFilter("postLimit", limit.postLimit);
-  config.addFilter("removeExt", strip.stripFileExtension);
+  config.addFilter("postLimit", postLimit);
+  config.addFilter("removeExt", stripFileExtension);
   config.addFilter("baseUrl", baseUrl);
   config.addFilter("postDate", date.postDate);
   config.addFilter("postDateTime", date.postDateTime);
