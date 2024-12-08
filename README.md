@@ -1,6 +1,6 @@
 <div id="top" align="center">
 <!-- PROJECT LOGO -->
-  <a href="https://github.com/edheltzel"><img src="https://files.inthera.in/flightdeck/v3-flightdeck__logo--purple-haze-600x528.png" alt="flightdeck Logo" width="400"></a>
+  <a href="https://github.com/edheltzel"><img src="https://files.inthera.in/flightdeck/flightdeck-dark.png" alt="flightdeck Logo" width="400"></a>
   <h1>flightdeck</h1>
   <h4 style="padding-bottom: .5em">An opinionated starter project for <a href="https://www.11ty.dev/">Eleventy 🎈</a>.</h4>
 <!-- PROJECT SHIELDS -->

@@ -1,42 +1,53 @@
 /* Rods from God */
 @media all and (width >=56.25em) {
-  .rods-from-god::after,
-  .rods-from-god::before {
-    content: "";
-    display: block;
-    position: absolute;
-    height: 50vh;
-    width: 2px;
-    top: -50%;
-    left: 20vw;
-    background: linear-gradient(to bottom, hsla(0, 0%, 0%, 0) 0, var(--ap-rods-from-god-hsl) 75%, hsla(0, 0%, 0%, 0) 0);
-    animation: rods-from-god var(--ap-rods-from-god-time) cubic-bezier(.4, .26, 0, .97) 0s infinite forwards;
+	.rfg {
+		position: relative;
 
-    z-index: -1
-  }
-}
+		&::after,
+		&::before {
+			content: "";
+			display: block;
+			position: absolute;
+			height: 50vh;
+			width: 2px;
+			top: -50%;
+			background: linear-gradient(to bottom,
+					hsla(0, 0%, 0%, 0) 0,
+					var(--ap-rods-from-god-hsl) 75%,
+					hsla(0, 0%, 0%, 0) 0);
+			animation: rods-from-god var(--ap-rods-from-god-time) cubic-bezier(0.4, 0.26, 0, 0.97) 0s infinite forwards;
 
-.rods-from-god::before {
-  animation-delay: 2s;
-  left: 40vw
+			z-index: -1;
+		}
+
+		&::after {
+			left: 30vw;
+		}
+
+		&::before {
+			animation-delay: 2s;
+			left: 40vw;
+		}
+	}
+	main.rfg{
+		&::after{
+			animation-delay: 1s;
+			left: 30vw
+		}
+		&::before {
+		animation-delay: 1.75s;
+		left: 40vw
+	}
+
+	}
 }
 
 @keyframes rods-from-god {
-  0% {
-    top: -50%
-  }
+	0% {
+		top: -50%
+	}
 
-  100% {
-    top: 100%
-  }
-}
-
-.rfg--right::after {
-  animation-delay: 4s;
-  left: 60vw
-}
-
-.rfg--right::before {
-  animation-delay: 6s;
-  left: 80vw
+	100% {
+		top: 100%
+	}
 }
