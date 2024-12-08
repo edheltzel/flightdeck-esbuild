@@ -1,9 +1,10 @@
 /**
  * Returns the first 200 characters as the excerpt
+ * @param {string} content - The content to create an excerpt from
+ * @returns {string} The excerpt with ellipsis
  * @usage {{ post.templateContent | excerpt | safe }}
  */
-
-module.exports = (content) => {
+export default (content) => {
   // Remove HTML tags
   const text = content.replace(/<[^>]+>/g, "");
 

@@ -6,8 +6,6 @@
  * @returns {Array} The subset of the array up to the limit
  * @usage {{ for item in collections.all | postLimit(3) }}
  */
-const postLimit = (arr, limit) => {
+export const postLimit = (arr, limit) => {
   return arr.slice(0, limit);
 };
-
-module.exports = { postLimit };

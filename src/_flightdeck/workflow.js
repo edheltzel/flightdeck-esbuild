@@ -8,7 +8,7 @@
  * @see https://www.11ty.dev/docs/dev-server/
  */
 
-module.exports = (config, options) => {
+export default (config, options) => {
   config.setQuietMode(true); // reduce console
   config.setServerOptions({
     port: 54321, // like Astro

@@ -6,26 +6,33 @@
  *
  * @param {import("@11ty/eleventy").UserConfig} config - The Eleventy config object to which the transformations will be added.
  * @param {{useImageDirTransform: boolean}} options - Custom options for configuring transforms.
- *
  */
 
+import markdownIt from "./transforms/markdownIt.js";
+import imageTransform from "./transforms/allimages.js";
+import minifyHtml from "./transforms/minifyHtml.js";
+import esbuildTransform from "./transforms/esBuild.js";
+import lightningTransform from "./transforms/lightning.js";
+
 const isProd = process.env.ENV === "prod";
-const { markdownIt } = require("./transforms/markdownIt"); // markdown-it plugins
-const { transformImages } = require("./transforms/allimages"); // optimize all images in src/assets/images
-const minifyHtml = require("./transforms/minifyHtml");
-const { transformJs } = require("./transforms/esBuild"); // js bundling
-const lightningCss = require("./transforms/lightning"); // css bundling
 
-module.exports = (config, options) => {
-  config.setLibrary("md", markdownIt);
-  config.addPlugin(transformJs);
-  config.addPlugin(lightningCss);
+export default (config, options) => {
+  // Set up markdown processing
+  config.setLibrary("md", markdownIt());
 
-  if (options.useImageDirTransform) {
-    config.addPlugin(transformImages);
+  // Add transforms
+  minifyHtml(config);
+  esbuildTransform(config);
+  lightningTransform(config);
+
+  // Add image optimization if enabled
+  if (options?.useImageDirTransform) {
+    imageTransform(config);
   }
+
   // production build only
   if (isProd) {
-    config.addPlugin(minifyHtml);
+    // No minifyHtml config.addPlugin equivalent, so leaving this commented out
+    // config.addPlugin(minifyHtml);
   }
 };

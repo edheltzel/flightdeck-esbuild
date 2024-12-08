@@ -8,11 +8,11 @@
  * @param {import("@11ty/eleventy").UserConfig} config - The Eleventy config object to which the plugins will be added.
  */
 
-const embedEverything = require("eleventy-plugin-embed-everything");
-const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-const navigation = require("@11ty/eleventy-navigation");
+import embedEverything from "eleventy-plugin-embed-everything";
+import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
+import navigation from "@11ty/eleventy-navigation";
 
-module.exports = (config) => {
+export default (config) => {
   config.addPlugin(embedEverything);
   config.addPlugin(syntaxHighlight);
   config.addPlugin(navigation);

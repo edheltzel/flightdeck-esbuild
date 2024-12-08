@@ -6,8 +6,6 @@
  * @usage <body class="layout--{{ layout | removeExt }}">
  * useful for creating css classes based on layouts
  */
-const stripFileExtension = (file) => {
+export const stripFileExtension = (file) => {
   return file.replace(/\.[^/.]+$/, "");
 };
-
-module.exports = { stripFileExtension };

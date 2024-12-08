@@ -4,6 +4,7 @@
 	"author": "Ed Heltzel",
 	"description": "An opinionated Jamstack starter project for Eleventy.",
 	"license": "WTFPL",
+	"type": "module",
 	"devDependencies": {
 		"@11ty/eleventy": "^3.0.0",
 		"@11ty/eleventy-img": "^5.0.0",
