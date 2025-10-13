@@ -5,6 +5,43 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org).
 
+## [Unreleased] - 2025-01-13
+
+### Changed
+
+#### Dependencies Updated
+
+**Production Dependencies:**
+- Alpine.js: 3.14.1 → 3.15.0
+- @alpinejs/persist: 3.14.1 → 3.15.0
+
+**Development Dependencies:**
+- @11ty/eleventy: 3.0.0 → 3.1.2
+- @11ty/eleventy-img: 5.0.0 → 6.0.4
+- @11ty/eleventy-navigation: 0.3.5 → 1.0.4
+- @11ty/eleventy-plugin-syntaxhighlight: 5.0.0 → 5.0.2
+- @biomejs/biome: 1.9.3 → 2.2.6
+- browserslist: 4.24.0 → 4.26.3
+- eleventy-plugin-embed-everything: 1.19.0 → 1.21.0
+- esbuild: 0.24.0 → 0.25.10
+- fast-glob: 3.3.2 → 3.3.3
+- lightningcss: 1.27.0 → 1.30.2
+- lightningcss-cli: 1.27.0 → 1.30.2
+- markdown-it-attrs: 4.2.0 → 4.3.1
+
+**Package Manager:**
+- bun: 1.2.21 → 1.3.0
+
+### Fixed
+
+- Fixed CSS quote consistency in `app.css` per Biome 2.2.6 formatter recommendations
+
+### Notes
+
+- All updates are backward compatible with no breaking changes
+- Production build tested and passing
+- Code quality checks passing with Biome 2.2.6
+
 ## [v0.6.0](https://github.com/edheltzel/flightdeck-esbuild/tree/v0.6.0) - 2024-08-06
 
 [Full Changelog](https://github.com/edheltzel/flightdeck-esbuild/compare/v0.5.41...v0.6.0)
