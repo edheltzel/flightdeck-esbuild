@@ -27,16 +27,18 @@
 		}
 	},
   "files": {
-    "ignore": [
-      "./node_modules",
-      "./.vscode",
-      "./.cache/**/*",
-      "./.jampack/**/*",
-      "./_site/**/*",
-      "./dist/**/*",
-      "*.map.*",
-      "./package.json",
-      "./*rc*.json"
-    ]
-  }
+    "ignoreUnknown": false,
+    "includes": ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx", "**/*.json", "**/*.css"]
+  },
+  "overrides": [
+    {
+      "includes": ["./node_modules/**", "./.vscode/**", "./.cache/**", "./.jampack/**", "./_site/**", "./dist/**", "**/*.map.*", "./package.json", "./*rc*.json"],
+      "linter": {
+        "enabled": false
+      },
+      "formatter": {
+        "enabled": false
+      }
+    }
+  ]
 }
