@@ -12,8 +12,6 @@ BOLDEND='\033[0m' #bold end
 
 
 TITLE="🧼 Scrubbed "
-OPTIONS="${YELLOW}site${NC}, or ${YELLOW}purge${NC}"
-OOPS="🚀💥🔥 OOPS! We need a valid option – Try using ${OPTIONS}"
 MALFUNCTION="👨‍🚀 Huston... We have a problem! Make sure you use ${OPTIONS} - "
 
 SITE="${WHITE}${BOLD}output${BOLDEND}${NC} & ${WHITE}${BOLD}all cache${BOLDEND}${NC} directories ✨"

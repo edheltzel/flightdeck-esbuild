@@ -1,7 +1,7 @@
 <div id="top" align="center">
 <!-- PROJECT LOGO -->
-  <a href="https://github.com/edheltzel"><img src="https://files.inthera.in/flightdeck/flightdeck-dark.png" alt="flightdeck Logo" width="400"></a>
-  <h1>flightdeck</h1>
+  <a href="https://github.com/edheltzel"><img src="https://files.inthera.in/flightdeck/flightdeck-dark.png" alt="Flightdeck Logo" width="400"></a>
+  <h1>Flightdeck</h1>
   <h4 style="padding-bottom: .5em">An opinionated starter project for <a href="https://www.11ty.dev/">Eleventy 🎈</a>.</h4>
 <!-- PROJECT SHIELDS -->
 
@@ -63,13 +63,13 @@
 The key concept here is to keep Eleventy in control of the entire development and build processes.
 
 ```shell
-    gh repo clone edheltzel/flightdeck flightdeck && cd flightdeck && pnpm run install && pnpm run start
+    gh repo clone edheltzel/flightdeck flightdeck && cd flightdeck && bun install && bun run start
 ```
 
 **Build your project**
 
 ```shell
-   pnpm run build
+   bun run build
 ```
 
 <!-- #endregion Too Long Didn’t Read -->
@@ -119,9 +119,9 @@ We are assuming that you already have Node with NPM (or another package manger, 
 
 **Package managers are like dotfiles, everyone has their own preference.**
 
-We are using [pnpm](https://pnpm.io/) as our package manager.
+We are using [Bun](https://bun.sh) as our package manager.
 
-But, you can swap `pnpm` in favor of your preferences 👉 [NPM](https://www.npmjs.com/) , [Yarn](https://yarnpkg.com/), and and [Bun](https://bun.sh). Use whatever you want 👍 just be sure to update the `package.json` with what ever flavor you choose to use:
+But, you can swap `bun` in favor of your preferences 👉 [NPM](https://www.npmjs.com/) , [Yarn](https://yarnpkg.com/), and [pnpm](https://pnpm.io/). Use whatever you want 👍 just be sure to update the `package.json` with what ever flavor you choose to use:
 
 - change `preview` with your preference
 - change `upgrade` with your preference
@@ -157,7 +157,7 @@ git clone https://github.com/edheltzel/flightdeck.git
 
 ```shell
 cd flightdeck
-pnpm run install
+bun install
 ```
 
 Using `gh` in the terminal:
@@ -168,7 +168,7 @@ gh repo clone edheltzel/flightdeck
 
 ```shell
 cd flightdeck
-pnpm run  install
+bun install
 ```
 
 <details>
@@ -211,7 +211,7 @@ available, but the `start` command is where all the magic 🪄 happens – it w
 Again, the focus here is to keep Eleventy in control of the entire development and build processes, to keep things simple.
 
 ```shell
-pnpm run start
+bun run start
 ```
 
 <details>
@@ -221,9 +221,9 @@ pnpm run start
     start
     eleventy --serve
 
-    Commands available via "pnpm run":
+    Commands available via "bun run":
      dev
-      pnpm run clean && pnpm run start
+      bun run clean && bun run start
      build
       ENV=prod eleventy
      debug
@@ -231,7 +231,7 @@ pnpm run start
      deploy
       wrangler pages deploy dist --project-name my-flightdeck --commit-message "local build & deploy"
      preview
-      pnpm run clean && pnpm run build && pnpx http-server dist -p 54321
+      bun run clean && bun run build && bunx http-server dist -p 54321
      check
       biome check
      format
@@ -243,13 +243,13 @@ pnpm run start
      purge
       ./.scrub.sh purge
      upgrade
-      pnpx npm-check-updates -ui
+      bunx npm-check-updates -ui
      release
       gh release create v$npm_package_version --generate-notes --latest
 
 </details>
 
-- `preinstall` command - runs `npx only-allow pnpm` to ensure that only pnpm is installed.
+- `preinstall` command - (removed when migrating to Bun) previously ensured only pnpm was used.
 - `dev` command - removes the existing `dist` and starts the development server with Eleventy.
 - `start` command - starts the development server with Eleventy.
 - `build` command - executes the production build of your site with Eleventy, includes HTML minification, compressed Sass, optimized images, and bundled javascript.
@@ -258,15 +258,15 @@ pnpm run start
 - `deploy` command - deploys the "manual" production build to Cloudflare Pages.
 - `preview` command - spins up a local server to preview the production build.
 - `check` command - runs biome lint and format at the same time JS/TS/CSS, see `biome.json`.
-  - ie: `pnpm run check ./src/assets/js/app.js`
+  - ie: `bun run check ./src/assets/js/app.js`
 - `format` command - uses biome to format JS/TS/CSS, see `biome.json`.
-  - ie: `pnpm run format ./src/assets/js/app.js`
+  - ie: `bun run format ./src/assets/js/app.js`
 - `lint` command - uses biome to lint JS/TS/CSS, see `biome.json`.
-  - ie: `pnpm run lint ./src/assets/js/app.js`
+  - ie: `bun run lint ./src/assets/js/app.js`
 - `clean` command - scrubs/removes the `dist/` and `.cache` directories
-- `purge` command - scrubs/removes the `dist/`, `.cache`, `node_modules`, and any lock files from npm, yarn, pnpm or pnpm. - 🧼 A fresh install.
+- `purge` command - scrubs/removes the `dist/`, `.cache`, `node_modules`, and any lock files from npm, yarn, pnpm, or bun. - 🧼 A fresh install.
   - **👀 NOTE: Both `clean` and `purge` are executed from a bash script**
-- `upgrade` command - uses `bunx npm-check-updates -ui` to upgrade dependencies to their latest versions and updates the `package.json` - this is a work around for `pnpm run upgrade` not working as expected or how other package managers work.
+- `upgrade` command - uses `bunx npm-check-updates -ui` to upgrade dependencies to their latest versions and updates the `package.json` - Bun handles this efficiently with its fast package resolution.
 - `release` command - creates a new release on GitHub.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -381,7 +381,7 @@ If you'd rather us Scss to write you styles you'll need to do a few things to se
   - please reference `_flightdeck/transforms.js` and `_flightdeck/transforms/_scss.js`
   - see [eleventy-sass repo](https://github.com/kentaroi/eleventy-sass) for documentation.
   - see [picocss docs](https://picocss.com/docs/sass#custom-theme) for theming.
-- If you do not want the additional dependencies just run `pnpm remove sass eleventy-sass postcss autoprefixer @picocss/pico`
+- If you do not want the additional dependencies just run `bun remove sass eleventy-sass postcss autoprefixer @picocss/pico`
 
 <!-- #region Autopilot -->
 
