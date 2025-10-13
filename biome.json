@@ -28,11 +28,11 @@
 	},
   "files": {
     "ignoreUnknown": false,
-    "includes": ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx", "**/*.json", "**/*.css"]
+    "include": ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx", "**/*.json", "**/*.css"]
   },
   "overrides": [
     {
-      "includes": ["./node_modules/**", "./.vscode/**", "./.cache/**", "./.jampack/**", "./_site/**", "./dist/**", "**/*.map.*", "./package.json", "./*rc*.json"],
+      "include": ["./node_modules/**", "./.vscode/**", "./.cache/**", "./.jampack/**", "./_site/**", "./dist/**", "**/*.map.*", "./package.json", "./*rc*.json"],
       "linter": {
         "enabled": false
       },
